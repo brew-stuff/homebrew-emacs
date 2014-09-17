@@ -10,7 +10,7 @@ class OrgMode < Formula
   def install
     system "make", "all"
     (share+"emacs/site-lisp").install "lisp" => "org"
-    (share+"emacs/site-lisp/org").install "contrib"
+    (share+"emacs/site-lisp/org").install "contrib/lisp" => "contrib"
     info.install 'doc/org' => 'org.info'
   end
 end
