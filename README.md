@@ -10,14 +10,10 @@ Install
 $ brew tap edavis/emacs
 ```
 
-If a package in here also exists in the default repo, you must prefix
-the name with `edavis/emacs/<pkg>` so it can be found.
-
-For example:
+Once tapped, use the `edavis/emacs/<pkg>` prefix whenever you need to
+install a package:
 
 ```bash
-$ brew install magit # default magit
-$ brew install edavis/emacs/magit # this tap's magit
+$ brew install edavis/emacs/magit
+$ brew install edavis/emacs/org-mode
 ```
-
-If a package only exists in here, you don't need to prefix it.
