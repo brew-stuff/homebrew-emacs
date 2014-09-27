@@ -68,7 +68,7 @@ free to request it by creating a new issue or submitting a pull request.
 Uninstall
 ---------
 
-To remove homebrew-emacs, you "untap" it:
+To uninstall homebrew-emacs, you just need to "untap" it:
 
 ```bash
 $ brew untap edavis/emacs
