@@ -3,8 +3,30 @@ homebrew-emacs
 
 homebrew-emacs is a Homebrew tap for Emacs packages.
 
+Once installed, it enables you to install
+[Emacs](https://gnu.org/s/emacs/) packages (e.g., [magit][],
+[org-mode][], [markdown-mode][], etc.) via
+[Homebrew](http://brew.sh/).
+
+It is an alternative to the [builtin ELPA package manager][elpa] that
+ships with Emacs 24.
+
+I started this project as I didn't want to have to learn another
+package manager when I already use Homebrew for everything else.
+
+[elpa]: http://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html#Packages
+[magit]: https://github.com/magit/magit
+[org-mode]: http://orgmode.org/
+[markdown-mode]: http://jblevins.org/projects/markdown-mode/
+
 Install
 -------
+
+You must "tap" homebrew-emacs before it can be used. This imports all
+the formulae and makes them available for the `brew` command.
+
+This only needs to be done once. Once tapped, "brew update" is enough
+to update it.
 
 ```bash
 $ brew tap edavis/emacs
@@ -35,3 +57,15 @@ the above path. You'll need to add this sub-directory to your
 
 Reading the formula should help if you run into any problems. If
 something is particularly confusing, please open a issue or PR.
+
+Uninstall
+---------
+
+To remove homebrew-emacs, you "untap" it:
+
+```bash
+$ brew untap edavis/emacs
+```
+
+All files installed from this tap will still exist, just the tap will
+no longer be updated.
