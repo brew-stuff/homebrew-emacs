@@ -2,7 +2,7 @@ require 'formula'
 
 class DiredDetails < Formula
   homepage 'http://www.emacswiki.org/DiredDetails'
-  url 'http://www.emacswiki.org/emacs/download/dired-details.el', :using => :curl
+  url 'http://www.emacswiki.org/emacs/download/dired-details.el?revision=15', :using => :curl
   version '1.3.2'
   sha1 '3de7e19ae874dac03edf9951648a1f11f52dead6'
 
