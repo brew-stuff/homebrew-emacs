@@ -2,8 +2,8 @@ require 'formula'
 
 class OrgMode < Formula
   homepage 'http://orgmode.org/'
-  url 'http://orgmode.org/org-8.2.8.tar.gz'
-  sha1 'e2d1715ce97406a91edb9191c29dd8564460f9b5'
+  url 'http://orgmode.org/org-8.2.10.tar.gz'
+  sha1 'fcb1c74c84387979a883431012930a0a63fc5138'
 
   head 'git://orgmode.org/org-mode.git'
 
