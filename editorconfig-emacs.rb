@@ -17,6 +17,13 @@ class EditorconfigEmacs < Formula
     doc.install "README.md"
   end
 
+  def caveats; <<-EOS.undent
+    Currently, Emacs fails to find editorconfig-emacs it is expected to follow a symlink to editorconfig.el
+    The workaround is to add the direct path to your load-path:
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/editorconfig-emacs")
+  EOS
+  end
+
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/editorconfig-emacs")
