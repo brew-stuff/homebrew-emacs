@@ -1,4 +1,4 @@
-class Org < Formula
+class OrgMode < Formula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
   url "http://orgmode.org/org-8.2.10.tar.gz"
