@@ -12,21 +12,21 @@ class EditorconfigEmacs < Formula
   def install
     system "make"
     system "make", "test"
-    (share/"emacs/site-lisp/#{name}").install "editorconfig.el",
-                                              "editorconfig.elc"
+    (share/"emacs/site-lisp/editorconfig").install "editorconfig.el",
+                                                   "editorconfig.elc"
     doc.install "README.md"
   end
 
   def caveats; <<-EOS.undent
     Currently, Emacs fails to find editorconfig-emacs if it is expected to follow a symlink of a directory.
     The workaround is to add a directory that's not itself a symlink to your load-path:
-      (add-to-list 'load-path "#{opt_share}/emacs/site-lisp/editorconfig-emacs")
+      (add-to-list 'load-path "#{opt_share}/emacs/site-lisp/editorconfig")
   EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/#{name}")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/editorconfig")
       (load "editorconfig")
       (print (minibuffer-prompt-width))
     EOS
