@@ -14,16 +14,13 @@ class OrgMode < Formula
     version "8.3beta"
   end
 
+  depends_on "dunn/emacs/dash"
+
   option "with-texinfo+", "Install Jonas Bernoulli's extension of ox-texinfo"
 
   # sort of arbitrary; I can't find an official minimum version required
   depends_on :emacs => "22.2"
   depends_on :tex => :optional
-
-  resource "dash" do
-    url "https://github.com/magnars/dash.el/archive/2.11.0.tar.gz"
-    sha256 "d888d34b9b86337c5740250f202e7f2efc3bf059b08a817a978bf54923673cde"
-  end
 
   resource "ox-texinfo-plus" do
     url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"
@@ -40,10 +37,6 @@ class OrgMode < Formula
       infodir = #{info}/emacs/#{name}
     EOS
     system "make", "install"
-
-    resource("dash").stage do
-      (share/"emacs/site-lisp/#{name}").install "dash.el"
-    end
 
     if build.with? "texinfo+"
       resource("ox-texinfo-plus").stage { (share/"emacs/site-lisp/#{name}").install "ox-texinfo%2B.el" => "ox-texinfo+.el" }
