@@ -5,8 +5,21 @@ class MarkdownMode < Formula
   sha256 "625e6f9680470bd119d79a3f97731347b8dd3d6311926f353d4065e67b76d92b"
   head "git://jblevins.org/git/markdown-mode.git"
 
+  option "with-markdown-plus", "Install the markdown-mode+ extension"
+
+  resource "markdown+" do
+    url "https://github.com/milkypostman/markdown-mode-plus/raw/f35e63284c5caed19b29501730e134018a78e441/markdown-mode%2B.el"
+    sha256 "743209cb390f9bd29bbaaf53d8e4940ee452ce401d85f253d938503d0e80d0f8"
+  end
+
   def install
     (share/"emacs/site-lisp/markdown-mode").install "markdown-mode.el"
+
+    if build.with? "markdown-plus"
+      resource("markdown+").stage do
+        (share/"emacs/site-lisp/markdown-mode").install "markdown-mode%2B.el" => "markdown-mode+.el"
+      end
+    end
   end
 
   test do
