@@ -25,19 +25,11 @@ You must "tap" homebrew-emacs before it can be used. This imports all
 the formulae and makes them available for the `brew` command.
 
 ```bash
-$ brew tap edavis/emacs
+$ brew tap dunn/emacs
 ```
 
 This only needs to be done once. Once tapped, "brew update" is enough
 to update it.
-
-Once tapped, use the `edavis/emacs/<pkg>` prefix whenever you need to
-install a package:
-
-```bash
-$ brew install edavis/emacs/org-mode
-$ brew install --HEAD edavis/emacs/magit
-```
 
 Configuration
 -------------
@@ -71,7 +63,7 @@ Uninstall
 To uninstall homebrew-emacs, you just need to "untap" it:
 
 ```bash
-$ brew untap edavis/emacs
+$ brew untap dunn/emacs
 ```
 
 All files installed from this tap will still exist, just the tap will
