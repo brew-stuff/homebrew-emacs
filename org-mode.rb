@@ -35,28 +35,28 @@ class OrgMode < Formula
     rm "local.mk"
     (buildpath/"local.mk").write <<-EOS.undent
       prefix  = #{prefix}
-      lispdir = #{share}/emacs/site-lisp/org
-      datadir = #{etc}/emacs/org
-      infodir = #{info}/emacs/org
+      lispdir = #{share}/emacs/site-lisp/#{name}
+      datadir = #{etc}/emacs/#{name}
+      infodir = #{info}/emacs/#{name}
     EOS
     system "make", "install"
 
     resource("dash").stage do
-      (share/"emacs/site-lisp/org").install "dash.el"
+      (share/"emacs/site-lisp/#{name}").install "dash.el"
     end
 
     if build.with? "texinfo+"
-      resource("ox-texinfo-plus").stage { (share/"emacs/site-lisp/org").install "ox-texinfo%2B.el" => "ox-texinfo+.el" }
+      resource("ox-texinfo-plus").stage { (share/"emacs/site-lisp/#{name}").install "ox-texinfo%2B.el" => "ox-texinfo+.el" }
     end
 
-    (share/"emacs/site-lisp/org").install "contrib/lisp" => "contrib"
+    (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
 
   def caveats; <<-EOS.undent
     You may need to remove the version of org that's bundled with newer versions of Emacs.
     Lisp files have been installed to:
-    #{HOMEBREW_PREFIX}/share/emacs/site-lisp/org
+    #{HOMEBREW_PREFIX}/share/emacs/site-lisp/#{name}
   EOS
   end
 
