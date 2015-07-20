@@ -9,11 +9,9 @@ class Popup < Formula
   depends_on "cask"
 
   def install
-    # otherwise a buffer pops up with the test results
-    inreplace "Makefile", "$(CASK) exec $(EMACS) -Q",
-                          "$(CASK) exec $(EMACS) -Q --batch"
-    system "make", "test", "EMACS=#{which "emacs"}",
-                           "CASK=#{Formula["cask"].bin}/cask"
+    # non-interactive test
+    system "make", "travis-ci", "EMACS=#{which "emacs"}",
+                                "CASK=#{Formula["cask"].bin}/cask"
 
     (share/"emacs/site-lisp/popup").install "popup.el"
     doc.install "README.md"
