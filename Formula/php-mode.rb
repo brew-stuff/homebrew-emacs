@@ -13,4 +13,12 @@ class PhpMode < Formula
                                                Dir["*.elc"]
     doc.install "README.md"
   end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+      (require 'php-mode)
+      (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+    EOS
+  end
 end
