@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class ClLib < Formula
   desc "Compatibility library for Emacs 24's cl-lib"
   homepage "http://elpa.gnu.org/packages/cl-lib.html"
@@ -8,5 +10,15 @@ class ClLib < Formula
   def install
     version_string = build.stable? ? "-#{version}" : ""
     (share/"emacs/site-lisp/cl-lib").install "cl-lib#{version_string}.el" => "cl-lib.el"
+  end
+
+  if Emacs.version >= 24
+    def caveats; <<-EOS.undent
+      Warning: Emacs 24 and higher includes cl-lib
+
+      Installing the compatibility library in parallel can have unexpected consequences.
+      Make sure Emacs' native cl-lib appears before this one in your load-path.
+    EOS
+    end
   end
 end
