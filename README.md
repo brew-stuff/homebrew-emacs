@@ -26,7 +26,7 @@ You can install any of the packages in `./Formula` by prefixing them
 with the tap name, `dunn/emacs`:
 
 ```
-brew install dunn/emacs/smex`
+brew install dunn/emacs/smex
 ```
 
 That will automatically "tap" the repository, so then you can install
