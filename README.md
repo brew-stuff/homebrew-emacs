@@ -4,7 +4,7 @@ homebrew-emacs
 homebrew-emacs is a Homebrew tap for Emacs packages.
 
 It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
-(e.g., [magit][], [org-mode][], [markdown-mode][], etc.) via
+(e.g., [flycheck][], [org-mode][], [markdown-mode][], etc.) via
 [Homebrew](http://brew.sh/).
 
 It is an alternative to the [builtin ELPA package manager][elpa] that
@@ -13,8 +13,8 @@ ships with Emacs 24.
 I started this project as I didn't want to have to learn another
 package manager when I already use Homebrew for everything else.
 
+[flycheck]: http://www.flycheck.org
 [elpa]: http://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html#Packages
-[magit]: https://github.com/magit/magit
 [org-mode]: http://orgmode.org/
 [markdown-mode]: http://jblevins.org/projects/markdown-mode/
 
