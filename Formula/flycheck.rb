@@ -14,6 +14,9 @@ class Flycheck < Formula
   end
 
   depends_on "cask"
+  depends_on "dunn/emacs/dash"
+  depends_on "dunn/emacs/let-alist"
+  depends_on "dunn/emacs/pkg-info"
 
   def install
     system "make", "compile", "EMACS=#{which "emacs"}",
@@ -25,10 +28,18 @@ class Flycheck < Formula
     doc.install "README.md", Dir["doc/*"]
   end
 
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+      (require 'flycheck)
+      (add-hook 'after-init-hook #'global-flycheck-mode)
+    EOS
+  end
+
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/flycheck")
-      (require 'flycheck)
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/flycheck")
+      (load "flycheck")
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
