@@ -6,6 +6,7 @@ class FountainMode < Formula
   head "https://github.com/rnkn/fountain-mode.git"
 
   depends_on :emacs => "24.4"
+  depends_on "dunn/emacs/s"
 
   def install
     (share/"emacs/site-lisp/fountain-mode").install "fountain-mode.el"
