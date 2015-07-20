@@ -17,4 +17,13 @@ class PkgInfo < Formula
                                                Dir["*.elc"]
     doc.install "README.md"
   end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/flycheck")
+      (load "pkg-info")
+      (print (minibuffer-prompt-width))
+    EOS
+    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+  end
 end
