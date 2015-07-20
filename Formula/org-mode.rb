@@ -55,7 +55,7 @@ class OrgMode < Formula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp")
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
       (load "org")
       (print (minibuffer-prompt-width))
     EOS
