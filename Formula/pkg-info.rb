@@ -7,6 +7,7 @@ class PkgInfo < Formula
 
   depends_on :emacs => "24.1"
   depends_on "cask"
+  depends_on "dunn/emacs/epl"
 
   def install
     system "make", "compile", "EMACS=#{which "emacs"}",
