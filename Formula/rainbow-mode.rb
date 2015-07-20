@@ -13,6 +13,7 @@ class RainbowMode < Formula
   def caveats; <<-EOS.undent
     Add hooks to activate rainbow-mode where desired, like so:
 
+      (require 'rainbow-mode)
       (add-hook 'scss-mode-hook 'scss-rainbow-hook)
       (defun scss-rainbow-hook ()
         "Colorize color strings."
