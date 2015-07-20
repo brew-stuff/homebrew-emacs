@@ -1,17 +1,17 @@
 homebrew-emacs
 ==============
 
-homebrew-emacs is a Homebrew tap for Emacs packages.
+homebrew-emacs is a [Homebrew](http://brew.sh) tap for Emacs packages.
 
 It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
-(e.g., [flycheck][], [org-mode][], [markdown-mode][], etc.) via
-[Homebrew](http://brew.sh/).
+like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
+install`.
 
-It is an alternative to the [builtin ELPA package manager][elpa] that
-ships with Emacs 24.
-
-I started this project as I didn't want to have to learn another
-package manager when I already use Homebrew for everything else.
+I'm trying to use it as an alternative to the
+[builtin ELPA package manager][elpa] that ships with Emacs 24.  The
+advantage is more customizable builds and a much better interface.
+Those who have many more packages will probably not find those
+considerations compelling.
 
 [flycheck]: http://www.flycheck.org
 [elpa]: http://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html#Packages
@@ -21,38 +21,44 @@ package manager when I already use Homebrew for everything else.
 Install
 -------
 
-You must "tap" homebrew-emacs before it can be used. This imports all
-the formulae and makes them available for the `brew` command.
+You can install any of the packages in `./Formula` by prefixing them
+with the tap name, `dunn/emacs`:
 
-```bash
-$ brew tap dunn/emacs
+```
+brew install dunn/emacs/smex`
 ```
 
-This only needs to be done once. Once tapped, "brew update" is enough
-to update it.
+That will automatically "tap" the repository, so then you can install
+formula without prefixing:
+
+```
+brew install flycheck
+```
+
+You can manually tap (and untap) as well:
+
+```
+brew tap dunn/emacs
+```
+
+`brew update` will then update formulae in your taps as well as those
+in the core repository.
 
 Configuration
 -------------
 
-By default, files are installed into
-`/usr/local/share/emacs/site-lisp`. Make sure to add this directory to
-your `load-path`:
+Add this to your init file to make sure Emacs can find packages
+installed by Homebrew:
 
 ```elisp
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
 ```
-
-If a package has a lot of files, I install it into a sub-directory of
-the above path. You'll need to add this sub-directory to your
-`load-path` before anything will work.
-
-Reading the formula should help if you run into any problems. If
-something is particularly confusing, please open a issue or PR.
 
 Contributions
 -------------
 
-Right now this tap is mostly just packages I personally use.
+Right now this tap is just packages I personally use.
 
 But if there is a package you use that isn't included, please feel
 free to request it by creating a new issue or submitting a pull request.
@@ -66,5 +72,5 @@ To uninstall homebrew-emacs, you just need to "untap" it:
 $ brew untap dunn/emacs
 ```
 
-All files installed from this tap will still exist, just the tap will
-no longer be updated.
+All files installed from this tap will still exist, but the formulae
+will no longer be updated.
