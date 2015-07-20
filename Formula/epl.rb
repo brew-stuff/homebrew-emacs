@@ -19,7 +19,7 @@ class Epl < Formula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/emacs/site-lisp")
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
       (require 'elp)
       (print (minibuffer-prompt-width))
     EOS
