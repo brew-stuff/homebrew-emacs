@@ -56,7 +56,7 @@ class OrgMode < Formula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp")
-      (require 'org)
+      (load "org")
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
