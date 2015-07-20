@@ -2,7 +2,7 @@ class RainbowMode < Formula
   desc "Minor mode for highlighting color-strings"
   homepage "http://elpa.gnu.org/packages/rainbow-mode.html"
   url "http://elpa.gnu.org/packages/rainbow-mode-0.11.el"
-  sha256 "honk"
+  sha256 "72ed06fb4f2f3ab1d5e2a9aac10864bce1d45f1923e52ee9a8e6d8f2930e16a5"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/rainbow-mode/rainbow-mode.el"
 
   def install
