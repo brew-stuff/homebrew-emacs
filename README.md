@@ -7,6 +7,7 @@ It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
 like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
 install`.
 
+Like [Eric Davis](https://github.com/edavis), who I forked this from,
 I'm trying to use it as an alternative to the
 [builtin ELPA package manager][elpa] that ships with Emacs 24.  The
 advantage is more customizable builds and a much better interface.
