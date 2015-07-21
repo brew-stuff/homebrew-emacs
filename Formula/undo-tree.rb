@@ -1,8 +1,8 @@
 class UndoTree < Formula
   desc "Branching undo mode for Emacs"
   homepage "http://www.dr-qubit.org/emacs.php#undo-tree"
-  url "http://www.dr-qubit.org/download.php?file=undo-tree/undo-tree-0.6.4.el"
-  sha256 "e92f0cf9629c755108f92af26a6587a41e77fa3b9228511d97feb5154f50d201"
+  url "http://elpa.gnu.org/packages/undo-tree-0.6.5.el"
+  sha256 "67b4842cc3cafa5a8b15adc89e6db37e8367f5078fd2d4d5df723ade7d3f492f"
   head "http://www.dr-qubit.org/git/undo-tree.git"
 
   def install
