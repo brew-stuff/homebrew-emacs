@@ -63,10 +63,8 @@ prefix.
 Contributions
 -------------
 
-Right now this tap is just packages I personally use.
-
-But if there is a package you use that isn't included, please feel
-free to request it by creating a new issue or submitting a pull request.
+If there's a package you use that isn't included here, please consider
+opening a pull request!
 
 Uninstall
 ---------
