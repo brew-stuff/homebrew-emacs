@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class Popup < Formula
   desc "Visual popup interface library for Emacs"
   homepage "https://github.com/auto-complete/popup-el"
@@ -7,6 +9,7 @@ class Popup < Formula
 
   depends_on :emacs => "23"
   depends_on "cask"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24
 
   def install
     # non-interactive test
