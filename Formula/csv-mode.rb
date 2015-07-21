@@ -1,11 +1,31 @@
-require 'formula'
-
 class CsvMode < Formula
-  homepage 'http://centaur.maths.qmul.ac.uk/Emacs/'
-  url 'http://elpa.gnu.org/packages/csv-mode-1.2.el', :using => :curl
-  sha1 'dae6f0d12788c1e67a23b080f8f516bc1ef9c6fb'
+  desc "Emacs major mode for editing delimited-field files"
+  homepage "https://sites.google.com/site/fjwcentaur/emacs"
+  url "http://elpa.gnu.org/packages/csv-mode-1.5.el"
+  sha256 "ac872ed07b18869165a2848c43b06b36fa73dce5f199ac79123a55b3f232acb6"
+  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/csv-mode/csv-mode.el"
 
   def install
-    (share+'emacs/site-lisp').install 'csv-mode-1.2.el' => 'csv-mode.el'
+    version_string = build.stable? ? "-#{version}" : ""
+    (share/"emacs/site-lisp/csv-mode").install "csv-mode#{version_string}.el" => "csv-mode.el"
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+      (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+      (autoload 'csv-mode "csv-mode"
+        "Major mode for editing comma-separated value files." t)
+    EOS
+  end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (load "csv-mode")
+      (csv-toggle-descending)
+      (print (minibuffer-prompt-width))
+    EOS
+    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
   end
 end
