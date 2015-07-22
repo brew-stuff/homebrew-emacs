@@ -12,11 +12,10 @@ module Emacs
     formula_path = caller.first.gsub(/:.*/, "")
     f = Formulary.factory(formula_path)
     if f.deps.any?
-      emacs_args << "-L"
       f.recursive_dependencies do |_, dep|
         Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
           x = Pathname.new(x)
-          emacs_args << x if x.directory?
+          emacs_args << "--directory #{x}" if x.directory?
         end
       end
     end
