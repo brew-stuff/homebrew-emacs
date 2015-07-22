@@ -10,7 +10,7 @@ class CsvMode < Formula
   def install
     mv "csv-mode-#{version}.el", "csv-mode.el" if build.stable?
 
-    Emacs.compile Dir["*.el"]
+    Emacs.compile "csv-mode.el"
     (share/"emacs/site-lisp/csv-mode").install Dir["*.el"],
                                                Dir["*.elc"]
   end
