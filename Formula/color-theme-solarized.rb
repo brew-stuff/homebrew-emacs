@@ -5,6 +5,8 @@ class ColorThemeSolarized < Formula
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
 
+  depends_on :emacs => "22.1"
+
   def install
     Emacs.compile Dir["*.el"]
     (share/"emacs/site-lisp/solarized").install Dir["*.el"],
