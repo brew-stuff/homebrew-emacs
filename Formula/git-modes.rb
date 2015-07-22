@@ -7,8 +7,7 @@ class GitModes < EmacsFormula
   sha256 "13e2584013e6aab940b8531e4eda4a4ef4da2efe4eee4a87277109b9663cbb25"
   head "https://github.com/magit/git-modes.git"
 
-  # min version unclear but required for compiling
-  depends_on :emacs => "22.1"
+  depends_on :emacs
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

@@ -7,6 +7,8 @@ class CsvMode < EmacsFormula
   sha256 "ac872ed07b18869165a2848c43b06b36fa73dce5f199ac79123a55b3f232acb6"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/csv-mode/csv-mode.el"
 
+  depends_on :emacs
+
   def install
     mv "csv-mode-#{version}.el", "csv-mode.el" if build.stable?
 

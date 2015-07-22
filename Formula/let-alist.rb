@@ -7,6 +7,8 @@ class LetAlist < EmacsFormula
   sha256 "1da10a090b40feb682a35c36498ba0d23d1ea8787db64d8ca3067dbff712611c"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/let-alist/let-alist.el"
 
+  depends_on :emacs
+
   def install
     mv "let-alist-#{version}.el", "let-alist.el" if build.stable?
 

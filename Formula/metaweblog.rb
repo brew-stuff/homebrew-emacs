@@ -7,6 +7,7 @@ class Metaweblog < EmacsFormula
   sha256 "14ac8029fc685417d419f28f2f04acb38ddfa269669b0c862d4ba6ca1fffb906"
   head "https://github.com/punchagan/metaweblog.git"
 
+  depends_on :emacs
   depends_on "dunn/emacs/xml-rpc"
 
   def install

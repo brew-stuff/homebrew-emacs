@@ -7,7 +7,7 @@ class UndoTree < EmacsFormula
   sha256 "67b4842cc3cafa5a8b15adc89e6db37e8367f5078fd2d4d5df723ade7d3f492f"
   head "http://www.dr-qubit.org/git/undo-tree.git"
 
-  depends_on :emacs => "22.1"
+  depends_on :emacs
 
   def install
     mv "undo-tree-#{version}.el", "undo-tree.el" if build.stable?

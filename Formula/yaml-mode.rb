@@ -8,8 +8,7 @@ class YamlMode < EmacsFormula
   sha256 "6d2226a4ecd5f3c2fd6ca8a469a2124c4888405a5f4e1552ca05bb1912e2506a"
   head "https://github.com/yoshiki/yaml-mode.git"
 
-  # ¯\_(ツ)_/¯
-  depends_on :emacs => "22.1"
+  depends_on :emacs
 
   def install
     (share/"emacs/site-lisp/yaml-mode").mkpath

@@ -7,6 +7,7 @@ class Org2blogWp < EmacsFormula
   sha256 "28ccab8541fe79a3bc82387d3605531f99045536f23af619f3634a7b59a410f9"
   head "https://github.com/punchagan/org2blog.git"
 
+  # tested on 22 and above
   depends_on :emacs => "22.1"
   depends_on "dunn/emacs/metaweblog"
   depends_on "dunn/emacs/org-mode"

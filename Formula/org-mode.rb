@@ -18,8 +18,7 @@ class OrgMode < EmacsFormula
 
   option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
 
-  # sort of arbitrary; I can't find an official minimum version required
-  depends_on :emacs => "22.2"
+  depends_on :emacs
   depends_on :tex => :optional
   depends_on "dunn/emacs/dash"
 

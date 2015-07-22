@@ -7,6 +7,8 @@ class ClLib < EmacsFormula
   sha256 "24a5c6ca95c3d702939f4e8d370eb9bbd496db86d4a022caefaba4753a738efc"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/cl-lib/cl-lib.el"
 
+  depends_on :emacs
+
   def install
     mv "cl-lib-#{version}.el", "cl-lib.el" if build.stable?
 

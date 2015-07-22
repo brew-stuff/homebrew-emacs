@@ -7,7 +7,8 @@ class Popup < EmacsFormula
   sha256 "19714326dd5166def540c3f1c47a27e67ffdb3a94c91271c88a8500a15846c0b"
   head "https://github.com/auto-complete/popup-el.git"
 
-  depends_on :emacs => "23"
+  # only tested on 24
+  depends_on :emacs => "24.1"
   depends_on "cask"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
 

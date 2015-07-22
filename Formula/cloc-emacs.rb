@@ -5,7 +5,7 @@ class ClocEmacs < EmacsFormula
   homepage "https://github.com/cosmicexplorer/cloc-emacs"
   head "https://github.com/cosmicexplorer/cloc-emacs.git"
 
-  depends_on :emacs => "22.1"
+  depends_on :emacs
   depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
 
   def install

@@ -8,7 +8,7 @@ class XmlRpc < EmacsFormula
   sha256 "ebd4e582f66df200a01344cd89af428d1ae75878c2057c76c65c66e841721045"
   head "lp:xml-rpc-el", :using => :bzr
 
-  depends_on :emacs => "22.1"
+  depends_on :emacs
 
   def install
     byte_compile "xml-rpc.el"

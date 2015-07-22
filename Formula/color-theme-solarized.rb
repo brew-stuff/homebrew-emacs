@@ -5,7 +5,7 @@ class ColorThemeSolarized < EmacsFormula
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
 
-  depends_on :emacs => "22.1"
+  depends_on :emacs
 
   def install
     byte_compile Dir["*.el"]

@@ -5,7 +5,7 @@ class Wgrep < EmacsFormula
   homepage "https://github.com/mhayashi1120/Emacs-wgrep"
   head "https://github.com/mhayashi1120/Emacs-wgrep.git"
 
-  depends_on :emacs => "24.1"
+  depends_on :emacs => "22.1"
 
   def install
     system "make", "compile"

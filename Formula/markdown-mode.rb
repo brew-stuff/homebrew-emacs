@@ -14,6 +14,8 @@ class MarkdownMode < EmacsFormula
     sha256 "743209cb390f9bd29bbaaf53d8e4940ee452ce401d85f253d938503d0e80d0f8"
   end
 
+  depends_on :emacs
+
   def install
     # currently fails to compile:
     # > markdown-mode.el:3737:1:Error: Invalid modifier in string
