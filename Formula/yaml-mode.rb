@@ -1,13 +1,35 @@
-require 'formula'
-
+# coding: utf-8
 class YamlMode < Formula
-  homepage 'https://github.com/yoshiki/yaml-mode'
-  url 'https://github.com/yoshiki/yaml-mode/archive/release-0.0.10.tar.gz'
-  sha1 '75c1318947d076ac6c1d5591e0a9ba944115c55a'
-  head 'https://github.com/yoshiki/yaml-mode.git'
+  desc "Emacs major mode for editing YAML files"
+  homepage "https://github.com/yoshiki/yaml-mode"
+  url "https://github.com/yoshiki/yaml-mode/archive/v0.0.11.tar.gz"
+  sha256 "6d2226a4ecd5f3c2fd6ca8a469a2124c4888405a5f4e1552ca05bb1912e2506a"
+  head "https://github.com/yoshiki/yaml-mode.git"
+
+  # ¯\_(ツ)_/¯
+  depends_on :emacs => "22.1"
 
   def install
-    system 'make', 'bytecompile'
-    (share+'emacs/site-lisp').install ['yaml-mode.el', 'yaml-mode.elc']
+    (share/"emacs/site-lisp/yaml-mode").mkpath
+    system "make", "install", "PREFIX=#{prefix}",
+           "INSTALLLIBDIR=#{share}/emacs/site-lisp/yaml-mode"
+    doc.install "README"
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'yaml-mode)
+    (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+  EOS
+  end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (load "yaml-mode")
+      (print (yaml-mode-version))
+    EOS
+    assert_equal "\"#{version}\"", shell_output("emacs -batch -l #{testpath}/test.el").strip
   end
 end
