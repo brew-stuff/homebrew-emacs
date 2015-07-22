@@ -5,8 +5,10 @@ module Emacs
 
   def self.compile(*args)
     # TODO: load directories of dependencies
-    args.each do |file|
-      system "emacs", "--batch", "-Q", "-f", "batch-byte-compile", *file
+    lisps = args.flatten
+    lisps.each do |file|
+      ohai "Byte compiling #{file}"
+      system "emacs", "--batch", "-Q", "-f", "batch-byte-compile", file
     end
   end
 end
