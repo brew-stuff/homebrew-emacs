@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class LetAlist < Formula
   desc "Easily let-bind values of an assoc-list by their names"
   homepage "http://elpa.gnu.org/packages/let-alist.html"
@@ -6,7 +8,10 @@ class LetAlist < Formula
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/let-alist/let-alist.el"
 
   def install
-    version_string = build.stable? ? "-#{version}" : ""
-    (share/"emacs/site-lisp/let-alist").install "let-alist#{version_string}.el" => "let-alist.el"
+    mv "let-alist-#{version}.el", "let-alist.el" if build.stable?
+
+    Emacs.compile "let-alist.el"
+    (share/"emacs/site-lisp/let-alist").install "let-alist.el",
+                                                "let-alist.elc"
   end
 end
