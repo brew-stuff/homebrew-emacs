@@ -6,27 +6,27 @@ module Emacs
   end
 
   def self.compile(*args)
-    lisps = args.flatten
-    lisps.each do |file|
-      emacs_args = %w[emacs --batch -Q]
+    emacs_args = %w[emacs --batch -Q]
 
-      # FIXME: lol
-      formula_path = caller.first.gsub(/:.*/, "")
-      f = Formulary.factory(formula_path)
-      if f.deps.any?
-        f.recursive_dependencies do |_, dep|
-          Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
-            x = Pathname.new(x)
-            emacs_args << "--directory #{x}" if x.directory?
-          end
+    # FIXME: lol
+    formula_path = caller.first.gsub(/:.*/, "")
+    f = Formulary.factory(formula_path)
+    if f.deps.any?
+      f.recursive_dependencies do |_, dep|
+        Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
+          x = Pathname.new(x)
+          emacs_args << "--directory #{x}" if x.directory?
         end
       end
-      emacs_args << %w[-f batch-byte-compile]
+    end
+    emacs_args << %w[-f batch-byte-compile]
 
+    lisps = args.flatten
+    lisps.each do |file|
       ohai "Byte compiling #{file}"
-      emacs_args << file
+      puts emacs_args.join(" ") + " #{file}"
       # TODO: why doesn't `system "emacs", *emacs_args` work here
-      system emacs_args.join(" ")
+      system emacs_args.join(" ") + " #{file}"
     end
   end
 end
