@@ -6,8 +6,8 @@ class Wgrep < Formula
   depends_on :emacs => "24.1"
 
   def install
-    system "make", "compile", "EMACS=#{which "emacs"}"
-    system "make", "check", "EMACS=#{which "emacs"}"
+    system "make", "compile"
+    system "make", "check"
 
     (share/"emacs/site-lisp/wgrep").install Dir["*.el"],
                                             Dir["*.elc"]

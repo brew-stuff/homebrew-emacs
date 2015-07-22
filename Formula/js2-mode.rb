@@ -8,8 +8,8 @@ class Js2Mode < Formula
   depends_on :emacs => "24.1"
 
   def install
-    system "make", "EMACS=#{which "emacs"}"
-    system "make", "test", "EMACS=#{which "emacs"}"
+    system "make"
+    system "make", "test"
 
     (share/"emacs/site-lisp/js2-mode").install Dir["*.el"],
                                                Dir["*.elc"]

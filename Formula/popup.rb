@@ -13,8 +13,7 @@ class Popup < Formula
 
   def install
     # non-interactive test
-    system "make", "travis-ci", "EMACS=#{which "emacs"}",
-                                "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "travis-ci", "CASK=#{Formula["cask"].bin}/cask"
 
     (share/"emacs/site-lisp/popup").install "popup.el"
     doc.install "README.md"

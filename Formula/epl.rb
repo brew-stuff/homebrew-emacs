@@ -9,8 +9,7 @@ class Epl < Formula
   depends_on "cask"
 
   def install
-    system "make", "compile", "EMACS=#{which "emacs"}",
-                              "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
     system "make", "test"
     (share/"emacs/site-lisp/epl").install Dir["*.el"],
                                           Dir["*.elc"]

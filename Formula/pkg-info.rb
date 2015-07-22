@@ -10,8 +10,7 @@ class PkgInfo < Formula
   depends_on "dunn/emacs/epl"
 
   def install
-    system "make", "compile", "EMACS=#{which "emacs"}",
-                              "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
 
     (share/"emacs/site-lisp/pkg-info").install Dir["*.el"],
                                                Dir["*.elc"]

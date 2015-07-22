@@ -19,8 +19,7 @@ class Flycheck < Formula
   depends_on "dunn/emacs/pkg-info"
 
   def install
-    system "make", "compile", "EMACS=#{which "emacs"}",
-                              "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
 
     (share/"emacs/site-lisp/flycheck").install Dir["*.el"],
                                                Dir["*.elc"]

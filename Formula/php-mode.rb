@@ -8,7 +8,7 @@ class PhpMode < Formula
   depends_on :emacs => "24.1"
 
   def install
-    system "make", "test", "EMACS=#{which "emacs"}"
+    system "make", "test"
     (share/"emacs/site-lisp/php-mode").install Dir["*.el"],
                                                Dir["*.elc"]
     doc.install "README.md"

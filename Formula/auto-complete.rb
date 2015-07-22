@@ -10,11 +10,9 @@ class AutoComplete < Formula
   depends_on "dunn/emacs/popup"
 
   def install
-    system "make", "test", "EMACS=#{which "emacs"}",
-                           "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
 
-    system "make", "byte-compile", "EMACS=#{which "emacs"}",
-                                   "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "byte-compile", "CASK=#{Formula["cask"].bin}/cask"
     (share/"emacs/site-lisp/auto-complete").install Dir["*.el"],
                                                     Dir["*.elc"]
   end
