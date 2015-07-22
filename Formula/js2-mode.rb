@@ -10,7 +10,6 @@ class Js2Mode < Formula
   def install
     system "make"
     system "make", "test"
-
     (share/"emacs/site-lisp/js2-mode").install Dir["*.el"],
                                                Dir["*.elc"]
     doc.install Dir["*.md"]
@@ -19,11 +18,11 @@ class Js2Mode < Formula
   def caveats; <<-EOS.undent
     Add the following to your init file:
 
-      (require 'js2-mode)
-      (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-      (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-      (add-to-list 'interpreter-mode-alist '("iojs" . js2-mode))
-    EOS
+    (require 'js2-mode)
+    (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+    (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+    (add-to-list 'interpreter-mode-alist '("iojs" . js2-mode))
+  EOS
   end
 
   test do
