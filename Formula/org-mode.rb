@@ -14,7 +14,7 @@ class OrgMode < Formula
     version "8.3beta"
   end
 
-  option "with-texinfo+", "Install Jonas Bernoulli's extension of ox-texinfo"
+  option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
 
   # sort of arbitrary; I can't find an official minimum version required
   depends_on :emacs => "22.2"
@@ -37,8 +37,8 @@ class OrgMode < Formula
     EOS
     system "make", "install"
 
-    if build.with? "texinfo+"
       resource("ox-texinfo-plus").stage { (share/"emacs/site-lisp/#{name}").install "ox-texinfo%2B.el" => "ox-texinfo+.el" }
+    if build.with? "texinfo-plus"
     end
 
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
