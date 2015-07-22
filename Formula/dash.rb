@@ -1,4 +1,6 @@
-class Dash < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class Dash < EmacsFormula
   desc "A modern list library for Emacs"
   homepage "https://github.com/magnars/dash.el"
   url "https://github.com/magnars/dash.el/archive/2.11.0.tar.gz"

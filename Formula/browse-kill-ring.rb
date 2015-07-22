@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class BrowseKillRing < Formula
+class BrowseKillRing < EmacsFormula
   desc "Tool for examining kill history in Emacs"
   homepage "https://github.com/browse-kill-ring/browse-kill-ring"
   url "https://github.com/browse-kill-ring/browse-kill-ring/archive/2.0.0.tar.gz"
@@ -8,7 +8,7 @@ class BrowseKillRing < Formula
   head "https://github.com/browse-kill-ring/browse-kill-ring.git"
 
   def install
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/browse-kill-ring").install Dir["*.el"],
                                                        Dir["*.elc"]
     doc.install "README.md"

@@ -1,4 +1,6 @@
-class Epl < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class Epl < EmacsFormula
   desc "package.el API"
   homepage "https://github.com/cask/epl"
   url "https://github.com/cask/epl/archive/0.7.tar.gz"

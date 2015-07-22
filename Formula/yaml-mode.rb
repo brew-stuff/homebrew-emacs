@@ -1,5 +1,7 @@
 # coding: utf-8
-class YamlMode < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class YamlMode < EmacsFormula
   desc "Emacs major mode for editing YAML files"
   homepage "https://github.com/yoshiki/yaml-mode"
   url "https://github.com/yoshiki/yaml-mode/archive/v0.0.11.tar.gz"

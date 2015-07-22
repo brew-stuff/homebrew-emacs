@@ -1,4 +1,6 @@
-class Js2Mode < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"
   homepage "https://github.com/mooz/js2-mode"
   url "https://github.com/mooz/js2-mode/archive/20150713.tar.gz"

@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class LetAlist < Formula
+class LetAlist < EmacsFormula
   desc "Easily let-bind values of an assoc-list by their names"
   homepage "http://elpa.gnu.org/packages/let-alist.html"
   url "http://elpa.gnu.org/packages/let-alist-1.0.4.el"
@@ -10,7 +10,7 @@ class LetAlist < Formula
   def install
     mv "let-alist-#{version}.el", "let-alist.el" if build.stable?
 
-    Emacs.compile "let-alist.el"
+    byte_compile "let-alist.el"
     (share/"emacs/site-lisp/let-alist").install "let-alist.el",
                                                 "let-alist.elc"
   end

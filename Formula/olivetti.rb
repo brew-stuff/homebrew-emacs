@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class Olivetti < Formula
+class Olivetti < EmacsFormula
   desc "Emacs minor mode for distraction-free writing"
   homepage "https://github.com/rnkn/olivetti"
   url "https://github.com/rnkn/olivetti/archive/v1.2.0.tar.gz"
@@ -9,7 +9,7 @@ class Olivetti < Formula
   head "https://github.com/rnkn/olivetti.git"
 
   def install
-    Emacs.compile "olivetti.el"
+    byte_compile "olivetti.el"
     (share/"emacs/site-lisp/olivetti").install "olivetti.el",
                                                "olivetti.elc"
     doc.install "README.md"

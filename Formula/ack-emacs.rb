@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class AckEmacs < Formula
+class AckEmacs < EmacsFormula
   desc "Emacs interface to Ack-like tools"
   homepage "https://github.com/leoliu/ack-el"
   url "http://elpa.gnu.org/packages/ack-1.3.tar"
@@ -10,7 +10,7 @@ class AckEmacs < Formula
   depends_on :emacs => "24.1"
 
   def install
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/ack").install Dir["*.el"],
                                           Dir["*.elc"]
     doc.install "README.rst"

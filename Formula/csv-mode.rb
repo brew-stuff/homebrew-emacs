@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class CsvMode < Formula
+class CsvMode < EmacsFormula
   desc "Emacs major mode for editing delimited-field files"
   homepage "https://sites.google.com/site/fjwcentaur/emacs"
   url "http://elpa.gnu.org/packages/csv-mode-1.5.el"
@@ -10,7 +10,7 @@ class CsvMode < Formula
   def install
     mv "csv-mode-#{version}.el", "csv-mode.el" if build.stable?
 
-    Emacs.compile "csv-mode.el"
+    byte_compile "csv-mode.el"
     (share/"emacs/site-lisp/csv-mode").install Dir["*.el"],
                                                Dir["*.elc"]
   end

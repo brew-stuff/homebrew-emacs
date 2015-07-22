@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class ScssMode < Formula
+class ScssMode < EmacsFormula
   desc "Major mode for editing .scss files in Emacs"
   homepage "https://github.com/antonj/scss-mode"
   url "https://github.com/antonj/scss-mode/archive/0.5.0.tar.gz"
@@ -10,7 +10,7 @@ class ScssMode < Formula
   depends_on :emacs => "22.1"
 
   def install
-    Emacs.compile "scss-mode.el"
+    byte_compile "scss-mode.el"
     (share/"emacs/site-lisp/scss-mode").install "scss-mode.el",
                                                 "scss-mode.elc"
     doc.install "README.org"

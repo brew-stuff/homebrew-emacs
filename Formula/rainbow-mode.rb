@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class RainbowMode < Formula
+class RainbowMode < EmacsFormula
   desc "Minor mode for highlighting color-strings"
   homepage "http://elpa.gnu.org/packages/rainbow-mode.html"
   url "http://elpa.gnu.org/packages/rainbow-mode-0.11.el"
@@ -12,7 +12,7 @@ class RainbowMode < Formula
   def install
     mv "rainbow-mode-#{version}.el", "rainbow-mode.el" if build.stable?
 
-    Emacs.compile "rainbow-mode.el"
+    byte_compile "rainbow-mode.el"
     (share/"emacs/site-lisp/rainbow-mode").install "rainbow-mode.el",
                                                    "rainbow-mode.elc"
   end

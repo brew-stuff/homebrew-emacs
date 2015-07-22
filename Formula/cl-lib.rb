@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class ClLib < Formula
+class ClLib < EmacsFormula
   desc "Compatibility library for Emacs 24's cl-lib"
   homepage "http://elpa.gnu.org/packages/cl-lib.html"
   url "http://elpa.gnu.org/packages/cl-lib-0.5.el"
@@ -10,7 +10,7 @@ class ClLib < Formula
   def install
     mv "cl-lib-#{version}.el", "cl-lib.el" if build.stable?
 
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/cl-lib").install Dir["*.el"],
                                              Dir["*.elc"]
   end

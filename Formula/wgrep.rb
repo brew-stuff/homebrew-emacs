@@ -1,4 +1,6 @@
-class Wgrep < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class Wgrep < EmacsFormula
   desc "Writeable grep buffers for Emacs"
   homepage "https://github.com/mhayashi1120/Emacs-wgrep"
   head "https://github.com/mhayashi1120/Emacs-wgrep.git"

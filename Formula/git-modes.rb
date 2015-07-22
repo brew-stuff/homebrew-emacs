@@ -1,4 +1,6 @@
-class GitModes < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class GitModes < EmacsFormula
   desc "Emacs major modes for git config, attributes, and ignore"
   homepage "https://github.com/magit/git-modes"
   url "https://github.com/magit/git-modes/archive/1.2.0.tar.gz"

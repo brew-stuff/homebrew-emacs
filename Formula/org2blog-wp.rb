@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class Org2blogWp < Formula
+class Org2blogWp < EmacsFormula
   desc "Emacs package for publishing from org-mode to WordPress blogs"
   homepage "https://github.com/punchagan/org2blog"
   url "https://github.com/punchagan/org2blog/archive/v0.9.2.tar.gz"
@@ -14,7 +14,7 @@ class Org2blogWp < Formula
 
   # tests are interactive so we can't run them
   def install
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/org2blog-wp").install Dir["*.el"],
                                                   Dir["*.elc"]
     doc.install "README.org"

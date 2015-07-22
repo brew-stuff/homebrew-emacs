@@ -1,4 +1,6 @@
-class PkgInfo < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class PkgInfo < EmacsFormula
   desc "Library for providing information about Emacs packages"
   homepage "https://github.com/lunaryorn/pkg-info.el"
   url "https://github.com/lunaryorn/pkg-info.el/archive/0.6.tar.gz"

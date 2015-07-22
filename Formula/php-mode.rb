@@ -1,4 +1,6 @@
-class PhpMode < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class PhpMode < EmacsFormula
   desc "Major mode for editing PHP files"
   homepage "https://github.com/ejmr/php-mode"
   url "https://github.com/ejmr/php-mode/archive/v1.17.0.tar.gz"

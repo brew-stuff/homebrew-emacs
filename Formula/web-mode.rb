@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class WebMode < Formula
+class WebMode < EmacsFormula
   homepage "http://web-mode.org"
   url "https://github.com/fxbois/web-mode/archive/v11.2.tar.gz"
   sha256 "e9e91da7ee0be5f3b0aa018571f42c6963086dd2a446f2554f405a8175543b82"
@@ -12,7 +12,7 @@ class WebMode < Formula
     chmod 0755, "run.sh"
     system "./run.sh"
 
-    Emacs.compile "web-mode.el"
+    byte_compile "web-mode.el"
     (share/"emacs/site-lisp").install "web-mode.el", "web-mode.elc"
     doc.install "README.md"
   end

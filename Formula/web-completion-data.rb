@@ -1,4 +1,6 @@
-class WebCompletionData < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class WebCompletionData < EmacsFormula
   desc "Completion data for ac-html and company-web"
   homepage "https://github.com/osv/web-completion-data"
   url "https://github.com/osv/web-completion-data/archive/v0.1.tar.gz"

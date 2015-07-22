@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class Smex < Formula
+class Smex < EmacsFormula
   desc "Adds Ido completions to Emacs' M-x"
   homepage "https://github.com/nonsequitur/smex"
   url "https://github.com/nonsequitur/smex/archive/3.0.tar.gz"
@@ -10,7 +10,7 @@ class Smex < Formula
   depends_on :emacs => "24.1"
 
   def install
-    Emacs.compile "smex.el"
+    byte_compile "smex.el"
     (share/"emacs/site-lisp/smex").install "smex.el", "smex.elc"
     doc.install "README.markdown"
   end

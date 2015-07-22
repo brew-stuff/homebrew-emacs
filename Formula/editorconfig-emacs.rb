@@ -1,4 +1,6 @@
-class EditorconfigEmacs < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
   homepage "http://editorconfig.org/"
   url "https://github.com/editorconfig/editorconfig-emacs/archive/v0.4.tar.gz"

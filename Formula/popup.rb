@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class Popup < Formula
+class Popup < EmacsFormula
   desc "Visual popup interface library for Emacs"
   homepage "https://github.com/auto-complete/popup-el"
   url "https://github.com/auto-complete/popup-el/archive/v0.5.2.tar.gz"
@@ -15,7 +15,7 @@ class Popup < Formula
     # non-interactive test
     system "make", "travis-ci", "CASK=#{Formula["cask"].bin}/cask"
 
-    Emacs.compile "popup.el"
+    byte_compile "popup.el"
     (share/"emacs/site-lisp/popup").install "popup.el", "popup.elc"
     doc.install "README.md"
   end

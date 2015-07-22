@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class S < Formula
+class S < EmacsFormula
   desc "Emacs string manipulation library"
   homepage "https://github.com/magnars/s.el"
   url "https://github.com/magnars/s.el/archive/1.9.0.tar.gz"
@@ -12,7 +12,7 @@ class S < Formula
   def install
     system "./run-tests.sh"
 
-    Emacs.compile "s.el"
+    byte_compile "s.el"
     (share/"emacs/site-lisp/s").install "s.el", "s.elc"
 
     system "./create-docs.sh" if build.head?

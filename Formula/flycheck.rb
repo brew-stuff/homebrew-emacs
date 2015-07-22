@@ -1,4 +1,6 @@
-class Flycheck < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
 

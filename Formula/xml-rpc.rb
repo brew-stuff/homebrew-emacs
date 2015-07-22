@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class XmlRpc < Formula
+class XmlRpc < EmacsFormula
   desc "XML-RPC client for Emacs"
   homepage "https://launchpad.net/xml-rpc-el"
   url "https://launchpad.net/xml-rpc-el/trunk/1.6.8/+download/xml-rpc.el"
@@ -11,7 +11,7 @@ class XmlRpc < Formula
   depends_on :emacs => "22.1"
 
   def install
-    Emacs.compile "xml-rpc.el"
+    byte_compile "xml-rpc.el"
     (share/"emacs/site-lisp/xml-rpc").install "xml-rpc.el",
                                               "xml-rpc.elc"
   end

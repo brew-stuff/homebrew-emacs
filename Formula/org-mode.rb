@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class OrgMode < Formula
+class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
   url "http://orgmode.org/org-8.2.10.tar.gz"
@@ -42,13 +42,13 @@ class OrgMode < Formula
     if build.with? "texinfo-plus"
       resource("ox-texinfo-plus").stage do
         mv "ox-texinfo%2B.el", "ox-texinfo+.el"
-        Emacs.compile "ox-texinfo+.el"
+        byte_compile "ox-texinfo+.el"
         (share/"emacs/site-lisp/#{name}").install "ox-texinfo+.el",
                                                   "ox-texinfo+.elc"
       end
     end
 
-    Emacs.compile Dir["contrib/lisp/*.el"]
+    byte_compile Dir["contrib/lisp/*.el"]
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end

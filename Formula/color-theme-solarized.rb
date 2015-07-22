@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class ColorThemeSolarized < Formula
+class ColorThemeSolarized < EmacsFormula
   desc "Ethan Schoonover's Solarized color scheme for Emacs"
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
@@ -8,7 +8,7 @@ class ColorThemeSolarized < Formula
   depends_on :emacs => "22.1"
 
   def install
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/solarized").install Dir["*.el"],
                                                 Dir["*.elc"]
     doc.install "README.md"

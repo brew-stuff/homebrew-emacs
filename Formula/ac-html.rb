@@ -1,4 +1,6 @@
-class AcHtml < Formula
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+
+class AcHtml < EmacsFormula
   desc "Autocompletion for HTML in Emacs"
   homepage "https://github.com/cheunghy/ac-html"
   url "https://github.com/cheunghy/ac-html/archive/v0.31.tar.gz"

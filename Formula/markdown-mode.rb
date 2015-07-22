@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class MarkdownMode < Formula
+class MarkdownMode < EmacsFormula
   desc "Major mode for editing Markdown files"
   homepage "http://jblevins.org/projects/markdown-mode/"
   url "http://jblevins.org/git/markdown-mode.git/snapshot/markdown-mode-2.0.tar.gz"
@@ -21,7 +21,7 @@ class MarkdownMode < Formula
     if build.with? "markdown-plus"
       resource("markdown+").stage do
         mv "markdown-mode%2B.el", "markdown-mode+.el"
-        Emacs.compile "markdown-mode+.el"
+        byte_compile "markdown-mode+.el"
         (share/"emacs/site-lisp/markdown-mode").install "markdown-mode+.el",
                                                         "markdown-mode+.elc"
       end

@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class FountainMode < Formula
+class FountainMode < EmacsFormula
   desc "Major mode for the Fountain screenwriting syntax"
   homepage "https://github.com/rnkn/fountain-mode"
   url "https://github.com/rnkn/fountain-mode/archive/v1.5.0.tar.gz"
@@ -11,7 +11,7 @@ class FountainMode < Formula
   depends_on "dunn/emacs/s"
 
   def install
-    Emacs.compile "fountain-mode.el"
+    byte_compile "fountain-mode.el"
     (share/"emacs/site-lisp/fountain-mode").install "fountain-mode.el",
                                                     "fountain-mode.elc"
     doc.install "README.md"

@@ -1,4 +1,4 @@
-class AutoComplete < Formula
+class AutoComplete < EmacsFormula
   desc "Autocompletion extension for Emacs"
   homepage "http://auto-complete.org/"
   url "https://github.com/auto-complete/auto-complete/archive/v1.5.0.tar.gz"

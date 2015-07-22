@@ -1,6 +1,6 @@
-require File.expand_path("../../Homebrew/emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
 
-class UndoTree < Formula
+class UndoTree < EmacsFormula
   desc "Branching undo mode for Emacs"
   homepage "http://www.dr-qubit.org/emacs.php#undo-tree"
   url "http://elpa.gnu.org/packages/undo-tree-0.6.5.el"
@@ -10,7 +10,7 @@ class UndoTree < Formula
   depends_on :emacs => "22.1"
 
   def install
-    Emacs.compile Dir["*.el"]
+    byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/undo-tree").install Dir["*.el"],
                                                 Dir["*.elc"]
   end
