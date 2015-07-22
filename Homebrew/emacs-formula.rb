@@ -5,26 +5,36 @@ class EmacsFormula < Formula
     super
   end
 
-  def byte_compile(*args)
-    emacs_args = %W[emacs --batch -Q --directory #{buildpath}]
+  def byte_compile(*files)
+    emacs_args = %W[--batch -Q --directory #{buildpath}]
 
     if deps.any?
       recursive_dependencies do |_, dep|
         Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
           x = Pathname.new(x)
-          emacs_args << "--directory #{x}" if x.directory?
+          emacs_args << "--directory" << "#{x}" if x.directory?
         end
       end
     end
-    emacs_args << %w[-f batch-byte-compile]
+    emacs_args << "-f" << "batch-byte-compile"
 
-    lisps = args.flatten
+    lisps = files.flatten
     lisps.each do |file|
       ohai "Byte compiling #{file}"
-      pid = fork { exec(emacs_args.join(" ") + " #{file}") }
+      args = Array.new(emacs_args)
+      args << file
+      pid = fork { exec("emacs", *args) }
       Process.wait pid
       # is this necessary?
       $stdout.flush
+      unless $?.success?
+        require "cmd/--env"
+
+        env = ENV.to_hash
+        puts # line between emacs output and env dump
+        Homebrew.dump_build_env(env)
+        raise BuildError.new(self, "emacs", args, env)
+      end
     end
   end
 end
