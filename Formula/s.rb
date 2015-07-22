@@ -1,4 +1,4 @@
-require File.expand_path("../../emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs", __FILE__)
 
 class S < Formula
   desc "Emacs string manipulation library"

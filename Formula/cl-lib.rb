@@ -1,4 +1,4 @@
-require File.expand_path("../../emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs", __FILE__)
 
 class ClLib < Formula
   desc "Compatibility library for Emacs 24's cl-lib"

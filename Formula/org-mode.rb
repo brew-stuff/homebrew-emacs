@@ -1,4 +1,4 @@
-require File.expand_path("../../emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs", __FILE__)
 
 class OrgMode < Formula
   desc "Notes, TODOs, and project planning for Emacs"

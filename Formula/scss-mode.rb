@@ -1,4 +1,4 @@
-require File.expand_path("../../emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs", __FILE__)
 
 class ScssMode < Formula
   desc "Major mode for editing .scss files in Emacs"

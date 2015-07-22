@@ -1,4 +1,4 @@
-require File.expand_path("../../emacs", __FILE__)
+require File.expand_path("../../Homebrew/emacs", __FILE__)
 
 class LetAlist < Formula
   desc "Easily let-bind values of an assoc-list by their names"
