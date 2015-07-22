@@ -20,7 +20,8 @@ class EditorconfigEmacs < Formula
   def caveats; <<-EOS.undent
     Currently, Emacs fails to find editorconfig-emacs if it is expected to follow a symlink of a directory.
     The workaround is to add a directory that's not itself a symlink to your load-path:
-      (add-to-list 'load-path "#{opt_share}/emacs/site-lisp/editorconfig")
+
+    (add-to-list 'load-path "#{opt_share}/emacs/site-lisp/editorconfig")
   EOS
   end
 
@@ -28,6 +29,7 @@ class EditorconfigEmacs < Formula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/editorconfig")
       (load "editorconfig")
+      (edconf-set-indentation "space")
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
