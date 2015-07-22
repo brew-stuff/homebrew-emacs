@@ -8,8 +8,11 @@ class ClLib < Formula
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/cl-lib/cl-lib.el"
 
   def install
-    version_string = build.stable? ? "-#{version}" : ""
-    (share/"emacs/site-lisp/cl-lib").install "cl-lib#{version_string}.el" => "cl-lib.el"
+    mv "cl-lib-#{version}.el", "cl-lib.el" if build.stable?
+
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/cl-lib").install Dir["*.el"],
+                                             Dir["*.elc"]
   end
 
   if Emacs.version >= 24
