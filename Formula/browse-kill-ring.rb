@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class BrowseKillRing < Formula
   desc "Tool for examining kill history in Emacs"
   homepage "https://github.com/browse-kill-ring/browse-kill-ring"
@@ -6,7 +8,9 @@ class BrowseKillRing < Formula
   head "https://github.com/browse-kill-ring/browse-kill-ring.git"
 
   def install
-    (share/"emacs/site-lisp/browse-kill-ring").install "browse-kill-ring.el"
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/browse-kill-ring").install Dir["*.el"],
+                                                       Dir["*.elc"]
     doc.install "README.md"
   end
 
