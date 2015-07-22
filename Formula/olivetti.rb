@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class Olivetti < Formula
   desc "Emacs minor mode for distraction-free writing"
   homepage "https://github.com/rnkn/olivetti"
@@ -7,7 +9,9 @@ class Olivetti < Formula
   head "https://github.com/rnkn/olivetti.git"
 
   def install
-    (share/"emacs/site-lisp/olivetti").install "olivetti.el"
+    Emacs.compile "olivetti.el"
+    (share/"emacs/site-lisp/olivetti").install "olivetti.el",
+                                               "olivetti.elc"
     doc.install "README.md"
   end
 
