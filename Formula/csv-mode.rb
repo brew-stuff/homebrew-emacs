@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class CsvMode < Formula
   desc "Emacs major mode for editing delimited-field files"
   homepage "https://sites.google.com/site/fjwcentaur/emacs"
@@ -6,8 +8,11 @@ class CsvMode < Formula
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/csv-mode/csv-mode.el"
 
   def install
-    version_string = build.stable? ? "-#{version}" : ""
-    (share/"emacs/site-lisp/csv-mode").install "csv-mode#{version_string}.el" => "csv-mode.el"
+    mv "csv-mode-#{version}.el", "csv-mode.el" if build.stable?
+
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/csv-mode").install Dir["*.el"],
+                                               Dir["*.elc"]
   end
 
   def caveats; <<-EOS.undent
