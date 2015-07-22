@@ -7,7 +7,7 @@ class EditorconfigEmacs < Formula
 
   depends_on "editorconfig"
   # developers only test it against 24
-  depends_on :emacs => "24"
+  depends_on :emacs => "24.1"
 
   def install
     system "make"
