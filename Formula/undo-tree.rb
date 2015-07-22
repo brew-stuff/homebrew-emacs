@@ -10,6 +10,8 @@ class UndoTree < EmacsFormula
   depends_on :emacs => "22.1"
 
   def install
+    mv "undo-tree-#{version}.el", "undo-tree.el" if build.stable?
+
     byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/undo-tree").install Dir["*.el"],
                                                 Dir["*.elc"]
