@@ -11,7 +11,6 @@ class PkgInfo < Formula
 
   def install
     system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
-
     (share/"emacs/site-lisp/pkg-info").install Dir["*.el"],
                                                Dir["*.elc"]
     doc.install "README.md"
