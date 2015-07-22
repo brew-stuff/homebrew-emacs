@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class FountainMode < Formula
   desc "Major mode for the Fountain screenwriting syntax"
   homepage "https://github.com/rnkn/fountain-mode"
@@ -9,15 +11,17 @@ class FountainMode < Formula
   depends_on "dunn/emacs/s"
 
   def install
-    (share/"emacs/site-lisp/fountain-mode").install "fountain-mode.el"
+    Emacs.compile "fountain-mode.el"
+    (share/"emacs/site-lisp/fountain-mode").install "fountain-mode.el",
+                                                    "fountain-mode.elc"
     doc.install "README.md"
   end
 
   def caveats; <<-EOS.undent
     Add the following to your init file:
 
-      (require 'fountain-mode)
-      (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
-    EOS
+    (require 'fountain-mode)
+    (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
+  EOS
   end
 end
