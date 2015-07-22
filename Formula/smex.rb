@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Smex < EmacsFormula
   desc "Adds Ido completions to Emacs' M-x"

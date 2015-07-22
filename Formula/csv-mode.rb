@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class CsvMode < EmacsFormula
   desc "Emacs major mode for editing delimited-field files"

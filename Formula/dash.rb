@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Dash < EmacsFormula
   desc "A modern list library for Emacs"

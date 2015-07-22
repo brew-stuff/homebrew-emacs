@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class LetAlist < EmacsFormula
   desc "Easily let-bind values of an assoc-list by their names"

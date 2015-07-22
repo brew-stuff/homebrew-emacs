@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Org2blogWp < EmacsFormula
   desc "Emacs package for publishing from org-mode to WordPress blogs"

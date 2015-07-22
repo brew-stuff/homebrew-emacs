@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class PandocMode < EmacsFormula
   desc "Emacs minor mode for interacting with pandoc"

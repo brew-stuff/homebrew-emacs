@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Hydra < EmacsFormula
   desc "Emacs package for grouping commands under a common prefix"

@@ -3,7 +3,7 @@ raise FormulaUnspecifiedError if ARGV.empty?
 def template(name)
   classname = name.split("-").collect(&:capitalize).join
   <<-EOS.undent
-  require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+  require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
   class #{classname} < EmacsFormula
     desc ""

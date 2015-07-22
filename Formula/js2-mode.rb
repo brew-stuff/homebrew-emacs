@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"

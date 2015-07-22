@@ -1,5 +1,5 @@
 # coding: utf-8
-require File.expand_path("../../Homebrew/emacs-formula", __FILE__)
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class YamlMode < EmacsFormula
   desc "Emacs major mode for editing YAML files"
