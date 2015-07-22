@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class OrgMode < Formula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
@@ -37,10 +39,16 @@ class OrgMode < Formula
     EOS
     system "make", "install"
 
-      resource("ox-texinfo-plus").stage { (share/"emacs/site-lisp/#{name}").install "ox-texinfo%2B.el" => "ox-texinfo+.el" }
     if build.with? "texinfo-plus"
+      resource("ox-texinfo-plus").stage do
+        mv "ox-texinfo%2B.el", "ox-texinfo+.el"
+        Emacs.compile "ox-texinfo+.el"
+        (share/"emacs/site-lisp/#{name}").install "ox-texinfo+.el",
+                                                  "ox-texinfo+.elc"
+      end
     end
 
+    Emacs.compile Dir["contrib/lisp/*.el"]
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
