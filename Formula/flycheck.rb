@@ -24,24 +24,24 @@ class Flycheck < Formula
 
     (share/"emacs/site-lisp/flycheck").install Dir["*.el"],
                                                Dir["*.elc"]
-
     doc.install "README.md", Dir["doc/*"]
   end
 
   def caveats; <<-EOS.undent
     Add the following to your init file:
 
-      (require 'flycheck)
-      (add-hook 'after-init-hook #'global-flycheck-mode)
-    EOS
+    (require 'flycheck)
+    (add-hook 'after-init-hook #'global-flycheck-mode)
+  EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/flycheck")
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
       (load "flycheck")
-      (print (minibuffer-prompt-width))
+      (load "pkg-info")
+      (print (flycheck-version))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "\"#{version}\"", shell_output("emacs -batch -l #{testpath}/test.el").strip
   end
 end
