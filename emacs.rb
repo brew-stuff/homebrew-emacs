@@ -1,14 +1,33 @@
+require "formula"
+
 module Emacs
   def self.version
     Utils.popen_read("emacs", "--batch", "--eval", "(princ emacs-version)").to_f
   end
 
   def self.compile(*args)
-    # TODO: load directories of dependencies
+    emacs_args = %w[emacs --batch -Q]
+
+    # FIXME: lol
+    formula_path = caller.first.gsub(/:.*/, "")
+    f = Formulary.factory(formula_path)
+    if f.deps.any?
+      emacs_args << "-L"
+      f.recursive_dependencies do |_, dep|
+        Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
+          x = Pathname.new(x)
+          emacs_args << x if x.directory?
+        end
+      end
+    end
+    emacs_args << %w[-f batch-byte-compile]
+
     lisps = args.flatten
     lisps.each do |file|
       ohai "Byte compiling #{file}"
-      system "emacs", "--batch", "-Q", "-f", "batch-byte-compile", file
+      emacs_args << file
+      # TODO: why doesn't `system "emacs", *emacs_args` work here
+      system emacs_args.join(" ")
     end
   end
 end
