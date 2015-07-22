@@ -32,6 +32,9 @@ class EmacsFormula < Formula
 
         env = ENV.to_hash
         puts # line between emacs output and env dump
+        onoe "Byte compilation failed"
+        puts "emacs #{args.join(" ")}"
+        puts
         Homebrew.dump_build_env(env)
         raise BuildError.new(self, "emacs", args, env)
       end
