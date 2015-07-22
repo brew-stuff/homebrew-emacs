@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class MarkdownMode < Formula
   desc "Major mode for editing Markdown files"
   homepage "http://jblevins.org/projects/markdown-mode/"
@@ -13,13 +15,27 @@ class MarkdownMode < Formula
   end
 
   def install
+    # currently fails to compile:
+    # > markdown-mode.el:3737:1:Error: Invalid modifier in string
     (share/"emacs/site-lisp/markdown-mode").install "markdown-mode.el"
-
     if build.with? "markdown-plus"
       resource("markdown+").stage do
-        (share/"emacs/site-lisp/markdown-mode").install "markdown-mode%2B.el" => "markdown-mode+.el"
+        mv "markdown-mode%2B.el", "markdown-mode+.el"
+        Emacs.compile "markdown-mode+.el"
+        (share/"emacs/site-lisp/markdown-mode").install "markdown-mode+.el",
+                                                        "markdown-mode+.elc"
       end
     end
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'markdown-mode)
+    (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+  EOS
   end
 
   test do
