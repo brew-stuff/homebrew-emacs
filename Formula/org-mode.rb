@@ -55,6 +55,11 @@ class OrgMode < Formula
 
   def caveats; <<-EOS.undent
     Make sure the path to this version appears in your load-path before the version bundled with Emacs.
+
+    Add the following to your init file:
+
+    (require 'org)
+    (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
   EOS
   end
 
