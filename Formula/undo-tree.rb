@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class UndoTree < Formula
   desc "Branching undo mode for Emacs"
   homepage "http://www.dr-qubit.org/emacs.php#undo-tree"
@@ -5,9 +7,12 @@ class UndoTree < Formula
   sha256 "67b4842cc3cafa5a8b15adc89e6db37e8367f5078fd2d4d5df723ade7d3f492f"
   head "http://www.dr-qubit.org/git/undo-tree.git"
 
+  depends_on :emacs => "22.1"
+
   def install
-    version_string = build.stable? ? "-#{version}" : ""
-    (share/"emacs/site-lisp/undo-tree").install "undo-tree#{version_string}.el" => "undo-tree.el"
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/undo-tree").install Dir["*.el"],
+                                                Dir["*.elc"]
   end
 
   test do
