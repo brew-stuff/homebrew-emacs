@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class AckEmacs < Formula
   desc "Emacs interface to Ack-like tools"
   homepage "https://github.com/leoliu/ack-el"
@@ -8,7 +10,9 @@ class AckEmacs < Formula
   depends_on :emacs => "24.1"
 
   def install
-    (share/"emacs/site-lisp/ack").install Dir["*.el"]
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/ack").install Dir["*.el"],
+                                          Dir["*.elc"]
     doc.install "README.rst"
   end
 
