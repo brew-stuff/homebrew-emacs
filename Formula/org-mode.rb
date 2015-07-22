@@ -47,9 +47,7 @@ class OrgMode < Formula
   end
 
   def caveats; <<-EOS.undent
-    You may need to remove the version of org that's bundled with newer versions of Emacs.
-    Lisp files have been installed to:
-    #{HOMEBREW_PREFIX}/share/emacs/site-lisp/#{name}
+    Make sure the path to this version appears in your load-path before the version bundled with Emacs.
   EOS
   end
 
