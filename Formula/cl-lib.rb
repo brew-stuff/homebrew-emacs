@@ -15,9 +15,9 @@ class ClLib < EmacsFormula
                                              Dir["*.elc"]
   end
 
-  if Emacs.version >= 24
+  if Emacs.version >= 24.3
     def caveats; <<-EOS.undent
-      Warning: Emacs 24 and higher includes cl-lib
+      Warning: Emacs 24.3 and higher includes cl-lib
 
       Installing the compatibility library in parallel can have unexpected consequences.
       Make sure Emacs' native cl-lib appears before this one in your load-path.

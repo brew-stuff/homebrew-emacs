@@ -9,7 +9,7 @@ class Popup < EmacsFormula
 
   depends_on :emacs => "23"
   depends_on "cask"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     # non-interactive test
