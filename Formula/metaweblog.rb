@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class Metaweblog < Formula
   desc "Emacs library to access metaweblog-based weblogs"
   homepage "https://github.com/punchagan/metaweblog"
@@ -8,6 +10,8 @@ class Metaweblog < Formula
   depends_on "dunn/emacs/xml-rpc"
 
   def install
-    (share/"emacs/site-lisp/metaweblog").install "metaweblog.el"
+    Emacs.compile "metaweblog.el"
+    (share/"emacs/site-lisp/metaweblog").install "metaweblog.el",
+                                                 "metaweblog.elc"
   end
 end
