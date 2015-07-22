@@ -1,3 +1,5 @@
+require File.expand_path("../../emacs", __FILE__)
+
 class Org2blogWp < Formula
   desc "Emacs package for publishing from org-mode to WordPress blogs"
   homepage "https://github.com/punchagan/org2blog"
@@ -10,9 +12,11 @@ class Org2blogWp < Formula
   depends_on "dunn/emacs/org-mode"
   depends_on "dunn/emacs/xml-rpc"
 
+  # tests are interactive so we can't run them
   def install
-    # tests are interactive so we can't run them
-    (share/"emacs/site-lisp/org2blog-wp").install Dir["*.el"]
+    Emacs.compile Dir["*.el"]
+    (share/"emacs/site-lisp/org2blog-wp").install Dir["*.el"],
+                                                  Dir["*.elc"]
     doc.install "README.org"
   end
 
