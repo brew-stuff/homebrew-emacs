@@ -24,4 +24,14 @@ class FountainMode < Formula
     (add-to-list 'auto-mode-alist '("\\.fountain$" . fountain-mode))
   EOS
   end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (load "fountain-mode")
+      (print (fountain-export-bold "Homebrew: **the** Brewing"))
+    EOS
+    assert_equal "\"Homebrew: <strong>the</strong> Brewing\"",
+                 shell_output("emacs -batch -l #{testpath}/test.el").strip
+  end
 end
