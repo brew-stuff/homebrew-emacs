@@ -14,13 +14,12 @@ class OrgMode < Formula
     version "8.3beta"
   end
 
-  depends_on "dunn/emacs/dash"
-
   option "with-texinfo+", "Install Jonas Bernoulli's extension of ox-texinfo"
 
   # sort of arbitrary; I can't find an official minimum version required
   depends_on :emacs => "22.2"
   depends_on :tex => :optional
+  depends_on "dunn/emacs/dash"
 
   resource "ox-texinfo-plus" do
     url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"
