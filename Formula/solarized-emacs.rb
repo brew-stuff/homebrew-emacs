@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class ColorThemeSolarized < EmacsFormula
+class SolarizedEmacs < EmacsFormula
   desc "Ethan Schoonover's Solarized color scheme for Emacs"
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
