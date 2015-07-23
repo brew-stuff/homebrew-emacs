@@ -66,6 +66,11 @@ Contributions
 If there's a package you use that isn't included here, please consider
 opening a pull request!
 
+Once you've tapped this repository, you'll have an
+[external command](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md)
+`brew emacs <new-formula>` that will create a template to get you
+started adding more Emacs packages.
+
 Uninstall
 ---------
 
