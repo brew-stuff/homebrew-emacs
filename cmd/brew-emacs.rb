@@ -41,7 +41,9 @@ def template(name)
 end
 
 ARGV.each do |new|
-  formula_file = (HOMEBREW_LIBRARY/"Taps/dunn/homebrew-emacs/Formula/#{new}.rb")
-  formula_file.write template(new)
-  exec_editor(formula_file)
+  @formula_file = (HOMEBREW_LIBRARY/"Taps/dunn/homebrew-emacs/Formula/#{new}.rb")
+  @formula_file.write template(new)
 end
+
+# open the last one created
+exec_editor(@formula_file)
