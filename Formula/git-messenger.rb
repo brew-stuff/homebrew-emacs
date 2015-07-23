@@ -22,6 +22,7 @@ class GitMessenger < EmacsFormula
     Add the following to your init file:
 
     (require 'git-messenger)
+    (setq git-messenger:show-detail t)
   EOS
   end
 
