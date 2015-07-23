@@ -5,12 +5,12 @@ class SolarizedEmacs < EmacsFormula
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
 
-  depends_on :emacs
+  depends_on :emacs => "22.1"
 
   def install
-    byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/solarized").install Dir["*.el"],
-                                                Dir["*.elc"]
+    # actually a test
+    system "make", "build"
+    (share/"emacs/site-lisp/solarized").install Dir["*.el"]
     doc.install "README.md"
   end
 
