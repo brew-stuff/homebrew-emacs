@@ -2,6 +2,8 @@ raise FormulaUnspecifiedError if ARGV.empty?
 
 def template(name)
   classname = name.split("-").collect(&:capitalize).join
+  # An added '-emacs' suffix probably isn't part of the actual package name
+  name = name.gsub(/-emacs/, "")
   <<-EOS.undent
   require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
