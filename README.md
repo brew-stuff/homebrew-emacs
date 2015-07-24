@@ -8,14 +8,12 @@ like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
 install`.
 
 Like [Eric Davis](https://github.com/edavis), who I forked this from,
-I'm trying to use it as an alternative to the
-[builtin ELPA package manager][elpa] that ships with Emacs 24.  The
-advantage is more customizable builds and a much better interface.
-Those who have many more packages will probably not find those
-considerations compelling.
+I'm trying to use it as an alternative to the built-in `package.el`
+system that ships with Emacs 24.  The advantage is more customizable
+builds and a much better interface.  Those who have many more packages
+installed will probably not find those considerations compelling.
 
 [flycheck]: http://www.flycheck.org
-[elpa]: http://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html#Packages
 [org-mode]: http://orgmode.org/
 [markdown-mode]: http://jblevins.org/projects/markdown-mode/
 
