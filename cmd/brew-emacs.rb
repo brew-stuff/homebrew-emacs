@@ -14,7 +14,7 @@ def template(name)
     sha256 ""
     head ""
 
-    depends_on :emacs => "24.4"
+    depends_on :emacs => "22.1"
 
     def install
       byte_compile "#{name}.el"
