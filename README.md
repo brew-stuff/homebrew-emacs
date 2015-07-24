@@ -27,17 +27,12 @@ with the tap name, `dunn/emacs`:
 brew install dunn/emacs/smex
 ```
 
-That will automatically "tap" the repository, so then you can install
-formula without prefixing:
+That will automatically "tap" the repository (which you can do
+manually with `brew tap dunn/emacs`), so then you can install formula
+without prefixing:
 
 ```
 brew install flycheck
-```
-
-You can manually tap (and untap) as well:
-
-```
-brew tap dunn/emacs
 ```
 
 `brew update` will then update formulae in your taps as well as those
@@ -58,24 +53,23 @@ If you installed Homebrew in a non-standard location (run `brew
 --prefix` to check), replace `/usr/local` with the correct Homebrew
 prefix.
 
-Contributions
--------------
+"Where is ___?"
+--------------
 
-If there's a package you use that isn't included here, please consider
-opening a pull request!
+- **Magit** is in the core repository: `brew install magit`
 
-Once you've tapped this repository, you'll have an
-[external command](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md)
-`brew emacs <new-formula>` that will create a template to get you
-started adding more Emacs packages.
+- **Auctex** is in the TeX tap: `brew install homebrew/tex/auctex`
+
+- **That Neat New Package** can be added by you: `brew emacs
+  neat-new-package` to get started.  Pull requests are always welcome!
 
 Uninstall
 ---------
 
 To uninstall homebrew-emacs, you just need to "untap" it:
 
-```bash
-$ brew untap dunn/emacs
+```
+brew untap dunn/emacs
 ```
 
 All files installed from this tap will still exist, but the formulae
