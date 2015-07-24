@@ -2,19 +2,19 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class DarkroomMode < EmacsFormula
   desc "Emacs major mode to remove visual distractions"
-  homepage "http://elpa.gnu.org/packages/darkroom.html"
-  url "http://elpa.gnu.org/packages/darkroom-0.1.el"
-  sha256 "5399b8c7c5f7c7121772736bca1022c5951995755027924c78a71f18aa432e3a"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/darkroom/darkroom.el"
+  homepage "https://github.com/capitaomorte/darkroom"
+  url "https://github.com/capitaomorte/darkroom/archive/0.2.tar.gz"
+  sha256 "0dd1c3d8ba143601b9a558ff1fcf9cad75f11c44cbaca9ac5f10a1d7bdc3f725"
+  head "https://github.com/capitaomorte/darkroom.git"
 
   depends_on :emacs
   depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
-    mv "darkroom-#{version}.el", "darkroom.el"
     byte_compile "darkroom.el"
     (share/"emacs/site-lisp/darkroom").install "darkroom.el",
                                                "darkroom.elc"
+    doc.install "README.md" if build.head?
   end
 
   def caveats; <<-EOS.undent
