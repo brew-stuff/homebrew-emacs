@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class ContextColoring < EmacsFormula
-  desc "Emacs minor mode to highlight JS and Elisp code by scope"
+  desc "Emacs mode to highlight JS and Elisp code by scope"
   homepage "https://github.com/jacksonrayhamilton/context-coloring"
   url "https://github.com/jacksonrayhamilton/context-coloring/archive/v7.0.0.tar.gz"
   sha256 "d321bff4dd6a9be795ca701ee3adab88258b62f6d4f7d5eef3167c818aca1c84"
