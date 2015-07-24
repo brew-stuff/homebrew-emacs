@@ -5,7 +5,7 @@ class DbusCodegen < EmacsFormula
   homepage "http://elpa.gnu.org/packages/dbus-codegen.html"
   url "http://elpa.gnu.org/packages/dbus-codegen-0.1.el"
   sha256 "fc571aa29a09063995e1df525e001b1196f5193b8bbb1f007c141a9b0d9327be"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/dbus-codegen/dbus-codegen.el"
+  head "https://github.com/ueno/dbus-codegen-el.git"
 
   depends_on :emacs
   depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
