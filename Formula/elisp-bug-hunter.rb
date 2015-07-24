@@ -14,8 +14,7 @@ class ElispBugHunter < EmacsFormula
     mv "bug-hunter-#{version}.el", "bug-hunter.el" if build.stable?
 
     if build.head?
-      # taken from .travis.yml
-      system "emacs", *%w[--batch -L . -l ert -l bug-hunter-test.el -f ert-run-tests-batch-and-exit]
+      ert_run_tests "bug-hunter-test.el"
       doc.install "README.org"
     end
 
