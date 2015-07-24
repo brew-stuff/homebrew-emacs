@@ -58,7 +58,7 @@ prefix.
 
 - **Magit** is in the core repository: `brew install magit`
 
-- **Auctex** is in the TeX tap: `brew install homebrew/tex/auctex`
+- **AucTeX** is in the TeX tap: `brew install homebrew/tex/auctex`
 
 - **That Neat New Package** can be added by you: `brew emacs
   neat-new-package` to get started.  Pull requests are always welcome!
