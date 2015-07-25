@@ -16,16 +16,9 @@ class WebsocketEmacs < EmacsFormula
       # system "emacs", %W[--batch -Q -L #{buildpath} -l websocket-functional-test.el]
     end
     byte_compile "websocket.el"
-    (share/"emacs/site-lisp/websocket").install "websocket.el",
-                                                "websocket.elc"
+    (share/"emacs/site-lisp/websocket").install Dir["*.el"],
+                                                Dir["*.elc"]
     doc.install "README.org"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'websocket)
-  EOS
   end
 
   test do
