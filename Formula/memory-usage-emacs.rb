@@ -1,0 +1,34 @@
+require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+
+class MemoryUsageEmacs < EmacsFormula
+  desc "Tools for analyzing Emacs' memory usage"
+  homepage "http://elpa.gnu.org/packages/memory-usage.html"
+  url "http://elpa.gnu.org/packages/memory-usage-0.2.el"
+  sha256 "92bf00d1f12cde4367ccd85ed6afddfc0642a185f0bcb1fb5601b67cf5591c0f"
+
+  depends_on :emacs
+
+  def install
+    mv "memory-usage-#{version}.el", "memory-usage.el"
+    byte_compile "memory-usage.el"
+    (share/"emacs/site-lisp/memory-usage").install "memory-usage.el",
+                                                   "memory-usage.elc"
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'memory-usage)
+  EOS
+  end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (load "memory-usage")
+      (memory-usage)
+      (print (minibuffer-prompt-width))
+    EOS
+    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+  end
+end
