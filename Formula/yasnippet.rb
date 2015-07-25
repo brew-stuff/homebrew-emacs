@@ -32,6 +32,8 @@ class Yasnippet < EmacsFormula
   end
 
   def caveats; <<-EOS.undent
+    Snippets have been installed to #{opt_prefix}/contrib
+
     Add the following to your init file:
 
     (require 'yasnippet)
