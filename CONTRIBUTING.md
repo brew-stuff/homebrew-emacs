@@ -5,7 +5,7 @@ help!  There are really only a few guidelines to keep in mind:
 
 Formulae in this tap look a little different than those in the
 core Homebrew repository.  The first couple lines of an Emacs formula
-will look like this
+will look like this:
 
 ```ruby
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
