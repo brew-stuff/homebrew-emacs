@@ -8,7 +8,7 @@ like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
 install`.
 
 Like [Eric Davis](https://github.com/edavis), who I forked this from,
-I'm trying to use it as an alternative to the built-in `package.el`
+I’m trying to use it as an alternative to the built-in `package.el`
 system that ships with Emacs 24.  The advantage is more customizable
 builds and a much better interface.  Those who have many more packages
 installed will probably not find those considerations compelling.
@@ -27,7 +27,7 @@ with the tap name, `dunn/emacs`:
 brew install dunn/emacs/smex
 ```
 
-That will automatically "tap" the repository (which you can do
+That will automatically “tap” the repository (which you can do
 manually with `brew tap dunn/emacs`), so then you can install formula
 without prefixing:
 
@@ -54,7 +54,7 @@ If you installed Homebrew in a non-standard location (run `brew
 prefix.
 
 "Where is ___?"
---------------
+---------------
 
 - **Magit** is in the core repository: `brew install magit`
 
@@ -66,7 +66,7 @@ prefix.
 Uninstall
 ---------
 
-To uninstall homebrew-emacs, you just need to "untap" it:
+To uninstall homebrew-emacs, you just need to “untap” it:
 
 ```
 brew untap dunn/emacs
