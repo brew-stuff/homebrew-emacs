@@ -19,10 +19,11 @@ class EmacsFormula < Formula
     dir_paths
   end
 
+  ### This is not well-tested and should be used with caution
   def ert_run_tests(*files)
     test_args = %W[--batch -Q]
 
-    # if we're calling it from the test block or the install block
+    # Detect if we're calling it from the test block or the install block
     if buildpath.nil?
       dirs = Dir["#{share}/emacs/site-lisp/**/*"]
     else
@@ -41,7 +42,7 @@ class EmacsFormula < Formula
     files.flatten.each do |f|
       test_args << "-l" << f
     end
-    # i don't actually know why it needs to be this and not just
+    # I don't actually know why it needs to be this and not just
     # `-f ert-run-tests-batch-and-exit`
     test_args << "--eval" << "(ert-run-tests-batch-and-exit '(not (tag interactive)))"
 
@@ -56,6 +57,7 @@ class EmacsFormula < Formula
     end
   end
 
+  ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
     emacs_args = %W[
       --batch
