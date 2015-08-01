@@ -26,11 +26,13 @@ class OrgMode < EmacsFormula
   resource "ox-texinfo-plus" do
     url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"
     sha256 "b4d3e376b361dbf24db33b542928f8b5c7acb13325b9a970dacb3ca50a83bbd5"
+    version "20150319"
   end
 
   resource "toc-org" do
-    url "https://raw.githubusercontent.com/snosov1/toc-org/7eb2874ed3c9af2a4d239f87f1c77b5e6125ab54/toc-org.el"
-    sha256 "9b4e5bfbaf84238b52ba14247d5ec7afeb2e234eddc2cce9556157a636df99aa"
+    url "https://raw.githubusercontent.com/snosov1/toc-org/8cf236450b25f5b655f3262564d5a6af325bf6f4/toc-org.el"
+    sha256 "78432262ec6087a9eb0ac5062d6495258915c320e20e104ed633b392492cc21e"
+    version "20150801"
   end
 
   def install
