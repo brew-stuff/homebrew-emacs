@@ -47,7 +47,6 @@ class OrgMode < EmacsFormula
       end
     end
 
-    byte_compile Dir["contrib/lisp/*.el"]
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
