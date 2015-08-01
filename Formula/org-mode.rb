@@ -17,6 +17,7 @@ class OrgMode < EmacsFormula
   end
 
   option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
+  option "with-toc", "Install the toc-org extension"
 
   depends_on :emacs
   depends_on :tex => :optional
@@ -25,6 +26,11 @@ class OrgMode < EmacsFormula
   resource "ox-texinfo-plus" do
     url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"
     sha256 "b4d3e376b361dbf24db33b542928f8b5c7acb13325b9a970dacb3ca50a83bbd5"
+  end
+
+  resource "toc-org" do
+    url "https://raw.githubusercontent.com/snosov1/toc-org/7eb2874ed3c9af2a4d239f87f1c77b5e6125ab54/toc-org.el"
+    sha256 "9b4e5bfbaf84238b52ba14247d5ec7afeb2e234eddc2cce9556157a636df99aa"
   end
 
   def install
@@ -47,18 +53,36 @@ class OrgMode < EmacsFormula
       end
     end
 
+    if build.with? "toc"
+      resource("toc-org").stage do
+        byte_compile "toc-org.el"
+        (share/"emacs/site-lisp/#{name}").install "toc-org.el",
+                                                  "toc-org.elc"
+      end
+    end
+
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
 
-  def caveats; <<-EOS.undent
-    Make sure the path to this version appears in your load-path before the version bundled with Emacs.
+  def caveats
+    s = <<-EOS.undent
+      Make sure the path to this version appears in your load-path before the version bundled with Emacs.
 
-    Add the following to your init file:
+      Add the following to your init file:
 
-    (require 'org)
-    (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-  EOS
+      (require 'org)
+      (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+    EOS
+    s += "(require 'ox-texinfo+)" if build.with? "texinfo-plus"
+    if build.with? "toc"
+      s += <<-EOS.undent
+        (if (require 'toc-org nil t)
+            (add-hook 'org-mode-hook 'toc-org-enable)
+          (warn "toc-org not found"))
+      EOS
+    end
+    s
   end
 
   test do
