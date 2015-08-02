@@ -25,10 +25,10 @@ class MetarEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/metar")
       (load "metar")
       (print (metar-get-record "SARC"))
     EOS
-    assert_match "SARC", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_match "SARC", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

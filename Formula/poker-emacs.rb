@@ -25,11 +25,11 @@ class PokerEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/poker")
       (load "poker")
       (print (poker-random-deck))
     EOS
-    assert_equal 52, shell_output("emacs -batch -l #{testpath}/test.el")
+    assert_equal 52, shell_output("emacs -Q --batch -l #{testpath}/test.el")
                      .strip.gsub(/[()"]/, "")
                      .split(" ").length
   end

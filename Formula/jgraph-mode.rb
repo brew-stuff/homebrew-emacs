@@ -25,10 +25,10 @@ class JgraphMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/jgraph-mode")
       (load "jgraph-mode")
       (print jgraph-commands)
     EOS
-    assert_match "epilogue", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_match "epilogue", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

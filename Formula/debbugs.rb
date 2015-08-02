@@ -22,7 +22,7 @@ class Debbugs < EmacsFormula
     Add the following to your init file:
 
     (require 'debbugs-gnu)
-
+)
     ;; If you have org-mode, you may want to add instead:
 
     (require 'debbugs-org)

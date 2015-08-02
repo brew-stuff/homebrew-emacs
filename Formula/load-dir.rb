@@ -24,12 +24,12 @@ class LoadDir < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/load-dir")
       (load "load-dir")
       (load-dir-one "#{share}/emacs/site-lisp/load-dir")
       (print load-dir-loaded)
     EOS
     assert_equal "(\"#{share}/emacs/site-lisp/load-dir/load-dir\")",
-                 shell_output("emacs -batch -l #{testpath}/test.el").strip
+                 shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

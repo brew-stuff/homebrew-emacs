@@ -29,7 +29,7 @@ class Muse < EmacsFormula
 
     (require 'muse-mode)
     (require 'muse-project)
-
+)
     (require 'muse-html)
     (require 'muse-latex)
     (require 'muse-texinfo)
@@ -39,7 +39,7 @@ class Muse < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/muse")
       (load "muse-mode")
       (load "muse-project")
 
@@ -49,6 +49,6 @@ class Muse < EmacsFormula
       (load "muse-docbook")
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

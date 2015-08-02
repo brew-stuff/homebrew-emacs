@@ -26,11 +26,11 @@ class CapsLockEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/caps-lock")
       (load "caps-lock")
       (print caps-lock-commands)
     EOS
     assert_equal "(self-insert-command isearch-printing-char)",
-                 shell_output("emacs -batch -l #{testpath}/test.el").strip
+                 shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

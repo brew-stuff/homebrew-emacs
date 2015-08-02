@@ -34,6 +34,6 @@ class EditorconfigEmacs < EmacsFormula
       (edconf-set-indentation "space")
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

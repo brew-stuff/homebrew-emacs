@@ -27,10 +27,10 @@ class TinyEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/tiny")
       (load "tiny")
       (print (tiny-tokenize "+x2"))
     EOS
-    assert_equal "\"(+ x 2)\"", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "\"(+ x 2)\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

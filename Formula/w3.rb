@@ -31,10 +31,10 @@ class W3 < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/w3")
       (load "w3")
       (print (w3-version))
     EOS
-    assert_match version.to_s, shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_match version.to_s, shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

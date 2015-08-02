@@ -31,7 +31,7 @@ class GitModes < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp/git-modes")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/git-modes")
       (load "gitattributes-mode")
       (load "gitconfig-mode")
       (load "gitignore-mode")
@@ -39,6 +39,6 @@ class GitModes < EmacsFormula
       (gitconfig-indentation-string)
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
