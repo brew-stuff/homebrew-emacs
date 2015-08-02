@@ -11,16 +11,15 @@ class QueueEmacs < EmacsFormula
   def install
     mv "queue-#{version}.el", "queue.el"
     byte_compile "queue.el"
-    (share/"emacs/site-lisp/queue-emacs").install "queue.el",
-                                                  "queue.elc"
+    (share/"emacs/site-lisp/queue").install "queue.el", "queue.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/queue")
       (load "queue")
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
