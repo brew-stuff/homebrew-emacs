@@ -25,10 +25,10 @@ class Achievements < EmacsFormula
   test do
     (testpath/".emacs.d/.achievements").write ""
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/achievements")
       (load "achievements")
       (print (achievements-list-achievements))
     EOS
-    assert_match "ACHIEVEMENT UNLOCKED", shell_output("emacs -batch -l #{testpath}/test.el 2>&1").strip
+    assert_match "ACHIEVEMENT UNLOCKED", shell_output("emacs -Q --batch -l #{testpath}/test.el 2>&1").strip
   end
 end
