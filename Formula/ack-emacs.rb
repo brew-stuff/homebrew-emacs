@@ -16,6 +16,13 @@ class AckEmacs < EmacsFormula
     doc.install "README.rst"
   end
 
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'ack)
+  EOS
+  end
+
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
