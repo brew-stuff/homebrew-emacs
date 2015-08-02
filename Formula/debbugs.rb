@@ -23,7 +23,7 @@ class Debbugs < EmacsFormula
 
     (require 'debbugs-gnu)
 
-    If you have org-mode, you may want to add instead:
+    ;; If you have org-mode, you may want to add instead:
 
     (require 'debbugs-org)
     (autoload 'debbugs-org "debbugs-org" "" 'interactive)
