@@ -19,7 +19,6 @@ class Smex < EmacsFormula
     Add the following to your init file:
 
     (require 'smex)
-    (setq mac-option-modifier 'meta)
     (global-set-key (kbd "M-x") 'smex)
     (global-set-key (kbd "M-X") 'smex-major-mode-commands)
     (global-set-key (kbd "C-x C-M") 'smex-major-mode-commands)
