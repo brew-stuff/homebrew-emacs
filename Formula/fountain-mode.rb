@@ -27,11 +27,12 @@ class FountainMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/fountain-mode")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s"].share}/emacs/site-lisp/s")
       (load "fountain-mode")
       (print (fountain-export-bold "Homebrew: **the** Brewing"))
     EOS
     assert_equal "\"Homebrew: <strong>the</strong> Brewing\"",
-                 shell_output("emacs -batch -l #{testpath}/test.el").strip
+                 shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
