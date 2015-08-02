@@ -19,17 +19,17 @@ class AhungryEmacs < EmacsFormula
   def caveats; <<-EOS.undent
     Add the following to your init file:
 
-    (add-to-list 'custom-theme-load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp/ahungry/")
+    (add-to-list 'custom-theme-load-path "#{share}/emacs/site-lisp/ahungry/")
     (load-theme 'ahungry t)
   EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'custom-theme-load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp/ahungry/")
+      (add-to-list 'custom-theme-load-path "#{share}/emacs/site-lisp/ahungry/")
       (load-theme 'ahungry t)
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
