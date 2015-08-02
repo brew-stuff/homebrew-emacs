@@ -38,11 +38,14 @@ class Flycheck < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/flycheck")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/pkg-info"].share}/emacs/site-lisp/pkg-info")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].share}/emacs/site-lisp/epl")
       (load "flycheck")
       (load "pkg-info")
       (print (flycheck-version))
     EOS
-    assert_equal "\"#{version}\"", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "\"#{version}\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
