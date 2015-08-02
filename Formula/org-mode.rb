@@ -76,7 +76,7 @@ class OrgMode < EmacsFormula
       (require 'org)
       (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
     EOS
-    s += "(require 'ox-texinfo+)" if build.with? "texinfo-plus")
+    s += "(require 'ox-texinfo+)" if build.with? "texinfo-plus"
     if build.with? "toc"
       s += <<-EOS.undent
         (if (require 'toc-org nil t)
