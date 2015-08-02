@@ -29,7 +29,7 @@ class Muse < EmacsFormula
 
     (require 'muse-mode)
     (require 'muse-project)
-)
+
     (require 'muse-html)
     (require 'muse-latex)
     (require 'muse-texinfo)
