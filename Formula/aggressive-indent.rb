@@ -19,7 +19,7 @@ class AggressiveIndent < EmacsFormula
   end
 
   def caveats; <<-EOS.undent
-    Add the following to your init file, modified to your tastes:
+    Add something like the following to your init file:
 
     (require 'aggressive-indent)
     (global-aggressive-indent-mode 1)
