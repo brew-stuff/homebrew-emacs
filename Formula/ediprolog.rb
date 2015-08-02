@@ -17,7 +17,7 @@ class Ediprolog < EmacsFormula
   end
 
   def caveats; <<-EOS.undent
-    Add the following to your init file:
+    Add something like the following to your init file:
 
     (require 'ediprolog)
     (global-set-key [f10] 'ediprolog-dwim)
