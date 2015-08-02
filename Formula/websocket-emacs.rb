@@ -12,7 +12,7 @@ class WebsocketEmacs < EmacsFormula
   def install
     if build.head?
       ert_run_tests "websocket-test.el"
-      # opens an emacs buffer on completion
+      # the functional test opens an emacs buffer on completion
       # system "emacs", %W[--batch -Q -L #{buildpath} -l websocket-functional-test.el]
     end
     byte_compile "websocket.el"
