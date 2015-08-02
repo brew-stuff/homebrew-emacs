@@ -11,15 +11,15 @@ class HeapEmacs < EmacsFormula
   def install
     mv "heap-#{version}.el", "heap.el"
     byte_compile "heap.el"
-    (share/"emacs/site-lisp/heap-emacs").install "heap.el", "heap.elc"
+    (share/"emacs/site-lisp/heap").install "heap.el", "heap.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/heap")
       (load "heap")
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
