@@ -28,11 +28,13 @@ class WhichKey < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/which-key")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s"].share}/emacs/site-lisp/s")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash"].share}/emacs/site-lisp/dash")
       (load "which-key")
       (which-key-mode)
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
