@@ -12,7 +12,7 @@ class DjvuEmacs < EmacsFormula
   def install
     mv "djvu-#{version}.el", "djvu.el"
     byte_compile "djvu.el"
-    (share/"emacs/site-lisp/djvu-emacs").install "djvu.el", "djvu.elc"
+    (share/"emacs/site-lisp/djvu").install "djvu.el", "djvu.elc"
   end
 
   def caveats; <<-EOS.undent
@@ -24,10 +24,10 @@ class DjvuEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/djvu")
       (load "djvu")
       (print (minibuffer-prompt-width))
     EOS
-    assert_equal "0", shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
