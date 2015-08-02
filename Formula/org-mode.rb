@@ -69,7 +69,7 @@ class OrgMode < EmacsFormula
 
   def caveats
     s = <<-EOS.undent
-      Make sure the path to this version appears in your load-path before the version bundled with Emacs.
+      Make sure the path to this version of org appears in your load-path before the version bundled with Emacs.
 
       Add the following to your init file:
 
