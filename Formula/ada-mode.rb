@@ -48,10 +48,10 @@ class AdaMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/ada-mode")
       (load "ada-mode")
       (print (ada-mode-version))
     EOS
-    assert_match version.to_s, shell_output("emacs -batch -l #{testpath}/test.el").strip
+    assert_match version.to_s, shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
