@@ -7,11 +7,11 @@ It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
 like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
 install`.
 
-Like [Eric Davis](https://github.com/edavis), who I forked this from,
-I’m trying to use it as an alternative to the built-in `package.el`
-system that ships with Emacs 24.  The advantage is more customizable
-builds and a much better interface.  Those who have many more packages
-installed will probably not find those considerations compelling.
+It’s an alternative to the built-in `package.el` system that ships
+with Emacs 24.  The advantage is more customizable builds and a much
+better interface.  The disadvantage is that there are currently much
+fewer packages than are available through MELPA and Marmalade (but
+[you can help fix that!](#where-is-___)).
 
 [flycheck]: http://www.flycheck.org
 [org-mode]: http://orgmode.org/
@@ -21,14 +21,14 @@ Install
 -------
 
 You can install any of the packages in `./Formula` by prefixing them
-with the tap name, `dunn/emacs`:
+with the tap name, `homebrew/emacs`:
 
 ```
-brew install dunn/emacs/smex
+brew install homebrew/emacs/smex
 ```
 
 That will automatically “tap” the repository (which you can do
-manually with `brew tap dunn/emacs`), so then you can install formula
+manually with `brew tap homebrew/emacs`), so then you can install formula
 without prefixing:
 
 ```
@@ -69,8 +69,15 @@ Uninstall
 To uninstall homebrew-emacs, you just need to “untap” it:
 
 ```
-brew untap dunn/emacs
+brew untap homebrew/emacs
 ```
 
 All files installed from this tap will still exist, but the formulae
 will no longer be updated.
+
+About
+-----
+
+This tap was originally created by
+[Eric Davis](https://github.com/edavis), and is currently maintained
+by [Alex Dunn](https://github.com/dunn).
