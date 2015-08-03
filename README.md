@@ -9,7 +9,7 @@ install`.
 
 It’s an alternative to the built-in `package.el` system that ships
 with Emacs 24.  The advantage is more customizable builds and a much
-better interface.  The disadvantage is that there are currently much
+better interface.  The disadvantage is that there are currently many
 fewer packages than are available through MELPA and Marmalade (but
 [you can help fix that!](#where-is-___)).
 
