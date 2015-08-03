@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Names < EmacsFormula
   desc "Namespacing for Emacs Lisp"
   homepage "https://github.com/Malabarba/names"
-  url "https://github.com/Malabarba/names/archive/20150618.0.tar.gz"
-  sha256 "0b2121b183edfb3d4101f8dce1523f4cec6da7a8e19968e66b5605b4b0c5ed9d"
+  url "https://github.com/Malabarba/names/archive/20150723.0.tar.gz"
+  sha256 "353c5840828b298e826c3ebac267bcd72fd18988fccc2f50840b4df9022d0691"
   head "https://github.com/Malabarba/names.git"
 
   depends_on :emacs => "24.1"
