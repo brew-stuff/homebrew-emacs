@@ -9,7 +9,7 @@ class EmojiCheatSheetPlus < EmacsFormula
 
   # due to helm
   depends_on :emacs => "24.3"
-  depends_on "dunn/emacs/helm"
+  depends_on "homebrew/emacs/helm"
 
   def install
     byte_compile "emoji-cheat-sheet-plus.el"
@@ -28,7 +28,7 @@ class EmojiCheatSheetPlus < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/emoji-cheat-sheet-plus")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/helm"].share}/emacs/site-lisp/helm")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/helm"].share}/emacs/site-lisp/helm")
       (load "helm")
       (load "emoji-cheat-sheet-plus")
       (emoji-cheat-sheet-plus--create-cache)

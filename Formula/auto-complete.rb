@@ -9,7 +9,7 @@ class AutoComplete < EmacsFormula
 
   depends_on :emacs => "24.1"
   depends_on "cask"
-  depends_on "dunn/emacs/popup"
+  depends_on "homebrew/emacs/popup"
 
   def install
     system "make", "test", "CASK=#{Formula["cask"].bin}/cask"

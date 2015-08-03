@@ -10,9 +10,9 @@ class AcHtml < EmacsFormula
   # is not tested on lower versions
   depends_on :emacs => "24.3"
   depends_on "cask"
-  depends_on "dunn/emacs/auto-complete"
-  depends_on "dunn/emacs/dash"
-  depends_on "dunn/emacs/web-completion-data"
+  depends_on "homebrew/emacs/auto-complete"
+  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/web-completion-data"
 
   def install
     ert_run_tests "test/run-test.el"

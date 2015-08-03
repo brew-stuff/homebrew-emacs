@@ -9,9 +9,9 @@ class Org2blogWp < EmacsFormula
 
   # tested on 22 and above
   depends_on :emacs => "22.1"
-  depends_on "dunn/emacs/metaweblog"
-  depends_on "dunn/emacs/org-mode"
-  depends_on "dunn/emacs/xml-rpc"
+  depends_on "homebrew/emacs/metaweblog"
+  depends_on "homebrew/emacs/org-mode"
+  depends_on "homebrew/emacs/xml-rpc"
 
   # tests are interactive so we can't run them
   def install

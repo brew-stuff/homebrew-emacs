@@ -8,8 +8,8 @@ class TrieEmacs < EmacsFormula
 
   # for the avl-tree package
   depends_on :emacs => "24.1"
-  depends_on "dunn/emacs/heap-emacs"
-  depends_on "dunn/emacs/tnfa-emacs"
+  depends_on "homebrew/emacs/heap-emacs"
+  depends_on "homebrew/emacs/tnfa-emacs"
 
   def install
     mv "trie-#{version}.el", "trie.el"
@@ -20,9 +20,9 @@ class TrieEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/trie")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/heap-emacs"].share}/emacs/site-lisp/heap")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/tnfa-emacs"].share}/emacs/site-lisp/tNFA")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/queue-emacs"].share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/heap-emacs"].share}/emacs/site-lisp/heap")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/tnfa-emacs"].share}/emacs/site-lisp/tNFA")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].share}/emacs/site-lisp/queue")
       (load "trie")
       (print (minibuffer-prompt-width))
     EOS

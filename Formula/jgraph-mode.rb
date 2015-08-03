@@ -7,7 +7,7 @@ class JgraphMode < EmacsFormula
   sha256 "1469d74235c64e6baa2e48183b1167bb6afc029d8e0efaace9e9e4f2658ee910"
 
   depends_on :emacs
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     mv "jgraph-mode-#{version}.el", "jgraph-mode.el"

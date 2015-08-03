@@ -7,7 +7,7 @@ class WisiEmacs < EmacsFormula
   sha256 "797845efd2358d76d5281f45c19e521a7c7121549128eb43250b3d3b4f8e7791"
 
   depends_on :emacs => "24.2"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     byte_compile Dir["*.el"]

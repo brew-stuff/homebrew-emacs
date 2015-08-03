@@ -8,7 +8,7 @@ class FountainMode < EmacsFormula
   head "https://github.com/rnkn/fountain-mode.git"
 
   depends_on :emacs => "24.4"
-  depends_on "dunn/emacs/s"
+  depends_on "homebrew/emacs/s"
 
   def install
     byte_compile "fountain-mode.el"
@@ -28,7 +28,7 @@ class FountainMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/fountain-mode")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/s"].share}/emacs/site-lisp/s")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].share}/emacs/site-lisp/s")
       (load "fountain-mode")
       (print (fountain-export-bold "Homebrew: **the** Brewing"))
     EOS

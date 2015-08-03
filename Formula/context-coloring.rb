@@ -9,7 +9,7 @@ class ContextColoring < EmacsFormula
 
   depends_on :emacs => "24.3"
   depends_on "cask"
-  depends_on "dunn/emacs/js2-mode"
+  depends_on "homebrew/emacs/js2-mode"
 
   def install
     system "make", "test", "CASK=#{Formula["cask"].bin}/cask"

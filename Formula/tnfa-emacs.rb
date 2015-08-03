@@ -7,7 +7,7 @@ class TnfaEmacs < EmacsFormula
   sha256 "e61159c523166252709855ab5c71ea3aebea381d50e269c2dbc769b4d02d45ec"
 
   depends_on :emacs
-  depends_on "dunn/emacs/queue-emacs"
+  depends_on "homebrew/emacs/queue-emacs"
 
   def install
     mv "tNFA-#{version}.el", "tNFA.el"

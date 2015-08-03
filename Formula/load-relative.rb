@@ -10,7 +10,7 @@ class LoadRelative < EmacsFormula
     url "https://github.com/rocky/emacs-load-relative.git"
     depends_on "automake" => :build
     depends_on "autoconf" => :build
-    depends_on "dunn/emacs/test-simple"
+    depends_on "homebrew/emacs/test-simple"
   end
 
   depends_on :emacs => "24.1"

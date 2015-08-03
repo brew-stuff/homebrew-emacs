@@ -8,7 +8,7 @@ class CompanyStatistics < EmacsFormula
   head "https://github.com/company-mode/company-statistics.git"
 
   depends_on :emacs => "24.3"
-  depends_on "dunn/emacs/company-mode"
+  depends_on "homebrew/emacs/company-mode"
 
   def install
     byte_compile Dir["*.el"]
@@ -28,7 +28,7 @@ class CompanyStatistics < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/company-statistics")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/company-mode"].share}/emacs/site-lisp/company")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/company-mode"].share}/emacs/site-lisp/company")
       (load "company-statistics")
       (print (minibuffer-prompt-width))
     EOS

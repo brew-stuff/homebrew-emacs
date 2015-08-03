@@ -6,7 +6,7 @@ class Achievements < EmacsFormula
   head "https://bitbucket.org/gvol/emacs-achievements", :using => :hg
 
   depends_on :emacs
-  depends_on "dunn/emacs/keyfreq"
+  depends_on "homebrew/emacs/keyfreq"
 
   def install
     byte_compile Dir["*.el"]

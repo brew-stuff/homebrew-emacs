@@ -8,7 +8,7 @@ class ElispBugHunter < EmacsFormula
   head "https://github.com/Malabarba/elisp-bug-hunter.git"
 
   depends_on :emacs => "24.1"
-  depends_on "dunn/emacs/seq"
+  depends_on "homebrew/emacs/seq"
 
   def install
     mv "bug-hunter-#{version}.el", "bug-hunter.el" if build.stable?
@@ -33,7 +33,7 @@ class ElispBugHunter < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/bug-hunter")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].share}/emacs/site-lisp/seq")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].share}/emacs/site-lisp/seq")
       (load "bug-hunter")
       (print (minibuffer-prompt-width))
     EOS

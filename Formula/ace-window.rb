@@ -8,7 +8,7 @@ class AceWindow < EmacsFormula
   head "https://github.com/abo-abo/ace-window.git"
 
   depends_on :emacs
-  depends_on "dunn/emacs/avy"
+  depends_on "homebrew/emacs/avy"
 
   def install
     # there's a Makefile but it uses cask to do the same thing

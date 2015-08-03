@@ -8,9 +8,9 @@ class GnugoEmacs < EmacsFormula
 
   depends_on :emacs
   depends_on "homebrew/games/gnu-go"
-  depends_on "dunn/emacs/ascii-art-to-unicode"
-  depends_on "dunn/emacs/xpm-emacs"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/ascii-art-to-unicode"
+  depends_on "homebrew/emacs/xpm-emacs"
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     byte_compile Dir["*.el"]

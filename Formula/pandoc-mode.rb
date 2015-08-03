@@ -9,8 +9,8 @@ class PandocMode < EmacsFormula
 
   depends_on :emacs => "24.1"
   depends_on "pandoc"
-  depends_on "dunn/emacs/dash"
-  depends_on "dunn/emacs/hydra"
+  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/hydra"
 
   def install
     # compilation fails: https://github.com/joostkremers/pandoc-mode/issues/49

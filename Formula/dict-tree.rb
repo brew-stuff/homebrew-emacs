@@ -8,9 +8,9 @@ class DictTree < EmacsFormula
 
   # due to trie.el
   depends_on :emacs => "24.1"
-  depends_on "dunn/emacs/heap-emacs"
-  depends_on "dunn/emacs/tnfa-emacs"
-  depends_on "dunn/emacs/trie-emacs"
+  depends_on "homebrew/emacs/heap-emacs"
+  depends_on "homebrew/emacs/tnfa-emacs"
+  depends_on "homebrew/emacs/trie-emacs"
 
   def install
     mv "dict-tree-#{version}.el", "dict-tree.el"

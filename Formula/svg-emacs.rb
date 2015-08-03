@@ -7,8 +7,8 @@ class SvgEmacs < EmacsFormula
   sha256 "65af4fc190d066c35865c6b23380e6917d30354984af5ca952526e69b562476c"
 
   depends_on :emacs
-  depends_on "dunn/emacs/dom-emacs" => "HEAD"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/dom-emacs" => "HEAD"
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     mv "svg-#{version}.el", "svg.el"

@@ -21,7 +21,7 @@ class OrgMode < EmacsFormula
 
   depends_on :emacs
   depends_on :tex => :optional
-  depends_on "dunn/emacs/dash"
+  depends_on "homebrew/emacs/dash"
 
   resource "ox-texinfo-plus" do
     url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"

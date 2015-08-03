@@ -7,7 +7,7 @@ class MetarEmacs < EmacsFormula
   sha256 "28c4e562ee7a98eaa0b57f92c34b1f095dafb7e68b9cd2552f5008a0eff73f69"
 
   depends_on :emacs
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     mv "metar-#{version}.el", "metar.el"

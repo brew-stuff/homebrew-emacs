@@ -8,7 +8,7 @@ class Helm < EmacsFormula
   head "https://github.com/emacs-helm/helm.git"
 
   depends_on :emacs => "24.3"
-  depends_on "dunn/emacs/async-emacs"
+  depends_on "homebrew/emacs/async-emacs"
 
   def install
     system "make"

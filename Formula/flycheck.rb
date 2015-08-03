@@ -16,9 +16,9 @@ class Flycheck < EmacsFormula
   end
 
   depends_on "cask"
-  depends_on "dunn/emacs/dash"
-  depends_on "dunn/emacs/let-alist"
-  depends_on "dunn/emacs/pkg-info"
+  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/let-alist"
+  depends_on "homebrew/emacs/pkg-info"
 
   def install
     system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
@@ -39,9 +39,9 @@ class Flycheck < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/flycheck")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/pkg-info"].share}/emacs/site-lisp/pkg-info")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/dash"].share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].share}/emacs/site-lisp/epl")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].share}/emacs/site-lisp/pkg-info")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].share}/emacs/site-lisp/epl")
       (load "flycheck")
       (load "pkg-info")
       (print (flycheck-version))
