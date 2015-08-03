@@ -32,7 +32,7 @@ def template(name)
 
     test do
       (testpath/"test.el").write <<-EOS.undent
-        (add-to-list 'load-path "\#{HOMEBREW_PREFIX}/share/emacs/site-lisp")
+        (add-to-list 'load-path "\#{share}/emacs/site-lisp/#{name}")
         (load "#{name}")
         (print (minibuffer-prompt-width))
       \EOS
