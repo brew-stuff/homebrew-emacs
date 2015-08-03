@@ -1,0 +1,23 @@
+language: objective-c
+
+cache:
+  directories:
+    - /Library/Caches/Homebrew
+
+before_install:
+  - brew update
+
+install:
+  - mkdir -p $(brew --prefix)/Library/Taps/homebrew/
+  - ln -s $PWD $(brew --prefix)/Library/Taps/homebrew/homebrew-emacs
+
+script:
+  - cd $(brew --prefix)
+  - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
+        brew test-bot $TRAVIS_COMMIT --skip-setup --verbose --tap=homebrew/emacs;
+    else
+        brew test-bot $TRAVIS_COMMIT --skip-setup --verbose --tap=homebrew/emacs --ci-pr;
+    fi
+
+notifications:
+  email: false
