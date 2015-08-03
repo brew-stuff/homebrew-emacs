@@ -43,7 +43,7 @@ def template(name)
 end
 
 ARGV.each do |new|
-  @formula_file = (HOMEBREW_LIBRARY/"Taps/dunn/homebrew-emacs/Formula/#{new}.rb")
+  @formula_file = (HOMEBREW_LIBRARY/"Taps/homebrew/homebrew-emacs/Formula/#{new}.rb")
   @formula_file.write template(new)
 end
 
