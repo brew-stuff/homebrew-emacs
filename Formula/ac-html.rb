@@ -15,13 +15,10 @@ class AcHtml < EmacsFormula
   depends_on "dunn/emacs/web-completion-data"
 
   def install
-    # have (recursive) dependencies available for the tests
-    %w[auto-complete dash web-completion-data popup].each do |dep|
-      cp Dir["#{Formula["dunn/emacs/" + dep].share}/emacs/site-lisp/#{dep}/*.el"], buildpath
-    end
-
-    system "make"
-    (share/"emacs/site-lisp/ac-html").install Dir["ac-*.el"]
+    ert_run_tests "test/run-test.el"
+    byte_compile Dir["*.el"]
+    (share/"emacs/site-lisp/ac-html").install Dir["*.el"],
+                                              Dir["*.elc"]
     doc.install "README.md"
   end
 
