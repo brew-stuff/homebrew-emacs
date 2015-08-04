@@ -7,6 +7,7 @@ class AutoComplete < EmacsFormula
   sha256 "a960848fcb94f438c6795070b3125c1a039bf11cc058dbd60e8668adb3cebe4c"
   head "https://github.com/auto-complete/auto-complete.git"
 
+  option "with-c-headers", "Install ac-c-headers"
   option "with-etags", "Install ac-etags"
   option "with-haskell", "Install ac-haskell-process"
   option "with-helm", "Use helm for selecting completion candidates"
@@ -41,6 +42,11 @@ class AutoComplete < EmacsFormula
     depends_on "homebrew/emacs/s"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
+  end
+
+  resource "c-headers" do
+    url "https://github.com/zk-phi/ac-c-headers.git",
+        :revision => "2e9ace7f31e029c3c79a675e36d67279b11c6de5"
   end
 
   resource "etags" do
@@ -84,6 +90,13 @@ class AutoComplete < EmacsFormula
   end
 
   def install
+    if build.with? "c-headers"
+      resource("c-headers").stage do
+        byte_compile "ac-c-headers.el"
+        (share/"emacs/site-lisp/auto-complete/ac-c-headers").install "ac-c-headers.el", "ac-c-headers.elc"
+      end
+    end
+
     if build.with? "etags"
       resource("etags").stage do
         byte_compile "ac-etags.el"
@@ -155,6 +168,15 @@ class AutoComplete < EmacsFormula
       Add the following to your init file:
 
       (require 'auto-complete)
+    EOS
+    if build.with? "c-headers"
+      s += <<-EOS.undent
+
+      (require 'ac-c-headers)
+      (add-hook 'c-mode-hook
+                (lambda ()
+                  (add-to-list 'ac-sources 'ac-source-c-headers)
+                  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
     EOS
     if build.with? "etags"
       s += <<-EOS.undent
