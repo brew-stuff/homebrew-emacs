@@ -22,8 +22,11 @@ class EmacsFormula < Formula
   ### This is not well-tested and should be used with caution
   def ert_run_tests(*files)
     test_args = %W[--batch -Q]
+    # allow running in resource blocks
+    test_args << "--directory" << "#{Pathname.pwd}"
 
-    # Detect if we're calling it from the test block or the install block
+    # Detect if we're calling it from the test block or the install
+    # block
     if buildpath.nil?
       dirs = Dir["#{share}/emacs/site-lisp/**/*"]
     else
@@ -59,11 +62,15 @@ class EmacsFormula < Formula
 
   ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
+    # add Pathname.pwd as well as buildpath to allow this to be run
+    # from within resource blocks
     emacs_args = %W[
       --batch
       -Q
       --directory
       #{buildpath}
+      --directory
+      #{Pathname.pwd}
     ]
     # lib_load_paths is an array so we need to flatten later on
     emacs_args << lib_load_paths if deps.any?
