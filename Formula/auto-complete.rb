@@ -14,6 +14,7 @@ class AutoComplete < EmacsFormula
   option "with-ispell", "Install ac-ispell"
   option "with-js2", "Install ac-js2"
   option "with-php", "Install ac-php"
+  option "with-slime", "Install ac-slime"
 
   depends_on :emacs => "24.1"
   depends_on "cask"
@@ -22,6 +23,7 @@ class AutoComplete < EmacsFormula
 
   depends_on "homebrew/emacs/haskell-mode" if build.with? "haskell"
   depends_on "homebrew/emacs/helm" if build.with? "helm"
+  depends_on "homebrew/emacs/slime" if build.with? "slime"
 
   if build.with? "html"
     depends_on "homebrew/emacs/dash"
@@ -76,6 +78,11 @@ class AutoComplete < EmacsFormula
     sha256 "6f805a71911837dea1f13d45830f81ffab8625ae56156265761808c1d7bd5d18"
   end
 
+  resource "slime" do
+    url "https://github.com/purcell/ac-slime/archive/0.8.tar.gz"
+    sha256 "c33d8098708899f103d4b50daf45f3fb6d8e8ae57a912ece5c682da86afe0540"
+  end
+
   def install
     if build.with? "etags"
       resource("etags").stage do
@@ -127,6 +134,13 @@ class AutoComplete < EmacsFormula
         ert_run_tests "tests/ac-php-test.el"
         byte_compile Dir["*.el"]
         (share/"emacs/site-lisp/auto-complete/ac-php").install Dir["*.el"], Dir["*.elc"]
+      end
+    end
+
+    if build.with? "slime"
+      resource("slime").stage do
+        byte_compile "ac-slime.el"
+        (share/"emacs/site-lisp/auto-complete/ac-slime").install "ac-slime.el", "ac-slime.elc"
       end
     end
 
@@ -202,6 +216,16 @@ class AutoComplete < EmacsFormula
                      (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
                      (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
                      ))
+    EOS
+    end
+    if build.with? "slime"
+      s += <<-EOS.undent
+
+      (require 'ac-slime)
+      (add-hook 'slime-mode-hook 'set-up-slime-ac)
+      (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+      (eval-after-load "auto-complete"
+        '(add-to-list 'ac-modes 'slime-repl-mode))
     EOS
     end
     s
