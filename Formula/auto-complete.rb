@@ -178,6 +178,7 @@ class AutoComplete < EmacsFormula
                   (add-to-list 'ac-sources 'ac-source-c-headers)
                   (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
     EOS
+    end
     if build.with? "etags"
       s += <<-EOS.undent
 
