@@ -15,12 +15,15 @@ class HaskellMode < EmacsFormula
   def install
     system "make"
     system "make", "check"
-    system "make", "doc/html" if build.with? "html"
     (share/"emacs/site-lisp/haskell-mode").install Dir["*.el"],
                                                    Dir["*.elc"]
-    doc.install "README.md", "doc/html"
+    doc.install "README.md"
     info.install Dir["*.info"]
-    puts `ls doc`
+
+    if build.with? "html"
+      system "make", "doc/html"
+      doc.install "doc/html"
+    end
   end
 
   def caveats; <<-EOS.undent
