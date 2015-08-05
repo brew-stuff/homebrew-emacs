@@ -135,10 +135,12 @@ class AutoComplete < EmacsFormula
 
     if build.with? "js2"
       resource("js2").stage do
-        # tests open a browser window
-        # ert_run_tests "ac-js2-tests.el"
-        byte_compile "ac-js2.el"
-        (share/"emacs/site-lisp/auto-complete/ac-js2").install "ac-js2.el", "ac-js2.elc", "skewer-addon.js"
+        # https://github.com/ScottyB/ac-js2/issues/18#issuecomment-74518558
+        inreplace "ac-js2.el" do |s|
+          s.gsub! "(ac-define-source \"js2\"", "(eval '(ac-define-source \"js2\""
+          s.gsub! "(requires . -1))))", "(requires . -1)))))"
+        end
+        (share/"emacs/site-lisp/auto-complete/ac-js2").install "ac-js2.el", "skewer-addon.js"
       end
     end
 
