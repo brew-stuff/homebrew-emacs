@@ -220,6 +220,7 @@ class AutoComplete < EmacsFormula
       s += <<-EOS.undent
 
       (require 'ac-js2)
+      (add-hook 'js2-mode-hook 'ac-js2-mode)
       (add-hook 'js2-mode-hook 'ac-js2-setup-auto-complete-mode)
     EOS
     end
