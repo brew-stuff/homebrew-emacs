@@ -10,21 +10,48 @@ class CompanyMode < EmacsFormula
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
+  option "with-web", "Install company-web"
+
+  if build.with? "web"
+    depends_on "homebrew/emacs/dash"
+    depends_on "homebrew/emacs/web-completion-data"
+  end
+
+  resource "web" do
+    url "https://github.com/osv/company-web/archive/v0.9.tar.gz"
+    sha256 "c5e26ae5eb9f7c57684b24ad9a960fa86df5ab2e2dac14b7b1068f3853a98622"
+  end
+
   def install
+    if build.with? "web"
+      resource("web").stage do
+        byte_compile Dir["*.el"]
+        (share/"emacs/site-lisp/company/web").install Dir["*.el"],
+                                                      Dir["*.elc"]
+      end
+    end
+
     system "make", "test-batch"
     system "make", "compile"
-
     (share/"emacs/site-lisp/company").install Dir["company*.el"],
                                               Dir["company*.elc"]
     doc.install "README.md"
   end
 
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
+  def caveats
+    s = <<-EOS.undent
+      Add the following to your init file:
 
-    (require 'company)
-    (add-hook 'after-init-hook 'global-company-mode)
-  EOS
+      (require 'company)
+      (add-hook 'after-init-hook 'global-company-mode)
+    EOS
+    if build.with? "web"
+      s += <<-EOS.undent
+
+      (require 'company-web-html)
+    EOS
+    end
+    s
   end
 
   test do
