@@ -15,25 +15,47 @@ class Flycheck < EmacsFormula
     depends_on :emacs => "24.3"
   end
 
+  option "with-package", "Install flycheck-package"
+
   depends_on "cask"
   depends_on "homebrew/emacs/dash"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
 
-  def install
-    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
+  resource "package" do
+    url "https://github.com/purcell/flycheck-package/archive/0.6.tar.gz"
+    sha256 "ec81d515d064bffca8bcc88704e4b324f87a6cbfe4b7bb0db69f07ec8d53d0db"
+  end
 
+  def install
+    if build.with? "package"
+      resource("package").stage do
+        byte_compile "flycheck-package.el"
+        (share/"emacs/site-lisp/flycheck").install "flycheck-package.el"
+      end
+    end
+
+    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
     (share/"emacs/site-lisp/flycheck").install Dir["*.el"],
                                                Dir["*.elc"]
     doc.install "README.md", Dir["doc/*"]
   end
 
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
+  def caveats
+    s = <<-EOS.undent
+      Add the following to your init file:
 
-    (require 'flycheck)
-    (add-hook 'after-init-hook #'global-flycheck-mode)
-  EOS
+      (require 'flycheck)
+      (add-hook 'after-init-hook #'global-flycheck-mode)
+    EOS
+    if build.with? "package"
+      s += <<-EOS.undent
+
+      (eval-after-load 'flycheck
+        '(flycheck-package-setup))
+    EOS
+    end
+    s
   end
 
   test do
