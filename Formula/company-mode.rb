@@ -10,11 +10,17 @@ class CompanyMode < EmacsFormula
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
+  option "with-emoji", "Install company-emoji"
   option "with-web", "Install company-web"
 
   if build.with? "web"
     depends_on "homebrew/emacs/dash"
     depends_on "homebrew/emacs/web-completion-data"
+  end
+
+  resource "emoji" do
+    url "https://github.com/dunn/company-emoji/archive/v0.1.0.tar.gz"
+    sha256 "4ea26c951fd23dec6b67e204e6dca3c29253d78af58765acf6fb04952070d2c6"
   end
 
   resource "web" do
@@ -23,6 +29,14 @@ class CompanyMode < EmacsFormula
   end
 
   def install
+    if build.with? "emoji"
+      resource("emoji").stage do
+        byte_compile "company-emoji.el"
+        (share/"emacs/site-lisp/company/emoji").install Dir["*.el"],
+                                                        Dir["*.elc"]
+      end
+    end
+
     if build.with? "web"
       resource("web").stage do
         byte_compile Dir["*.el"]
