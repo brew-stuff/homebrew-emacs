@@ -218,7 +218,7 @@ class AutoComplete < EmacsFormula
       (ac-ispell-setup)
     EOS
     end
-    if build.with? "ispell"
+    if build.with? "js2"
       s += <<-EOS.undent
 
       (require 'ac-js2)
