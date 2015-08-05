@@ -13,7 +13,7 @@ class SkewerMode < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/skewer-mode").install Dir["*.el"], Dir["*.elc"], Dir["*.js"]
+    (share/"emacs/site-lisp/skewer-mode").install Dir["*.el"], Dir["*.elc"], Dir["*.js"], Dir["*.html"]
     doc.install "README.md"
   end
 
