@@ -135,12 +135,8 @@ class AutoComplete < EmacsFormula
 
     if build.with? "js2"
       resource("js2").stage do
-        # https://github.com/ScottyB/ac-js2/issues/18#issuecomment-74518558
-        inreplace "ac-js2.el" do |s|
-          s.gsub! "(ac-define-source \"js2\"", "(eval '(ac-define-source \"js2\""
-          s.gsub! "(requires . -1))))", "(requires . -1)))))"
-        end
-        (share/"emacs/site-lisp/auto-complete/ac-js2").install "ac-js2.el", "skewer-addon.js"
+        byte_compile "ac-js2.el"
+        (share/"emacs/site-lisp/auto-complete/ac-js2").install "ac-js2.el", "ac-js2.elc", "skewer-addon.js"
       end
     end
 
@@ -224,7 +220,7 @@ class AutoComplete < EmacsFormula
       s += <<-EOS.undent
 
       (require 'ac-js2)
-      (add-hook 'js2-mode-hook 'ac-js2-mode)
+      (add-hook 'js2-mode-hook 'ac-js2-setup-auto-complete-mode)
     EOS
     end
     if build.with? "php"
