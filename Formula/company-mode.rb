@@ -59,6 +59,14 @@ class CompanyMode < EmacsFormula
       (require 'company)
       (add-hook 'after-init-hook 'global-company-mode)
     EOS
+    if build.with? "emoji"
+      s += <<-EOS.undent
+
+      (require 'company-emoji)
+      (add-hook 'markdown-mode-hook 'company-emoji-init)
+      (add-hook 'mail-mode-hook 'company-emoji-init)
+    EOS
+    end
     if build.with? "web"
       s += <<-EOS.undent
 
