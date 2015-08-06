@@ -19,8 +19,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "emoji" do
-    url "https://github.com/dunn/company-emoji/archive/v1.0.0.tar.gz"
-    sha256 "a32525d9de3a68e38a9384281fcf870f523ad6c87af2bc523152351dbd0dcd09"
+    url "https://github.com/dunn/company-emoji/archive/v1.0.1.tar.gz"
+    sha256 "c6293f9892577acab13892a8ca1228b706bb23d3cf1055ba6a190d9cb6247617"
   end
 
   resource "web" do
