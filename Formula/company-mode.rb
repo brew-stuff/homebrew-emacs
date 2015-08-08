@@ -19,8 +19,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "emoji" do
-    url "https://github.com/dunn/company-emoji/archive/v1.0.1.tar.gz"
-    sha256 "c6293f9892577acab13892a8ca1228b706bb23d3cf1055ba6a190d9cb6247617"
+    url "https://github.com/dunn/company-emoji/archive/v2.1.0.tar.gz"
+    sha256 "3b626cc62ed12d8a6024faf9b80a750bd9a7daed3becd53aacae63d96dc962ea"
   end
 
   resource "web" do
@@ -63,8 +63,8 @@ class CompanyMode < EmacsFormula
       s += <<-EOS.undent
 
       (require 'company-emoji)
-      (add-hook 'markdown-mode-hook 'company-emoji-init)
-      (add-hook 'mail-mode-hook 'company-emoji-init)
+      (add-hook 'markdown-mode-hook 'company-mode)
+      (add-hook 'company-mode-hook 'company-emoji-init)
     EOS
     end
     if build.with? "web"
