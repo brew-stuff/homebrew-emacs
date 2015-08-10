@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class Hydra < EmacsFormula
-  desc "Emacs package for grouping commands under a common prefix"
+class HydraEmacs < EmacsFormula
+  desc "Group Emacs commands under a common prefix"
   homepage "https://github.com/abo-abo/hydra"
   url "https://github.com/abo-abo/hydra/archive/0.13.0.tar.gz"
   sha256 "93023bd90722cf5e12134c2cfa6b9fd640224641e8afde41ea47caf1a89cd6a7"
@@ -11,7 +11,6 @@ class Hydra < EmacsFormula
 
   def install
     system "make", "test"
-    # `make compile` is interactive and deletes compiled files afterward
     byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/hydra").install Dir["*.el"], Dir["*.elc"]
     doc.install "README.md"
