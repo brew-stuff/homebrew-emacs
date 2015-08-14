@@ -13,7 +13,6 @@ class Olivetti < EmacsFormula
     byte_compile "olivetti.el"
     (share/"emacs/site-lisp/olivetti").install "olivetti.el",
                                                "olivetti.elc"
-    doc.install "README.md"
   end
 
   test do
