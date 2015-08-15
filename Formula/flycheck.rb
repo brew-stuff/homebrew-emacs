@@ -3,17 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
+  url "https://github.com/flycheck/flycheck/archive/0.24.tar.gz"
+  sha256 "b2b7a98c70029f9c4382c5e22f215750eb6a5b6a82d6987bd40f34fb152d57e3"
+  head "https://github.com/flycheck/flycheck.git"
 
-  stable do
-    url "https://github.com/flycheck/flycheck/archive/0.23.tar.gz"
-    sha256 "edda4967780f3566842c87b7a5d7f2630be593b9029a7909e5c02f68c82ee9e3"
-    depends_on :emacs => "24.1"
-  end
-
-  head do
-    url "https://github.com/flycheck/flycheck.git"
-    depends_on :emacs => "24.3"
-  end
+  depends_on :emacs => "24.3"
 
   option "with-package", "Install flycheck-package"
 
@@ -61,9 +55,9 @@ class Flycheck < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/flycheck")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].share}/emacs/site-lisp/pkg-info")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].share}/emacs/site-lisp/epl")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].opt_share}/emacs/site-lisp/pkg-info")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].opt_share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_share}/emacs/site-lisp/epl")
       (load "flycheck")
       (load "pkg-info")
       (print (flycheck-version))
