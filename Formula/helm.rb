@@ -1,10 +1,10 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Helm < EmacsFormula
-  desc "Emacs incremental completion and selection narrowing framework"
+  desc "Emacs completion and selection narrowing framework"
   homepage "https://emacs-helm.github.io/helm/"
-  url "https://github.com/emacs-helm/helm/archive/v1.7.5.tar.gz"
-  sha256 "50757fdaa6063e4838cca08f78545004e45bd448461aae53b0a87d220995f2c2"
+  url "https://github.com/emacs-helm/helm/archive/v1.7.6.tar.gz"
+  sha256 "7017b1ee8e82bf78193f826b3e82b17db6a4ee547ffb5b292a4c0d157e2e642a"
   head "https://github.com/emacs-helm/helm.git"
 
   depends_on :emacs => "24.3"
@@ -14,7 +14,6 @@ class Helm < EmacsFormula
     system "make"
     (share/"emacs/site-lisp/helm").install Dir["*.el"],
                                            Dir["*.elc"]
-    doc.install "README.md"
   end
 
   def caveats; <<-EOS.undent
