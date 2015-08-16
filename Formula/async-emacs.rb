@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AsyncEmacs < EmacsFormula
   desc "Emacs library for asynchronous processing"
   homepage "https://github.com/jwiegley/emacs-async"
-  url "https://github.com/jwiegley/emacs-async/archive/v1.3.tar.gz"
-  sha256 "1d60850f591b42b25eff655c6b58c199c7efe7553e0f0908a2867b73b3d4eafb"
+  url "https://github.com/jwiegley/emacs-async/archive/v1.4.tar.gz"
+  sha256 "295d6d5dd759709ef714a7d05c54aa2934f2ffb4bb2e90e4434415f75f05473b"
   head "https://github.com/jwiegley/emacs-async.git"
 
   depends_on :emacs
@@ -13,7 +13,6 @@ class AsyncEmacs < EmacsFormula
     byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/async").install Dir["*.el"],
                                             Dir["*.elc"]
-    doc.install "README.md"
   end
 
   def caveats; <<-EOS.undent
