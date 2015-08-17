@@ -20,7 +20,6 @@ def template(name)
       byte_compile "#{name}.el"
       (share/"emacs/site-lisp/#{name}").install "#{name}.el",
                                                 "#{name}.elc"
-      doc.install "README.md"
     end
 
     def caveats; <<-EOS.undent
