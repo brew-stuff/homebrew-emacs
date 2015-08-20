@@ -1,11 +1,10 @@
-# coding: utf-8
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class YamlMode < EmacsFormula
   desc "Emacs major mode for editing YAML files"
   homepage "https://github.com/yoshiki/yaml-mode"
-  url "https://github.com/yoshiki/yaml-mode/archive/v0.0.11.tar.gz"
-  sha256 "6d2226a4ecd5f3c2fd6ca8a469a2124c4888405a5f4e1552ca05bb1912e2506a"
+  url "https://github.com/yoshiki/yaml-mode/archive/v0.0.12.tar.gz"
+  sha256 "f294ed0e2f77081c2e77fd9bd9b496346d5812b240613c5c9aee2dc6abfa5ca1"
   head "https://github.com/yoshiki/yaml-mode.git"
 
   depends_on :emacs
