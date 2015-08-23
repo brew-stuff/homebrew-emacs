@@ -8,6 +8,7 @@ class AutoComplete < EmacsFormula
   head "https://github.com/auto-complete/auto-complete.git"
 
   option "with-c-headers", "Install ac-c-headers"
+  option "with-emoji", "Install ac-emoji"
   option "with-etags", "Install ac-etags"
   option "with-haskell", "Install ac-haskell-process"
   option "with-helm", "Use helm for selecting completion candidates"
@@ -47,6 +48,11 @@ class AutoComplete < EmacsFormula
   resource "c-headers" do
     url "https://github.com/zk-phi/ac-c-headers.git",
         :revision => "2e9ace7f31e029c3c79a675e36d67279b11c6de5"
+  end
+
+  resource "emoji" do
+    url "https://github.com/syohex/emacs-ac-emoji/archive/0.01.tar.gz"
+    sha256 "fe38923e2cb1010974b71eb740a7c91b195bd191936f2a29d44be72cb8b0e83f"
   end
 
   resource "etags" do
@@ -94,6 +100,13 @@ class AutoComplete < EmacsFormula
       resource("c-headers").stage do
         byte_compile "ac-c-headers.el"
         (share/"emacs/site-lisp/auto-complete/ac-c-headers").install "ac-c-headers.el", "ac-c-headers.elc"
+      end
+    end
+
+    if build.with? "emoji"
+      resource("emoji").stage do
+        byte_compile Dir["*.el"]
+        (share/"emacs/site-lisp/auto-complete/ac-emoji").install Dir["*.el"], Dir["*.elc"]
       end
     end
 
@@ -175,6 +188,15 @@ class AutoComplete < EmacsFormula
                 (lambda ()
                   (add-to-list 'ac-sources 'ac-source-c-headers)
                   (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+    EOS
+    end
+    if build.with? "emoji"
+      s += <<-EOS.undent
+
+      (require 'ac-emoji)
+      (add-hook 'markdown-mode-hook 'ac-emoji-setup)
+      (add-hook 'git-commit-mode-hook 'ac-emoji-setup)
+      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend)
     EOS
     end
     if build.with? "etags"
