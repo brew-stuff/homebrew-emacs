@@ -19,7 +19,6 @@ class AutoComplete < EmacsFormula
   option "with-slime", "Install ac-slime"
 
   depends_on :emacs => "24.1"
-  depends_on "cask"
   depends_on "homebrew/emacs/popup"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
@@ -168,8 +167,8 @@ class AutoComplete < EmacsFormula
       end
     end
 
-    system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
-    system "make", "byte-compile", "CASK=#{Formula["cask"].bin}/cask"
+    ert_run_tests "tests/run-test.el"
+    byte_compile "auto-complete.el", "auto-complete-config.el"
     (share/"emacs/site-lisp/auto-complete").install Dir["*.el"],
                                                     Dir["*.elc"]
   end
