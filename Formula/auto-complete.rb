@@ -86,8 +86,8 @@ class AutoComplete < EmacsFormula
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.4.2.tar.gz"
-    sha256 "6f805a71911837dea1f13d45830f81ffab8625ae56156265761808c1d7bd5d18"
+    url "https://github.com/xcwen/ac-php/archive/1.5.1.tar.gz"
+    sha256 "6de2d559d96783f07dec1a2941569aae6f44b093a1ec620444370388d6ec9077"
   end
 
   resource "slime" do
