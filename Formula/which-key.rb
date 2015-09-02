@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WhichKey < EmacsFormula
   desc "Emacs package for displaying available keybindings"
   homepage "https://github.com/justbur/emacs-which-key"
-  url "https://github.com/justbur/emacs-which-key/archive/v0.5.1.tar.gz"
-  sha256 "c02b4c38c43c59b7db6fb884cd9cd43205a4146c7ab7e2cda3034cf606b1d019"
+  url "https://github.com/justbur/emacs-which-key/archive/v0.5.2.tar.gz"
+  sha256 "1c8975ba7721c678f4f0f4892b0a8e4f4b7b1f9f1a594a2a61600d337d753086"
   head "https://github.com/justbur/emacs-which-key.git"
 
   depends_on :emacs => "24.3"
@@ -15,7 +15,6 @@ class WhichKey < EmacsFormula
     byte_compile "which-key.el"
     (share/"emacs/site-lisp/which-key").install "which-key.el",
                                                 "which-key.elc"
-    doc.install "README.org"
   end
 
   def caveats; <<-EOS.undent
