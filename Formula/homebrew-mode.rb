@@ -3,11 +3,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HomebrewMode < EmacsFormula
   desc "Emacs minor mode for editing Homebrew formulae"
   homepage "https://github.com/dunn/homebrew-mode"
-  url "https://github.com/dunn/homebrew-mode/archive/1.1.1.tar.gz"
-  sha256 "2c4014418c6f5e07c9748d13466f0004e89f8b77e17e030a55d52ce678a537c6"
+  url "https://github.com/dunn/homebrew-mode/archive/1.2.1.tar.gz"
+  sha256 "f6b132a451c9ca71b6e630d6d4431ea958753a8e3913f02a96b1f9cb18cd9766"
   head "https://github.com/dunn/homebrew-mode.git"
 
-  depends_on :emacs
+  depends_on :emacs => "24.4"
+  depends_on "homebrew/emacs/dash"
   depends_on "homebrew/emacs/inf-ruby"
 
   def install
@@ -27,6 +28,7 @@ class HomebrewMode < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/homebrew-mode")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].share}/emacs/site-lisp/inf-ruby")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
 
       (load "homebrew-mode")
       (print homebrew-mode-version)
