@@ -3,18 +3,17 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"
   homepage "https://github.com/mooz/js2-mode"
-  url "https://github.com/mooz/js2-mode/archive/20150713.tar.gz"
-  sha256 "ae59eb9139eed5f67f2b4d282fd318f1c8d363727b00878f9f8517a7ff0ce668"
+  url "https://github.com/mooz/js2-mode/archive/20150909.tar.gz"
+  sha256 "0013a232f90a9cdf533b44c296875d0e4d6af373a8c411ee3864f149981955db"
   head "https://github.com/mooz/js2-mode.git"
 
   depends_on :emacs => "24.1"
 
   def install
-    system "make"
+    system "make", "BATCHFLAGS=-L . -batch -q --no-site-file"
     system "make", "test"
     (share/"emacs/site-lisp/js2-mode").install Dir["*.el"],
                                                Dir["*.elc"]
-    doc.install Dir["*.md"]
   end
 
   def caveats; <<-EOS.undent
