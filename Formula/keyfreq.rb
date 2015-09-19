@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Keyfreq < EmacsFormula
   desc "Track Emacs command frequencies"
   homepage "https://github.com/dacap/keyfreq"
-  url "https://github.com/dacap/keyfreq/archive/1.5.tar.gz"
-  sha256 "c03ed5bcf506f0426c46be536a9b1b449e439f69f008a5175c6f9adecfb83201"
+  url "https://github.com/dacap/keyfreq/archive/1.6.tar.gz"
+  sha256 "ecf2ea7686842adb4052637444de6fe5325baab5c71b20f3965c2408a94e10c9"
   head "https://github.com/dacap/keyfreq.git"
 
   depends_on :emacs
@@ -13,16 +13,6 @@ class Keyfreq < EmacsFormula
     byte_compile "keyfreq.el"
     (share/"emacs/site-lisp/keyfreq").install "keyfreq.el",
                                               "keyfreq.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'keyfreq)
-    (keyfreq-mode 1)
-    (keyfreq-autosave-mode 1)
-  EOS
   end
 
   test do
