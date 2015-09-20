@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Evil < EmacsFormula
   desc "Extensible vi layer for Emacs"
   homepage "https://bitbucket.org/lyro/evil"
-  url "https://bitbucket.org/lyro/evil/get/1.2.2.tar.bz2"
-  sha256 "fc43392e2178b54528f44147fc2b0f905b9dfdfe5b1860e46da428b3ac9ba444"
+  url "https://bitbucket.org/lyro/evil/get/1.2.4.tar.bz2"
+  sha256 "aef1bbbac2571ced3bab0872a9e5b26de1827f1e02d84150abb371d8cdb76ba5"
   head "https://bitbucket.org/lyro/evil", :using => :hg
 
   depends_on :emacs
@@ -18,14 +18,6 @@ class Evil < EmacsFormula
     system "make", "info"
     info.install "doc/evil.info"
     doc.install "doc/evil.pdf"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'evil)
-    (evil-mode 1)
-  EOS
   end
 
   test do
