@@ -50,8 +50,8 @@ class AutoComplete < EmacsFormula
   end
 
   resource "emoji" do
-    url "https://github.com/syohex/emacs-ac-emoji/archive/0.01.tar.gz"
-    sha256 "fe38923e2cb1010974b71eb740a7c91b195bd191936f2a29d44be72cb8b0e83f"
+    url "https://github.com/syohex/emacs-ac-emoji/archive/0.02.tar.gz"
+    sha256 "fde5b02f594a212fd1bb8ef760ed4bb07d0ef00ef9f6608867b73c191ddf6127"
   end
 
   resource "etags" do
@@ -173,104 +173,14 @@ class AutoComplete < EmacsFormula
                                                     Dir["*.elc"]
   end
 
-  def caveats
-    s = <<-EOS.undent
-      Add the following to your init file:
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{share}/emacs/site-lisp/auto-complete")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/popup"].share}/emacs/site-lisp/popup")
 
-      (require 'auto-complete)
+      (load "auto-complete")
+      (print ac-version)
     EOS
-    if build.with? "c-headers"
-      s += <<-EOS.undent
-
-      (require 'ac-c-headers)
-      (add-hook 'c-mode-hook
-                (lambda ()
-                  (add-to-list 'ac-sources 'ac-source-c-headers)
-                  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
-    EOS
-    end
-    if build.with? "emoji"
-      s += <<-EOS.undent
-
-      (require 'ac-emoji)
-      (add-hook 'markdown-mode-hook 'ac-emoji-setup)
-      (add-hook 'git-commit-mode-hook 'ac-emoji-setup)
-      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend)
-    EOS
-    end
-    if build.with? "etags"
-      s += <<-EOS.undent
-
-      (require 'ac-etags)
-      (ac-etags-setup)
-    EOS
-    end
-    if build.with? "haskell"
-      s += <<-EOS.undent
-
-      (require 'ac-haskell-process)
-      (add-hook 'interactive-haskell-mode-hook 'ac-haskell-process-setup)
-      (add-hook 'haskell-interactive-mode-hook 'ac-haskell-process-setup)
-      (eval-after-load "auto-complete"
-        '(add-to-list 'ac-modes 'haskell-interactive-mode))
-    EOS
-    end
-    if build.with? "helm"
-      s += <<-EOS.undent
-
-      (require 'ac-helm)
-      (global-set-key (kbd "C-:") 'ac-complete-with-helm)
-      (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
-    EOS
-    end
-    if build.with? "html"
-      s += <<-EOS.undent
-
-      (require 'ac-html)
-      (add-hook 'html-mode-hook 'ac-html-enable)
-    EOS
-    end
-    if build.with? "ispell"
-      s += <<-EOS.undent
-
-      (require 'ac-ispell)
-      (ac-ispell-setup)
-    EOS
-    end
-    if build.with? "js2"
-      s += <<-EOS.undent
-
-      (require 'ac-js2)
-      (add-hook 'js2-mode-hook 'ac-js2-mode)
-      (add-hook 'js2-mode-hook 'ac-js2-setup-auto-complete-mode)
-    EOS
-    end
-    if build.with? "php"
-      s += <<-EOS.undent
-
-      (require 'ac-php)
-      (add-hook 'php-mode-hook
-                  '(lambda ()
-                     (auto-complete-mode t)
-                     (require 'ac-php)
-                     (setq ac-php-use-cscope-flag  t ) ;; enable cscope
-                     (setq ac-sources  '(ac-source-php ) )
-                     (yas-global-mode 1)
-                     (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-                     (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-                     ))
-    EOS
-    end
-    if build.with? "slime"
-      s += <<-EOS.undent
-
-      (require 'ac-slime)
-      (add-hook 'slime-mode-hook 'set-up-slime-ac)
-      (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-      (eval-after-load "auto-complete"
-        '(add-to-list 'ac-modes 'slime-repl-mode))
-    EOS
-    end
-    s
+    assert_equal "\"#{version}\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
