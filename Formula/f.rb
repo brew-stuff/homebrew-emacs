@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class F < EmacsFormula
   desc "Emacs filesystem API"
   homepage "https://github.com/rejeep/f.el"
-  url "https://github.com/rejeep/f.el/archive/v0.17.2.tar.gz"
-  sha256 "9d4a6f59e4eeed6776440420eb41e65bfd20760a45bf2e4f9e950fe21a65afd8"
+  url "https://github.com/rejeep/f.el/archive/v0.18.0.tar.gz"
+  sha256 "38fae0e2288bb55bfb9d692ec3a4f295661e2456e8909927bc3ba034b1f282ec"
   head "https://github.com/rejeep/f.el.git"
 
   depends_on :emacs => "24.1"
@@ -15,14 +15,6 @@ class F < EmacsFormula
     # make test/compile requires emacs-parallel
     byte_compile "f.el"
     (share/"emacs/site-lisp/f").install "f.el", "f.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'f)
-  EOS
   end
 
   test do
