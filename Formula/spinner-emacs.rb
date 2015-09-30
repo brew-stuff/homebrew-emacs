@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SpinnerEmacs < EmacsFormula
   desc "Emacs library for spinners and progress bars"
   homepage "https://github.com/Malabarba/spinner.el"
-  url "http://elpa.gnu.org/packages/spinner-1.3.1.el"
-  sha256 "06e12c872be3202f02aa0db9c8336758075f6faeca23014a52b610534b211854"
+  url "http://elpa.gnu.org/packages/spinner-1.4.el"
+  sha256 "6eb561821f9a220bb311206bd75e40cb5d12c04ab586b1bc1f48356817449d48"
   head "https://github.com/Malabarba/spinner.el.git"
 
   depends_on :emacs
@@ -14,7 +14,6 @@ class SpinnerEmacs < EmacsFormula
     byte_compile "spinner.el"
     (share/"emacs/site-lisp/spinner").install "spinner.el",
                                               "spinner.elc"
-    doc.install "README.org" if build.head?
   end
 
   test do
