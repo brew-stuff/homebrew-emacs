@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AsyncEmacs < EmacsFormula
   desc "Emacs library for asynchronous processing"
   homepage "https://github.com/jwiegley/emacs-async"
-  url "https://github.com/jwiegley/emacs-async/archive/v1.4.tar.gz"
-  sha256 "295d6d5dd759709ef714a7d05c54aa2934f2ffb4bb2e90e4434415f75f05473b"
+  url "https://github.com/jwiegley/emacs-async/archive/v1.5.tar.gz"
+  sha256 "3126a6960796aa1bebe8a169ea5430df6ae5e18a34816c01b578f7c37c4bc216"
   head "https://github.com/jwiegley/emacs-async.git"
 
   depends_on :emacs
@@ -13,13 +13,6 @@ class AsyncEmacs < EmacsFormula
     byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/async").install Dir["*.el"],
                                             Dir["*.elc"]
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'async)
-  EOS
   end
 
   test do
