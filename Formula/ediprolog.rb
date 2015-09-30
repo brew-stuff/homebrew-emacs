@@ -3,10 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Ediprolog < EmacsFormula
   desc "Emacs functions for interacting with SWI-Prolog"
   homepage "http://elpa.gnu.org/packages/ediprolog.html"
-  url "http://elpa.gnu.org/packages/ediprolog-1.0.el"
-  sha256 "dc983af90f17ee4181f67d5d7f75e95cc837556d749a552d282bfac8d8032b0f"
+  url "http://elpa.gnu.org/packages/ediprolog-1.1.el"
+  sha256 "cd9b33fca95eb715baab42c1830a0874960d228aae14f28930f3e40f79640aa7"
 
-  # untested below
   depends_on :emacs => "21.2"
 
   def install
@@ -14,14 +13,6 @@ class Ediprolog < EmacsFormula
     byte_compile "ediprolog.el"
     (share/"emacs/site-lisp/ediprolog").install "ediprolog.el",
                                                 "ediprolog.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add something like the following to your init file:
-
-    (require 'ediprolog)
-    (global-set-key [f10] 'ediprolog-dwim)
-  EOS
   end
 
   test do
