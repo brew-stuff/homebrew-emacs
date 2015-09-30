@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-8.3.1.tar.gz"
-  sha256 "3d13b02fc42c76753aaa2f8873544af00218d2235fd19c13221736b10498c332"
+  url "http://orgmode.org/org-8.3.2.tar.gz"
+  sha256 "8ae811d19546f73306710f70eed8ee1a1ec9981e78b98af077fa224d5e8875b8"
 
   head "git://orgmode.org/org-mode.git", :shallow => false
 
@@ -22,9 +22,9 @@ class OrgMode < EmacsFormula
   end
 
   resource "toc-org" do
-    url "https://raw.githubusercontent.com/snosov1/toc-org/8cf236450b25f5b655f3262564d5a6af325bf6f4/toc-org.el"
-    sha256 "78432262ec6087a9eb0ac5062d6495258915c320e20e104ed633b392492cc21e"
-    version "20150801"
+    url "https://raw.githubusercontent.com/snosov1/toc-org/72883a08b01d08b74cc03c565eac8d0422770fcf/toc-org.el"
+    sha256 "7da964e6060a11fd6ddcd86cd30a7cfb1dca0e54eb452eaf16ef660895aa8c8f"
+    version "20150921"
   end
 
   def install
@@ -57,26 +57,6 @@ class OrgMode < EmacsFormula
 
     (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
-  end
-
-  def caveats
-    s = <<-EOS.undent
-      Make sure the path to this version of org appears in your load-path before the version bundled with Emacs.
-
-      Add the following to your init file:
-
-      (require 'org)
-      (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-    EOS
-    s += "(require 'ox-texinfo+)" if build.with? "texinfo-plus"
-    if build.with? "toc"
-      s += <<-EOS.undent
-        (if (require 'toc-org nil t)
-            (add-hook 'org-mode-hook 'toc-org-enable)
-          (warn "toc-org not found"))
-      EOS
-    end
-    s
   end
 
   test do
