@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Helm < EmacsFormula
   desc "Emacs completion and selection narrowing framework"
   homepage "https://emacs-helm.github.io/helm/"
-  url "https://github.com/emacs-helm/helm/archive/v1.7.8.tar.gz"
-  sha256 "16c3615c8f265b3bc8b044601cf03c9ed27188c4ea87829e161abed1cca570d8"
+  url "https://github.com/emacs-helm/helm/archive/v1.7.9.tar.gz"
+  sha256 "59d125897570141c8bc7fb37fd64946d2f5733c7c2c0120942e8d0b2f76c8c2d"
   head "https://github.com/emacs-helm/helm.git"
 
   depends_on :emacs => "24.3"
@@ -14,14 +14,6 @@ class Helm < EmacsFormula
     system "make"
     (share/"emacs/site-lisp/helm").install Dir["*.el"],
                                            Dir["*.elc"]
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'helm-config)
-    (global-set-key (kbd "M-x") 'helm-M-x)
-  EOS
   end
 
   test do
