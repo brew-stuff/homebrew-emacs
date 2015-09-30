@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Keyfreq < EmacsFormula
   desc "Track Emacs command frequencies"
   homepage "https://github.com/dacap/keyfreq"
-  url "https://github.com/dacap/keyfreq/archive/1.6.tar.gz"
-  sha256 "ecf2ea7686842adb4052637444de6fe5325baab5c71b20f3965c2408a94e10c9"
+  url "https://github.com/dacap/keyfreq/archive/1.7.tar.gz"
+  sha256 "b933c3535b68b141f959aa352621d738bdd8bc16a952721674150cbb6f0e4b69"
   head "https://github.com/dacap/keyfreq.git"
 
   depends_on :emacs
