@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class S < EmacsFormula
   desc "Emacs string manipulation library"
   homepage "https://github.com/magnars/s.el"
-  url "https://github.com/magnars/s.el/archive/1.9.0.tar.gz"
-  sha256 "2181f6d901503d0ad95b50ec063f7c3b9c9225f8f91f7e69af76bf73ca1450bd"
+  url "https://github.com/magnars/s.el/archive/1.10.0.tar.gz"
+  sha256 "376c4c1577ac99ce5d510cd957d8d7b4f218ca6b8012f9459a5d902de1d53c3b"
   head "https://github.com/magnars/s.el.git"
 
   depends_on :emacs => "23.1"
@@ -16,6 +16,5 @@ class S < EmacsFormula
     (share/"emacs/site-lisp/s").install "s.el", "s.elc"
 
     system "./create-docs.sh" if build.head?
-    doc.install "README.md"
   end
 end
