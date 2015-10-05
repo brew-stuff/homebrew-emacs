@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CoffeeMode < EmacsFormula
   desc "Emacs major mode for CoffeeScript"
   homepage "https://github.com/defunkt/coffee-mode"
-  url "https://github.com/defunkt/coffee-mode/archive/v0.6.0.tar.gz"
-  sha256 "f1e2fd0797d69ece434b00a88bbfddb4265d5e9bf12fd2a7d39ccbfb00200870"
+  url "https://github.com/defunkt/coffee-mode/archive/v0.6.1.tar.gz"
+  sha256 "5d3674e1cecf1c6566db496bbde97e34ebcf07b75e7ed7b07b569bc4412265dd"
   head "https://github.com/defunkt/coffee-mode.git"
 
   depends_on :emacs => "24.1"
@@ -15,15 +15,7 @@ class CoffeeMode < EmacsFormula
     byte_compile "coffee-mode.el"
     (share/"emacs/site-lisp/coffee-mode").install "coffee-mode.el",
                                                   "coffee-mode.elc"
-    doc.install "README.md", "examples"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'coffee-mode)
-    (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-  EOS
+    doc.install "examples"
   end
 
   test do
