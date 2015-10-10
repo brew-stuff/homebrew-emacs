@@ -8,17 +8,17 @@ class HomebrewMode < EmacsFormula
   head "https://github.com/dunn/homebrew-mode.git"
 
   depends_on :emacs => "24.4"
-  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/inf-ruby"
 
   def install
     system "make", "test",
            "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby",
-           "dash=#{Formula["homebrew/emacs/dash"].opt_share}/emacs/site-lisp/dash"
+           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash"
 
     system "make", "install", "prefix=#{prefix}",
            "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby",
-           "dash=#{Formula["homebrew/emacs/dash"].opt_share}/emacs/site-lisp/dash"
+           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash"
   end
 
   def caveats; <<-EOS.undent
@@ -33,7 +33,7 @@ class HomebrewMode < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/homebrew-mode")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].share}/emacs/site-lisp/inf-ruby")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
 
       (load "homebrew-mode")
       (print homebrew-mode-version)

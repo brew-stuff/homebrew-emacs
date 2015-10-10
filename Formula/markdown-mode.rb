@@ -16,7 +16,7 @@ class MarkdownMode < EmacsFormula
 
   if build.with? "toc"
     depends_on "homebrew/emacs/s"
-    depends_on "homebrew/emacs/dash"
+    depends_on "homebrew/emacs/dash-emacs"
   end
 
   resource "markdown+" do

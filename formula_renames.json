@@ -1,3 +1,4 @@
 {
-    "hydra": "hydra-emacs"
+  "hydra": "hydra-emacs",
+  "dash": "dash-emacs"
 }

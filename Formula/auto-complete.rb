@@ -27,7 +27,7 @@ class AutoComplete < EmacsFormula
   depends_on "homebrew/emacs/slime" if build.with? "slime"
 
   if build.with? "html"
-    depends_on "homebrew/emacs/dash"
+    depends_on "homebrew/emacs/dash-emacs"
     depends_on "homebrew/emacs/web-completion-data"
   end
 

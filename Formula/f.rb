@@ -8,7 +8,7 @@ class F < EmacsFormula
   head "https://github.com/rejeep/f.el.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/s"
 
   def install
@@ -20,7 +20,7 @@ class F < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/f")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].share}/emacs/site-lisp/s")
       (load "f")
       (print (f-this-file))

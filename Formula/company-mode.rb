@@ -14,7 +14,7 @@ class CompanyMode < EmacsFormula
   option "with-web", "Install company-web"
 
   if build.with? "web"
-    depends_on "homebrew/emacs/dash"
+    depends_on "homebrew/emacs/dash-emacs"
     depends_on "homebrew/emacs/web-completion-data"
   end
 

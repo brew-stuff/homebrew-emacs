@@ -12,7 +12,7 @@ class Flycheck < EmacsFormula
   option "with-package", "Install flycheck-package"
 
   depends_on "cask"
-  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
 
@@ -56,7 +56,7 @@ class Flycheck < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/flycheck")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].opt_share}/emacs/site-lisp/pkg-info")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].opt_share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_share}/emacs/site-lisp/epl")
       (load "flycheck")
       (load "pkg-info")

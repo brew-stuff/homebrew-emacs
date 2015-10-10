@@ -1,20 +1,18 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class Dash < EmacsFormula
-  desc "A modern list library for Emacs"
+class DashEmacs < EmacsFormula
+  desc "Modern list library for Emacs"
   homepage "https://github.com/magnars/dash.el"
   url "https://github.com/magnars/dash.el/archive/2.12.0.tar.gz"
-  sha256 "c6db3a237747b02d20382a761397563d813b306c020ae28ce25a1c3915fac60f"
+  sha256 "272b337f31edb95c5aadc8e953d522bd307dc522588f246cc9157edee10b1a76"
   head "https://github.com/magnars/dash.el.git"
 
   depends_on :emacs => "24.1"
 
   def install
     system "./run-tests.sh"
-    system "./create-docs.sh"
     (share/"emacs/site-lisp/dash").install Dir["*.el"],
                                            Dir["*.elc"]
-    doc.install Dir["*.texi"]
     info.install "dash.info"
   end
 

@@ -8,7 +8,7 @@ class WhichKey < EmacsFormula
   head "https://github.com/justbur/emacs-which-key.git"
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/s"
 
   def install
@@ -21,7 +21,7 @@ class WhichKey < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/which-key")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].share}/emacs/site-lisp/s")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
       (load "which-key")
       (which-key-mode)
       (print (minibuffer-prompt-width))

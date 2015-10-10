@@ -9,7 +9,7 @@ class Cider < EmacsFormula
 
   depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/clojure-mode"
-  depends_on "homebrew/emacs/dash"
+  depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/pkg-info"
   depends_on "homebrew/emacs/queue-emacs"
 
@@ -29,7 +29,7 @@ class Cider < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/cider")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash"].share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/clojure-mode"].share}/emacs/site-lisp/clojure-mode")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].share}/emacs/site-lisp/queue")
       (load "cider")
