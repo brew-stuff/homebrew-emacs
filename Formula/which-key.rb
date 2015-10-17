@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WhichKey < EmacsFormula
   desc "Emacs package for displaying available keybindings"
   homepage "https://github.com/justbur/emacs-which-key"
-  url "https://github.com/justbur/emacs-which-key/archive/v0.6.1.tar.gz"
-  sha256 "06dc0b0cd10f4e5058ce09bfab641562c60899581f108e1084d7080208a36045"
+  url "https://github.com/justbur/emacs-which-key/archive/v0.6.2.tar.gz"
+  sha256 "dd6800283b5d53a9a49bd2f6acceb5b3bd88a7c31902a6b2dc948aa917bf6163"
   head "https://github.com/justbur/emacs-which-key.git"
 
   depends_on :emacs => "24.3"
