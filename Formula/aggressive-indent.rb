@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AggressiveIndent < EmacsFormula
   desc "Emacs minor mode to keep code always indented"
   homepage "https://github.com/Malabarba/aggressive-indent-mode"
-  url "https://github.com/Malabarba/aggressive-indent-mode/archive/1.4.tar.gz"
-  sha256 "cbc4920e46342c5cbd307b5b0b7b9e4cd43ea9009e7378dce1fd9cae89882db4"
+  url "https://github.com/Malabarba/aggressive-indent-mode/archive/1.4.1.tar.gz"
+  sha256 "e29f35ee77f421686c50352142a59eeaceaaaf28999691940a47a78732dc1bfe"
   head "https://github.com/Malabarba/aggressive-indent-mode.git"
 
   depends_on :emacs => "24.1"
