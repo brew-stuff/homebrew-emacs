@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Sotlisp < EmacsFormula
   desc "Emacs minor mode for writing Emacs Lisp faster"
   homepage "https://github.com/Malabarba/speed-of-thought-lisp"
-  url "https://github.com/Malabarba/speed-of-thought-lisp/archive/1.4.tar.gz"
-  sha256 "23b33570d72039ca431f777c2ea94ab95c54df47dac5b40e54fd9c223fe96a89"
+  url "https://github.com/Malabarba/speed-of-thought-lisp/archive/1.4.1.tar.gz"
+  sha256 "1cefb4cb1a7e1f4093cdfa4980dc003f2ba3857a593d1dc983888a8f01504648"
   head "https://github.com/Malabarba/speed-of-thought-lisp.git"
 
   depends_on :emacs => "24.1"
