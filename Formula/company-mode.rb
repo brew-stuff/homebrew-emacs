@@ -7,11 +7,11 @@ class CompanyMode < EmacsFormula
   sha256 "ff7f70a13e353181526f8a11145f543955fb3f76c6772cf6d79912782a5e95ef"
   head "https://github.com/company-mode/company-mode.git"
 
-  depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
-
   option "with-emoji", "Install company-emoji"
   option "with-web", "Install company-web"
+
+  depends_on :emacs => "24.1"
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   if build.with? "web"
     depends_on "homebrew/emacs/dash-emacs"
@@ -19,8 +19,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "emoji" do
-    url "https://github.com/dunn/company-emoji/archive/v2.1.0.tar.gz"
-    sha256 "3b626cc62ed12d8a6024faf9b80a750bd9a7daed3becd53aacae63d96dc962ea"
+    url "https://github.com/dunn/company-emoji/archive/2.3.0.tar.gz"
+    sha256 "51f5c3c43ab6fcb79ea88115b0e773269cc02d56a8dbaec1f83f7fbe3e5f34f8"
   end
 
   resource "web" do
@@ -49,31 +49,6 @@ class CompanyMode < EmacsFormula
     system "make", "compile"
     (share/"emacs/site-lisp/company").install Dir["company*.el"],
                                               Dir["company*.elc"]
-    doc.install "README.md"
-  end
-
-  def caveats
-    s = <<-EOS.undent
-      Add the following to your init file:
-
-      (require 'company)
-      (add-hook 'after-init-hook 'global-company-mode)
-    EOS
-    if build.with? "emoji"
-      s += <<-EOS.undent
-
-      (require 'company-emoji)
-      (add-hook 'markdown-mode-hook 'company-mode)
-      (add-hook 'company-mode-hook 'company-emoji-init)
-    EOS
-    end
-    if build.with? "web"
-      s += <<-EOS.undent
-
-      (require 'company-web-html)
-    EOS
-    end
-    s
   end
 
   test do
