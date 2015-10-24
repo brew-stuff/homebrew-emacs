@@ -3,9 +3,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SoapClientEmacs < EmacsFormula
   desc "Emacs SOAP client"
   homepage "https://github.com/alex-hhh/emacs-soap-client"
+  url "https://github.com/alex-hhh/emacs-soap-client/archive/3.0.0.tar.gz"
+  sha256 "804d291b0875da8b15ff82246926cbef8f1e8b529f61c1381e442b9ff25b842b"
   head "https://github.com/alex-hhh/emacs-soap-client.git"
 
   depends_on :emacs
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     byte_compile Dir["*.el"]
