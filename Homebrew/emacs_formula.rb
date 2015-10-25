@@ -97,4 +97,12 @@ class EmacsFormula < Formula
       end
     end
   end
+
+  def generate_autoloads(pkg_name=@name)
+    system "emacs", "--batch", "--quick", "--eval", <<-EOS.undent
+      (let ((generated-autoload-file "#{share}/emacs/site-lisp/#{pkg_name}/#{pkg_name}-autoloads.el"))
+        (update-directory-autoloads "#{share}/emacs/site-lisp/#{pkg_name}"))
+    EOS
+    rm "#{share}/emacs/site-lisp/#{pkg_name}/#{pkg_name}-autoloads.el~"
+  end
 end
