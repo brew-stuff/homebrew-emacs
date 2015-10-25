@@ -22,13 +22,6 @@ def template(name)
                                                 "#{name}.elc"
     end
 
-    def caveats; <<-EOS.undent
-      Add the following to your init file:
-
-      (require '#{name})
-    \EOS
-    end
-
     test do
       (testpath/"test.el").write <<-EOS.undent
         (add-to-list 'load-path "\#{share}/emacs/site-lisp/#{name}")
