@@ -46,7 +46,7 @@ class AutoComplete < EmacsFormula
 
   resource "c-headers" do
     url "https://github.com/zk-phi/ac-c-headers.git",
-        :revision => "2e9ace7f31e029c3c79a675e36d67279b11c6de5"
+        :revision => "de13a1d35b311e6601556d8ef163de102057deea"
   end
 
   resource "emoji" do
@@ -85,8 +85,8 @@ class AutoComplete < EmacsFormula
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.5.1.tar.gz"
-    sha256 "6de2d559d96783f07dec1a2941569aae6f44b093a1ec620444370388d6ec9077"
+    url "https://github.com/xcwen/ac-php/archive/1.7.0.tar.gz"
+    sha256 "b011515b046b2235532d7e6e78eb413268a605543714b3b5339d38969823be7d"
   end
 
   resource "slime" do
