@@ -22,7 +22,7 @@ class ElispBugHunter < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/bug-hunter")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].share}/emacs/site-lisp/seq")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_share}/emacs/site-lisp/seq")
       (load "bug-hunter")
       (print (minibuffer-prompt-width))
     EOS

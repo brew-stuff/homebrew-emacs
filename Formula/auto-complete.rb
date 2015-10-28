@@ -176,7 +176,7 @@ class AutoComplete < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/auto-complete")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/popup"].share}/emacs/site-lisp/popup")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/popup"].opt_share}/emacs/site-lisp/popup")
 
       (load "auto-complete")
       (print ac-version)

@@ -41,8 +41,8 @@ class PandocMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/hydra-emacs"].share}/emacs/site-lisp/hydra")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/hydra-emacs"].opt_share}/emacs/site-lisp/hydra")
       (add-to-list 'load-path "#{share}/emacs/site-lisp/pandoc-mode")
       (load "pandoc-mode")
       (print (minibuffer-prompt-width))
