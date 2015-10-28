@@ -12,7 +12,6 @@ class Diminish < EmacsFormula
   def install
     byte_compile "diminish.el"
     (share/"emacs/site-lisp/diminish").install "diminish.el", "diminish.elc"
-    generate_autoloads
   end
 
   test do
