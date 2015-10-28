@@ -16,7 +16,6 @@ class Projectile < EmacsFormula
     byte_compile "projectile.el"
     (share/"emacs/site-lisp/projectile").install "projectile.el",
                                                  "projectile.elc"
-    generate_autoloads
   end
 
   test do
