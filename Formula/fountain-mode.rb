@@ -28,7 +28,7 @@ class FountainMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/fountain-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].share}/emacs/site-lisp/s")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].opt_share}/emacs/site-lisp/s")
       (load "fountain-mode")
       (print (fountain-export-bold "Homebrew: **the** Brewing"))
     EOS

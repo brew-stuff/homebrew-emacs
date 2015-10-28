@@ -19,7 +19,7 @@ class SvgEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/svg")
-      (add-to-list 'load-path "#{Formula["dom-emacs"].share}/emacs/site-lisp/dom")
+      (add-to-list 'load-path "#{Formula["dom-emacs"].opt_share}/emacs/site-lisp/dom")
       (load "svg")
       (print (minibuffer-prompt-width))
     EOS

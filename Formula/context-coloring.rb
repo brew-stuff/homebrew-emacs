@@ -35,7 +35,7 @@ class ContextColoring < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/context-coloring")
-      (add-to-list 'load-path "#{Formula["js2-mode"].share}/emacs/site-lisp/js2-mode")
+      (add-to-list 'load-path "#{Formula["js2-mode"].opt_share}/emacs/site-lisp/js2-mode")
       (load "context-coloring")
       (print (minibuffer-prompt-width))
     EOS

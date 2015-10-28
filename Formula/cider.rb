@@ -29,9 +29,9 @@ class Cider < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/cider")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/clojure-mode"].share}/emacs/site-lisp/clojure-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/clojure-mode"].opt_share}/emacs/site-lisp/clojure-mode")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].opt_share}/emacs/site-lisp/queue")
       (load "cider")
       (print cider-version)
     EOS

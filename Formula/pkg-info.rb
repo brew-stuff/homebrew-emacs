@@ -21,7 +21,7 @@ class PkgInfo < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/pkg-info")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].share}/emacs/site-lisp/epl")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_share}/emacs/site-lisp/epl")
       (load "pkg-info")
       (print (minibuffer-prompt-width))
     EOS
