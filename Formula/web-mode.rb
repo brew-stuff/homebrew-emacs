@@ -3,11 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WebMode < EmacsFormula
   desc "Emacs major mode for editing web templates"
   homepage "http://web-mode.org"
-  url "https://github.com/fxbois/web-mode/archive/v12.3.tar.gz"
-  sha256 "f1df22c5948ddcbddf3af6efcc7f1d9888505296a97d279fe11027f8c267fa90"
+  url "https://github.com/fxbois/web-mode/archive/v12.4.tar.gz"
+  sha256 "fd7e83d8ff42e0446d8d18be2f3c2ff9bb70730d0c1f9e81d620d2f02c9d641d"
   head "https://github.com/fxbois/web-mode.git"
 
-  depends_on :emacs => "23.1"
+  depends_on :emacs => "22.1"
 
   def install
     system "/bin/bash", "./run.sh"
