@@ -3,9 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Seq < EmacsFormula
   desc "Sequence manipulation library for Emacs"
   homepage "http://elpa.gnu.org/packages/seq.html"
-  url "http://elpa.gnu.org/packages/seq-1.9.el"
-  sha256 "08be71299d883c0a547444dc5fbfd7a55f0b74eb037dba32998e936e9ffb2219"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/seq/seq.el"
+  url "http://elpa.gnu.org/packages/seq-1.11.el"
+  sha256 "30ccb62dc6d2d216b5acdeb5ed5d9ce1b85893d84158bae233ddf8db19a9eae2"
+  head "https://github.com/NicolasPetton/seq.el.git"
 
   depends_on :emacs
 
