@@ -1,5 +1,4 @@
 require File.expand_path("../emacs", __FILE__)
-require File.expand_path("../emacs_requirement", __FILE__)
 
 class EmacsFormula < Formula
   def initialize(*)
