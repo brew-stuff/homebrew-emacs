@@ -20,9 +20,9 @@ class TrieEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/trie")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/heap-emacs"].share}/emacs/site-lisp/heap")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/tnfa-emacs"].share}/emacs/site-lisp/tNFA")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/heap-emacs"].opt_share}/emacs/site-lisp/heap")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/tnfa-emacs"].opt_share}/emacs/site-lisp/tNFA")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].opt_share}/emacs/site-lisp/queue")
       (load "trie")
       (print (minibuffer-prompt-width))
     EOS
