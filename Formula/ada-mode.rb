@@ -4,7 +4,7 @@ class AdaMode < EmacsFormula
   desc "Emacs major mode for editing Ada sources"
   homepage "http://stephe-leake.org/emacs/ada-mode/emacs-ada-mode.html"
   url "http://stephe-leake.org/emacs/ada-mode/org.emacs.ada-mode-5.1.8.tar.gz"
-  sha256 "361b5e4f3bd8cb48a236245ce65093c361175e4ae782d0233555bd9bd294aa91"
+  sha256 "da22247244cafe9395189fcca13667448fbc6a0fd52fb0cbcd8c3b0545aaf092"
 
   option "without-reference", "Build without the reference manual"
 
@@ -12,12 +12,12 @@ class AdaMode < EmacsFormula
 
   resource "reference" do
     url "http://stephe-leake.org/ada/arm_info-2012.2.tar.gz"
-    sha256 "4e734e37b82a5db34656c6cff9bfee0b11f9ebbcac1cc6716d80541a25359970"
+    sha256 "e861098b37faf38289b0ada9543bb2f846285080512d86e052a4154d0a800e61"
   end
 
   resource "mode-keys" do
     url "http://stephe-leake.org/emacs/ada-mode/ada-mode-keys.el"
-    sha256 "e24580f931f1f989413091933fe653ff009739fdcf22573d04d7670093e9ceb9"
+    sha256 "51fcdc58780ed2f63a6ccd956c3a349d34da93e4271986b7c3cc2e42e11dd6bd"
   end
 
   def install
