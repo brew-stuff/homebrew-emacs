@@ -17,8 +17,8 @@ class Flycheck < EmacsFormula
   depends_on "homebrew/emacs/pkg-info"
 
   resource "package" do
-    url "https://github.com/purcell/flycheck-package/archive/0.7.tar.gz"
-    sha256 "5e9f8b7926ea6ca03a8f1993c53aa827020877c6d2c5f7a5117b1d544dd6c0ab"
+    url "https://github.com/purcell/flycheck-package/archive/0.8.tar.gz"
+    sha256 "86bcccb66b68ea31707429c0da59fe616a9ecc93a8b9e782055758a4888ca030"
   end
 
   def install
