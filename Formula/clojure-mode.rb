@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClojureMode < EmacsFormula
   desc "Emacs major mode for Clojure"
   homepage "https://github.com/clojure-emacs/clojure-mode"
-  url "https://github.com/clojure-emacs/clojure-mode/archive/4.1.0.tar.gz"
-  sha256 "05105cbeb0c1db47c0be0835de9afde6be76a83ea32e06bbcc07dcd4ac72cb25"
+  url "https://github.com/clojure-emacs/clojure-mode/archive/5.0.0.tar.gz"
+  sha256 "fb5aadf8179c0f651ace136fabb0b6a685e4bd213f1958b2181e9f30681073a2"
   head "https://github.com/clojure-emacs/clojure-mode.git"
 
   option "with-inf", "Build with the \"inferior\" REPL"
@@ -13,29 +13,21 @@ class ClojureMode < EmacsFormula
   depends_on "cask"
 
   resource "inf" do
-    url "https://github.com/clojure-emacs/inf-clojure/archive/v1.2.0.tar.gz"
-    sha256 "1dd45cee8d263051c09428e07b6c2cb010914b00ff493cdf532dd28d7832ac1c"
+    url "https://github.com/clojure-emacs/inf-clojure/archive/v1.3.0.tar.gz"
+    sha256 "adadc2a73a41c9409dcba3a1a2fe37ae3e3e4ec0d3aed2000d30df6d1ff70a93"
   end
 
   def install
-    system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
-    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
-    (share/"emacs/site-lisp/clojure-mode").install Dir["*.el"],
-                                                   Dir["*.elc"]
-    doc.install "README.md"
-
     if build.with? "inf"
       resource("inf").stage do
-        (share/"emacs/site-lisp/clojure-mode").install "inf-clojure.el"
+        byte_compile "inf-clojure.el"
+        (share/"emacs/site-lisp/clojure-mode").install "inf-clojure.el",
+                                                       "inf-clojure.elc"
       end
     end
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'clojure-mode)
-  EOS
+    system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
+    (share/"emacs/site-lisp/clojure-mode").install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
