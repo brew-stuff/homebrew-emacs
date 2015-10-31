@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HomebrewMode < EmacsFormula
   desc "Emacs minor mode for editing Homebrew formulae"
   homepage "https://github.com/dunn/homebrew-mode"
-  url "https://github.com/dunn/homebrew-mode/archive/1.3.1.tar.gz"
-  sha256 "50dd3277df683ca3d74295be1647f0b378252deaf127b9da188a3cde3959ae22"
+  url "https://github.com/dunn/homebrew-mode/archive/1.3.2.tar.gz"
+  sha256 "2110552ed8c7f924cf00dc2985c1e242aceb1b385d5ceeb9267a1652a8e20ed0"
   head "https://github.com/dunn/homebrew-mode.git"
 
   depends_on :emacs => "24.4"
@@ -19,14 +19,6 @@ class HomebrewMode < EmacsFormula
     system "make", "install", "prefix=#{prefix}",
            "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby",
            "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'homebrew-mode)
-    (global-homebrew-mode)
-  EOS
   end
 
   test do
