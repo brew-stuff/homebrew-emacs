@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Projectile < EmacsFormula
   desc "Project Interaction Library for Emacs"
   homepage "http://batsov.com/projectile/"
-  url "https://github.com/bbatsov/projectile/archive/v0.12.0.tar.gz"
-  sha256 "8973f9151d4e3b9c39a30499399486903ccd57ca79f6dec0f1994da487c7999c"
+  url "https://github.com/bbatsov/projectile/archive/v0.13.0.tar.gz"
+  sha256 "1dbafcd6eafa718c83de0e1a48d6cf3f47d3bbb7bfb4e629522ce6b5e7e48208"
   head "https://github.com/bbatsov/projectile.git"
 
   depends_on :emacs => "24.1"
