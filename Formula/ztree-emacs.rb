@@ -11,21 +11,12 @@ class ZtreeEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/ztree").install Dir["*.el"],
-                                            Dir["*.elc"]
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'ztree)
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/ztree")
+      (add-to-list 'load-path "#{elisp}")
       (load "ztree")
       (print (minibuffer-prompt-width))
     EOS
