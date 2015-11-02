@@ -11,21 +11,12 @@ class TypoMode < EmacsFormula
 
   def install
     byte_compile "typo.el"
-    (share/"emacs/site-lisp/typo").install "typo.el", "typo.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add something like the following to your init file:
-
-    (require 'typo)
-    (add-hook 'markdown-mode-hook 'typo-mode)
-  EOS
+    elisp.install "typo.el", "typo.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/typo")
+      (add-to-list 'load-path "#{elisp}")
       (load "typo")
       (typo-global-mode 1)
       (print (minibuffer-prompt-width))
