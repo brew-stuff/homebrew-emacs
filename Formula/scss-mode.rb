@@ -11,16 +11,15 @@ class ScssMode < EmacsFormula
 
   def install
     byte_compile "scss-mode.el"
-    (share/"emacs/site-lisp/scss-mode").install "scss-mode.el",
-                                                "scss-mode.elc"
-    doc.install "README.org"
+    elisp.install "scss-mode.el", "scss-mode.elc"
   end
 
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'scss-mode)
-    (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
-  EOS
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{elisp}")
+      (load "scss-mode")
+      (print (minibuffer-prompt-width))
+    EOS
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
