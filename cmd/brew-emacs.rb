@@ -18,13 +18,12 @@ def template(name)
 
     def install
       byte_compile "#{name}.el"
-      (share/"emacs/site-lisp/#{name}").install "#{name}.el",
-                                                "#{name}.elc"
+      elisp.install "#{name}.el", "#{name}.elc"
     end
 
     test do
       (testpath/"test.el").write <<-EOS.undent
-        (add-to-list 'load-path "\#{share}/emacs/site-lisp/#{name}")
+        (add-to-list 'load-path "\#{elisp}")
         (load "#{name}")
         (print (minibuffer-prompt-width))
       \EOS
