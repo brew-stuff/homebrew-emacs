@@ -10,14 +10,12 @@ class DomEmacs < EmacsFormula
 
   def install
     byte_compile "dom.el"
-    (share/"emacs/site-lisp/dom").install "dom.el",
-                                          "dom.elc"
-    doc.install "README.md"
+    elisp.install "dom.el", "dom.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/dom")
+      (add-to-list 'load-path "#{elisp}")
       (load "dom")
       (print (minibuffer-prompt-width))
     EOS
