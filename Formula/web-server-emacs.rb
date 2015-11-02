@@ -2,7 +2,7 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class WebServerEmacs < EmacsFormula
   desc "Emacs Lisp webserver"
-  homepage "http://eschulte.github.io/emacs-web-server/"
+  homepage "https://eschulte.github.io/emacs-web-server/"
   url "http://elpa.gnu.org/packages/web-server-0.1.1.tar"
   sha256 "5690e943312b312b4be3f419a3c292b73d2ccfe6f045da988f84aac23174a1e0"
   head "https://github.com/eschulte/emacs-web-server.git"
@@ -16,14 +16,14 @@ class WebServerEmacs < EmacsFormula
       # `make doc` currently fails
       system "make", "src"
       system "make", "check"
-      doc.install "README", Dir["doc/*"], "examples"
+      doc.install Dir["doc/*"], "examples"
     end
-    (share/"emacs/site-lisp/web-server").install Dir["*.el"], Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp")
+      (add-to-list 'load-path "#{elisp}")
       (load "web-server")
       (print (minibuffer-prompt-width))
     EOS
