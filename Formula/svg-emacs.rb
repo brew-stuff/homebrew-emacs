@@ -13,13 +13,13 @@ class SvgEmacs < EmacsFormula
   def install
     mv "svg-#{version}.el", "svg.el"
     byte_compile "svg.el"
-    (share/"emacs/site-lisp/svg").install "svg.el", "svg.elc"
+    elisp.install "svg.el", "svg.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/svg")
-      (add-to-list 'load-path "#{Formula["dom-emacs"].opt_share}/emacs/site-lisp/dom")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["dom-emacs"].opt_elisp}")
       (load "svg")
       (print (minibuffer-prompt-width))
     EOS
