@@ -10,21 +10,12 @@ class ZenburnEmacs < EmacsFormula
   depends_on :emacs => "24.1"
 
   def install
-    (share/"emacs/site-lisp/zenburn").install "zenburn-theme.el"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (add-to-list 'custom-theme-load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp/zenburn")
-    (load-theme 'zenburn t)
-  EOS
+    elisp.install "zenburn-theme.el"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'custom-theme-load-path "#{share}/emacs/site-lisp/zenburn")
+      (add-to-list 'custom-theme-load-path "#{elisp}")
       (load-theme 'zenburn t)
       (print (minibuffer-prompt-width))
     EOS
