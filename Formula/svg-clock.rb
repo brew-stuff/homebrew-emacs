@@ -11,20 +11,12 @@ class SvgClock < EmacsFormula
   def install
     mv "svg-clock-#{version}.el", "svg-clock.el"
     byte_compile "svg-clock.el"
-    (share/"emacs/site-lisp/svg-clock").install "svg-clock.el",
-                                                "svg-clock.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'svg-clock)
-  EOS
+    elisp.install "svg-clock.el", "svg-clock.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/svg-clock")
+      (add-to-list 'load-path "#{elisp}")
       (load "svg-clock")
       (svg-clock)
       (svg-clock)
