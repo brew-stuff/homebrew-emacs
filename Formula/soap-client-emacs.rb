@@ -12,13 +12,12 @@ class SoapClientEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/soap-client").install Dir["*.el"],
-                                                  Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp")
+      (add-to-list 'load-path "#{elisp}")
       (load "soap-client")
       (print (minibuffer-prompt-width))
     EOS
