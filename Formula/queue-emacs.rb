@@ -11,12 +11,12 @@ class QueueEmacs < EmacsFormula
   def install
     mv "queue-#{version}.el", "queue.el"
     byte_compile "queue.el"
-    (share/"emacs/site-lisp/queue").install "queue.el", "queue.elc"
+    elisp.install "queue.el", "queue.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{elisp}")
       (load "queue")
       (print (minibuffer-prompt-width))
     EOS
