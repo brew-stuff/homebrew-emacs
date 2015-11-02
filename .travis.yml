@@ -17,7 +17,7 @@ matrix:
 before_install:
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
   - sudo chown -R $USER $(brew --repo)
-  - brew update
+  - brew update || brew update
   - mkdir -p $(brew --repo)/Library/Taps/homebrew
   - ln -s $PWD $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
   - cd $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
