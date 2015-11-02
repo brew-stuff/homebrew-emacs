@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class XmlRpc < EmacsFormula
+class XmlRpcEmacs < EmacsFormula
   desc "XML-RPC client for Emacs"
   homepage "https://launchpad.net/xml-rpc-el"
   url "https://launchpad.net/xml-rpc-el/trunk/1.6.8/+download/xml-rpc.el"
@@ -12,7 +12,15 @@ class XmlRpc < EmacsFormula
 
   def install
     byte_compile "xml-rpc.el"
-    (share/"emacs/site-lisp/xml-rpc").install "xml-rpc.el",
-                                              "xml-rpc.elc"
+    elisp.install "xml-rpc.el", "xml-rpc.elc"
+  end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{elisp}")
+      (load "xml-rpc")
+      (print xml-rpc-version)
+    EOS
+    assert_equal "\"#{version}\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end

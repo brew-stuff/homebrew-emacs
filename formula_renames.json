@@ -1,4 +1,5 @@
 {
   "hydra": "hydra-emacs",
-  "dash": "dash-emacs"
+  "dash": "dash-emacs",
+  "xml-rpc": "xml-rpc-emacs"
 }
