@@ -18,7 +18,7 @@ class TnfaEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/tnfa")
-      (add-to-list 'load-path "#{Formula["queue-emacs"].share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{Formula["queue-emacs"].opt_share}/emacs/site-lisp/queue")
       (load "tNFA")
       (print (minibuffer-prompt-width))
     EOS
