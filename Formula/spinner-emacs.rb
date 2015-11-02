@@ -12,13 +12,12 @@ class SpinnerEmacs < EmacsFormula
   def install
     mv "spinner-#{version}.el", "spinner.el" if build.stable?
     byte_compile "spinner.el"
-    (share/"emacs/site-lisp/spinner").install "spinner.el",
-                                              "spinner.elc"
+    elisp.install "spinner.el", "spinner.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/spinner")
+      (add-to-list 'load-path "#{elisp}")
       (load "spinner")
       (spinner-start)
       (spinner-stop)
