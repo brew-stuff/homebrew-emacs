@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Evil < EmacsFormula
   desc "Extensible vi layer for Emacs"
   homepage "https://bitbucket.org/lyro/evil"
-  url "https://bitbucket.org/lyro/evil/get/1.2.6.tar.bz2"
-  sha256 "7178c89c146cb1a6dafa5a2d543a5513e1eccca773efe5eedce1960899954c66"
+  url "https://bitbucket.org/lyro/evil/get/1.2.7.tar.bz2"
+  sha256 "df3a321b866e75d056690cd5104dfee1652f0ae2c268e655859e2a5967727503"
   head "https://bitbucket.org/lyro/evil", :using => :hg
 
   depends_on :emacs
@@ -12,8 +12,7 @@ class Evil < EmacsFormula
 
   def install
     system "make"
-    (share/"emacs/site-lisp/evil").install Dir["*.el"], Dir["*.elc"]
-    (share/"emacs/site-lisp/evil").install "lib/goto-chg.el"
+    elisp.install Dir["*.el"], Dir["*.elc"], "lib/goto-chg.el"
 
     system "make", "info"
     info.install "doc/evil.info"
@@ -22,7 +21,7 @@ class Evil < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/evil")
+      (add-to-list 'load-path "#{elisp}")
       (load "evil")
       (evil-mode 1)
       (print (minibuffer-prompt-width))
