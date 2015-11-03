@@ -8,28 +8,17 @@ class EditorconfigEmacs < EmacsFormula
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   depends_on "editorconfig"
-  # developers only test it against 24
   depends_on :emacs => "24.1"
 
   def install
     system "make"
     system "make", "test"
-    (share/"emacs/site-lisp/editorconfig").install "editorconfig.el",
-                                                   "editorconfig.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Currently, Emacs fails to find editorconfig-emacs if it is expected to follow a symlink of a directory.
-    The workaround is to add a directory that's not itself a symlink to your load-path:
-
-    (add-to-list 'load-path "#{opt_share}/emacs/site-lisp/editorconfig")
-  EOS
+    elisp.install "editorconfig.el", "editorconfig.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/editorconfig")
+      (add-to-list 'load-path "#{elisp}")
       (load "editorconfig")
       (edconf-set-indentation "space")
       (print (minibuffer-prompt-width))
