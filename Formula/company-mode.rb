@@ -2,7 +2,7 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class CompanyMode < EmacsFormula
   desc "Modular in-buffer completion framework for Emacs"
-  homepage "http://company-mode.github.io"
+  homepage "https://company-mode.github.io"
   url "https://github.com/company-mode/company-mode/archive/0.8.12.tar.gz"
   sha256 "ff7f70a13e353181526f8a11145f543955fb3f76c6772cf6d79912782a5e95ef"
   head "https://github.com/company-mode/company-mode.git"
