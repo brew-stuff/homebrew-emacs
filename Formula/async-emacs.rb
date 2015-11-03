@@ -11,13 +11,12 @@ class AsyncEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/async").install Dir["*.el"],
-                                            Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/async")
+      (add-to-list 'load-path "#{elisp}")
       (load "async")
       (print (minibuffer-prompt-width))
     EOS
