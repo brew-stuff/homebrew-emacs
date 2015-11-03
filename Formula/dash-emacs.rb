@@ -11,14 +11,13 @@ class DashEmacs < EmacsFormula
 
   def install
     system "./run-tests.sh"
-    (share/"emacs/site-lisp/dash").install Dir["*.el"],
-                                           Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
     info.install "dash.info"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{elisp}")
       (load "dash")
       (print (--map (* it it) '(1 2 3 4)))
     EOS
