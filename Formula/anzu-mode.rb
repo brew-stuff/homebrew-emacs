@@ -12,12 +12,12 @@ class AnzuMode < EmacsFormula
 
   def install
     byte_compile "anzu.el"
-    (share/"emacs/site-lisp/anzu").install "anzu.el", "anzu.elc"
+    elisp.install "anzu.el", "anzu.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/anzu")
+      (add-to-list 'load-path "#{elisp}")
       (load "anzu")
       (anzu-mode +1)
       (print (minibuffer-prompt-width))
