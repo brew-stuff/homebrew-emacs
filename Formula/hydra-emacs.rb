@@ -21,12 +21,12 @@ class HydraEmacs < EmacsFormula
   def install
     system "make", "test"
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/hydra").install Dir["*.el"], Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/hydra")
+      (add-to-list 'load-path "#{elisp}")
       (load "hydra")
       (defhydra hydra-zoom (global-map "<f2>")
         "zoom"
