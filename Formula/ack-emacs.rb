@@ -11,13 +11,12 @@ class AckEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/ack").install Dir["*.el"],
-                                          Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/ack")
+      (add-to-list 'load-path "#{elisp}")
       (load "ack")
       (ack-skel-file)
       (print (minibuffer-prompt-width))
