@@ -4,18 +4,18 @@ homebrew-emacs
 homebrew-emacs is a [Homebrew](http://brew.sh) tap for Emacs packages.
 
 It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
-like [flycheck][], [org-mode][] and [markdown-mode][] using `brew
+like [flycheck][], [company][] and [markdown-mode][] using `brew
 install`.
 
-It’s an alternative to the built-in `package.el` system that ships
-with Emacs 24.  The advantage is more customizable builds and a much
-better interface.  The disadvantage is that there are currently many
-fewer packages than are available through MELPA and Marmalade (but
-[you can help fix that!](#where-is-___)).
-
 [flycheck]: http://www.flycheck.org
-[org-mode]: http://orgmode.org/
+[company]: https://company-mode.github.io
 [markdown-mode]: http://jblevins.org/projects/markdown-mode/
+
+It’s an alternative to the built-in `package.el` system introduced in
+Emacs 24.  Advantages include more customizable builds and (arguably)
+a better interface.  The disadvantage is that there are currently many
+fewer packages than are available through MELPA (but
+[you can help fix that!](#where-is-___)).
 
 Install
 -------
@@ -24,7 +24,7 @@ You can install any of the packages in `./Formula` by prefixing them
 with the tap name, `homebrew/emacs`:
 
 ```
-brew install homebrew/emacs/smex
+brew install homebrew/emacs/helm
 ```
 
 That will automatically “tap” the repository (which you can do
@@ -32,7 +32,7 @@ manually with `brew tap homebrew/emacs`), so then you can install formula
 without prefixing:
 
 ```
-brew install flycheck
+brew install web-mode
 ```
 
 `brew update` will then update formulae in your taps as well as those
