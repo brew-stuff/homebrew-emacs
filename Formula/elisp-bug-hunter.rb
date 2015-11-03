@@ -15,14 +15,13 @@ class ElispBugHunter < EmacsFormula
     ert_run_tests "bug-hunter-test.el" if build.head?
 
     byte_compile "bug-hunter.el"
-    (share/"emacs/site-lisp/bug-hunter").install "bug-hunter.el",
-                                                 "bug-hunter.elc"
+    elisp.install "bug-hunter.el", "bug-hunter.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/bug-hunter")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_share}/emacs/site-lisp/seq")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
       (load "bug-hunter")
       (print (minibuffer-prompt-width))
     EOS
