@@ -11,13 +11,12 @@ class AhungryEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/ahungry").install Dir["*.el"],
-                                              Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'custom-theme-load-path "#{share}/emacs/site-lisp/ahungry/")
+      (add-to-list 'custom-theme-load-path "#{elisp}")
       (load-theme 'ahungry t)
       (print (minibuffer-prompt-width))
     EOS
