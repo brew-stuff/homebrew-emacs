@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WebMode < EmacsFormula
   desc "Emacs major mode for editing web templates"
   homepage "http://web-mode.org"
-  url "https://github.com/fxbois/web-mode/archive/v12.4.tar.gz"
-  sha256 "fd7e83d8ff42e0446d8d18be2f3c2ff9bb70730d0c1f9e81d620d2f02c9d641d"
+  url "https://github.com/fxbois/web-mode/archive/v13.tar.gz"
+  sha256 "71b0cdce16b73add6470c4a7425fbb6d348c6edae11fa25d3f94d71c5b36df90"
   head "https://github.com/fxbois/web-mode.git"
 
   depends_on :emacs => "22.1"
@@ -12,12 +12,12 @@ class WebMode < EmacsFormula
   def install
     system "/bin/bash", "./run.sh"
     byte_compile "web-mode.el"
-    (share/"emacs/site-lisp/web-mode").install "web-mode.el", "web-mode.elc"
+    elisp.install "web-mode.el", "web-mode.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/web-mode")
+      (add-to-list 'load-path "#{elisp}")
       (load "web-mode")
       (print web-mode-version)
     EOS
