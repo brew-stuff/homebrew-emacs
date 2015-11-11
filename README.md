@@ -56,8 +56,6 @@ prefix.
 "Where is ___?"
 ---------------
 
-- **Magit** is in the core repository: `brew install magit`
-
 - **AucTeX** is in the TeX tap: `brew install homebrew/tex/auctex`
 
 - **That Neat New Package** can be added by you: `brew emacs
