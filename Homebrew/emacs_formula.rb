@@ -61,7 +61,7 @@ class EmacsFormula < Formula
 
   ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
-    emacs_args = %W[ --batch -Q ]
+    emacs_args = %W[ --batch -Q --directory #{Pathname.pwd}]
 
     Dir["**/*"].each do |x|
       x = Pathname.new(x)
