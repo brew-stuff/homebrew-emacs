@@ -61,16 +61,13 @@ class EmacsFormula < Formula
 
   ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
-    # add Pathname.pwd as well as buildpath to allow this to be run
-    # from within resource blocks
-    emacs_args = %W[
-      --batch
-      -Q
-      --directory
-      #{buildpath}
-      --directory
-      #{Pathname.pwd}
-    ]
+    emacs_args = %W[ --batch -Q ]
+
+    Dir["**/*"].each do |x|
+      x = Pathname.new(x)
+      emacs_args << "--directory" << "#{x}" if x.directory?
+    end
+
     # lib_load_paths is an array so we need to flatten later on
     emacs_args << lib_load_paths if deps.any?
 
@@ -79,8 +76,10 @@ class EmacsFormula < Formula
     lisps = files.flatten
     lisps.each do |file|
       ohai "Byte compiling #{file}"
+
       args = Array.new(emacs_args.flatten)
       args << file
+
       pid = fork { exec("emacs", *args) }
       Process.wait pid
       # is this necessary?
