@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SoapClientEmacs < EmacsFormula
   desc "Emacs SOAP client"
   homepage "https://github.com/alex-hhh/emacs-soap-client"
-  url "https://github.com/alex-hhh/emacs-soap-client/archive/3.0.0.tar.gz"
-  sha256 "804d291b0875da8b15ff82246926cbef8f1e8b529f61c1381e442b9ff25b842b"
+  url "https://github.com/alex-hhh/emacs-soap-client/archive/3.0.2.tar.gz"
+  sha256 "fed577c8244f5a2102ecea440d8e3646e50d2c1837f9475142e2380ec35589d1"
   head "https://github.com/alex-hhh/emacs-soap-client.git"
 
   depends_on :emacs
