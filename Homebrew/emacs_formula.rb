@@ -61,23 +61,30 @@ class EmacsFormula < Formula
 
   ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
-    emacs_args = %W[ --batch -Q --directory #{Pathname.pwd}]
+    emacs_args = %W[ --batch -Q ]
 
-    Dir["**/*"].each do |x|
+    # Pathname.pwd and buildpath differ when we're compiling resources
+    load_dirs = %W[#{buildpath} #{Pathname.pwd}]
+
+    Dir["#{buildpath}/**/*"].each do |x|
       x = Pathname.new(x)
-      emacs_args << "--directory" << "#{x}" if x.directory?
+      load_dirs << x if x.directory?
     end
 
-    # lib_load_paths is an array so we need to flatten later on
-    emacs_args << lib_load_paths if deps.any?
+    Dir["#{Pathname.pwd}/**/*"].each do |x|
+      x = Pathname.new(x)
+      load_dirs << x if x.directory?
+    end
 
+    emacs_args += load_dirs.uniq.map { |d| %W[--directory #{d}] }.flatten
+    emacs_args += lib_load_paths if deps.any?
     emacs_args << "-f" << "batch-byte-compile"
 
     lisps = files.flatten
     lisps.each do |file|
       ohai "Byte compiling #{file}"
 
-      args = Array.new(emacs_args.flatten)
+      args = Array.new(emacs_args)
       args << file
 
       pid = fork { exec("emacs", *args) }
