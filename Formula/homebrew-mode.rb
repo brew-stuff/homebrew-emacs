@@ -13,19 +13,19 @@ class HomebrewMode < EmacsFormula
 
   def install
     system "make", "test",
-           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby",
-           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash"
+           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}",
+           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
 
     system "make", "install", "prefix=#{prefix}",
-           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby",
-           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash"
+           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}",
+           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/homebrew-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].opt_share}/emacs/site-lisp/inf-ruby")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
 
       (load "homebrew-mode")
       (print homebrew-mode-version)
