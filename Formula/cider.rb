@@ -12,26 +12,20 @@ class Cider < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/pkg-info"
   depends_on "homebrew/emacs/queue-emacs"
+  depends_on "homebrew/emacs/seq"
+  depends_on "homebrew/emacs/spinner-emacs"
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/cider").install Dir["*.el"], Dir["*.elc"]
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'cider)
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/cider")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/clojure-mode"].opt_share}/emacs/site-lisp/clojure-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].opt_share}/emacs/site-lisp/queue")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/clojure-mode"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/queue-emacs"].opt_elisp}")
       (load "cider")
       (print cider-version)
     EOS
