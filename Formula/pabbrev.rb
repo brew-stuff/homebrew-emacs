@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Pabbrev < EmacsFormula
   desc "Predictive abbreviation expansion for Emacs"
   homepage "https://github.com/phillord/pabbrev"
-  url "http://elpa.gnu.org/packages/pabbrev-4.2.el"
-  sha256 "530118458c1340e3a48b8efe0f365aa360c7764c3d39d8ae215cdeb3078ddef5"
+  url "http://elpa.gnu.org/packages/pabbrev-4.2.1.el"
+  sha256 "b0bb2a370b626d09a43b7159080ac95ca6239bf9dcccc35fbc0ef960665365a7"
   head "https://github.com/phillord/pabbrev.git"
 
   depends_on :emacs
@@ -14,21 +14,12 @@ class Pabbrev < EmacsFormula
     mv "pabbrev-#{version}.el", "pabbrev.el" if build.stable?
 
     byte_compile "pabbrev.el"
-    (share/"emacs/site-lisp/pabbrev").install "pabbrev.el",
-                                              "pabbrev.elc"
-    doc.install "README.md" if build.head?
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'pabbrev)
-  EOS
+    elisp.install "pabbrev.el", "pabbrev.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/pabbrev")
+      (add-to-list 'load-path "#{elisp}")
       (load "pabbrev")
       (print (minibuffer-prompt-width))
     EOS
