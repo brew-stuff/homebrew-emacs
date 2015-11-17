@@ -6,13 +6,15 @@ class EmacsFormula < Formula
   end
 
   def lib_load_paths
+    return [] unless deps.any?
     dir_paths = []
-    if deps.any?
-      recursive_dependencies do |_, dep|
-        Dir["#{dep.to_formula.opt_share}/emacs/site-lisp/**/*"].each do |x|
-          x = Pathname.new(x)
-          dir_paths << "--directory" << "#{x}" if x.directory?
-        end
+    recursive_dependencies do |_, dep|
+      lispdir = dep.to_formula.opt_elisp
+      dir_paths << "--directory" << lispdir
+
+      Dir["#{lispdir}/**/*"].each do |x|
+        x = Pathname.new(x)
+        dir_paths << "--directory" << "#{x}" if x.directory?
       end
     end
     dir_paths
@@ -22,15 +24,16 @@ class EmacsFormula < Formula
   def ert_run_tests(*files)
     test_args = %W[--batch -Q]
     # allow running in resource blocks
-    test_args << "--directory" << "#{Pathname.pwd}"
+    test_args << "--directory" << Pathname.pwd
 
     # Detect if we're calling it from the test block or the install
     # block
     if buildpath.nil?
-      dirs = Dir["#{share}/emacs/site-lisp/**/*"]
+      test_args << "--directory" << elisp
+      dirs = Dir["#{elisp}/**/*"]
     else
       dirs = Dir["#{buildpath}/**/*"]
-      test_args << "--directory" << "#{buildpath}"
+      test_args << "--directory" << buildpath
     end
     dirs.each do |x|
       x = Pathname.new(x)
@@ -64,14 +67,14 @@ class EmacsFormula < Formula
     emacs_args = %W[ --batch -Q ]
 
     # Pathname.pwd and buildpath differ when we're compiling resources
-    load_dirs = %W[#{buildpath} #{Pathname.pwd}]
+    load_dirs = [buildpath, Pathname.pwd]
 
-    Dir["#{buildpath}/**/*"].each do |x|
+    Dir["#{buildpath}/*/*"].each do |x|
       x = Pathname.new(x)
       load_dirs << x if x.directory?
     end
 
-    Dir["#{Pathname.pwd}/**/*"].each do |x|
+    Dir["#{Pathname.pwd}/*/*"].each do |x|
       x = Pathname.new(x)
       load_dirs << x if x.directory?
     end
