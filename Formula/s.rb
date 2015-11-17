@@ -11,10 +11,18 @@ class S < EmacsFormula
 
   def install
     system "./run-tests.sh"
+    system "./create-docs.sh" if build.head?
 
     byte_compile "s.el"
-    (share/"emacs/site-lisp/s").install "s.el", "s.elc"
+    elisp.install "s.el", "s.elc"
+  end
 
-    system "./create-docs.sh" if build.head?
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{elisp}")
+      (load "s")
+      (print (s-repeat 4 "omg"))
+    EOS
+    assert_equal "\"omgomgomgomg\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
