@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClojureMode < EmacsFormula
   desc "Emacs major mode for Clojure"
   homepage "https://github.com/clojure-emacs/clojure-mode"
-  url "https://github.com/clojure-emacs/clojure-mode/archive/5.0.0.tar.gz"
-  sha256 "fb5aadf8179c0f651ace136fabb0b6a685e4bd213f1958b2181e9f30681073a2"
+  url "https://github.com/clojure-emacs/clojure-mode/archive/5.0.1.tar.gz"
+  sha256 "e046f8c2c286c50724c2c11725d0dbc33c3247bc4f5f2e070483b414bacc3dce"
   head "https://github.com/clojure-emacs/clojure-mode.git"
 
   option "with-inf", "Build with the \"inferior\" REPL"
@@ -21,18 +21,17 @@ class ClojureMode < EmacsFormula
     if build.with? "inf"
       resource("inf").stage do
         byte_compile "inf-clojure.el"
-        (share/"emacs/site-lisp/clojure-mode").install "inf-clojure.el",
-                                                       "inf-clojure.elc"
+        elisp.install "inf-clojure.el", "inf-clojure.elc"
       end
     end
     system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
     system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
-    (share/"emacs/site-lisp/clojure-mode").install Dir["*.el"], Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/clojure-mode")
+      (add-to-list 'load-path "#{elisp}")
       (load "clojure-mode")
       (print clojure-mode-version)
     EOS
