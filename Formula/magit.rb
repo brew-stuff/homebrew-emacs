@@ -7,11 +7,32 @@ class Magit < EmacsFormula
   sha256 "ee9574dc20cd078d62d669dc19caf8ffc29480a01184d6bc5e90cfa6c800ddf2"
   head "https://github.com/magit/magit.git", :shallow => false
 
+  option "with-gh-pulls", "Build with GitHub pull request extension"
+
   depends_on :emacs => "24.4"
   depends_on "homebrew/emacs/async-emacs"
   depends_on "homebrew/emacs/dash-emacs"
 
+  if build.with? "gh-pulls"
+    depends_on "homebrew/emacs/gh-emacs"
+    depends_on "homebrew/emacs/pcache"
+    depends_on "homebrew/emacs/s"
+  end
+
+  resource "gh-pulls" do
+    url "https://github.com/sigma/magit-gh-pulls/archive/0.5.2.tar.gz"
+    sha256 "95cea18d4d9b8b16c64d726c24343280fa50705b057790d6cee6019ef3471037"
+  end
+
   def install
+    if build.with? "gh-pulls"
+      resource("gh-pulls").stage do
+        ert_run_tests "magit-gh-pulls-tests.el"
+        byte_compile "magit-gh-pulls.el"
+        elisp.install "magit-gh-pulls.el", "magit-gh-pulls.elc"
+      end
+    end
+
     (buildpath/"config.mk").write <<-EOS
       LOAD_PATH = -L #{buildpath}/lisp \
                   -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp} \
