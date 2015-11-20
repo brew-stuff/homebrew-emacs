@@ -69,12 +69,12 @@ class EmacsFormula < Formula
     # Pathname.pwd and buildpath differ when we're compiling resources
     load_dirs = [buildpath, Pathname.pwd]
 
-    Dir["#{buildpath}/*/*"].each do |x|
+    Dir["#{buildpath}/**"].each do |x|
       x = Pathname.new(x)
       load_dirs << x if x.directory?
     end
 
-    Dir["#{Pathname.pwd}/*/*"].each do |x|
+    Dir["#{Pathname.pwd}/**"].each do |x|
       x = Pathname.new(x)
       load_dirs << x if x.directory?
     end
