@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PdfTools < EmacsFormula
   desc "Emacs support library for PDF files"
   homepage "https://github.com/politza/pdf-tools"
-  url "https://github.com/politza/pdf-tools/archive/v0.60.tar.gz"
-  sha256 "3deff1183d69e942a9b9d94897e7aab73550574f953823815f5df925852d13f9"
+  url "https://github.com/politza/pdf-tools/archive/v0.70.tar.gz"
+  sha256 "e7e46d98e9a66aadacc94a5da20c5ae3e592cdf4ba2d43a6e79aabc84dbc0ad4"
   head "https://github.com/politza/pdf-tools.git"
 
   depends_on :emacs => "24.3"
