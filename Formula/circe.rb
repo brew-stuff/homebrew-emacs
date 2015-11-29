@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Circe < EmacsFormula
   desc "Emacs IRC client"
   homepage "https://github.com/jorgenschaefer/circe"
-  url "https://github.com/jorgenschaefer/circe/archive/v2.0.tar.gz"
-  sha256 "c35ca0016a1da8f8c08cc20439a24af82b937b95250711d1c4b2944a3caec45d"
+  url "https://github.com/jorgenschaefer/circe/archive/v2.1.tar.gz"
+  sha256 "b70b550f6fcc01616e0ca9f9884b6726a07c4a0359f7dbdbd86ce963eb375718"
   head "https://github.com/jorgenschaefer/circe.git"
 
   depends_on :emacs
@@ -12,22 +12,13 @@ class Circe < EmacsFormula
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
-    doc.install "README.md", "LICENSE"
-
     system "scripts/compile"
-    (share/"emacs/site-lisp/circe").install Dir["*.el"], Dir["*.elc"]
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'circe)
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/circe")
+      (add-to-list 'load-path "#{elisp}")
       (load "circe")
       (print circe-version)
     EOS
