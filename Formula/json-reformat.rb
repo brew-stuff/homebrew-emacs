@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class JsonReformat < EmacsFormula
   desc "JSON reformatting tool for Emacs"
   homepage "https://github.com/gongo/json-reformat"
-  url "https://github.com/gongo/json-reformat/archive/0.0.5.tar.gz"
-  sha256 "bb2cbd407e4c284678963612a354bc46624974a473e696842eb71a2b53dbce70"
+  url "https://github.com/gongo/json-reformat/archive/0.0.6.tar.gz"
+  sha256 "48dc62c4a1d1021afc3f4a0be49ea81cef7e9eb0997dcb23a827bfcc34c1cb85"
   head "https://github.com/gongo/json-reformat.git"
 
   depends_on :emacs => "23.1"
