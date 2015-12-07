@@ -41,8 +41,8 @@ class Magit < EmacsFormula
     args = %W[
       PREFIX=#{prefix}
       docdir=#{doc}
-      VERSION=#{version}
     ]
+    args << "VERSION=#{version}" if build.stable?
     system "make", "install", *args
   end
 
