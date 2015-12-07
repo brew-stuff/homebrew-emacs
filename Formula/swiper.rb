@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Swiper < EmacsFormula
   desc "Emacs isearch with an overview"
   homepage "https://github.com/abo-abo/swiper"
-  url "https://github.com/abo-abo/swiper/archive/0.6.0.tar.gz"
-  sha256 "ebe53ad7a55a63295ddb29bd5aca2c12ed74f5e21066c325f0cedabb0ba2a199"
+  url "https://github.com/abo-abo/swiper/archive/0.7.0.tar.gz"
+  sha256 "8e25761d466edff701c09f5c245903597493bac72dedfef84a1ba6eaf0cbd3ef"
   head "https://github.com/abo-abo/swiper.git"
 
   option "with-helm", "Use helm as the backend instead of ivy"
@@ -18,33 +18,21 @@ class Swiper < EmacsFormula
   end
 
   def install
-    system "make", "compile"
-    system "make", "test"
-    (share/"emacs/site-lisp/swiper").install Dir["*.el"], Dir["*.elc"]
-    doc.install "README.md"
-
     if build.with? "helm"
       resource("swiper-helm").stage do
-        (share/"emacs/site-lisp/swiper").install "swiper-helm.el"
-        doc.install "README.md" => "README-helm.md"
+        byte_compile "swiper-helm.el"
+        elisp.install "swiper-helm.el", "swiper-helm.elc"
       end
     end
-  end
 
-  def caveats
-    helm = build.with?("helm") ? "-helm" : ""
-    <<-EOS.undent
-      Add the following to your init file:
-
-      (require 'swiper#{helm})
-      (global-set-key "\\C-s" 'swiper#{helm})
-      (global-set-key "\\C-r" 'swiper#{helm})
-    EOS
+    system "make", "compile"
+    system "make", "test"
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/swiper")
+      (add-to-list 'load-path "#{elisp}")
       (load "swiper")
       (print (minibuffer-prompt-width))
     EOS
