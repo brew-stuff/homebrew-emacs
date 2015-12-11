@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CoffeeMode < EmacsFormula
   desc "Emacs major mode for CoffeeScript"
   homepage "https://github.com/defunkt/coffee-mode"
-  url "https://github.com/defunkt/coffee-mode/archive/v0.6.1.tar.gz"
-  sha256 "5d3674e1cecf1c6566db496bbde97e34ebcf07b75e7ed7b07b569bc4412265dd"
+  url "https://github.com/defunkt/coffee-mode/archive/v0.6.2.tar.gz"
+  sha256 "caedf2077e89a7ea3d3984f7a15df6b193a0fe939678fd55d6e2fc7f101046f6"
   head "https://github.com/defunkt/coffee-mode.git"
 
   depends_on :emacs => "24.1"
