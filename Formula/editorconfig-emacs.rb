@@ -7,7 +7,7 @@ class EditorconfigEmacs < EmacsFormula
       :tag => "v0.6.1",
       :revision => "3d1e4797ea3f5a1bb6d0ec296f04ce05e6e368b4"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
-  revision 1
+  revision 2
 
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
 
@@ -20,8 +20,20 @@ class EditorconfigEmacs < EmacsFormula
     ENV["LC_ALL"] = "en_US.UTF-8"
     system "make"
     system "make", "test", "PROJECT_ROOT_DIR=#{buildpath}"
-    bin.install "bin/editorconfig-el"
-    elisp.install "editorconfig.el", "editorconfig.elc"
+    elisp.install Dir["*.el"], Dir["*.elc"]
+
+    libexec.install "bin/editorconfig-el"
+    (bin/"editorconfig-el").write_env_script(libexec/"editorconfig-el",
+                                             :EDITORCONFIG_CORE_LIBRARY_PATH => opt_elisp)
+  end
+
+  def caveats
+    if build.without? "editorconfig"
+      <<-EOS.undent
+      Set the variable `editorconfig-exec-path' to
+        #{HOMEBREW_PREFIX}/bin/editorconfig-el
+      EOS
+    end
   end
 
   test do
