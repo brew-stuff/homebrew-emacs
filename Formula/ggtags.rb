@@ -3,25 +3,16 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Ggtags < EmacsFormula
   desc "Emacs interface to GNU Global tagging system"
   homepage "https://github.com/leoliu/ggtags"
-  url "https://github.com/leoliu/ggtags/archive/0.8.10.tar.gz"
-  sha256 "e43162c92426b7f5ea04f661cf32012c2430764050897af47c171410e7677a9f"
+  url "https://github.com/leoliu/ggtags/archive/0.8.11.tar.gz"
+  sha256 "5fd28f3f5d63d3325474b93f1a992f9f38bdb1279c3a2d3ba67b034d1728ecf4"
   head "https://github.com/leoliu/ggtags.git"
 
   depends_on :emacs => "24.1"
-  depends_on "global" => "with-exuberant-ctags"
+  depends_on "global" => "with-ctags"
 
   def install
     system "make"
-    (share/"emacs/site-lisp/ggtags").install "ggtags.el",
-                                             "ggtags.elc"
-    doc.install "README.rst"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'ggtags)
-  EOS
+    elisp.install "ggtags.el", "ggtags.elc"
   end
 
   test do
