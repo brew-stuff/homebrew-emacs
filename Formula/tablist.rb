@@ -3,6 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Tablist < EmacsFormula
   desc "Extended tabulated-list-mode for Emacs"
   homepage "https://github.com/politza/tablist"
+  url "https://github.com/politza/tablist/archive/v0.70.tar.gz"
+  sha256 "2cfd4e8060e045a5fb49f56ba1d21b09d8f149c809500b6df8bc86ea8f36ed9c"
   head "https://github.com/politza/tablist.git"
 
   depends_on :emacs => "24.3"
