@@ -2,21 +2,21 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Diminish < EmacsFormula
   desc "Hide modeline display of Emacs minor modes"
-  homepage "http://www.eskimo.com/~seldon/"
-  url "http://www.eskimo.com/~seldon/diminish.el"
-  version "0.44"
-  sha256 "ba7aefe7899dd0c7428a4f666c5c1391338b1197c1f163b4504abee7d9aa861c"
+  homepage "https://github.com/myrjola/diminish.el"
+  url "https://github.com/myrjola/diminish.el/archive/v0.45.tar.gz"
+  sha256 "49ce6cb24d40bde0f3e82a30adbc19b322fd3e56d53208c0cad9b1b275126644"
+  head "https://github.com/myrjola/diminish.el.git"
 
   depends_on :emacs
 
   def install
     byte_compile "diminish.el"
-    (share/"emacs/site-lisp/diminish").install "diminish.el", "diminish.elc"
+    elisp.install "diminish.el", "diminish.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/diminish")
+      (add-to-list 'load-path "#{elisp}")
       (load "diminish")
       (print (minibuffer-prompt-width))
     EOS
