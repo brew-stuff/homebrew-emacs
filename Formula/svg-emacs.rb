@@ -7,7 +7,6 @@ class SvgEmacs < EmacsFormula
   sha256 "65af4fc190d066c35865c6b23380e6917d30354984af5ca952526e69b562476c"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/dom-emacs"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
@@ -19,7 +18,6 @@ class SvgEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["dom-emacs"].opt_elisp}")
       (load "svg")
       (print (minibuffer-prompt-width))
     EOS
