@@ -7,7 +7,7 @@ class SvgEmacs < EmacsFormula
   sha256 "65af4fc190d066c35865c6b23380e6917d30354984af5ca952526e69b562476c"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/dom-emacs"
+  depends_on "homebrew/emacs/dom-emacs" if Emacs.version < 25
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
