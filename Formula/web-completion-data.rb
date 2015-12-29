@@ -7,6 +7,8 @@ class WebCompletionData < EmacsFormula
   sha256 "ae74070f2612542af24684279a8ca191da1eead2c5ba5e1bcf7153d6c42ee995"
   head "https://github.com/osv/web-completion-data.git"
 
+  bottle :unneeded
+
   def install
     (share/"emacs/site-lisp/web-completion-data").install Dir["*"]
   end
