@@ -7,6 +7,8 @@ class DashEmacs < EmacsFormula
   sha256 "41460193aa74787b247b09ad7cae696016110abba2a922ef1a067472eba15220"
   head "https://github.com/magnars/dash.el.git"
 
+  bottle :unneeded
+
   depends_on :emacs => "24.1"
 
   def install
