@@ -7,6 +7,8 @@ class ZenburnEmacs < EmacsFormula
   sha256 "8692349dbb8e65b1f6d914052893717695ddaf8210218188d89fbd23559c51f8"
   head "https://github.com/bbatsov/zenburn-emacs.git"
 
+  bottle :unneeded
+
   depends_on :emacs => "24.1"
 
   def install
