@@ -95,8 +95,6 @@ class EmacsFormula < Formula
       # is this necessary?
       $stdout.flush
       unless $?.success?
-        require "cmd/--env"
-
         env = ENV.to_hash
         puts # line between emacs output and env dump
         onoe "Byte compilation failed"
