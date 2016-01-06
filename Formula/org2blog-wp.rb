@@ -11,7 +11,7 @@ class Org2blogWp < EmacsFormula
   depends_on :emacs => "22.1"
   depends_on "homebrew/emacs/metaweblog"
   depends_on "homebrew/emacs/org-mode"
-  depends_on "homebrew/emacs/xml-rpc"
+  depends_on "homebrew/emacs/xml-rpc-emacs"
 
   # tests are interactive so we can't run them
   def install
