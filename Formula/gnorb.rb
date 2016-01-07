@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Gnorb < EmacsFormula
   desc "Glue code between Gnus, Org, and BBDB in Emacs"
   homepage "https://github.com/girzel/gnorb"
-  url "http://elpa.gnu.org/packages/gnorb-1.1.1.tar"
-  sha256 "aadf76a504dcf0acfa0884178376dc6006162d4257c9e447bca9b66b2d7b22da"
+  url "http://elpa.gnu.org/packages/gnorb-1.1.2.tar"
+  sha256 "7db3ddc270a26905f0635eae53af3ac24694ec4fdb4a3aaa498fd13176e3a5a1"
   head "https://github.com/girzel/gnorb.git"
 
   depends_on :emacs
@@ -12,22 +12,14 @@ class Gnorb < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/gnorb").install Dir["*.el"],
-                                            Dir["*.elc"]
-    doc.install "README.org", "gnorb.texi"
+    elisp.install Dir["*.el"], Dir["*.elc"]
+    doc.install "gnorb.texi"
     info.install "gnorb.info"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'gnorb)
-  EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/gnorb")
+      (add-to-list 'load-path "#{elisp}")
       (load "gnorb")
       (print (minibuffer-prompt-width))
     EOS
