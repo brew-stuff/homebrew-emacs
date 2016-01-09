@@ -8,7 +8,7 @@ class BeaconMode < EmacsFormula
   head "https://github.com/Malabarba/beacon.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/seq"
+  depends_on "homebrew/emacs/seq" if Emacs.version < 25
 
   def install
     mv "beacon-#{version}.el", "beacon.el" if build.stable?

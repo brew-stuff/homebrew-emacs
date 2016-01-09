@@ -18,7 +18,7 @@ class Flycheck < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
-  depends_on "homebrew/emacs/seq"
+  depends_on "homebrew/emacs/seq" if Emacs.version < 25
   depends_on "homebrew/emacs/haskell-mode" if build.with? "haskell"
   depends_on "homebrew/emacs/pos-tip" if build.with? "pos-tip"
 

@@ -8,7 +8,7 @@ class ElispBugHunter < EmacsFormula
   head "https://github.com/Malabarba/elisp-bug-hunter.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/seq"
+  depends_on "homebrew/emacs/seq" if Emacs.version < 25
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
