@@ -3,9 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class MarkdownMode < EmacsFormula
   desc "Major mode for editing Markdown files"
   homepage "http://jblevins.org/projects/markdown-mode/"
-  url "http://jblevins.org/git/markdown-mode.git/snapshot/markdown-mode-2.0.tar.gz"
-  sha256 "625e6f9680470bd119d79a3f97731347b8dd3d6311926f353d4065e67b76d92b"
-  head "git://jblevins.org/git/markdown-mode.git"
+  url "https://github.com/jrblevin/markdown-mode/archive/v2.1.tar.gz"
+  sha256 "65d28802915a47056108b63eba3911e32de35c5d6b3c6898ca23ac414b0c4de7"
+  head "https://github.com/jrblevin/markdown-mode.git"
 
   deprecated_option "with-markdown-plus" => "with-plus"
 
@@ -34,39 +34,25 @@ class MarkdownMode < EmacsFormula
       resource("markdown+").stage do
         mv "markdown-mode%2B.el", "markdown-mode+.el"
         byte_compile "markdown-mode+.el"
-        (share/"emacs/site-lisp/markdown-mode").install "markdown-mode+.el",
-                                                        "markdown-mode+.elc"
+        elisp.install "markdown-mode+.el", "markdown-mode+.elc"
       end
     end
     if build.with? "toc"
       resource("markdown-toc").stage do
         byte_compile "markdown-toc.el"
-        (share/"emacs/site-lisp/markdown-mode").install "markdown-toc.el",
-                                                        "markdown-toc.elc"
+        elisp.install "markdown-toc.el", "markdown-toc.elc"
       end
     end
 
     # Install markdown-mode last so it's in the buildpath when
     # markdown-toc looks for it during compile
-    #
-    # markdown-mode itself currently fails to compile:
-    # > markdown-mode.el:3737:1:Error: Invalid modifier in string
-    (share/"emacs/site-lisp/markdown-mode").install "markdown-mode.el"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'markdown-mode)
-    (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-    (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
-    (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-  EOS
+    byte_compile "markdown-mode.el"
+    elisp.install "markdown-mode.el", "markdown-mode.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/markdown-mode")
+      (add-to-list 'load-path "#{elisp}")
       (require 'markdown-mode)
       (print (minibuffer-prompt-width))
     EOS
