@@ -36,6 +36,7 @@ install:
       brew install homebrew/versions/ruby187;
       export HOMEBREW_RUBY_PATH="/usr/local/opt/ruby187/bin/ruby";
       brew untap homebrew/versions;
+      brew tap --repair;
     fi
   - export HOMEBREW_DEVELOPER="1"
   - ulimit -n 1024
