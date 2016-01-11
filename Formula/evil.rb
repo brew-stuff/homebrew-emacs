@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Evil < EmacsFormula
   desc "Extensible vi layer for Emacs"
   homepage "https://bitbucket.org/lyro/evil"
-  url "https://bitbucket.org/lyro/evil/get/1.2.8.tar.bz2"
-  sha256 "6f695cff3f03ee9ba381f634b1666bc109883ec4e47cdb2019b82b8e73a13626"
+  url "https://bitbucket.org/lyro/evil/get/1.2.9.tar.bz2"
+  sha256 "1282b814754d9059f5b81ae2f25500348a71b025c74b552f98543b7567f74e0b"
   head "https://bitbucket.org/lyro/evil", :using => :hg
 
   depends_on :emacs
