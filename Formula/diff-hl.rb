@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class DiffHl < EmacsFormula
   desc "Emacs modes for highlighting uncommitted changes"
   homepage "https://github.com/dgutov/diff-hl"
-  url "http://elpa.gnu.org/packages/diff-hl-1.8.1.tar"
-  sha256 "c4c8a6e356b833b1bb4b54454582e39c10221254c6a5d7da9f33cedac351d827"
+  url "https://github.com/dgutov/diff-hl/archive/1.8.2.tar.gz"
+  sha256 "4adf44b895d13182c437d7095847f149a693163f994d96b7c9006b1e44192f28"
   head "https://github.com/dgutov/diff-hl.git"
 
   depends_on :emacs => "24.1"
@@ -17,7 +17,7 @@ class DiffHl < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/diff-hl")
+      (add-to-list 'load-path "#{elisp}")
       (load "diff-hl")
       (turn-on-diff-hl-mode)
       (print (minibuffer-prompt-width))
