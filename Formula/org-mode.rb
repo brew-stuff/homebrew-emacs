@@ -16,9 +16,9 @@ class OrgMode < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
-    url "https://github.com/tarsius/ox-texinfo-plus/raw/4e3c611ce8b79593171593d2907e0f95ae5c97fc/ox-texinfo%2B.el"
-    sha256 "b4d3e376b361dbf24db33b542928f8b5c7acb13325b9a970dacb3ca50a83bbd5"
-    version "20150319"
+    url "https://github.com/tarsius/ox-texinfo-plus/raw/9074ab2a22cb13536b8c19f69480c8723c91a2b6/ox-texinfo%2B.el"
+    sha256 "d358d3c30d377f0ba831be8df79884de2bb571f875c78a0d1d1cc93282fe4d93"
+    version "20151203"
   end
 
   resource "toc-org" do
@@ -32,7 +32,7 @@ class OrgMode < EmacsFormula
     rm "local.mk"
     (buildpath/"local.mk").write <<-EOS.undent
       prefix  = #{prefix}
-      lispdir = #{share}/emacs/site-lisp/#{name}
+      lispdir = #{elisp}
       datadir = #{etc}/emacs/#{name}
       infodir = #{info}/emacs/#{name}
     EOS
@@ -42,26 +42,24 @@ class OrgMode < EmacsFormula
       resource("ox-texinfo-plus").stage do
         mv "ox-texinfo%2B.el", "ox-texinfo+.el"
         byte_compile "ox-texinfo+.el"
-        (share/"emacs/site-lisp/#{name}").install "ox-texinfo+.el",
-                                                  "ox-texinfo+.elc"
+        elisp.install "ox-texinfo+.el", "ox-texinfo+.elc"
       end
     end
 
     if build.with? "toc"
       resource("toc-org").stage do
         byte_compile "toc-org.el"
-        (share/"emacs/site-lisp/#{name}").install "toc-org.el",
-                                                  "toc-org.elc"
+        elisp.install "toc-org.el", "toc-org.elc"
       end
     end
 
-    (share/"emacs/site-lisp/#{name}").install "contrib/lisp" => "contrib"
+    elisp.install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp")
+      (add-to-list 'load-path "#{elisp}")
       (load "org")
       (print (minibuffer-prompt-width))
     EOS
