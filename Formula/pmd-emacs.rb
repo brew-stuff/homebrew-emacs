@@ -11,12 +11,10 @@ class PmdEmacs < EmacsFormula
   depends_on "pmd"
 
   def install
-    # install the documentation
-    doc.install "CHANGELOG", "LICENSE.txt", "readme.md"
-
-    Dir.chdir("src/elisp")
-    byte_compile "pmd.el"
-    elisp.install "pmd.el", "pmd.elc"
+    cd "src/elisp" do
+      byte_compile "pmd.el"
+      elisp.install "pmd.el", "pmd.elc"
+    end
   end
 
   test do
