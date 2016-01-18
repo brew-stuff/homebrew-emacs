@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class BeaconMode < EmacsFormula
   desc "Highlight the cursor when an Emacs window scrolls"
   homepage "https://github.com/Malabarba/beacon"
-  url "http://elpa.gnu.org/packages/beacon-0.5.1.el"
-  sha256 "44ea8964d19e3c68a1d9ce4494fb8de80cecadca8a0736699f43749a2fbefef7"
+  url "http://elpa.gnu.org/packages/beacon-0.6.1.el"
+  sha256 "8b475fa73aea3364406c7c28d822a0916da72aaccddd588fbcc319d0dd7fe37d"
   head "https://github.com/Malabarba/beacon.git"
 
   depends_on :emacs
@@ -14,13 +14,13 @@ class BeaconMode < EmacsFormula
     mv "beacon-#{version}.el", "beacon.el" if build.stable?
 
     byte_compile "beacon.el"
-    (share/"emacs/site-lisp/beacon-mode").install "beacon.el", "beacon.elc"
+    elisp.install "beacon.el", "beacon.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/beacon-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_share}/emacs/site-lisp/seq")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
       (load "beacon")
       (print (minibuffer-prompt-width))
     EOS
