@@ -3,11 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClojureMode < EmacsFormula
   desc "Emacs major mode for Clojure"
   homepage "https://github.com/clojure-emacs/clojure-mode"
-  url "https://github.com/clojure-emacs/clojure-mode/archive/5.0.1.tar.gz"
-  sha256 "e046f8c2c286c50724c2c11725d0dbc33c3247bc4f5f2e070483b414bacc3dce"
+  url "https://github.com/clojure-emacs/clojure-mode/archive/5.1.0.tar.gz"
+  sha256 "3f688b8d352935745eee522faba7ad63a64b5e58217b3913fc9bde9356f8dc6c"
   head "https://github.com/clojure-emacs/clojure-mode.git"
 
-  option "with-inf", "Build with the \"inferior\" REPL"
+  option "with-inf", "Build with the inferior REPL"
 
   depends_on :emacs => "24.3"
   depends_on "cask"
@@ -24,8 +24,8 @@ class ClojureMode < EmacsFormula
         elisp.install "inf-clojure.el", "inf-clojure.elc"
       end
     end
-    system "make", "test", "CASK=#{Formula["cask"].bin}/cask"
-    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
+    system "make", "test"
+    system "make", "compile"
     elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
