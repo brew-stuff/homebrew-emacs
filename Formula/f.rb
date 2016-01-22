@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class F < EmacsFormula
   desc "Emacs filesystem API"
   homepage "https://github.com/rejeep/f.el"
-  url "https://github.com/rejeep/f.el/archive/v0.18.0.tar.gz"
-  sha256 "38fae0e2288bb55bfb9d692ec3a4f295661e2456e8909927bc3ba034b1f282ec"
+  url "https://github.com/rejeep/f.el/archive/v0.17.3.tar.gz"
+  sha256 "6d39b521dccdfa03e09daf99a5e11d8fde1854517733d69cf1b6a9313fe6ef3e"
   head "https://github.com/rejeep/f.el.git"
 
   depends_on :emacs => "24.1"
@@ -14,14 +14,14 @@ class F < EmacsFormula
   def install
     # make test/compile requires emacs-parallel
     byte_compile "f.el"
-    (share/"emacs/site-lisp/f").install "f.el", "f.elc"
+    elisp.install "f.el", "f.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/f")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_share}/emacs/site-lisp/dash")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].opt_share}/emacs/site-lisp/s")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].opt_elisp}")
       (load "f")
       (print (f-this-file))
     EOS
