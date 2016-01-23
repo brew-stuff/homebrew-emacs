@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HaskellMode < EmacsFormula
   desc "Emacs major mode for Haskell"
   homepage "https://github.com/haskell/haskell-mode"
-  url "https://github.com/haskell/haskell-mode/archive/v13.16.tar.gz"
-  sha256 "6a846e9fb0b4ba354d6d42452cf298d548a0457271cd73fb792c0bf677a13d59"
+  url "https://github.com/haskell/haskell-mode/archive/v13.18.tar.gz"
+  sha256 "144c39f748b41391918334c29700dc0dc8661070387eee543bf182ed11f10b9c"
   head "https://github.com/haskell/haskell-mode.git"
 
   deprecated_option "with-html" => "with-docs"
@@ -27,7 +27,7 @@ class HaskellMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/haskell-mode")
+      (add-to-list 'load-path "#{elisp}")
       (load "haskell-mode")
       (print (minibuffer-prompt-width))
     EOS
