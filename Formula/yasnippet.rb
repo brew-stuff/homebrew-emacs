@@ -11,19 +11,18 @@ class Yasnippet < EmacsFormula
 
   devel do
     url "https://github.com/capitaomorte/yasnippet.git",
-        :tag => "0.9.0-beta",
-        :revision => "cc64ff62bff29a2dc794a7573299fbe0b2bd1547"
+        :tag => "0.9.1-snapshot",
+        :revision => "80941c077f8248ee1e8dcc64b3b57e741b9e5755"
   end
 
   depends_on :emacs => "23.1"
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
-    system "rake", "compile"
-    system "rake", "tests" unless build.stable?
-    system "rake", "doc" unless build.devel?
-    (share/"emacs/site-lisp/yasnippet").install Dir["*.el"], Dir["*.elc"]
+    byte_compile "yasnippet.el"
+    ert_run_tests "yasnippet-tests.el" unless build.stable?
+    elisp.install Dir["*.el"], Dir["*.elc"]
 
-    doc.install "README.mdown"
     if build.stable?
       (prefix/"contrib").install "extras"
     else
@@ -33,16 +32,12 @@ class Yasnippet < EmacsFormula
 
   def caveats; <<-EOS.undent
     Snippets have been installed to #{opt_prefix}/contrib
-
-    Add the following to your init file:
-
-    (require 'yasnippet)
   EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/yasnippet")
+      (add-to-list 'load-path "#{elisp}")
       (load "yasnippet")
       (print (minibuffer-prompt-width))
     EOS
