@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WisiEmacs < EmacsFormula
   desc "Indentation/navigation in Emacs using LALR parsers"
   homepage "http://elpa.gnu.org/packages/wisi.html"
-  url "http://elpa.gnu.org/packages/wisi-1.1.1.tar"
-  sha256 "797845efd2358d76d5281f45c19e521a7c7121549128eb43250b3d3b4f8e7791"
+  url "http://elpa.gnu.org/packages/wisi-1.1.2.tar"
+  sha256 "c335b1f368c402e7810ebf97cb52c95afd0b90807aec6d178f3beef5aef3f911"
 
   depends_on :emacs => "24.2"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
