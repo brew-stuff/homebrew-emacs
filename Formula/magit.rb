@@ -24,7 +24,23 @@ class Magit < EmacsFormula
     sha256 "95cea18d4d9b8b16c64d726c24343280fa50705b057790d6cee6019ef3471037"
   end
 
+  resource "with-editor" do
+    url "https://github.com/magit/with-editor/archive/v2.5.0.tar.gz"
+    sha256 "8091465eefee4057a4a0daab72db1f2f0415e2abfe965d1e8b8206f3031aeba5"
+  end
+
   def install
+    # Make unconditional with next release:
+    # https://github.com/magit/magit/commit/e87fe8180b6513450a110b7ad4fed887895720c3
+    if build.head?
+      resource("with-editor").stage do
+        byte_compile "with-editor.el"
+        elisp.install "with-editor.el", "with-editor.elc"
+        info.install "with-editor.info"
+        doc.install Dir["with-editor.*"]
+      end
+    end
+
     if build.with? "gh-pulls"
       resource("gh-pulls").stage do
         ert_run_tests "magit-gh-pulls-tests.el"
@@ -33,11 +49,14 @@ class Magit < EmacsFormula
       end
     end
 
-    (buildpath/"config.mk").write <<-EOS
-      LOAD_PATH = -L #{buildpath}/lisp \
-                  -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp} \
-                  -L #{Formula["homebrew/emacs/async-emacs"].opt_elisp}
-    EOS
+    load_args = [
+      "LOAD_PATH = -L #{buildpath}/lisp",
+      "LOAD_PATH += -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp}",
+      "LOAD_PATH += -L #{Formula["homebrew/emacs/async-emacs"].opt_elisp}",
+    ]
+    load_args << "LOAD_PATH += -L #{elisp}" if build.head?
+    (buildpath/"config.mk").write load_args.join("\n")
+
     args = %W[
       PREFIX=#{prefix}
       docdir=#{doc}
