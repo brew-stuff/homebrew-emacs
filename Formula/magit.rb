@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Magit < EmacsFormula
   desc "Emacs interface for Git"
   homepage "https://github.com/magit/magit"
-  url "https://github.com/magit/magit/releases/download/2.4.1/magit-2.4.1.tar.gz"
-  sha256 "f53fc3cb94692d3f3c157f1156be373c763cabefb9e524b4a3b5ccb56a74e8e3"
+  url "https://github.com/magit/magit/releases/download/2.5.0/magit-2.5.0.tar.gz"
+  sha256 "aaebcea4317c5f3a92f4d106e5196e5803171f6251c1c69c9f84fdaf4bbfd844"
   head "https://github.com/magit/magit.git", :shallow => false
 
   option "with-gh-pulls", "Build with GitHub pull request extension"
@@ -30,15 +30,11 @@ class Magit < EmacsFormula
   end
 
   def install
-    # Make unconditional with next release:
-    # https://github.com/magit/magit/commit/e87fe8180b6513450a110b7ad4fed887895720c3
-    if build.head?
-      resource("with-editor").stage do
-        byte_compile "with-editor.el"
-        elisp.install "with-editor.el", "with-editor.elc"
-        info.install "with-editor.info"
-        doc.install Dir["with-editor.*"]
-      end
+    resource("with-editor").stage do
+      byte_compile "with-editor.el"
+      elisp.install "with-editor.el", "with-editor.elc"
+      info.install "with-editor.info"
+      doc.install Dir["with-editor.*"]
     end
 
     if build.with? "gh-pulls"
@@ -53,8 +49,8 @@ class Magit < EmacsFormula
       "LOAD_PATH = -L #{buildpath}/lisp",
       "LOAD_PATH += -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp}",
       "LOAD_PATH += -L #{Formula["homebrew/emacs/async-emacs"].opt_elisp}",
+      "LOAD_PATH += -L #{elisp}",
     ]
-    load_args << "LOAD_PATH += -L #{elisp}" if build.head?
     (buildpath/"config.mk").write load_args.join("\n")
 
     args = %W[
