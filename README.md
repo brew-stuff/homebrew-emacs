@@ -58,6 +58,8 @@ prefix.
 
 - **AucTeX** is in the TeX tap: `brew install homebrew/tex/auctex`
 
+- **ESS** is in the Science tap: `brew install homebrew/science/ess`
+
 - **That Neat New Package** can be added by you: `brew emacs
   neat-new-package` to get started.  Pull requests are always welcome!
 
