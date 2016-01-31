@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WcheckMode < EmacsFormula
   desc "General-purpose text-checker interface for Emacs"
   homepage "https://github.com/tlikonen/wcheck-mode"
-  url "http://elpa.gnu.org/packages/wcheck-mode-2016.1.5.el"
-  sha256 "6349832400070833d697c2baf251450a452a54414f32edc9ef57ddc0b518ad2b"
+  url "http://elpa.gnu.org/packages/wcheck-mode-2016.1.30.el"
+  sha256 "58f6d43989214f44c61ea75a06bebf383f08c9e5c74b3b1080045047b5edf943"
   head "https://github.com/tlikonen/wcheck-mode.git"
 
   depends_on :emacs
