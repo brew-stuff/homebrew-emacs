@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class KnowYourHttpWell < EmacsFormula
   desc "HTTP reference lookup in Emacs"
   homepage "https://github.com/for-GET/know-your-http-well"
-  url "https://github.com/for-GET/know-your-http-well/archive/v0.4.0.tar.gz"
-  sha256 "9f2f69619167679cf770784f129490755d4158a02550d55e01dddfda84831cab"
+  url "https://github.com/for-GET/know-your-http-well/archive/v0.5.0.tar.gz"
+  sha256 "d26229332d1ebb15cce3970e9185390244f10806986bbaa3e28f7185d0e773f8"
   head "https://github.com/for-GET/know-your-http-well.git"
 
   depends_on :emacs
