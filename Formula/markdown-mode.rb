@@ -12,8 +12,7 @@ class MarkdownMode < EmacsFormula
   option "with-plus", "Install the markdown-mode+ extension"
   option "with-toc", "Install the markdown-toc extension"
 
-  depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on :emacs => "24.4"
 
   if build.with? "toc"
     depends_on "homebrew/emacs/s"
