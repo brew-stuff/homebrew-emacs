@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class S < EmacsFormula
+class SEmacs < EmacsFormula
   desc "Emacs string manipulation library"
   homepage "https://github.com/magnars/s.el"
   url "https://github.com/magnars/s.el/archive/1.11.0.tar.gz"
