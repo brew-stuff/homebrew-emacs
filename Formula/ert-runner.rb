@@ -13,7 +13,7 @@ class ErtRunner < EmacsFormula
   depends_on "homebrew/emacs/commander-emacs"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/f"
-  depends_on "homebrew/emacs/s"
+  depends_on "homebrew/emacs/s-emacs"
   depends_on "homebrew/emacs/shut-up"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 

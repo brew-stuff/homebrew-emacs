@@ -15,7 +15,7 @@ class MarkdownMode < EmacsFormula
   depends_on :emacs => "24.4"
 
   if build.with? "toc"
-    depends_on "homebrew/emacs/s"
+    depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/dash-emacs"
   end
 

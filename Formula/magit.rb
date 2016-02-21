@@ -16,7 +16,7 @@ class Magit < EmacsFormula
   if build.with? "gh-pulls"
     depends_on "homebrew/emacs/gh-emacs"
     depends_on "homebrew/emacs/pcache"
-    depends_on "homebrew/emacs/s"
+    depends_on "homebrew/emacs/s-emacs"
   end
 
   resource "gh-pulls" do

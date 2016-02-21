@@ -10,7 +10,7 @@ class CommanderEmacs < EmacsFormula
   depends_on :emacs
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/f"
-  depends_on "homebrew/emacs/s"
+  depends_on "homebrew/emacs/s-emacs"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
@@ -23,7 +23,7 @@ class CommanderEmacs < EmacsFormula
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/f"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
       (load "commander")
       (print (minibuffer-prompt-width))
     EOS

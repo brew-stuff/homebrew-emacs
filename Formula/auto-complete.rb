@@ -39,7 +39,7 @@ class AutoComplete < EmacsFormula
   if build.with? "php"
     depends_on "homebrew/emacs/f"
     depends_on "homebrew/emacs/php-mode"
-    depends_on "homebrew/emacs/s"
+    depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
   end

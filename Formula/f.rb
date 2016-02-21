@@ -9,7 +9,7 @@ class F < EmacsFormula
 
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/s"
+  depends_on "homebrew/emacs/s-emacs"
 
   def install
     # make test/compile requires emacs-parallel
@@ -21,7 +21,7 @@ class F < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
       (load "f")
       (print (f-this-file))
     EOS
