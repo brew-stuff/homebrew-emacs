@@ -1,5 +1,46 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
+class CommonLispRequirement < Requirement
+  fatal true
+  default_formula "sbcl"
+
+  # Based on ordering of available implementations from
+  # https://common-lisp.net/project/slime/; except for SBCL which is
+  # the default in the Makefile
+  lisps = {
+    :sbcl => "sbcl",
+    :ccl => "clozure-cl",
+    :clisp => "clisp",
+    :ecl => "ecl",
+    :abcl => "abcl",
+  }
+
+  satisfy :build_env => false do
+    lisps.each do |bin, f|
+      @lisp = bin if @lisp.nil? && Formula[f].installed?
+    end
+    !@lisp.nil?
+  end
+
+  env do
+    ENV.prepend_path "PATH", Formula[lisps[@lisp]].opt_bin
+    ENV["LISP"] = @lisp.to_s
+  end
+
+  def message
+    s = <<-EOS.undent
+      A Common Lisp implementation is required:
+      - sbcl
+      - homebrew/binary/cmucl
+      - clozure-cl
+      - clisp
+      - ecl
+      - abcl
+    EOS
+    s + super
+  end
+end
+
 class Slime < EmacsFormula
   desc "Emacs package for interactive programming in Lisp"
   homepage "http://common-lisp.net/project/slime/"
@@ -8,12 +49,12 @@ class Slime < EmacsFormula
   head "https://github.com/slime/slime.git"
 
   depends_on :emacs => "23.4"
-  depends_on "sbcl"
+  depends_on CommonLispRequirement
 
   def install
-    system "make"
-    system "make", "compile-swank"
-    system "make", "contrib-compile"
+    system "make", "LISP=#{ENV["LISP"]}"
+    system "make", "compile-swank", "LISP=#{ENV["LISP"]}"
+    system "make", "contrib-compile", "LISP=#{ENV["LISP"]}"
     elisp.install Dir["*.lisp"], Dir["*.el"], Dir["*.elc"],
                   "lib", "swank", "contrib"
   end
