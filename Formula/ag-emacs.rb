@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AgEmacs < EmacsFormula
   desc "Emacs front-end to ag (the silver searcher)"
   homepage "http://agel.readthedocs.org/en/latest/"
-  url "https://github.com/Wilfred/ag.el/archive/0.46.tar.gz"
-  sha256 "27d55776b47968bbccf0548d63bc91ef91390322842ab1f95db6c107d862df93"
+  url "https://github.com/Wilfred/ag.el/archive/0.47.tar.gz"
+  sha256 "5951a28a112a7adeb2276d12bb9543e5ea4a42ca27fcd50c7a0e436fb9b995e6"
   head "https://github.com/Wilfred/ag.el.git"
 
   depends_on :emacs => "23.4"
