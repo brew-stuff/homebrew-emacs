@@ -2,10 +2,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class PuppetMode < EmacsFormula
   desc "Emacs major mode for editing Puppet files"
-  homepage "https://github.com/rockyluke/puppet-syntax-emacs"
-  url "https://github.com/rockyluke/puppet-syntax-emacs/archive/v1.0.tar.gz"
-  sha256 "9b2d240b4979c37ac55e873628d680a3e47fdc04d5ecfdbe5db26b71ddb9cd4f"
-  head "https://github.com/rockyluke/puppet-syntax-emacs.git"
+  homepage "https://github.com/lunaryorn/puppet-mode"
+  url "https://github.com/lunaryorn/puppet-mode/archive/0.3.tar.gz"
+  sha256 "71ebcb4bf518f9aca404260186b97556fb52060bc56edb77ab1881d64543174d"
+  head "https://github.com/lunaryorn/puppet-mode.git"
 
   depends_on :emacs
 
