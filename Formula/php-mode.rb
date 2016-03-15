@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class PhpMode < EmacsFormula
-  desc "Major mode for editing PHP files"
+  desc "Emacs major mode for editing PHP files"
   homepage "https://github.com/ejmr/php-mode"
   head "https://github.com/ejmr/php-mode.git"
 
@@ -21,6 +21,14 @@ class PhpMode < EmacsFormula
     ENV["TMPDIR"] = buildpath
     system "make", "test"
     elisp.install Dir["*.el"], Dir["*.elc"]
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'php-mode)
+    (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+    EOS
   end
 
   test do

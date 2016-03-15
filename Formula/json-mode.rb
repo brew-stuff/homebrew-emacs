@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class JsonMode < EmacsFormula
-  desc "Emacs major mode for editing JSON"
+  desc "Emacs major mode for editing JSON files"
   homepage "https://github.com/joshwnj/json-mode"
   url "https://github.com/joshwnj/json-mode/archive/1.6.0.tar.gz"
   sha256 "778916c34c270bd8888c603fafe732a2d0050bdef674ab5231ed18fb6ed291c2"
@@ -14,6 +14,14 @@ class JsonMode < EmacsFormula
   def install
     byte_compile "json-mode.el"
     elisp.install "json-mode.el", "json-mode.elc"
+  end
+
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'json-mode)
+    (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+    EOS
   end
 
   test do
