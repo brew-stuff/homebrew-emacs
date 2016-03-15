@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class DockerfileMode < EmacsFormula
-  desc "Emacs mode for handling Dockerfiles"
+  desc "Emacs major mode for editing Dockerfiles"
   homepage "https://github.com/spotify/dockerfile-mode"
   url "https://github.com/spotify/dockerfile-mode/archive/v1.2.tar.gz"
   sha256 "49618f06ed6d7a4d64251e00540df13870aeee9a8f55acd4def0482ada78156e"
@@ -14,10 +14,18 @@ class DockerfileMode < EmacsFormula
     elisp.install "dockerfile-mode.el", "dockerfile-mode.elc"
   end
 
+  def caveats; <<-EOS.undent
+    Add the following to your init file:
+
+    (require 'dockerfile-mode)
+    (add-to-list 'auto-mode-alist '("Dockerfile.*\\'" . dockerfile-mode))
+    EOS
+  end
+
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (load "dockerfile-mode")
+      (require 'dockerfile-mode)
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
