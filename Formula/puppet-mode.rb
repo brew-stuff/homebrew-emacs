@@ -16,14 +16,6 @@ class PuppetMode < EmacsFormula
     elisp.install "puppet-mode.el", "puppet-mode.elc"
   end
 
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'puppet-mode)
-    (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-    EOS
-  end
-
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
