@@ -9,7 +9,7 @@ class CommanderEmacs < EmacsFormula
 
   depends_on :emacs
   depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/f"
+  depends_on "homebrew/emacs/f-emacs"
   depends_on "homebrew/emacs/s-emacs"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 

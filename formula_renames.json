@@ -1,6 +1,7 @@
 {
   "hydra": "hydra-emacs",
   "dash": "dash-emacs",
+  "f": "f-emacs",
   "s": "s-emacs",
   "xml-rpc": "xml-rpc-emacs"
 }
