@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class F < EmacsFormula
+class FEmacs < EmacsFormula
   desc "Emacs filesystem API"
   homepage "https://github.com/rejeep/f.el"
   url "https://github.com/rejeep/f.el/archive/v0.17.3.tar.gz"
