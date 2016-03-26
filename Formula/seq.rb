@@ -2,17 +2,16 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Seq < EmacsFormula
   desc "Sequence manipulation library for Emacs"
-  homepage "http://elpa.gnu.org/packages/seq.html"
-  url "http://elpa.gnu.org/packages/seq-1.11.el"
-  sha256 "30ccb62dc6d2d216b5acdeb5ed5d9ce1b85893d84158bae233ddf8db19a9eae2"
+  homepage "https://elpa.gnu.org/packages/seq.html"
+  url "https://elpa.gnu.org/packages/seq-2.13.tar"
+  sha256 "2bf6dd367b90e7a7cc384146b0be93a2127b210cc7d5fa89c8dd66d4ab7c4d58"
   head "https://github.com/NicolasPetton/seq.el.git"
 
   depends_on :emacs
 
   def install
-    mv "seq-#{version}.el", "seq.el" if build.stable?
-    byte_compile "seq.el"
-    (share/"emacs/site-lisp/seq").install "seq.el", "seq.elc"
+    byte_compile Dir["*.el"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
