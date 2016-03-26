@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class FEmacs < EmacsFormula
   desc "Emacs filesystem API"
   homepage "https://github.com/rejeep/f.el"
-  url "https://github.com/rejeep/f.el/archive/v0.17.3.tar.gz"
-  sha256 "6d39b521dccdfa03e09daf99a5e11d8fde1854517733d69cf1b6a9313fe6ef3e"
+  url "https://github.com/rejeep/f.el/archive/v0.18.1.tar.gz"
+  sha256 "ebc75d44aa9090c47bc6f110bfaae5f583e09fa3ce43846644dccefb6194171e"
   head "https://github.com/rejeep/f.el.git"
 
   depends_on :emacs => "24.1"
