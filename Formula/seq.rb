@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Seq < EmacsFormula
   desc "Sequence manipulation library for Emacs"
   homepage "https://elpa.gnu.org/packages/seq.html"
-  url "https://elpa.gnu.org/packages/seq-2.13.tar"
-  sha256 "2bf6dd367b90e7a7cc384146b0be93a2127b210cc7d5fa89c8dd66d4ab7c4d58"
+  url "https://elpa.gnu.org/packages/seq-2.14.tar"
+  sha256 "332b1b4537e2fb26024d80a468fcad7c9481b1b5026a4ed88757f295ecc4f895"
   head "https://github.com/NicolasPetton/seq.el.git"
 
   depends_on :emacs
