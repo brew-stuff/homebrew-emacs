@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AutoComplete < EmacsFormula
   desc "Autocompletion extension for Emacs"
   homepage "https://github.com/auto-complete/auto-complete"
-  url "https://github.com/auto-complete/auto-complete/archive/v1.5.0.tar.gz"
-  sha256 "a960848fcb94f438c6795070b3125c1a039bf11cc058dbd60e8668adb3cebe4c"
+  url "https://github.com/auto-complete/auto-complete/archive/v1.5.1.tar.gz"
+  sha256 "1bfb4351c3e49681a875dab937c25b6b38e4bf8a8cd64bcba1954300242578cb"
   head "https://github.com/auto-complete/auto-complete.git"
 
   option "with-c-headers", "Install ac-c-headers"
