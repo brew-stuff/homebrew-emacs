@@ -4,35 +4,25 @@ class Yasnippet < EmacsFormula
   desc "Emacs template system"
   homepage "https://github.com/capitaomorte/yasnippet"
   url "https://github.com/capitaomorte/yasnippet.git",
-      :tag => "0.8.0",
-      :revision => "f28a3df702c62f1b045ea5b57d1344c90ebc9731"
+      :tag => "0.9.1",
+      :revision => "6aeccce2f17aca6a59a2790ec08680d52c03f6c0"
 
   head "https://github.com/capitaomorte/yasnippet.git"
-
-  devel do
-    url "https://github.com/capitaomorte/yasnippet.git",
-        :tag => "0.9.1-snapshot",
-        :revision => "80941c077f8248ee1e8dcc64b3b57e741b9e5755"
-  end
 
   depends_on :emacs => "23.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     byte_compile "yasnippet.el"
-    ert_run_tests "yasnippet-tests.el" unless build.stable?
+    ert_run_tests "yasnippet-tests.el"
     elisp.install Dir["*.el"], Dir["*.elc"]
 
-    if build.stable?
-      (prefix/"contrib").install "extras"
-    else
-      (prefix/"contrib").install "snippets", "yasmate"
-    end
+    prefix.install "doc"
+    (prefix/"contrib").install "snippets", "yasmate"
   end
 
-  def caveats; <<-EOS.undent
-    Snippets have been installed to #{opt_prefix}/contrib
-  EOS
+  def caveats
+    "Snippets have been installed to #{opt_prefix}/contrib"
   end
 
   test do
