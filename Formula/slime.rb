@@ -50,11 +50,18 @@ class Slime < EmacsFormula
 
   depends_on :emacs => "23.4"
   depends_on CommonLispRequirement
+  depends_on "texinfo" => :build
 
   def install
     system "make", "LISP=#{ENV["LISP"]}"
     system "make", "compile-swank", "LISP=#{ENV["LISP"]}"
     system "make", "contrib-compile", "LISP=#{ENV["LISP"]}"
+
+    cd "doc" do
+      system "make", "slime.info", "html/index.html"
+      info.install "slime.info"
+      doc.install "html"
+    end
     elisp.install Dir["*.lisp"], Dir["*.el"], Dir["*.elc"],
                   "lib", "swank", "contrib"
   end
