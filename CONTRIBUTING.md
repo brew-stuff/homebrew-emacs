@@ -4,8 +4,8 @@ Keeping everything up-to-date is a lot of work, so I appreciate the
 help!  There are really only a few guidelines to keep in mind:
 
 Formulae in this tap look a little different than those in the
-core Homebrew repository.  The first couple lines of an Emacs formula
-will look like this:
+[core Homebrew repository](https://github.com/Homebrew/homebrew-core).
+The first couple lines of an Emacs formula will look like this:
 
 ```ruby
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
@@ -25,7 +25,7 @@ name ELPA or MELPA uses.  Unfortunately we can’t always do that.  When
 you only have to deal with Emacs packages it’s fine to name your Emacs
 DocBook viewer “docbook,” but the formula in this tap have to co-exist
 with the rest of the Homebrew formula and we have
-[the real DocBook](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/docbook.rb)
+[the real DocBook](https://github.com/Homebrew/homebrew-core/blob/master/Formula/docbook.rb)
 in the core repository.  So here’s the pattern used in this tap:
 
 - If the package is primarily for a major or minor mode, suffix the
