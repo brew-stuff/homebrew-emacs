@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClojureMode < EmacsFormula
   desc "Emacs major mode for Clojure"
   homepage "https://github.com/clojure-emacs/clojure-mode"
-  url "https://github.com/clojure-emacs/clojure-mode/archive/5.2.0.tar.gz"
-  sha256 "4228eefccfdb5330e9f77b8ee9bf593a037a2356af90a37769f18b1ee0494981"
+  url "https://github.com/clojure-emacs/clojure-mode/archive/5.3.0.tar.gz"
+  sha256 "46158d685286d19c4db6fffadd594fffd84699b8dd0788c9afa396ab86ca283e"
   head "https://github.com/clojure-emacs/clojure-mode.git"
 
   option "with-inf", "Build with the inferior REPL"
