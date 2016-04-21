@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ElispBugHunter < EmacsFormula
   desc "Emacs library for debugging configuration files"
   homepage "https://github.com/Malabarba/elisp-bug-hunter"
-  url "https://elpa.gnu.org/packages/bug-hunter-1.2.el"
-  sha256 "f6e8538f3e45a0e8b3c48fa3ed0056b855a8133c7d9f9df13e3e9cd284befc09"
+  url "https://elpa.gnu.org/packages/bug-hunter-1.3.el"
+  sha256 "bdcc6706986e14045849c6ae4cf2587f06a4c22c787a4a8ff4837241ab4d2dc8"
   head "https://github.com/Malabarba/elisp-bug-hunter.git"
 
   depends_on :emacs => "24.1"
