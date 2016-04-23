@@ -2,10 +2,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
-  homepage "http://editorconfig.org/"
+  homepage "https://github.com/editorconfig/editorconfig-emacs"
   url "https://github.com/editorconfig/editorconfig-emacs.git",
-      :tag => "v0.7.3",
-      :revision => "a327a42f3fdc2ab6d0e8226b3a22f4bab7e536bb"
+      :tag => "v0.7.5",
+      :revision => "268478773c11bf5fb47b47b8c322bcd589e4c990"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
@@ -29,7 +29,7 @@ class EditorconfigEmacs < EmacsFormula
   def caveats
     if build.without? "editorconfig"
       <<-EOS.undent
-      Set the variable `editorconfig-exec-path' to
+      Set the Emacs variable `editorconfig-exec-path' to
         #{HOMEBREW_PREFIX}/bin/editorconfig-el
       EOS
     end
