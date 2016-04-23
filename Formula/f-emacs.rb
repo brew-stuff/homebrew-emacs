@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class FEmacs < EmacsFormula
   desc "Emacs filesystem API"
   homepage "https://github.com/rejeep/f.el"
-  url "https://github.com/rejeep/f.el/archive/v0.18.1.tar.gz"
-  sha256 "ebc75d44aa9090c47bc6f110bfaae5f583e09fa3ce43846644dccefb6194171e"
+  url "https://github.com/rejeep/f.el/archive/v0.18.2.tar.gz"
+  sha256 "e5791b653128f6508244a64096526439fcff6b40011b56c07fba552f20d446a4"
   head "https://github.com/rejeep/f.el.git"
 
   depends_on :emacs => "24.1"
@@ -12,7 +12,6 @@ class FEmacs < EmacsFormula
   depends_on "homebrew/emacs/s-emacs"
 
   def install
-    # make test/compile requires emacs-parallel
     byte_compile "f.el"
     elisp.install "f.el", "f.elc"
   end
