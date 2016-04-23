@@ -3,38 +3,20 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GitModes < EmacsFormula
   desc "Emacs major modes for git config, attributes, and ignore"
   homepage "https://github.com/magit/git-modes"
-  url "https://github.com/magit/git-modes/archive/1.2.0.tar.gz"
-  sha256 "13e2584013e6aab940b8531e4eda4a4ef4da2efe4eee4a87277109b9663cbb25"
+  url "https://github.com/magit/git-modes/archive/1.2.1.tar.gz"
+  sha256 "17d4dfc89331a8d52be5c3409098ff9cbc9f6c22a44310cfe11e78045bf31c21"
   head "https://github.com/magit/git-modes.git"
 
   depends_on :emacs
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'gitattributes-mode)
-    (require 'gitconfig-mode)
-    (require 'gitignore-mode)
-    (add-to-list 'auto-mode-alist '("^\\.gitattributes$" . gitattributes-mode))
-    (add-to-list 'auto-mode-alist '("^\\.gitconfig$" . gitconfig-mode))
-    (add-to-list 'auto-mode-alist '("^\\.gitignore$" . gitignore-mode))
-    (add-to-list 'auto-mode-alist '("\\.git\/info\/attributes$" . gitignore-mode))
-    (add-to-list 'auto-mode-alist '("\\.git\/config$" . gitignore-mode))
-    (add-to-list 'auto-mode-alist '("\\.git\/info\/exclude$" . gitignore-mode))
-    EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/git-modes")
-      (load "gitattributes-mode")
-      (load "gitconfig-mode")
-      (load "gitignore-mode")
+      (add-to-list 'load-path "#{elisp}")
+      (load "git-modes")
       (gitattributes-mode-help)
       (gitconfig-indentation-string)
       (print (minibuffer-prompt-width))
