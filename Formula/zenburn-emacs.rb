@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ZenburnEmacs < EmacsFormula
   desc "Low contrast theme for Emacs"
   homepage "https://github.com/bbatsov/zenburn-emacs"
-  url "https://github.com/bbatsov/zenburn-emacs/archive/v2.3.tar.gz"
-  sha256 "19289d14f58b4624975d20492b4c108feda904699e646a9afbfe9f76d0b10edc"
+  url "https://github.com/bbatsov/zenburn-emacs/archive/v2.4.tar.gz"
+  sha256 "e751cbd62f3a0929e733b6271f621d2556bd6836ef1b0b88dc4769541741d153"
   head "https://github.com/bbatsov/zenburn-emacs.git"
 
   bottle :unneeded
