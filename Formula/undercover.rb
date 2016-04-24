@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Undercover < EmacsFormula
   desc "Test coverage library for Emacs"
   homepage "https://github.com/sviridov/undercover.el"
-  url "https://github.com/sviridov/undercover.el/archive/v0.5.0.tar.gz"
-  sha256 "a8adcd65bfb8167d965ebefe28ee344c644b119df673aafe893dd98ef4568cc9"
+  url "https://github.com/sviridov/undercover.el/archive/v0.6.0.tar.gz"
+  sha256 "0ad4923504787f0e7bd2eaace841b68d075c532d08be2cd0d0582fdb41748838"
   head "https://github.com/sviridov/undercover.el.git"
 
   depends_on :emacs => "24.1"
