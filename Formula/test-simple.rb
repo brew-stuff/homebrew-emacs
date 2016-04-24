@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class TestSimple < EmacsFormula
   desc "Emacs unit test library"
   homepage "https://github.com/rocky/emacs-test-simple"
-  url "http://elpa.gnu.org/packages/test-simple-1.1.el"
-  sha256 "9caa26d95aa6b368742843ea37da5166101d9f152eaaec8060c11a05f2341969"
+  url "https://elpa.gnu.org/packages/test-simple-1.2.0.el"
+  sha256 "6ba88eb6b2b18d1edba5d2b80f1eba7f09bf98f0c375fd358c53c41179c627c9"
 
   head do
     url "https://github.com/rocky/emacs-test-simple.git"
@@ -22,15 +22,7 @@ class TestSimple < EmacsFormula
       system "./autogen.sh"
       system "make", "check"
     end
-    (share/"emacs/site-lisp/test-simple").install "test-simple.el",
-                                                  "test-simple.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'test-simple)
-  EOS
+    elisp.install "test-simple.el", "test-simple.elc"
   end
 
   test do
