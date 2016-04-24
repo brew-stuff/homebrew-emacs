@@ -3,12 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PandocMode < EmacsFormula
   desc "Emacs minor mode for interacting with pandoc"
   homepage "https://joostkremers.github.io/pandoc-mode/"
-  url "https://github.com/joostkremers/pandoc-mode/archive/2.14.tar.gz"
-  sha256 "27252dad4f97dc4ffb2f34503990be84f2abb6cf1b55cc49cd8e52b29086ab59"
+  url "https://github.com/joostkremers/pandoc-mode/archive/2.17.2.tar.gz"
+  sha256 "4b38c35d897f8505ed7f70341100e0f8070cbbf86489e63642840cf196fd63fe"
   head "https://github.com/joostkremers/pandoc-mode.git"
 
   depends_on :emacs => "24.1"
-  depends_on "pandoc"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/hydra-emacs"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
@@ -16,7 +15,7 @@ class PandocMode < EmacsFormula
   def install
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
-    info.install "dir", "pandoc-mode.info"
+    info.install "pandoc-mode.info"
   end
 
   test do
