@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Swiper < EmacsFormula
   desc "Emacs isearch with an overview"
   homepage "https://github.com/abo-abo/swiper"
-  url "https://github.com/abo-abo/swiper/archive/0.7.0.tar.gz"
-  sha256 "8e25761d466edff701c09f5c245903597493bac72dedfef84a1ba6eaf0cbd3ef"
+  url "https://github.com/abo-abo/swiper/archive/0.8.0.tar.gz"
+  sha256 "582414b7e257019696e2b93bbdf6556383751e85ee6ecbf56fe1e85800e5d8a2"
   head "https://github.com/abo-abo/swiper.git"
 
   option "with-helm", "Use helm as the backend instead of ivy"
