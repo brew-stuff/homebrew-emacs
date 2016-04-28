@@ -22,7 +22,7 @@ class GroovyMode < EmacsFormula
     byte_compile el_array
     elisp.install el_array, Dir["*.elc"]
 
-    doc.install "gplv2.txt"
+    prefix.install "gplv2.txt"
   end
 
   def caveats; <<-EOS.undent
