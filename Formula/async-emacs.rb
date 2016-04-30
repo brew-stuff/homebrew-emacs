@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AsyncEmacs < EmacsFormula
   desc "Emacs library for asynchronous processing"
   homepage "https://github.com/jwiegley/emacs-async"
-  url "https://github.com/jwiegley/emacs-async/archive/v1.7.tar.gz"
-  sha256 "1804b52c80870c74dacc045937c85ecf9b735508d05f9bffbae462f7de933533"
+  url "https://github.com/jwiegley/emacs-async/archive/v1.8.tar.gz"
+  sha256 "b57514d60bcb02f80a203d0cdfbf4149718e3f3588d10065f87e6bf9767daa8d"
   head "https://github.com/jwiegley/emacs-async.git"
 
   depends_on :emacs
