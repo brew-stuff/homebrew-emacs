@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
-  url "https://github.com/flycheck/flycheck/archive/0.25.1.tar.gz"
-  sha256 "90f0c51a65966291577a1714f9d230de4b56969849add22cf580955351867ee0"
+  url "https://github.com/flycheck/flycheck/releases/download/26/flycheck-26.tar"
+  sha256 "bdd35ab6d8c7fd7b883e7c9c950da9b61d07c6d8e9cf41870717ddacabe12aab"
   head "https://github.com/flycheck/flycheck.git"
 
   option "with-cask", "Build with Cask support"
@@ -14,7 +14,6 @@ class Flycheck < EmacsFormula
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
   depends_on :emacs => "24.3"
-  depends_on "cask"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
@@ -43,8 +42,9 @@ class Flycheck < EmacsFormula
   end
 
   resource "pos-tip" do
-    url "https://github.com/flycheck/flycheck-pos-tip/archive/0.1.tar.gz"
-    sha256 "6a29678399239f42b9038238ededff2e8d407824878ead6af0770143ec8a8ec4"
+    url "https://github.com/flycheck/flycheck-pos-tip/archive/hotfix-0.25.1.tar.gz"
+    sha256 "fb5b66ae1ecf3aca87fd5e0de88b98301d6fa3f6ec4562677d209349265dd553"
+    version "0.1-hotfix"
   end
 
   def install
@@ -56,9 +56,8 @@ class Flycheck < EmacsFormula
       end
     end
 
-    system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
+    byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
-    doc.install Dir["doc/*"]
   end
 
   test do
