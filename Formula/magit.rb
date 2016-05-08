@@ -4,6 +4,7 @@ class Magit < EmacsFormula
   desc "Emacs interface for Git"
   homepage "https://github.com/magit/magit"
   url "https://github.com/magit/magit/releases/download/2.6.2/magit-2.6.2.tar.gz"
+  mirror "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/magit/magit_2.6.2.orig.tar.gz"
   sha256 "c76692d5e7b242dfb9df1f610bdfdd13fbfbc432923a99b355e525c17196a146"
   head "https://github.com/magit/magit.git", :shallow => false
 
