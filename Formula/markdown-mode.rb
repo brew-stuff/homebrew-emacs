@@ -4,6 +4,7 @@ class MarkdownMode < EmacsFormula
   desc "Major mode for editing Markdown files"
   homepage "http://jblevins.org/projects/markdown-mode/"
   url "https://github.com/jrblevin/markdown-mode/archive/v2.1.tar.gz"
+  mirror "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/markdown-mode/markdown-mode_2.1.orig.tar.gz"
   sha256 "65d28802915a47056108b63eba3911e32de35c5d6b3c6898ca23ac414b0c4de7"
   head "https://github.com/jrblevin/markdown-mode.git"
 
