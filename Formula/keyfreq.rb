@@ -3,16 +3,16 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Keyfreq < EmacsFormula
   desc "Track Emacs command frequencies"
   homepage "https://github.com/dacap/keyfreq"
-  url "https://github.com/dacap/keyfreq/archive/1.7.tar.gz"
-  sha256 "b933c3535b68b141f959aa352621d738bdd8bc16a952721674150cbb6f0e4b69"
+  url "https://github.com/dacap/keyfreq/archive/1.8.tar.gz"
+  sha256 "8dd13c050e4ebb943c9190f2d9066ec6f4cb7af21b28abd1a2bc76c59539609e"
   head "https://github.com/dacap/keyfreq.git"
 
   depends_on :emacs
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
 
   def install
     byte_compile "keyfreq.el"
-    (share/"emacs/site-lisp/keyfreq").install "keyfreq.el",
-                                              "keyfreq.elc"
+    elisp.install "keyfreq.el", "keyfreq.elc"
   end
 
   test do
