@@ -3,17 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GroovyMode < EmacsFormula
   desc "Modes for Groovy and Groovy-related technology"
   homepage "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes"
+  url "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/archive/1.0.1.tar.gz"
+  sha256 "a7a498d47ee6d2eef2fb1e6d484bbba9354d0fd4176437819ce5474f86b611bc"
   head "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git"
-
-  stable do
-    url "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/archive/v-1.0.0.tar.gz"
-    sha256 "601444423056310f5b043c8f6006cec936f2092226ea45717a648b9bf05e4615"
-
-    patch do
-      url "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/commit/792b0c5a72f7500c8e07f37b77b96fd1f91ac61b.diff"
-      sha256 "163a42603f7c4e178359b4310ce1fa7d9e9011304f2b2f32d4e884d3ed16f0a8"
-    end
-  end
 
   depends_on :emacs => "22.1"
 
@@ -22,7 +14,7 @@ class GroovyMode < EmacsFormula
     byte_compile el_array
     elisp.install el_array, Dir["*.elc"]
 
-    prefix.install "gplv2.txt"
+    prefix.install "gpl-3.0.txt"
   end
 
   def caveats; <<-EOS.undent
