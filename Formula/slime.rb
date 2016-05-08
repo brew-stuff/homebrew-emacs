@@ -7,35 +7,33 @@ class CommonLispRequirement < Requirement
   # Based on ordering of available implementations from
   # https://common-lisp.net/project/slime/; except for SBCL which is
   # the default in the Makefile
-  lisps = {
-    :sbcl => "sbcl",
-    :ccl => "clozure-cl",
-    :clisp => "clisp",
-    :ecl => "ecl",
-    :abcl => "abcl",
-  }
+  lisps = %w[
+    sbcl lisp
+    ccl clisp
+    ecl abcl
+  ]
 
   satisfy :build_env => false do
-    lisps.each do |bin, f|
-      @lisp = bin if @lisp.nil? && Formula[f].installed?
+    lisps.each do |bin|
+      @lisp = which(bin) if @lisp.nil? && which(bin)
     end
     !@lisp.nil?
   end
 
   env do
-    ENV.prepend_path "PATH", Formula[lisps[@lisp]].opt_bin
-    ENV["LISP"] = @lisp.to_s
+    ENV.prepend_path "PATH", @lisp
+    ENV["LISP"] = @lisp
   end
 
   def message
     s = <<-EOS.undent
       A Common Lisp implementation is required:
-      - sbcl
-      - homebrew/binary/cmucl
-      - clozure-cl
-      - clisp
-      - ecl
-      - abcl
+      - Steel Bank Common Lisp (SBCL)
+      - CMU Common Lisp (cmucl)
+      - Clozure Common Lisp (clozure-cl)
+      - CLISP
+      - Embedded Common Lisp (ECL)
+      - Armed Bear Common Lisp (ABCL)
     EOS
     s + super
   end
