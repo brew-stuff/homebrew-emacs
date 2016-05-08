@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class RainbowDelimiters < EmacsFormula
   desc "Color delimiters by depth in Emacs"
   homepage "https://github.com/Fanael/rainbow-delimiters"
-  url "https://github.com/Fanael/rainbow-delimiters/archive/2.1.1.tar.gz"
-  sha256 "6fe03f2e1b6c8ea317a82caeb8daa30910155208b0b70f980c66f01700908f18"
+  url "https://github.com/Fanael/rainbow-delimiters/archive/2.1.3.tar.gz"
+  sha256 "39a5aa2f5b6fc5ac7c97362442459d8f012ea5536c6720929666611dc995d974"
   head "https://github.com/Fanael/rainbow-delimiters.git"
 
   depends_on :emacs
