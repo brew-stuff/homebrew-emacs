@@ -3,27 +3,23 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WebsocketEmacs < EmacsFormula
   desc "Emacs Lisp WebSocket library"
   homepage "https://github.com/ahyatt/emacs-websocket"
-  url "http://elpa.gnu.org/packages/websocket-1.5.tar"
-  sha256 "5e4b760912f141dc0049397477026b0181350ee4a6f50cdfc22c096115628f5e"
+  url "https://elpa.gnu.org/packages/websocket-1.6.tar"
+  sha256 "aa284016d7cdf25bd2e413b78f8beed7363f2fc62c9b321e0d78bec050103526"
   head "https://github.com/ahyatt/emacs-websocket.git"
 
-  depends_on :emacs
+  depends_on :emacs => "23.1"
 
   def install
-    if build.head?
-      ert_run_tests "websocket-test.el"
-      # the functional test opens an emacs buffer on completion
-      # system "emacs", %W[--batch -Q -L #{buildpath} -l websocket-functional-test.el]
-    end
+    # the functional test requires a running Tornado web server
+    # https://github.com/ahyatt/emacs-websocket/blob/f18bfea59b843ea67bc0a3381783d6e083d33640/websocket-functional-test.el#L22-L24
+    ert_run_tests "websocket-test.el" if build.head?
     byte_compile "websocket.el"
-    (share/"emacs/site-lisp/websocket").install Dir["*.el"],
-                                                Dir["*.elc"]
-    doc.install "README.org"
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/websocket")
+      (add-to-list 'load-path "#{elisp}")
       (load "websocket")
       (print (minibuffer-prompt-width))
     EOS
