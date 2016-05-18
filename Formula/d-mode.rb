@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class DMode < EmacsFormula
   desc "Emacs major mode for D code"
   homepage "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode"
-  url "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode/archive/v-2.0.7.tar.gz"
-  sha256 "739b4623d4a44ab6a61138a60a91f2a591d9bcd318497d09d35820fa3c2bfc6e"
+  url "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode/archive/2.0.8.tar.gz"
+  sha256 "80ab7e82ebbb6afe4c7d9ab8e4feb597d2f84bd91739ac04120954594a7cd74e"
   head "https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode.git"
 
   depends_on :emacs => "23"
