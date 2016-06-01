@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ContextColoring < EmacsFormula
   desc "Emacs mode to color JS and Elisp code by scope"
   homepage "https://github.com/jacksonrayhamilton/context-coloring"
-  url "https://github.com/jacksonrayhamilton/context-coloring/archive/v7.2.1.tar.gz"
-  sha256 "81265c908086cfd429b11e7a92f009dd77fa49c4437485c1c7e4ee8c333010ad"
+  url "https://github.com/jacksonrayhamilton/context-coloring/archive/v8.0.1.tar.gz"
+  sha256 "06fc76c24bc738b595d2fff1c1fd41e1015a248d6bc9cdee5637b83d27d393b5"
   head "https://github.com/jacksonrayhamilton/context-coloring.git"
 
   depends_on :emacs => "24.3"
