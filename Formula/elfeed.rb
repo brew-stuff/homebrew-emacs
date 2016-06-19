@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Elfeed < EmacsFormula
   desc "Feed reader for Emacs"
   homepage "https://github.com/skeeto/elfeed"
-  url "https://github.com/skeeto/elfeed/archive/1.4.0.tar.gz"
-  sha256 "ad7415b03d0f8cfb2d3ced8084cf3611deb136226463729ad9f8941e9f5af4be"
+  url "https://github.com/skeeto/elfeed/archive/1.4.1.tar.gz"
+  sha256 "095d1bc9a401d6d333574ff3730dd2936636a3099080ea2d956e5d9f3acae544"
   head "https://github.com/skeeto/elfeed.git"
 
   depends_on :emacs => "24.3"
