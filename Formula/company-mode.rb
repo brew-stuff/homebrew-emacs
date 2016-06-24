@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CompanyMode < EmacsFormula
   desc "Modular in-buffer completion framework for Emacs"
   homepage "https://company-mode.github.io"
-  url "https://github.com/company-mode/company-mode/archive/0.8.12.tar.gz"
-  sha256 "ff7f70a13e353181526f8a11145f543955fb3f76c6772cf6d79912782a5e95ef"
+  url "https://github.com/company-mode/company-mode/archive/0.9.0.tar.gz"
+  sha256 "a15621088d8ce2d8ea4b9df3fac836dd337509fbf627937cb1b0ef4e08ca2462"
   head "https://github.com/company-mode/company-mode.git"
 
   option "with-emoji", "Install company-emoji"
