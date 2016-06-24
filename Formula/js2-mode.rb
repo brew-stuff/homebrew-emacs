@@ -3,32 +3,31 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"
   homepage "https://github.com/mooz/js2-mode"
-  url "https://github.com/mooz/js2-mode/archive/20150909.tar.gz"
-  sha256 "0013a232f90a9cdf533b44c296875d0e4d6af373a8c411ee3864f149981955db"
   head "https://github.com/mooz/js2-mode.git"
+
+  stable do
+    url "https://github.com/mooz/js2-mode/archive/20160623.tar.gz"
+    sha256 "65e1321fdd042a105dd80318347beb41a68333cb2be0bbc44c4f3a21a21ffc16"
+
+    # Prevent `make test` from loading old js2-mode from site-lisp;
+    # remove in next release
+    patch do
+      url "https://github.com/mooz/js2-mode/commit/68db1f586eb2cd20a08e47aa7becdbee368ea22f.diff"
+      sha256 "e4caccaa170e748519e8fd2471e68ed8a6e5449ea288eb6fdc1dca27721d17d3"
+    end
+  end
 
   depends_on :emacs => "24.1"
 
   def install
-    system "make", "BATCHFLAGS=-L . -batch -q --no-site-file"
+    system "make", "all"
     system "make", "test"
-    (share/"emacs/site-lisp/js2-mode").install Dir["*.el"],
-                                               Dir["*.elc"]
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'js2-mode)
-    (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-    (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-    (add-to-list 'interpreter-mode-alist '("iojs" . js2-mode))
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/js2-mode")
+      (add-to-list 'load-path "#{elisp}")
       (load "js2-mode")
       (print (minibuffer-prompt-width))
     EOS
