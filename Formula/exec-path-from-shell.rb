@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ExecPathFromShell < EmacsFormula
   desc "Import environment variables into Emacs"
   homepage "https://github.com/purcell/exec-path-from-shell"
-  url "https://github.com/purcell/exec-path-from-shell/archive/1.10.tar.gz"
-  sha256 "83e465e1deab6ad0d1c3f6ba83dcb8bd4d38ed32588c1c2ca9ba3f77b0dacd98"
+  url "https://github.com/purcell/exec-path-from-shell/archive/1.11.tar.gz"
+  sha256 "75861413984557c02cca01c4484b9b17a4c237cd66778e5a58847637f7c3f8ab"
   head "https://github.com/purcell/exec-path-from-shell.git"
 
   depends_on :emacs
