@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GhEmacs < EmacsFormula
   desc "GitHub API library for Emacs"
   homepage "https://github.com/sigma/gh.el"
-  url "https://github.com/sigma/gh.el/archive/v0.9.2.tar.gz"
-  sha256 "02c819656293406773a2525f85bccbb4cbf57938999e33d86c0d1bfa047d34c6"
+  url "https://github.com/sigma/gh.el/archive/v0.10.0.tar.gz"
+  sha256 "f1e4244c329197f1d659a024c8fe20e0d62d1e74578f8bebac216b8defc02635"
   head "https://github.com/sigma/gh.el.git"
 
   depends_on :emacs => "24.4"
