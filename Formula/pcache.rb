@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Pcache < EmacsFormula
   desc "Persistent caching for Emacs"
   homepage "https://github.com/sigma/pcache"
-  url "https://github.com/sigma/pcache/archive/v0.3.2.tar.gz"
-  sha256 "5acef749bf2255186b98cfa4f3656037db4b516a2622b94b2acc72b8a0532094"
+  url "https://github.com/sigma/pcache/archive/v0.4.0.tar.gz"
+  sha256 "01ea5596fe1da59f035069e133e571efe852f240692a9d9a609b16618b862bcf"
   head "https://github.com/sigma/pcache.git"
 
   depends_on :emacs
