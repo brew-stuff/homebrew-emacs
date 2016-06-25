@@ -3,13 +3,14 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WhichKey < EmacsFormula
   desc "Emacs package for displaying available keybindings"
   homepage "https://github.com/justbur/emacs-which-key"
-  url "https://github.com/justbur/emacs-which-key/archive/v1.1.9.tar.gz"
-  sha256 "91b3ec0f1beafa2faa6300ccbf55695365a1b804bc76d7c7af793cc1d8bc3f1d"
+  url "https://github.com/justbur/emacs-which-key/archive/v1.1.12.tar.gz"
+  sha256 "d9de71ca413ee21d2a224ccc03c4db6f52d4b40d01185eb54259385068ca5388"
   head "https://github.com/justbur/emacs-which-key.git"
 
   depends_on :emacs => "24.3"
 
   def install
+    ert_run_tests "which-key-tests.el"
     byte_compile "which-key.el"
     elisp.install "which-key.el", "which-key.elc"
   end
