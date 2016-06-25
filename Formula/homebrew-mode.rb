@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HomebrewMode < EmacsFormula
   desc "Emacs minor mode for editing Homebrew formulae"
   homepage "https://github.com/dunn/homebrew-mode"
-  url "https://github.com/dunn/homebrew-mode/archive/1.3.5.tar.gz"
-  sha256 "ffac1f32b1780d0cfada9d57f33fe895ae46150962f7e6c2e32b69ff94fa9fc2"
+  url "https://github.com/dunn/homebrew-mode/archive/1.3.6.tar.gz"
+  sha256 "f362f572b3fd0de4f41783d9416f80068fe78589c320b58881ac455dd62fea05"
   head "https://github.com/dunn/homebrew-mode.git"
 
   depends_on :emacs => "24.4"
