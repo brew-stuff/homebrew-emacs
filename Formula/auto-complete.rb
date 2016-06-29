@@ -85,8 +85,8 @@ class AutoComplete < EmacsFormula
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.7.1.tar.gz"
-    sha256 "41f526a76ba8ed35d660c6766ea59cec9b88d141433b78f5947763a1a1bcd84f"
+    url "https://github.com/xcwen/ac-php/archive/1.7.3.tar.gz"
+    sha256 "77df161c5a7704401b4ab5024f9232be0e8eef3ce881b7c96a753ed37349af48"
   end
 
   resource "slime" do
@@ -98,35 +98,35 @@ class AutoComplete < EmacsFormula
     if build.with? "c-headers"
       resource("c-headers").stage do
         byte_compile "ac-c-headers.el"
-        (share/"emacs/site-lisp/auto-complete/ac-c-headers").install "ac-c-headers.el", "ac-c-headers.elc"
+        elisp.install "ac-c-headers.el", "ac-c-headers.elc"
       end
     end
 
     if build.with? "emoji"
       resource("emoji").stage do
         byte_compile Dir["*.el"]
-        (share/"emacs/site-lisp/auto-complete/ac-emoji").install Dir["*.el"], Dir["*.elc"]
+        elisp.install Dir["*.el"], Dir["*.elc"]
       end
     end
 
     if build.with? "etags"
       resource("etags").stage do
         byte_compile "ac-etags.el"
-        (share/"emacs/site-lisp/auto-complete/ac-etags").install "ac-etags.el", "ac-etags.elc"
+        elisp.install "ac-etags.el", "ac-etags.elc"
       end
     end
 
     if build.with? "haskell"
       resource("haskell").stage do
         byte_compile "ac-haskell-process.el"
-        (share/"emacs/site-lisp/auto-complete/ac-haskell-process").install "ac-haskell-process.el", "ac-haskell-process.elc"
+        elisp.install "ac-haskell-process.el", "ac-haskell-process.elc"
       end
     end
 
     if build.with? "helm"
       resource("helm").stage do
         byte_compile "ac-helm.el"
-        (share/"emacs/site-lisp/auto-complete/ac-helm").install "ac-helm.el", "ac-helm.elc"
+        elisp.install "ac-helm.el", "ac-helm.elc"
       end
     end
 
@@ -134,43 +134,42 @@ class AutoComplete < EmacsFormula
       resource("html").stage do
         ert_run_tests "test/run-test.el"
         byte_compile Dir["*.el"]
-        (share/"emacs/site-lisp/auto-complete/ac-html").install Dir["*.el"], Dir["*.elc"]
+        elisp.install Dir["*.el"], Dir["*.elc"]
       end
     end
 
     if build.with? "ispell"
       resource("ispell").stage do
         byte_compile "ac-ispell.el"
-        (share/"emacs/site-lisp/auto-complete/ac-ispell").install "ac-ispell.el", "ac-ispell.elc"
+        elisp.install "ac-ispell.el", "ac-ispell.elc"
       end
     end
 
     if build.with? "js2"
       resource("js2").stage do
         byte_compile "ac-js2.el"
-        (share/"emacs/site-lisp/auto-complete/ac-js2").install "ac-js2.el", "ac-js2.elc", "skewer-addon.js"
+        elisp.install "ac-js2.el", "ac-js2.elc", "skewer-addon.js"
       end
     end
 
     if build.with? "php"
       resource("php").stage do
         ert_run_tests "tests/ac-php-test.el"
-        byte_compile Dir["*.el"]
-        (share/"emacs/site-lisp/auto-complete/ac-php").install Dir["*.el"], Dir["*.elc"]
+        byte_compile (Dir["*.el"] - ["company-php.el"])
+        elisp.install Dir["*.el"], Dir["*.elc"], Dir["*.json"], "phpctags"
       end
     end
 
     if build.with? "slime"
       resource("slime").stage do
         byte_compile "ac-slime.el"
-        (share/"emacs/site-lisp/auto-complete/ac-slime").install "ac-slime.el", "ac-slime.elc"
+        elisp.install "ac-slime.el", "ac-slime.elc"
       end
     end
 
     ert_run_tests "tests/run-test.el"
     byte_compile "auto-complete.el", "auto-complete-config.el"
-    (share/"emacs/site-lisp/auto-complete").install Dir["*.el"],
-                                                    Dir["*.elc"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
