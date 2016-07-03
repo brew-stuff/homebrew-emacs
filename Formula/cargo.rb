@@ -4,7 +4,7 @@ class Cargo < EmacsFormula
   desc "Emacs Minor Mode for Cargo, Rust's Package Manager."
   homepage "https://github.com/kwrooijen/cargo.el"
   url "https://melpa.org/packages/cargo-20160525.519.tar"
-  sha256 "1bfa9cf6e07fc0890304b598f33a4e01c768627dbd42ab4672439a1a1a4a5086"
+  sha256 "a04e09d4061c1eaf57d31a012f546634f9d452cfd91810b673d272a7103e9180"
   head "https://github.com/kwrooijen/cargo.el.git"
 
   depends_on :emacs => "24.3"
