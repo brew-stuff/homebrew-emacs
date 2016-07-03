@@ -3,14 +3,14 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HydraEmacs < EmacsFormula
   desc "Group Emacs commands under a common prefix"
   homepage "https://github.com/abo-abo/hydra"
-  url "https://elpa.gnu.org/packages/hydra-0.13.5.tar"
-  sha256 "c898c82946efdab48f162980a6f86b947ea0d78bed6f00d78cab3583bdbc016f"
+  url "https://github.com/abo-abo/hydra/archive/0.13.6.tar.gz"
+  sha256 "800e3954c61aa5cbc0274afd246b334446c1aef12d117dca2da33e5410dce514"
   head "https://github.com/abo-abo/hydra.git"
 
   depends_on :emacs => "24.1"
 
   def install
-    system "make", "test" if build.head?
+    system "make", "test"
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
   end
