@@ -18,6 +18,7 @@ class Cargo < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/rust-mode"].opt_elisp}")
       (load "cargo")
       (print (minibuffer-prompt-width))
     EOS
