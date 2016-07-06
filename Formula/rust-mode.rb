@@ -16,14 +16,6 @@ class RustMode < EmacsFormula
     doc.install "README.md"
   end
 
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (autoload 'rust-mode "rust-mode" nil t)
-    (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-  EOS
-  end
-
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/rust-mode")
