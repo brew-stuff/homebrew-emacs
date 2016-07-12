@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class JsonMode < EmacsFormula
   desc "Emacs major mode for editing JSON"
   homepage "https://github.com/joshwnj/json-mode"
-  url "https://github.com/joshwnj/json-mode/archive/1.6.0.tar.gz"
-  sha256 "778916c34c270bd8888c603fafe732a2d0050bdef674ab5231ed18fb6ed291c2"
+  url "https://github.com/joshwnj/json-mode/archive/v1.7.0.tar.gz"
+  sha256 "e537a936ecfc0374e9bbbf6319bd7fc5f36258585f44acd3bcc71ccbc82d041a"
   head "https://github.com/joshwnj/json-mode.git"
 
   depends_on :emacs
