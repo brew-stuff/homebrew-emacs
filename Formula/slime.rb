@@ -51,6 +51,9 @@ class Slime < EmacsFormula
   depends_on "texinfo" => :build
 
   def install
+    # These are provided by Emacs 23.4+
+    rm %w[lib/cl-lib.el lib/ert.el lib/ert-x.el]
+
     system "make", "LISP=#{ENV["LISP"]}"
     system "make", "compile-swank", "LISP=#{ENV["LISP"]}"
     system "make", "contrib-compile", "LISP=#{ENV["LISP"]}"
