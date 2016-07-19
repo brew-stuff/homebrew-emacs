@@ -8,6 +8,7 @@ class CompanyMode < EmacsFormula
   head "https://github.com/company-mode/company-mode.git"
 
   option "with-emoji", "Install company-emoji"
+  option "with-php", "Install PHP backend"
   option "with-statistics", "Include statistical ranking minor mode"
   option "with-web", "Install company-web"
 
@@ -19,9 +20,22 @@ class CompanyMode < EmacsFormula
     depends_on "homebrew/emacs/web-completion-data"
   end
 
+  if build.with? "php"
+    depends_on "homebrew/emacs/f-emacs"
+    depends_on "homebrew/emacs/popup"
+    depends_on "homebrew/emacs/s-emacs"
+    depends_on "homebrew/emacs/xcscope"
+    depends_on "homebrew/emacs/yasnippet"
+  end
+
   resource "emoji" do
     url "https://github.com/dunn/company-emoji/archive/2.3.0.tar.gz"
     sha256 "51f5c3c43ab6fcb79ea88115b0e773269cc02d56a8dbaec1f83f7fbe3e5f34f8"
+  end
+
+  resource "php" do
+    url "https://github.com/xcwen/ac-php/archive/1.7.4.tar.gz"
+    sha256 "7e409509b59fd665a235fbb38f621099015b739943c7d82a3131762da3246de3"
   end
 
   resource "statistics" do
@@ -39,6 +53,14 @@ class CompanyMode < EmacsFormula
       resource("emoji").stage do
         byte_compile "company-emoji.el"
         (elisp/"emoji").install Dir["*.el"], Dir["*.elc"]
+      end
+    end
+
+    if build.with? "php"
+      resource("php").stage do
+        byte_compile (Dir["*.el"] - ["ac-php.el"])
+        (elisp/"php").install [(Dir["*.el"] - ["ac-php.el"]),
+                               Dir["*.elc"], Dir["*.json"], "phpctags"].flatten
       end
     end
 
