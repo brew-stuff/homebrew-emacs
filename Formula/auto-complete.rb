@@ -38,7 +38,7 @@ class AutoComplete < EmacsFormula
 
   if build.with? "php"
     depends_on "homebrew/emacs/f-emacs"
-    depends_on "homebrew/emacs/php-mode"
+    depends_on "homebrew/emacs/popup"
     depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
@@ -156,8 +156,8 @@ class AutoComplete < EmacsFormula
       resource("php").stage do
         ert_run_tests "tests/ac-php-test.el"
         byte_compile (Dir["*.el"] - ["company-php.el"])
-        elisp.install (Dir["*.el"] - ["company-php.el"]),
-                      Dir["*.elc"], Dir["*.json"], "phpctags"
+        elisp.install [(Dir["*.el"] - ["company-php.el"]),
+                       Dir["*.elc"], Dir["*.json"], "phpctags"].flatten
       end
     end
 
