@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Tern < EmacsFormula
   desc "JavaScript code analyzer"
   homepage "http://ternjs.net/"
-  url "https://github.com/ternjs/tern/archive/0.18.0.tar.gz"
-  sha256 "ac7b04825b825247e9c775c4e2b5007ddeba82b3b2502fbf456d193a423c15d0"
+  url "https://github.com/ternjs/tern/archive/0.19.0.tar.gz"
+  sha256 "8f8df246151044e8e54dbe8fe619bed1f6aa2ddc181f0c2155649823bf7b99e0"
   head "https://github.com/ternjs/tern.git"
 
   depends_on "node"
