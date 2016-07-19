@@ -85,8 +85,8 @@ class AutoComplete < EmacsFormula
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.7.3.tar.gz"
-    sha256 "77df161c5a7704401b4ab5024f9232be0e8eef3ce881b7c96a753ed37349af48"
+    url "https://github.com/xcwen/ac-php/archive/1.7.4.tar.gz"
+    sha256 "7e409509b59fd665a235fbb38f621099015b739943c7d82a3131762da3246de3"
   end
 
   resource "slime" do
@@ -156,7 +156,8 @@ class AutoComplete < EmacsFormula
       resource("php").stage do
         ert_run_tests "tests/ac-php-test.el"
         byte_compile (Dir["*.el"] - ["company-php.el"])
-        elisp.install Dir["*.el"], Dir["*.elc"], Dir["*.json"], "phpctags"
+        elisp.install (Dir["*.el"] - ["company-php.el"]),
+                      Dir["*.elc"], Dir["*.json"], "phpctags"
       end
     end
 
