@@ -7,10 +7,10 @@ class CompanyMode < EmacsFormula
   sha256 "a15621088d8ce2d8ea4b9df3fac836dd337509fbf627937cb1b0ef4e08ca2462"
   head "https://github.com/company-mode/company-mode.git"
 
-  option "with-emoji", "Install company-emoji"
+  option "with-emoji", "Install emoji backend"
   option "with-php", "Install PHP backend"
   option "with-statistics", "Include statistical ranking minor mode"
-  option "with-web", "Install company-web"
+  option "with-web", "Install web templating backend"
 
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
