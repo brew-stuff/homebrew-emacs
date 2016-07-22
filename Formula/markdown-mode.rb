@@ -26,8 +26,8 @@ class MarkdownMode < EmacsFormula
   end
 
   resource "markdown-toc" do
-    url "https://github.com/ardumont/markdown-toc/archive/0.0.9.tar.gz"
-    sha256 "e8070457efb4094ccc50533d167a968247c6f0141447ae16ab52be32d945da00"
+    url "https://github.com/ardumont/markdown-toc/releases/download/0.1.1/markdown-toc-0.1.1.tar"
+    sha256 "40d1297e2c9cbb38aad10c7431f1ea1ffc09c97aefa4e6d96adde3fd1e1a27ad"
   end
 
   def install
