@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HaskellMode < EmacsFormula
   desc "Emacs major mode for Haskell"
   homepage "https://github.com/haskell/haskell-mode"
-  url "https://github.com/haskell/haskell-mode/archive/v13.20.tar.gz"
-  sha256 "051171583e343e75f0f477d88fdde9b5402dad2da86512d22c721172cd12ffe4"
+  url "https://github.com/haskell/haskell-mode/archive/v13.20.1.tar.gz"
+  sha256 "62af1fce31c22770b76f49f5fe2ff92ad90d29fd7b8f925c392d454d3ed62c44"
   head "https://github.com/haskell/haskell-mode.git"
 
   deprecated_option "with-html" => "with-docs"
