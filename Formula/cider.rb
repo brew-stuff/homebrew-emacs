@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Cider < EmacsFormula
   desc "Clojure IDE for Emacs"
   homepage "https://github.com/clojure-emacs/cider"
-  url "https://github.com/clojure-emacs/cider/archive/v0.12.0.tar.gz"
-  sha256 "badc04d3d152c6eac97ed0b3dc24f68531102b6580bf13a765cbf0e1a55b1f03"
+  url "https://github.com/clojure-emacs/cider/archive/v0.13.0.tar.gz"
+  sha256 "5a73bccbaa705f2f66dc27bfdc7030a3f3262b4686b9f14d83a0a1134f910f8e"
   head "https://github.com/clojure-emacs/cider.git"
 
   depends_on :emacs => "24.3"
