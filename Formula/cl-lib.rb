@@ -17,7 +17,7 @@ class ClLib < EmacsFormula
                                              Dir["*.elc"]
   end
 
-  if Emacs.version >= 24.3
+  if Emacs.version >= Version.create("24.3")
     def caveats; <<-EOS.undent
       Warning: Emacs 24.3 and higher includes cl-lib
 

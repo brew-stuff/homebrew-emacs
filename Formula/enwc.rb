@@ -8,7 +8,7 @@ class Enwc < EmacsFormula
   head "http://bzr.savannah.nongnu.org/r/enwc/trunk", :using => :bzr
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     if build.stable?

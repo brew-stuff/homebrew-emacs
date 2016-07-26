@@ -13,7 +13,7 @@ class CompanyMode < EmacsFormula
   option "with-web", "Install web templating backend"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   if build.with? "web"
     depends_on "homebrew/emacs/dash-emacs"

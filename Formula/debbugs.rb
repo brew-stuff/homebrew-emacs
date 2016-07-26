@@ -7,7 +7,7 @@ class Debbugs < EmacsFormula
   sha256 "189f14f7c60c925c57fbae34ee9b0020a0e34e0ae08e2d601c02564a5c1c871f"
 
   depends_on :emacs => "22.1"
-  depends_on "homebrew/emacs/soap-client-emacs" if Emacs.version < 24.1
+  depends_on "homebrew/emacs/soap-client-emacs" if Emacs.version < Version.create("24.1")
 
   def install
     byte_compile Dir["*.el"]

@@ -1,5 +1,7 @@
 module Emacs
   def self.version
-    Utils.popen_read("emacs", "--batch", "--eval", "(princ emacs-version)").to_f
+    Version.create(
+      Utils.popen_read("emacs", "-Q", "--batch", "--eval", "(princ emacs-version)")
+    )
   end
 end

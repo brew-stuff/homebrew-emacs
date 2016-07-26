@@ -11,7 +11,7 @@ class Yasnippet < EmacsFormula
 
   depends_on :emacs => "23.1"
   depends_on "homebrew/emacs/htmlize" => :optional
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ert_run_tests "yasnippet-tests.el"

@@ -8,7 +8,7 @@ class SoapClientEmacs < EmacsFormula
   head "https://github.com/alex-hhh/emacs-soap-client.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"]

@@ -7,7 +7,7 @@ class LexEmacs < EmacsFormula
   sha256 "672dfebb43ea57cf05718b3bd9a72ce7967d5b3dc6f36aa18dcf8a25e688d9c4"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"]

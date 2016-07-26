@@ -10,7 +10,7 @@ class Tern < EmacsFormula
   depends_on "node"
   depends_on :emacs => "24"
   depends_on "homebrew/emacs/auto-complete" => :optional
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ENV.prepend_path "PATH", "#{Formula["node"].opt_libexec}/npm/bin"

@@ -20,7 +20,7 @@ class AutoComplete < EmacsFormula
 
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/popup"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   depends_on "homebrew/emacs/haskell-mode" if build.with? "haskell"
   depends_on "homebrew/emacs/helm" if build.with? "helm"

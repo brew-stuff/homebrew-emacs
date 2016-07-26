@@ -14,7 +14,7 @@ class Cider < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/pkg-info"
   depends_on "homebrew/emacs/queue-emacs"
-  depends_on "homebrew/emacs/seq" if Emacs.version < 25
+  depends_on "homebrew/emacs/seq" if Emacs.version < Version.create("25")
   depends_on "homebrew/emacs/spinner-emacs"
 
   def install

@@ -8,7 +8,7 @@ class DarkroomMode < EmacsFormula
   head "https://github.com/capitaomorte/darkroom.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "darkroom.el"

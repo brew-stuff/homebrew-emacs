@@ -8,7 +8,7 @@ class EasyKill < EmacsFormula
   head "https://github.com/leoliu/easy-kill.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     system "make", "test"
