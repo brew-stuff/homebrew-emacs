@@ -9,7 +9,7 @@ class GitMessenger < EmacsFormula
 
   depends_on :emacs
   depends_on "homebrew/emacs/popup"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "git-messenger.el"

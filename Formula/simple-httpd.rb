@@ -8,7 +8,7 @@ class SimpleHttpd < EmacsFormula
   head "https://github.com/skeeto/emacs-web-server.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ert_run_tests "simple-httpd-test.el"

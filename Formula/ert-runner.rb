@@ -15,7 +15,7 @@ class ErtRunner < EmacsFormula
   depends_on "homebrew/emacs/f-emacs"
   depends_on "homebrew/emacs/s-emacs"
   depends_on "homebrew/emacs/shut-up"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"]

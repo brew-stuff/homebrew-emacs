@@ -13,7 +13,7 @@ class EditorconfigEmacs < EmacsFormula
   depends_on :emacs => "24.1"
   depends_on "cmake" => :build
   depends_on "editorconfig" => :recommended
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ENV["LC_ALL"] = "en_US.UTF-8"

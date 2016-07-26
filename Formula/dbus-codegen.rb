@@ -8,7 +8,7 @@ class DbusCodegen < EmacsFormula
   head "https://github.com/ueno/dbus-codegen-el.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "dbus-codegen-#{version}.el", "dbus-codegen.el" if build.stable?

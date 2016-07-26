@@ -7,7 +7,7 @@ class LandmarkEmacs < EmacsFormula
   sha256 "64b7a0cfcb6926ea36a248c14cf39d1d0dce2cf29449f2a07c6fdbc07ea2e157"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "landmark-#{version}.el", "landmark.el"

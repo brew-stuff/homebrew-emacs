@@ -11,7 +11,7 @@ class AgEmacs < EmacsFormula
   depends_on "the_silver_searcher"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/s-emacs"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < 24.3
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "ag.el"
