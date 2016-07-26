@@ -16,7 +16,9 @@ class HaskellMode < EmacsFormula
   def install
     system "make"
     system "make", "check"
-    elisp.install Dir["*.el"], Dir["*.elc"]
+    elisp.install Dir["*.el"],
+                  Dir["build-#{Emacs.version}/*.elc"]
+
     info.install Dir["*.info"]
 
     if build.with? "docs"
