@@ -16,15 +16,14 @@ class OrgMode < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
-    url "https://github.com/tarsius/ox-texinfo-plus/raw/9074ab2a22cb13536b8c19f69480c8723c91a2b6/ox-texinfo%2B.el"
-    sha256 "d358d3c30d377f0ba831be8df79884de2bb571f875c78a0d1d1cc93282fe4d93"
-    version "20151203"
+    url "https://github.com/tarsius/ox-texinfo-plus/raw/d8ccdda026aa6891a306288e51ce8a9436000889/ox-texinfo%2B.el"
+    sha256 "cc734205aae4a1bb62e40b4c80b07362d2b0f1e8dff47a1b9ea1987521a8df02"
+    version "20160408"
   end
 
   resource "toc-org" do
-    url "https://raw.githubusercontent.com/snosov1/toc-org/72883a08b01d08b74cc03c565eac8d0422770fcf/toc-org.el"
-    sha256 "7da964e6060a11fd6ddcd86cd30a7cfb1dca0e54eb452eaf16ef660895aa8c8f"
-    version "20150921"
+    url "https://github.com/snosov1/toc-org/archive/1.0.0.tar.gz"
+    sha256 "57b71f5302f5063f9e80210b6fd188a53da4a0d14f3e55f6316790e12a70c1be"
   end
 
   def install
