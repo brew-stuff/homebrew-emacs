@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AdaMode < EmacsFormula
   desc "Emacs major mode for editing Ada sources"
   homepage "http://stephe-leake.org/emacs/ada-mode/emacs-ada-mode.html"
-  url "http://elpa.gnu.org/packages/ada-mode-5.1.9.tar"
-  sha256 "878eb97393f497d17f7bd1d93d55a85736b9955f2d1231d7dd8409e16ff21c12"
+  url "https://elpa.gnu.org/packages/ada-mode-5.2.0.tar"
+  sha256 "19dfd93c3c466cf4a246fae3c0123051490f6640bd3cefa791e54f5f17498ec8"
 
   option "without-reference", "Build without the reference manual"
 
