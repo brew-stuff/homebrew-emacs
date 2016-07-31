@@ -63,6 +63,4 @@ will no longer be updated.
 About
 -----
 
-This tap was originally created by
-[Eric Davis](https://github.com/edavis), and is currently maintained
-by [Alex Dunn](https://github.com/dunn).
+This tap was originally created by [Eric Davis](https://github.com/edavis).
