@@ -38,21 +38,6 @@ brew install web-mode
 `brew update` will then update formulae in your taps as well as those
 in the core repository.
 
-Configuration
--------------
-
-Add this to your init file to make sure Emacs can find packages
-installed by Homebrew:
-
-```elisp
-(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
-  (normal-top-level-add-subdirs-to-load-path))
-```
-
-If you installed Homebrew in a non-standard location (run `brew
---prefix` to check), replace `/usr/local` with the correct Homebrew
-prefix.
-
 "Where is ___?"
 ---------------
 
