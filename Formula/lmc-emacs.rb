@@ -2,29 +2,22 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class LmcEmacs < EmacsFormula
   desc "Emacs lisp simulator for the Little Man Computer"
-  homepage "http://elpa.gnu.org/packages/lmc.html"
-  url "http://elpa.gnu.org/packages/lmc-1.3.el"
-  sha256 "370096f5eb2c02c4f35baa8c143e5aecce2c493b367c700e83cb2df7f49cad68"
+  homepage "https://elpa.gnu.org/packages/lmc.html"
+  url "https://elpa.gnu.org/packages/lmc-1.4.el"
+  sha256 "50400d6861c7b065c7947747e20b991a88d10b08bfea120c68e0bdd429d3a43a"
 
   depends_on :emacs
+  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "lmc-#{version}.el", "lmc.el"
     byte_compile "lmc.el"
-    (share/"emacs/site-lisp/lmc").install "lmc.el",
-                                          "lmc.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'lmc)
-  EOS
+    elisp.install "lmc.el", "lmc.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/lmc")
+      (add-to-list 'load-path "#{elisp}")
       (load "lmc")
       (print (minibuffer-prompt-width))
     EOS
