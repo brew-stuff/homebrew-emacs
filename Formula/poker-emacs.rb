@@ -2,11 +2,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class PokerEmacs < EmacsFormula
   desc "Texas Hold'Em Poker for Emacs"
-  homepage "http://elpa.gnu.org/packages/poker.html"
-  url "http://elpa.gnu.org/packages/poker-0.1.el"
-  sha256 "e0bd037d3119a203973910c1207b42eb0617db4bbea17db23107e8656a2a753d"
+  homepage "https://elpa.gnu.org/packages/poker.html"
+  url "https://elpa.gnu.org/packages/poker-0.2.el"
+  sha256 "00b8a4953460c753e853dc093cf215ff836140de2fc41d3de4fbdb5de3d5336a"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
