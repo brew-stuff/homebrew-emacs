@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GitMessenger < EmacsFormula
   desc "Show commit info for individual lines in Emacs"
   homepage "https://github.com/syohex/emacs-git-messenger"
-  url "https://github.com/syohex/emacs-git-messenger/archive/0.16.tar.gz"
-  sha256 "a9065dfeee4f6594fe510aa933ebcd64e11d3cab1a2571edb1d4c5c8c5981969"
+  url "https://github.com/syohex/emacs-git-messenger/archive/0.17.tar.gz"
+  sha256 "f69d897345a5cbb211f7a72a6c3a5f46814909d035b635275b2b6f03ea5047e0"
   head "https://github.com/syohex/emacs-git-messenger.git"
 
   depends_on :emacs
