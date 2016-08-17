@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AnzuMode < EmacsFormula
   desc "Emacs minor mode for numbering search results"
   homepage "https://github.com/syohex/emacs-anzu"
-  url "https://github.com/syohex/emacs-anzu/archive/0.61.tar.gz"
-  sha256 "9cd204fe295cf981937e8add88e15ee38366450bc62c329fc8006521a1a48c06"
+  url "https://github.com/syohex/emacs-anzu/archive/0.62.tar.gz"
+  sha256 "9f91077d12bffc2d30640dfc5a5b627139d03c06bee9335f5df6977e121a8f99"
   head "https://github.com/syohex/emacs-anzu.git"
 
   depends_on :emacs => "24.1"
