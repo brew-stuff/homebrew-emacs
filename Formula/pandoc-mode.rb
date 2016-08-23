@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PandocMode < EmacsFormula
   desc "Emacs minor mode for interacting with pandoc"
   homepage "https://joostkremers.github.io/pandoc-mode/"
-  url "https://github.com/joostkremers/pandoc-mode/archive/2.17.2.tar.gz"
-  sha256 "4b38c35d897f8505ed7f70341100e0f8070cbbf86489e63642840cf196fd63fe"
+  url "https://github.com/joostkremers/pandoc-mode/archive/2.18.tar.gz"
+  sha256 "a26201377a7b3269827fcec98fc3b355bffd6d422debe32c01c8c7bb4b21b401"
   head "https://github.com/joostkremers/pandoc-mode.git"
 
   depends_on :emacs => "24.1"
