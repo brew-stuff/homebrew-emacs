@@ -2,9 +2,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Magit < EmacsFormula
   desc "Emacs interface for Git"
-  homepage "https://github.com/magit/magit"
-  url "https://github.com/magit/magit/releases/download/2.7.0/magit-2.7.0.tar.gz"
-  sha256 "f4625abbdf9537fb27751f3aa85fafc51cf793686615bb2501995160c544edcf"
+  homepage "https://magit.vc/"
+  url "https://github.com/magit/magit/releases/download/2.8.0/magit-2.8.0.tar.gz"
+  sha256 "d8415fe85d92edfa01fb2ce6238ba0e17a23d3a5e4f28f5d84d9466ee359dbfe"
   head "https://github.com/magit/magit.git", :shallow => false
 
   option "with-gh-pulls", "Build with GitHub pull request extension"
@@ -25,13 +25,15 @@ class Magit < EmacsFormula
   end
 
   resource "with-editor" do
-    url "https://github.com/magit/with-editor/archive/v2.5.0.tar.gz"
-    sha256 "8091465eefee4057a4a0daab72db1f2f0415e2abfe965d1e8b8206f3031aeba5"
+    url "https://github.com/magit/with-editor/archive/v2.5.2.tar.gz"
+    sha256 "6a06af51d1a43a6b02a2f0e63fe8102ad27bd57af27dff2d08e53c8bb970a74c"
   end
 
   def install
     resource("with-editor").stage do
-      byte_compile "with-editor.el"
+      system "make", "all",
+             "EFLAGS=-L #{Formula["homebrew/emacs/async-emacs"].opt_elisp} \
+                     -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
       elisp.install "with-editor.el", "with-editor.elc"
       info.install "with-editor.info"
       doc.install Dir["with-editor.*"]
