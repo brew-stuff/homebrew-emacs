@@ -7,7 +7,7 @@ class Deferred < EmacsFormula
   sha256 "1f3d615eff3b5199176ff7d84bc1908d48a936125c43c2deac5c073051a3aca5"
   head "https://github.com/kiwanami/emacs-deferred.git"
 
-  depends_on :emacs
+  depends_on :emacs => "23.1"
 
   def install
     byte_compile "deferred.el", "concurrent.el"
