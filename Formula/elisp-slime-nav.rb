@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ElispSlimeNav < EmacsFormula
   desc "Slime-style navigation of Emacs Lisp"
   homepage "https://github.com/purcell/elisp-slime-nav"
-  url "https://github.com/purcell/elisp-slime-nav/archive/0.8.tar.gz"
-  sha256 "c9bd44cf8f4965e0470f6dc10c88fbc3ff0783274df865b5c9062bd0fdb2f556"
+  url "https://github.com/purcell/elisp-slime-nav/archive/0.9.tar.gz"
+  sha256 "6239d99fcdcfc819a7aa739f21eeea433493ea4bac909dfb3be91e8243f507ef"
   head "https://github.com/purcell/elisp-slime-nav.git"
 
   depends_on :emacs
