@@ -2,21 +2,23 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Javaimp < EmacsFormula
   desc "Emacs functions for Java imports in Maven projects"
-  homepage "http://elpa.gnu.org/packages/javaimp.html"
-  url "http://elpa.gnu.org/packages/javaimp-0.6.el"
-  sha256 "10df463d9ba48a18116bea94fcff30c4e96c8c3a7397a08228fe2f9eb63c4301"
+  homepage "https://elpa.gnu.org/packages/javaimp.html"
+  url "https://elpa.gnu.org/packages/javaimp-0.6.tar"
+  sha256 "ce09593f934c370c41e99f95d4aeaab1581414213e7d6af09952e7653a64b304"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
+  depends_on "homebrew/emacs/seq" if Emacs.version < Version.create("25")
 
   def install
-    mv "javaimp-#{version}.el", "javaimp.el"
+    ert_run_tests "javaimp-tests.el"
     byte_compile "javaimp.el"
-    (share/"emacs/site-lisp/javaimp").install "javaimp.el", "javaimp.elc"
+    elisp.install "javaimp.el", "javaimp.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/javaimp")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
       (load "javaimp")
       (print (minibuffer-prompt-width))
     EOS
