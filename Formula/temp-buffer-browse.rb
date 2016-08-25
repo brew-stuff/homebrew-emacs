@@ -2,30 +2,21 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class TempBufferBrowse < EmacsFormula
   desc "Emacs mode for navigating temporary buffers"
-  homepage "http://elpa.gnu.org/packages/temp-buffer-browse.html"
-  url "http://elpa.gnu.org/packages/temp-buffer-browse-1.4.el"
-  sha256 "9cd50b8e1450b3de78e3b72c9c26ea38fdccc0975041d366f8488b852a3cbf14"
+  homepage "https://elpa.gnu.org/packages/temp-buffer-browse.html"
+  url "https://elpa.gnu.org/packages/temp-buffer-browse-1.5.el"
+  sha256 "6c74cc2ac6b971f22d2e841a8179d1a21ffc7c58079d5e65749b3cc33ade2eb7"
 
   depends_on :emacs => "24.3"
 
   def install
     mv "temp-buffer-browse-#{version}.el", "temp-buffer-browse.el"
     byte_compile "temp-buffer-browse.el"
-    (share/"emacs/site-lisp/temp-buffer-browse").install "temp-buffer-browse.el",
-                                                         "temp-buffer-browse.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'temp-buffer-browse)
-    (temp-buffer-browse-mode 1)
-  EOS
+    elisp.install "temp-buffer-browse.el", "temp-buffer-browse.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/temp-buffer-browse")
+      (add-to-list 'load-path "#{elisp}")
       (load "temp-buffer-browse")
       (temp-buffer-browse-mode 1)
       (print (minibuffer-prompt-width))
