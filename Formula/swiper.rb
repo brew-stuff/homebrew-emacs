@@ -9,7 +9,7 @@ class Swiper < EmacsFormula
 
   option "with-helm", "Use helm as the backend instead of ivy"
 
-  depends_on :emacs => "24.1"
+  depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/helm" if build.with? "helm"
 
   resource "swiper-helm" do
