@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Muse < EmacsFormula
-  desc "An authoring and publishing environment for Emacs"
+  desc "Authoring and publishing environment for Emacs"
   homepage "https://www.gnu.org/software/emacs-muse/"
   url "https://github.com/alexott/muse/archive/v3.20.tar.gz"
   sha256 "2ef519db1c1119b2346d40ac8ea640143a5ea939d7b40ac3d142200dc275d584"
