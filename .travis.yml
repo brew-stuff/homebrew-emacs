@@ -1,30 +1,20 @@
 language: ruby
 rvm: 2.0.0
-sudo: required
-os: linux
 
-matrix:
-  include:
-    - os: osx
-      env: OSX=10.11
-      osx_image: xcode7.3
-      rvm: system
-  allow_failures:
-    - os: linux
+env:
+  global:
+    - PATH="~/.linuxbrew/bin:~/.linuxbrew/sbin:$PATH"
 
 before_install:
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
-  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
-      git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew;
-      PATH="~/.linuxbrew/bin:~/.linuxbrew/sbin:$PATH";
-    fi
-  - sudo chown -R $USER $(brew --repo);
-  - brew update || brew update;
-  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then brew tap linuxbrew/xorg; fi
-  - mkdir -p $(brew --repo)/Library/Taps/homebrew;
-  - ln -s $PWD $(brew --repo)/Library/Taps/homebrew/homebrew-emacs;
-  - cd $(brew --repo)/Library/Taps/homebrew/homebrew-emacs;
-  - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/homebrew/homebrew-emacs";
+  - git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew;
+  - sudo chown -R $USER $(brew --repo)
+  - brew update || brew update
+  - brew tap linuxbrew/xorg
+  - mkdir -p $(brew --repo)/Library/Taps/homebrew
+  - ln -s $PWD $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
+  - cd $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
+  - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/homebrew/homebrew-emacs"
   - export HOMEBREW_DEVELOPER="1"
   - ulimit -n 1024
 
