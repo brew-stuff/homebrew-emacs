@@ -11,7 +11,7 @@ class IronyMode < EmacsFormula
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
   depends_on "homebrew/emacs/yasnippet" => :optional
 
-  depends_on "llvm" => "with-clang"
+  depends_on "llvm"
   depends_on "cmake" => :build
 
   def install
