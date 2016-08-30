@@ -21,8 +21,8 @@ class PokerEmacs < EmacsFormula
       (load "poker")
       (print (poker-random-deck))
     EOS
-    assert_equal 52, shell_output("emacs -Q --batch -l #{testpath}/test.el").
-      strip.gsub(/[()"]/, "").
-      split(" ").length
+    assert_equal 52, shell_output("emacs -Q --batch -l #{testpath}/test.el")
+      .strip.gsub(/[()"]/, "")
+      .split(" ").length
   end
 end
