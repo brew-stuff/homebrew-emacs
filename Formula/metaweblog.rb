@@ -8,7 +8,7 @@ class Metaweblog < EmacsFormula
   head "https://github.com/punchagan/metaweblog.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/xml-rpc"
+  depends_on "xml-rpc-emacs"
 
   def install
     byte_compile "metaweblog.el"
