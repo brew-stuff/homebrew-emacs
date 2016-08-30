@@ -11,25 +11,14 @@ class AceWindow < EmacsFormula
   depends_on "homebrew/emacs/avy"
 
   def install
-    # there's a Makefile but it uses cask to do the same thing
     byte_compile "ace-window.el"
-    (share/"emacs/site-lisp/ace-window").install "ace-window.el",
-                                                 "ace-window.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'ace-window)
-    (global-set-key (kbd "M-p") 'ace-window)
-  EOS
+    elisp.install "ace-window.el", "ace-window.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/ace-window")
-      (add-to-list 'load-path "#{HOMEBREW_PREFIX}/share/emacs/site-lisp/avy")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/avy"].opt_elisp}")
       (load "ace-window")
       (aw-window-list)
       (print (minibuffer-prompt-width))
