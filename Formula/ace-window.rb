@@ -7,6 +7,13 @@ class AceWindow < EmacsFormula
   sha256 "f616898826457431a235294165866875a72a2a3514376adafa84d656a87b5adc"
   head "https://github.com/abo-abo/ace-window.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "fb3d6af5535dcdd691e8c2d49ea7c7bfa702be2a0f2636f490c00ae074d40f59" => :el_capitan
+    sha256 "203e1f373ffe7fde6c54f7c7d2bac0ea54c8155426ea244ff7773c71843eba5f" => :yosemite
+    sha256 "203e1f373ffe7fde6c54f7c7d2bac0ea54c8155426ea244ff7773c71843eba5f" => :mavericks
+  end
+
   depends_on :emacs
   depends_on "homebrew/emacs/avy"
 
