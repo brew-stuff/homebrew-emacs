@@ -10,6 +10,8 @@ env:
 
 before_install:
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
+  # Fix error: Incorrect file permissions (664)
+  - chmod 0644 Formula/*.rb
   - sudo mkdir $HOME
   - sudo chown "$USER:" $HOME
   - mkdir $LINUXBREW
