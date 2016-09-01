@@ -7,14 +7,31 @@ class EmacsFormula < Formula
 
   def lib_load_paths
     return [] unless deps.any?
+
+    recursive_elisp_deps = Dependency.expand(self) do |_dependent, dep|
+      begin
+        if !dep.installed?
+          Dependency.prune
+        elsif !dep.to_formula.opt_elisp.exist?
+          Dependency.prune
+        elsif (dep.optional? || dep.recommended?) && build.without?(dep)
+          Dependency.prune
+        else
+          dep
+        end
+      rescue TapFormulaUnavailableError
+        Dependency.prune
+      end
+    end
+
     dir_paths = []
-    recursive_dependencies do |_, dep|
+    recursive_elisp_deps.each do |dep|
       lispdir = dep.to_formula.opt_elisp
       dir_paths << "--directory" << lispdir
 
       Dir["#{lispdir}/**/*"].each do |x|
         x = Pathname.new(x)
-        dir_paths << "--directory" << "#{x}" if x.directory?
+        dir_paths << "--directory" << x if x.directory?
       end
     end
     dir_paths
