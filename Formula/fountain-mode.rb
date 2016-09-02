@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class FountainMode < EmacsFormula
   desc "Major mode for the Fountain screenwriting syntax"
   homepage "https://github.com/rnkn/fountain-mode"
-  url "https://github.com/rnkn/fountain-mode/archive/v2.2.0.tar.gz"
-  sha256 "9dfe2a90ae311e860da32d6c94b55896d15037451f9facf6e14587d6c75ffc55"
+  url "https://github.com/rnkn/fountain-mode/archive/v2.2.1.tar.gz"
+  sha256 "21957eb037ede65650a5b4d56bcd9b412ddfa16a20f98596251a42346cd6957f"
   head "https://github.com/rnkn/fountain-mode.git"
 
   depends_on :emacs => "24.4"
