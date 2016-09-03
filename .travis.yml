@@ -9,6 +9,8 @@ env:
     - LINUXBREW=$HOME/.linuxbrew
 
 before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y makeinfo
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
   # Fix error: Incorrect file permissions (664)
   - chmod 0644 Formula/*.rb
