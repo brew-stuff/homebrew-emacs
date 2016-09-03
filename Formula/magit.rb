@@ -7,6 +7,13 @@ class Magit < EmacsFormula
   sha256 "d8415fe85d92edfa01fb2ce6238ba0e17a23d3a5e4f28f5d84d9466ee359dbfe"
   head "https://github.com/magit/magit.git", :shallow => false
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "cec5a3dc927f808a2dc756302a6c70dc2ae945be4d26fc1633829260ee447522" => :el_capitan
+    sha256 "b25d64ea860c9714ef6f43b569ca7d3617c140b2328d01acf88c3e7989d454bb" => :yosemite
+    sha256 "23e5fdf303b38153b052f5c195bcd8569928126d6d361e14b18f40a4fdcbf1b4" => :mavericks
+  end
+
   option "with-gh-pulls", "Build with GitHub pull request extension"
 
   depends_on :emacs => "24.4"
