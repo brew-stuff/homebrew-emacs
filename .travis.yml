@@ -27,7 +27,7 @@ before_install:
   - ulimit -n 1024
 
 script:
-  - brew test-bot --tap=homebrew/emacs
+  - brew test-bot --no-bottle
 
 notifications:
   email:
