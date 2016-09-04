@@ -7,6 +7,13 @@ class ListUnicodeDisplay < EmacsFormula
   sha256 "9f5f8a95aae6362cd1d4a1203e9e60aa2fef0b1bb3812d85605ca9ad41b70eb4"
   head "https://github.com/purcell/list-unicode-display.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "4b372145a0e655c8a5854f6eb7f2685db0837748eade9b68559f5013dc6b80bd" => :el_capitan
+    sha256 "ad0fc229b84165fc4003c57ecccb5e1c9aa0c2c3cdefbd27b372e9ddefda452e" => :yosemite
+    sha256 "ad0fc229b84165fc4003c57ecccb5e1c9aa0c2c3cdefbd27b372e9ddefda452e" => :mavericks
+  end
+
   depends_on :emacs
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
