@@ -7,6 +7,7 @@ class CompanyMode < EmacsFormula
   sha256 "a15621088d8ce2d8ea4b9df3fac836dd337509fbf627937cb1b0ef4e08ca2462"
   head "https://github.com/company-mode/company-mode.git"
 
+  option "with-ansible", "Install Ansible backend"
   option "with-emoji", "Install emoji backend"
   option "with-php", "Install PHP backend"
   option "with-statistics", "Include statistical ranking minor mode"
@@ -26,6 +27,11 @@ class CompanyMode < EmacsFormula
     depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
+  end
+
+  resource "ansible" do
+    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.1.1.tar.gz"
+    sha256 "56af14b89e247be5f9085c61cec5c75c69dd62725c268b0e69b493613eb66a12"
   end
 
   resource "emoji" do
@@ -49,6 +55,13 @@ class CompanyMode < EmacsFormula
   end
 
   def install
+    if build.with? "ansible"
+      resource("ansible").stage do
+        byte_compile Dir["*.el"]
+        (elisp/"ansible").install Dir["*.el"], Dir["*.elc"]
+      end
+    end
+
     if build.with? "emoji"
       resource("emoji").stage do
         byte_compile "company-emoji.el"
