@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PandocMode < EmacsFormula
   desc "Emacs minor mode for interacting with pandoc"
   homepage "https://joostkremers.github.io/pandoc-mode/"
-  url "https://github.com/joostkremers/pandoc-mode/archive/2.18.tar.gz"
-  sha256 "a26201377a7b3269827fcec98fc3b355bffd6d422debe32c01c8c7bb4b21b401"
+  url "https://github.com/joostkremers/pandoc-mode/archive/2.19.tar.gz"
+  sha256 "32646cbf41014cc2832ea9d63e420086030e2515ecd67f4ea2462b741e63e991"
   head "https://github.com/joostkremers/pandoc-mode.git"
 
   depends_on :emacs => "24.1"
@@ -20,6 +20,7 @@ class PandocMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["homebrew/emacs/hydra-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")
