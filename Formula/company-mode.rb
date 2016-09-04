@@ -106,6 +106,7 @@ class CompanyMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
       (load "company")
       (print (minibuffer-prompt-width))
     EOS
