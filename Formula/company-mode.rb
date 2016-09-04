@@ -7,6 +7,13 @@ class CompanyMode < EmacsFormula
   sha256 "a15621088d8ce2d8ea4b9df3fac836dd337509fbf627937cb1b0ef4e08ca2462"
   head "https://github.com/company-mode/company-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5be3f7bfcd72bb7f13a8e6e001b532b83bc9982d8ec2f95d2efe2b04d718afb3" => :el_capitan
+    sha256 "140dbec8dfb7342f6a706c40895cff621a9a8d13a1263d0b641a3aab4c3cd5b7" => :yosemite
+    sha256 "140dbec8dfb7342f6a706c40895cff621a9a8d13a1263d0b641a3aab4c3cd5b7" => :mavericks
+  end
+
   option "with-ansible", "Install Ansible backend"
   option "with-emoji", "Install emoji backend"
   option "with-php", "Install PHP backend"
