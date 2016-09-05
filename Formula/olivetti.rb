@@ -7,6 +7,13 @@ class Olivetti < EmacsFormula
   sha256 "4ce1a6f89e6b91e7a803e99a15ea6b84c2ab95a7617dd174d1a11cf49488912e"
   head "https://github.com/rnkn/olivetti.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "60046071268bb681034986943f56e00348e6d7db78f1283e457da0a4dd2f9b88" => :el_capitan
+    sha256 "8e86617a7be9d316f719de8fbed8947fea33d6f96334ff79b6fe9e8a19e1ebe3" => :yosemite
+    sha256 "8e86617a7be9d316f719de8fbed8947fea33d6f96334ff79b6fe9e8a19e1ebe3" => :mavericks
+  end
+
   depends_on :emacs => "24.4"
 
   def install
