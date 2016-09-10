@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CsharpMode < EmacsFormula
   desc "Major mode for editing C# code"
   homepage "https://github.com/josteink/csharp-mode"
-  url "https://github.com/josteink/csharp-mode/archive/v0.8.12.tar.gz"
-  sha256 "ad03db66c09cb7ac1f3843ef96060c41d136b8e7d17b8bccb25b559b3d132b0f"
+  url "https://github.com/josteink/csharp-mode/archive/v0.9.0.tar.gz"
+  sha256 "4232fe0fc4528be543ca1e338ce3e839814f2a5b43e480c16b7b4f1ea1bca3c5"
   head "https://github.com/josteink/csharp-mode"
 
   depends_on :emacs => "22.1"
