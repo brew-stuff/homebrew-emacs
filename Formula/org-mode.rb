@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-8.3.5.tar.gz"
-  sha256 "43df6c0fee7a554e1c2ebb1a9ec0be0bbe89ab5b8e0a193c3c3d707ed190341f"
+  url "http://orgmode.org/org-8.3.6.tar.gz"
+  sha256 "d95d295b44c7632f416f8844a5be7bdecd18592216961de69a9d47e6db8b6581"
 
   head "git://orgmode.org/org-mode.git", :shallow => false
 
@@ -27,16 +27,6 @@ class OrgMode < EmacsFormula
   end
 
   def install
-    system "make", "all"
-    rm "local.mk"
-    (buildpath/"local.mk").write <<-EOS.undent
-      prefix  = #{prefix}
-      lispdir = #{elisp}
-      datadir = #{etc}/emacs/#{name}
-      infodir = #{info}/emacs/#{name}
-    EOS
-    system "make", "install"
-
     if build.with? "texinfo-plus"
       resource("ox-texinfo-plus").stage do
         mv "ox-texinfo%2B.el", "ox-texinfo+.el"
@@ -51,6 +41,18 @@ class OrgMode < EmacsFormula
         elisp.install "toc-org.el", "toc-org.elc"
       end
     end
+
+    system "make", "all"
+
+    rm "local.mk"
+    (buildpath/"local.mk").write <<-EOS.undent
+      prefix  = #{prefix}
+      lispdir = #{elisp}
+      datadir = #{etc}/emacs/#{name}
+      infodir = #{info}/emacs/#{name}
+    EOS
+
+    system "make", "install"
 
     elisp.install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
