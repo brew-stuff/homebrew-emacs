@@ -8,6 +8,13 @@ class OrgMode < EmacsFormula
 
   head "git://orgmode.org/org-mode.git", :shallow => false
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "965cff6480838b526318f17b587de545406c69750715e04b5b2ec7215a403acc" => :el_capitan
+    sha256 "44dfea07fcc10911eaaefa08dae59e71711d7bed14f9f0bd87403e46276a3d66" => :yosemite
+    sha256 "7289e15b23efaf18bb91565f4643b99936bef6cc5a41912ffbdb0def65706b4d" => :mavericks
+  end
+
   option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
   option "with-toc", "Install the toc-org extension"
 
