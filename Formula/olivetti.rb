@@ -9,9 +9,9 @@ class Olivetti < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "60046071268bb681034986943f56e00348e6d7db78f1283e457da0a4dd2f9b88" => :el_capitan
-    sha256 "8e86617a7be9d316f719de8fbed8947fea33d6f96334ff79b6fe9e8a19e1ebe3" => :yosemite
-    sha256 "8e86617a7be9d316f719de8fbed8947fea33d6f96334ff79b6fe9e8a19e1ebe3" => :mavericks
+    sha256 "e0fad2ae9934cfcf128c817d05432fb838bad006da13fa5df6ab57314c621a4a" => :el_capitan
+    sha256 "de690d9fafca4739d01a1b7970e2fbbb4bb77df4bb989c87c28f827ad15c680b" => :yosemite
+    sha256 "de690d9fafca4739d01a1b7970e2fbbb4bb77df4bb989c87c28f827ad15c680b" => :mavericks
   end
 
   depends_on :emacs => "24.4"
