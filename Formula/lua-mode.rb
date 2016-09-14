@@ -2,7 +2,7 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class LuaMode < EmacsFormula
   desc "Emacs major mode for Lua"
-  homepage "http://immerrr.github.io/lua-mode"
+  homepage "https://immerrr.github.io/lua-mode"
   url "https://github.com/immerrr/lua-mode/archive/v20140514.tar.gz"
   sha256 "eed3ee2841ac1c5a563fc30425a26def91b1d44f1862d2d5e10fe7f769d61aea"
   head "https://github.com/immerrr/lua-mode.git"

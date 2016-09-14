@@ -13,7 +13,7 @@ class W3 < EmacsFormula
   def install
     ert_run_tests "tests/url-test.el"
 
-    # there's a Makefile.in but no configure or configure.ac so ¯\_(ツ)_/¯
+    # there's a Makefile.in but no configure or configure.ac
     byte_compile Dir["*.el"]
     (share/"emacs/site-lisp/w3").install Dir["*.el"],
                                          Dir["*.elc"],
