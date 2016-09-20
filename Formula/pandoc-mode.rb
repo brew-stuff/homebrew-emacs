@@ -7,6 +7,13 @@ class PandocMode < EmacsFormula
   sha256 "32646cbf41014cc2832ea9d63e420086030e2515ecd67f4ea2462b741e63e991"
   head "https://github.com/joostkremers/pandoc-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :sierra
+    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :el_capitan
+    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/hydra-emacs"
