@@ -2,7 +2,7 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class HeapEmacs < EmacsFormula
   desc "Emacs implementation of the ternary heap data structure"
-  homepage "http://www.dr-qubit.org/emacs.php"
+  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
   url "http://www.dr-qubit.org/download.php?file=predictive/heap-0.4.el"
   sha256 "e6394912f111d9ee09b1005a69f08e37f18dae7e0b19d8728217f4bc37b06fef"
 
@@ -11,12 +11,12 @@ class HeapEmacs < EmacsFormula
   def install
     mv "heap-#{version}.el", "heap.el"
     byte_compile "heap.el"
-    (share/"emacs/site-lisp/heap").install "heap.el", "heap.elc"
+    elisp.install "heap.el", "heap.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/heap")
+      (add-to-list 'load-path "#{elisp}")
       (load "heap")
       (print (minibuffer-prompt-width))
     EOS
