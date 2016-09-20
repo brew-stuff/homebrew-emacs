@@ -6,6 +6,13 @@ class DictTree < EmacsFormula
   url "https://elpa.gnu.org/packages/dict-tree-0.12.8.el"
   sha256 "457b6b3a0a103616ba54cfb48381e9a42f6a685a9164477ef88e25acb08b4a22"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6c55b749791552d0b990f565b5b94ca571cae46356e7be92f3dd41a862f11c0c" => :sierra
+    sha256 "6c55b749791552d0b990f565b5b94ca571cae46356e7be92f3dd41a862f11c0c" => :el_capitan
+    sha256 "6c55b749791552d0b990f565b5b94ca571cae46356e7be92f3dd41a862f11c0c" => :yosemite
+  end
+
   depends_on :emacs
   depends_on "homebrew/emacs/heap-emacs"
   depends_on "homebrew/emacs/tnfa-emacs"
