@@ -7,6 +7,13 @@ class UndoTree < EmacsFormula
   sha256 "67b4842cc3cafa5a8b15adc89e6db37e8367f5078fd2d4d5df723ade7d3f492f"
   head "http://www.dr-qubit.org/git/undo-tree.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "af24387700fc913baf161b154a4c1246673534b39abde4ebc23d1220e21053b3" => :sierra
+    sha256 "af24387700fc913baf161b154a4c1246673534b39abde4ebc23d1220e21053b3" => :el_capitan
+    sha256 "af24387700fc913baf161b154a4c1246673534b39abde4ebc23d1220e21053b3" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
