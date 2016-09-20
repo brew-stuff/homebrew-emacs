@@ -6,6 +6,13 @@ class PokerEmacs < EmacsFormula
   url "https://elpa.gnu.org/packages/poker-0.2.el"
   sha256 "00b8a4953460c753e853dc093cf215ff836140de2fc41d3de4fbdb5de3d5336a"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "c94d19d10fccf200c9a51a4b439e9d24678a80ff151a7638ef635176803905d2" => :sierra
+    sha256 "c94d19d10fccf200c9a51a4b439e9d24678a80ff151a7638ef635176803905d2" => :el_capitan
+    sha256 "c94d19d10fccf200c9a51a4b439e9d24678a80ff151a7638ef635176803905d2" => :yosemite
+  end
+
   depends_on emacs: "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
