@@ -6,6 +6,13 @@ class TrieEmacs < EmacsFormula
   url "https://elpa.gnu.org/packages/trie-0.2.6.el"
   sha256 "3112d165951b4bb84e64214373ae7f19eebf8948b0ee8b6158839582610b71e0"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :sierra
+    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :el_capitan
+    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :yosemite
+  end
+
   # for the avl-tree package
   depends_on emacs: "24.1"
   depends_on "homebrew/emacs/heap-emacs"
