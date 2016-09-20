@@ -2,8 +2,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class QueueEmacs < EmacsFormula
   desc "Emacs implementation of the queue data structure"
-  homepage "http://www.dr-qubit.org/emacs.php"
-  url "http://elpa.gnu.org/packages/queue-0.1.1.el"
+  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
+  url "https://elpa.gnu.org/packages/queue-0.1.1.el"
   sha256 "210daf744931abd007e2ad0caae0990ecfa09b6509402b9c6238398bbb23824b"
 
   depends_on :emacs
