@@ -8,6 +8,7 @@ class Muse < EmacsFormula
   head "https://github.com/alexott/muse.git"
 
   depends_on emacs: "21.1"
+  depends_on "homebrew/emacs/htmlize"
 
   def install
     inreplace "Makefile.defs.default", "/usr/local", prefix
