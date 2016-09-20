@@ -1,7 +1,8 @@
 {
-  "hydra": "hydra-emacs",
+  "cargo": "cargo-mode",
   "dash": "dash-emacs",
   "f": "f-emacs",
+  "hydra": "hydra-emacs",
   "s": "s-emacs",
   "xml-rpc": "xml-rpc-emacs"
 }
