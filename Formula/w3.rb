@@ -3,10 +3,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class W3 < EmacsFormula
   desc "Emacs web browser"
-  homepage "http://elpa.gnu.org/packages/w3.html"
-  url "http://elpa.gnu.org/packages/w3-4.0.49.tar"
+  homepage "https://elpa.gnu.org/packages/w3.html"
+  url "https://elpa.gnu.org/packages/w3-4.0.49.tar"
   sha256 "6be119e18fb6d4130be22f3aafc7d75b91b0b6ee3b28ed3b42a2f3371619c306"
-  head "http://git.savannah.gnu.org/r/emacs/elpa.git", :branch => "externals/w3"
+  head "http://git.savannah.gnu.org/r/emacs/elpa.git", branch: "externals/w3"
 
   depends_on :emacs
 
@@ -15,23 +15,14 @@ class W3 < EmacsFormula
 
     # there's a Makefile.in but no configure or configure.ac
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/w3").install Dir["*.el"],
-                                         Dir["*.elc"],
-                                         "etc"
+    elisp.install Dir["*.el"], Dir["*.elc"], "etc"
     prefix.install "contrib"
-    doc.install "README", "texi"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'w3)
-  EOS
+    doc.install "texi"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/w3")
+      (add-to-list 'load-path "#{elisp}")
       (load "w3")
       (print (w3-version))
     EOS
