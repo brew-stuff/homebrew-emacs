@@ -6,6 +6,13 @@ class F90InterfaceBrowser < EmacsFormula
   url "https://github.com/wence-/f90-iface/archive/elpa-v1.1.tar.gz"
   sha256 "af2b935143e14e11f274066e632e37d6e35efde4de8ba076be872c43f441619e"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "11d1af4867f71f99983df7901b5190f7ab6dae55663eea0ee840c014a0138911" => :sierra
+    sha256 "11d1af4867f71f99983df7901b5190f7ab6dae55663eea0ee840c014a0138911" => :el_capitan
+    sha256 "11d1af4867f71f99983df7901b5190f7ab6dae55663eea0ee840c014a0138911" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
