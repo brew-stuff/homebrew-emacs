@@ -7,7 +7,7 @@ class Muse < EmacsFormula
   sha256 "2ef519db1c1119b2346d40ac8ea640143a5ea939d7b40ac3d142200dc275d584"
   head "https://github.com/alexott/muse.git"
 
-  depends_on :emacs => "21.1"
+  depends_on emacs: "21.1"
 
   def install
     inreplace "Makefile.defs.default", "/usr/local", prefix
@@ -20,26 +20,12 @@ class Muse < EmacsFormula
     system "make", "info-only"
 
     system "make", "test"
-
     system "make", "install"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following (or a subset) to your init file:
-
-    (require 'muse-mode)
-    (require 'muse-project)
-
-    (require 'muse-html)
-    (require 'muse-latex)
-    (require 'muse-texinfo)
-    (require 'muse-docbook)
-  EOS
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/muse")
+      (add-to-list 'load-path "#{elisp}")
       (load "muse-mode")
       (load "muse-project")
 
