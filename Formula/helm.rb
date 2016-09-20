@@ -7,6 +7,13 @@ class Helm < EmacsFormula
   sha256 "546e32dffa9c90142b6e45e168ad0e9fa753232b8994a8e6649e5c7fd255be9e"
   head "https://github.com/emacs-helm/helm.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0288de17114d2cb79f37dcb1a81185d56e5e7646c48419a8043158a0da093027" => :sierra
+    sha256 "0288de17114d2cb79f37dcb1a81185d56e5e7646c48419a8043158a0da093027" => :el_capitan
+    sha256 "0288de17114d2cb79f37dcb1a81185d56e5e7646c48419a8043158a0da093027" => :yosemite
+  end
+
   depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/async-emacs"
 
