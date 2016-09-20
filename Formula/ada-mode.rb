@@ -2,13 +2,13 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class AdaMode < EmacsFormula
   desc "Emacs major mode for editing Ada sources"
-  homepage "http://stephe-leake.org/emacs/ada-mode/emacs-ada-mode.html"
+  homepage "http://www.nongnu.org/ada-mode/"
   url "https://elpa.gnu.org/packages/ada-mode-5.2.0.tar"
   sha256 "19dfd93c3c466cf4a246fae3c0123051490f6640bd3cefa791e54f5f17498ec8"
 
   option "without-reference", "Build without the reference manual"
 
-  depends_on :emacs => "24.2"
+  depends_on emacs: "24.2"
   depends_on "homebrew/emacs/wisi-emacs"
 
   resource "reference" do
