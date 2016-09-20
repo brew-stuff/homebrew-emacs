@@ -8,6 +8,13 @@ class W3 < EmacsFormula
   sha256 "6be119e18fb6d4130be22f3aafc7d75b91b0b6ee3b28ed3b42a2f3371619c306"
   head "http://git.savannah.gnu.org/r/emacs/elpa.git", branch: "externals/w3"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "2593f02cf26ce94ea59723a8ac0f115ea4f9abfffcbf3f53cafbce32cc9030f4" => :sierra
+    sha256 "2593f02cf26ce94ea59723a8ac0f115ea4f9abfffcbf3f53cafbce32cc9030f4" => :el_capitan
+    sha256 "2593f02cf26ce94ea59723a8ac0f115ea4f9abfffcbf3f53cafbce32cc9030f4" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
