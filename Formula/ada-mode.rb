@@ -6,6 +6,13 @@ class AdaMode < EmacsFormula
   url "https://elpa.gnu.org/packages/ada-mode-5.2.0.tar"
   sha256 "19dfd93c3c466cf4a246fae3c0123051490f6640bd3cefa791e54f5f17498ec8"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :sierra
+    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :el_capitan
+    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :yosemite
+  end
+
   option "without-reference", "Build without the reference manual"
 
   depends_on emacs: "24.2"
