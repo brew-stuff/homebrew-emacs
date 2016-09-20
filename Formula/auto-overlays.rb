@@ -7,6 +7,13 @@ class AutoOverlays < EmacsFormula
   sha256 "97840d265d7656e8e1488dcd08d2f037017d0afae1a46a430ab19e36d7b8122b"
   head "http://www.dr-qubit.org/git/predictive.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "92d8f95abb3a368dffaca663d466f746610224a34ef30609f1199fdd360dfd24" => :sierra
+    sha256 "92d8f95abb3a368dffaca663d466f746610224a34ef30609f1199fdd360dfd24" => :el_capitan
+    sha256 "92d8f95abb3a368dffaca663d466f746610224a34ef30609f1199fdd360dfd24" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
