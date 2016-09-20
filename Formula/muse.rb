@@ -7,6 +7,13 @@ class Muse < EmacsFormula
   sha256 "2ef519db1c1119b2346d40ac8ea640143a5ea939d7b40ac3d142200dc275d584"
   head "https://github.com/alexott/muse.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :sierra
+    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :el_capitan
+    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :yosemite
+  end
+
   depends_on emacs: "21.1"
   depends_on "homebrew/emacs/htmlize"
 
