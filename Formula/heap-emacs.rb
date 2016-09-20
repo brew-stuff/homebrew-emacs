@@ -6,6 +6,13 @@ class HeapEmacs < EmacsFormula
   url "http://www.dr-qubit.org/download.php?file=predictive/heap-0.4.el"
   sha256 "e6394912f111d9ee09b1005a69f08e37f18dae7e0b19d8728217f4bc37b06fef"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :sierra
+    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :el_capitan
+    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
