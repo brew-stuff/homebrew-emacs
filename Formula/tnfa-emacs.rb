@@ -2,9 +2,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class TnfaEmacs < EmacsFormula
   desc "Tagged non-deterministic finite-state automata"
-  homepage "http://www.dr-qubit.org/emacs.php"
-  url "http://www.dr-qubit.org/download.php?file=predictive/tNFA-0.1.1.el"
-  sha256 "e61159c523166252709855ab5c71ea3aebea381d50e269c2dbc769b4d02d45ec"
+  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
+  url "https://elpa.gnu.org/packages/tNFA-0.1.1.el"
+  sha256 "ba691bbbed5328939ca3a562a9231640502dd657f99c2f68295338f428bac406"
 
   depends_on :emacs
   depends_on "homebrew/emacs/queue-emacs"
