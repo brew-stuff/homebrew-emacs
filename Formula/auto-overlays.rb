@@ -2,8 +2,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class AutoOverlays < EmacsFormula
   desc "Emacs library for creating overlays based on regular expressions"
-  homepage "http://www.dr-qubit.org/emacs.php#overlay"
-  url "http://elpa.gnu.org/packages/auto-overlays-0.10.9.tar"
+  homepage "http://www.dr-qubit.org/Emacs_AutoOverlays_package.html"
+  url "https://elpa.gnu.org/packages/auto-overlays-0.10.9.tar"
   sha256 "97840d265d7656e8e1488dcd08d2f037017d0afae1a46a430ab19e36d7b8122b"
   head "http://www.dr-qubit.org/git/predictive.git"
 
@@ -18,12 +18,12 @@ class AutoOverlays < EmacsFormula
     end
 
     byte_compile Dir["auto-overlay*.el"]
-    (share/"emacs/site-lisp/auto-overlays").install Dir["auto-overlay*"]
+    elisp.install Dir["auto-overlay*"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/auto-overlays")
+      (add-to-list 'load-path "#{elisp}")
       (load "auto-overlays")
       (print (minibuffer-prompt-width))
     EOS
