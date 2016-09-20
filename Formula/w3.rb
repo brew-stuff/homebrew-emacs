@@ -24,8 +24,9 @@ class W3 < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
       (load "w3")
-      (print (w3-version))
+      (w3-fetch "http://brew.sh")
+      (print (minibuffer-prompt-width))
     EOS
-    assert_match version.to_s, shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
+    assert_match "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
