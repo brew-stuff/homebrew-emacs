@@ -1,13 +1,13 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class Cargo < EmacsFormula
+class CargoMode < EmacsFormula
   desc "Emacs Minor Mode for Cargo, Rust's Package Manager."
   homepage "https://github.com/kwrooijen/cargo.el"
   url "https://github.com/kwrooijen/cargo.el/archive/0.2.0.tar.gz"
   sha256 "e4e966615db86d51e3f3a7dcfca24d21d4725bac4d9a1a9ef61bddcf6e95100b"
   head "https://github.com/kwrooijen/cargo.el.git"
 
-  depends_on :emacs => "24.3"
+  depends_on emacs: "24.3"
   depends_on "rust-mode"
 
   def install
