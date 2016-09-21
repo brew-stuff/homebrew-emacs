@@ -6,6 +6,13 @@ class SmlMode < EmacsFormula
   url "https://elpa.gnu.org/packages/sml-mode-6.7.el"
   sha256 "3db9673b7c23e3ee58d8f0e748871700125fa0e44cdf14754a3ed6787aaf2d10"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0bbef293efc508f9c36deffcca323895aa4fd4d2da21527659d4e82bcaf389bf" => :sierra
+    sha256 "0bbef293efc508f9c36deffcca323895aa4fd4d2da21527659d4e82bcaf389bf" => :el_capitan
+    sha256 "0bbef293efc508f9c36deffcca323895aa4fd4d2da21527659d4e82bcaf389bf" => :yosemite
+  end
+
   depends_on emacs: "24.1"
 
   def install
