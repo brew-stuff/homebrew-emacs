@@ -6,6 +6,13 @@ class ScrollRestore < EmacsFormula
   url "https://elpa.gnu.org/packages/scroll-restore-1.0.el"
   sha256 "164e232bcdf72fdd0fae9c5b742888c4f863c9a168ef67da66f5d759e9d7a540"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0151cec65c17775e1344619ce240fe892653193ca9c87eee97eca85c293c344c" => :sierra
+    sha256 "0151cec65c17775e1344619ce240fe892653193ca9c87eee97eca85c293c344c" => :el_capitan
+    sha256 "0151cec65c17775e1344619ce240fe892653193ca9c87eee97eca85c293c344c" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
