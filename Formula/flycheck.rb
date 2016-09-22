@@ -13,7 +13,7 @@ class Flycheck < EmacsFormula
   option "with-package", "Include checker for package metadata"
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
-  depends_on :emacs => "24.3"
+  depends_on emacs: "24.3"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
@@ -37,8 +37,8 @@ class Flycheck < EmacsFormula
   end
 
   resource "package" do
-    url "https://github.com/purcell/flycheck-package/archive/0.8.tar.gz"
-    sha256 "86bcccb66b68ea31707429c0da59fe616a9ecc93a8b9e782055758a4888ca030"
+    url "https://github.com/purcell/flycheck-package/archive/0.9.tar.gz"
+    sha256 "90499e255116b5a4df8dd32f4221f63c77027f754b9fe9a3b15be7c696b0549c"
   end
 
   resource "pos-tip" do
