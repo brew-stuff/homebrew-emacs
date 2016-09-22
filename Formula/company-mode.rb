@@ -20,7 +20,7 @@ class CompanyMode < EmacsFormula
   option "with-statistics", "Include statistical ranking minor mode"
   option "with-web", "Install web templating backend"
 
-  depends_on :emacs => "24.1"
+  depends_on emacs: "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   if build.with? "web"
@@ -37,8 +37,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "ansible" do
-    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.1.1.tar.gz"
-    sha256 "56af14b89e247be5f9085c61cec5c75c69dd62725c268b0e69b493613eb66a12"
+    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.3.0.tar.gz"
+    sha256 "41a5fdf234484e4a67b4d3ae16e5917078a1ea3f2c01c08e26d95daade51d0ec"
   end
 
   resource "emoji" do
