@@ -7,6 +7,13 @@ class ZtreeEmacs < EmacsFormula
   sha256 "f04a0cdfa827802c7cf6ec0fafbf7b0a8c8f27ae9b471d403a1f69608c523176"
   head "https://github.com/fourier/ztree.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :sierra
+    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :el_capitan
+    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
