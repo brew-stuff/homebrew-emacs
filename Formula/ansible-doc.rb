@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AnsibleDoc < EmacsFormula
   desc "Ansible documentation lookup for Emacs"
   homepage "https://github.com/lunaryorn/ansible-doc.el"
-  url "https://github.com/lunaryorn/ansible-doc.el/archive/0.3.tar.gz"
-  sha256 "15214808b288dd9ff943b868dae5e7ac3f6e256bb4d1671ef69e50eab143a3e9"
+  url "https://github.com/lunaryorn/ansible-doc.el/archive/0.4.tar.gz"
+  sha256 "77374246b73f1291513fd027c5ecd526ad95f6b507d2e457b40aa6d5638dcfaf"
   head "https://github.com/lunaryorn/ansible-doc.el.git"
 
   depends_on :emacs => "24.1"
