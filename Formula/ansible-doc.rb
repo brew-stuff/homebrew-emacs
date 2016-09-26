@@ -7,6 +7,13 @@ class AnsibleDoc < EmacsFormula
   sha256 "77374246b73f1291513fd027c5ecd526ad95f6b507d2e457b40aa6d5638dcfaf"
   head "https://github.com/lunaryorn/ansible-doc.el.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6aa199b9cd8c2a4b74d946a02b5efc837c13c2013ba2a39f8fb663f331442bdf" => :sierra
+    sha256 "6aa199b9cd8c2a4b74d946a02b5efc837c13c2013ba2a39f8fb663f331442bdf" => :el_capitan
+    sha256 "6aa199b9cd8c2a4b74d946a02b5efc837c13c2013ba2a39f8fb663f331442bdf" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/yaml-mode"
 
