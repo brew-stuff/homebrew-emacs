@@ -32,8 +32,8 @@ class Magit < EmacsFormula
   end
 
   resource "with-editor" do
-    url "https://github.com/magit/with-editor/archive/v2.5.3.tar.gz"
-    sha256 "62fef0b3f22f1ecde39448aa6ef19899e3e2152f52847d6ada2f1b9d7123715f"
+    url "https://github.com/magit/with-editor/archive/v2.5.5.tar.gz"
+    sha256 "e4849370225f7e5973e6c4b4be6e5461d658ae58918079505c7d9fdbd436be25"
   end
 
   def install
