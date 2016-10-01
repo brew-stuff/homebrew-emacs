@@ -7,6 +7,13 @@ class FEmacs < EmacsFormula
   sha256 "3abf449393f5b26a68520a7ebaa7823995868dfaedd83e3d4646710f902d2914"
   head "https://github.com/rejeep/f.el.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "bf38575bd6c720968b2d219fded449db08415a4579c115b5141d6e9641a3b44d" => :sierra
+    sha256 "bf38575bd6c720968b2d219fded449db08415a4579c115b5141d6e9641a3b44d" => :el_capitan
+    sha256 "bf38575bd6c720968b2d219fded449db08415a4579c115b5141d6e9641a3b44d" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/s-emacs"
