@@ -7,6 +7,13 @@ class Jade < EmacsFormula
   sha256 "e1df2edc03262801f8a092da367ace26775452994831faefc2095a3025e53bfa"
   head "https://github.com/NicolasPetton/jade.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "9f73022a883f2c1b4f3165a26269dde452da02f9e8ecc87d1dbc07b3ee81e954" => :sierra
+    sha256 "9f73022a883f2c1b4f3165a26269dde452da02f9e8ecc87d1dbc07b3ee81e954" => :el_capitan
+    sha256 "9f73022a883f2c1b4f3165a26269dde452da02f9e8ecc87d1dbc07b3ee81e954" => :yosemite
+  end
+
   depends_on :emacs => "25.1"
   depends_on "homebrew/emacs/company-mode"
   depends_on "homebrew/emacs/js2-mode"
