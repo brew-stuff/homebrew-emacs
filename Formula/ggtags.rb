@@ -7,6 +7,13 @@ class Ggtags < EmacsFormula
   sha256 "428638328fed1884bfb5b5ea1c57b141ac78415f4f40aa98bef3faff58388d26"
   head "https://github.com/leoliu/ggtags.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0c6997c50b8f9e6bc6f4372673cd0ead4c45019563326078053235d748e879f1" => :sierra
+    sha256 "0c6997c50b8f9e6bc6f4372673cd0ead4c45019563326078053235d748e879f1" => :el_capitan
+    sha256 "0c6997c50b8f9e6bc6f4372673cd0ead4c45019563326078053235d748e879f1" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "global" => "with-ctags"
 
