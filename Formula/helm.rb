@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Helm < EmacsFormula
   desc "Emacs completion and selection narrowing framework"
   homepage "https://emacs-helm.github.io/helm/"
-  url "https://github.com/emacs-helm/helm/archive/v2.2.0.tar.gz"
-  sha256 "2f51f262ff07940e25f7c49c56f6ff214e0d41c5bd56516fe148c0178fe8cee6"
+  url "https://github.com/emacs-helm/helm/archive/v2.2.1.tar.gz"
+  sha256 "bc56eb8e149e464f96414fd0259247b539da9399e567ba9fd4b5b49f25added1"
   head "https://github.com/emacs-helm/helm.git"
 
   bottle do
