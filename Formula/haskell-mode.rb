@@ -3,14 +3,14 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HaskellMode < EmacsFormula
   desc "Emacs major mode for Haskell"
   homepage "https://github.com/haskell/haskell-mode"
-  url "https://github.com/haskell/haskell-mode/archive/v13.20.1.tar.gz"
-  sha256 "62af1fce31c22770b76f49f5fe2ff92ad90d29fd7b8f925c392d454d3ed62c44"
+  url "https://github.com/haskell/haskell-mode/archive/v16.1.tar.gz"
+  sha256 "109d9a0070825745c20f590c7fd0a1d2bb873d931db5ecc7deea317ab864d43c"
   head "https://github.com/haskell/haskell-mode.git"
 
   deprecated_option "with-html" => "with-docs"
   option "with-docs", "Build HTML documentation"
 
-  depends_on :emacs => "23.1"
+  depends_on :emacs => "24.3"
   depends_on "texinfo" if build.with? "docs"
 
   def install
