@@ -7,6 +7,13 @@ class HaskellMode < EmacsFormula
   sha256 "109d9a0070825745c20f590c7fd0a1d2bb873d931db5ecc7deea317ab864d43c"
   head "https://github.com/haskell/haskell-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6c1be171a695370b88b1a657fb1a847cec1f5763e5abe52489b192abf009ff63" => :sierra
+    sha256 "6c1be171a695370b88b1a657fb1a847cec1f5763e5abe52489b192abf009ff63" => :el_capitan
+    sha256 "6c1be171a695370b88b1a657fb1a847cec1f5763e5abe52489b192abf009ff63" => :yosemite
+  end
+
   deprecated_option "with-html" => "with-docs"
   option "with-docs", "Build HTML documentation"
 
