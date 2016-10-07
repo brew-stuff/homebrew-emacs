@@ -2,10 +2,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Yasnippet < EmacsFormula
   desc "Emacs template system"
-  homepage "https://github.com/capitaomorte/yasnippet"
+  homepage "https://github.com/joaotavora/yasnippet"
   url "https://elpa.gnu.org/packages/yasnippet-0.10.0.tar"
   sha256 "bb75c4ead91547cc4d178ad522a9f0f23eadd553d9924cdfefcace3c4e04076e"
-  head "https://github.com/capitaomorte/yasnippet.git"
+  head "https://github.com/joaotavora/yasnippet.git"
 
   option "with-htmlize", "Build HTML docs with htmlize"
 
