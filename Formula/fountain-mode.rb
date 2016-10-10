@@ -9,9 +9,9 @@ class FountainMode < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "810ccf756bbb26c43618fca8b78ca56fb7220b189ce7338ed881599962ec7f9c" => :el_capitan
-    sha256 "a47bfabe1dfc6d0ea49c70b81760d6ec5cbd5c051b61e893bc9afee816ec5e6d" => :yosemite
-    sha256 "a47bfabe1dfc6d0ea49c70b81760d6ec5cbd5c051b61e893bc9afee816ec5e6d" => :mavericks
+    sha256 "5c6033a6773495ac7b8f77179a2511da8ce87844b481855f892b7aa2a9e998ac" => :sierra
+    sha256 "5c6033a6773495ac7b8f77179a2511da8ce87844b481855f892b7aa2a9e998ac" => :el_capitan
+    sha256 "5c6033a6773495ac7b8f77179a2511da8ce87844b481855f892b7aa2a9e998ac" => :yosemite
   end
 
   depends_on :emacs => "24.4"
