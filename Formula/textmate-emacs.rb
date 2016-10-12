@@ -7,6 +7,13 @@ class TextmateEmacs < EmacsFormula
   sha256 "1ce4475d4e80eed145a5055f25912d66e93b4ca10306679b09e9cc722f5bcec2"
   head "https://github.com/defunkt/textmate.el.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "15528cfd245976e10b7fde8aaa9d98a1fd99a93df3ccf69968fe2bc7fc145388" => :sierra
+    sha256 "15528cfd245976e10b7fde8aaa9d98a1fd99a93df3ccf69968fe2bc7fc145388" => :el_capitan
+    sha256 "15528cfd245976e10b7fde8aaa9d98a1fd99a93df3ccf69968fe2bc7fc145388" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
