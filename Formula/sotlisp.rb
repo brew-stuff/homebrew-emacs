@@ -7,6 +7,13 @@ class Sotlisp < EmacsFormula
   sha256 "11da016428df7e9739dc7f652eee87cde065b307d0b1250faf8b93076b239915"
   head "https://github.com/Malabarba/speed-of-thought-lisp.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "7fc81ed345da59dab98007374f75cc362bdf9c165bc3b9ae8817d76a0ad888be" => :sierra
+    sha256 "7fc81ed345da59dab98007374f75cc362bdf9c165bc3b9ae8817d76a0ad888be" => :el_capitan
+    sha256 "7fc81ed345da59dab98007374f75cc362bdf9c165bc3b9ae8817d76a0ad888be" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
 
   def install
