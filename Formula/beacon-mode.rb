@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class BeaconMode < EmacsFormula
   desc "Highlight the cursor when an Emacs window scrolls"
   homepage "https://github.com/Malabarba/beacon"
-  url "http://elpa.gnu.org/packages/beacon-1.3.1.el"
-  sha256 "b28a4e8f97b191efc75dada920b71ef5209370e382dc8b056499cc098a49bca5"
+  url "https://elpa.gnu.org/packages/beacon-1.3.2.el"
+  sha256 "f62c7c19129def3e2942e6fbaf9e65222c707787eb088750a936da9c3b52b251"
   head "https://github.com/Malabarba/beacon.git"
 
   depends_on :emacs
