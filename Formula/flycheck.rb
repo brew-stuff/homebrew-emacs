@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
-  url "https://github.com/flycheck/flycheck/releases/download/29/flycheck-29.tar"
-  sha256 "d3bee0455327c86c6d756ac0ba7b47641f8092ab2f248b6039bd7c9e6f275eff"
+  url "https://github.com/flycheck/flycheck/releases/download/30/flycheck-30.tar"
+  sha256 "c7ef2e0195bd32af96180dff4602a86af2ed147f9a1735b51d1f11a9b19abfe7"
   head "https://github.com/flycheck/flycheck.git"
 
   bottle do
@@ -20,7 +20,7 @@ class Flycheck < EmacsFormula
   option "with-package", "Include checker for package metadata"
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
-  depends_on emacs: "24.3"
+  depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/let-alist"
   depends_on "homebrew/emacs/pkg-info"
@@ -29,8 +29,8 @@ class Flycheck < EmacsFormula
   depends_on "homebrew/emacs/pos-tip" if build.with? "pos-tip"
 
   resource "cask" do
-    url "https://github.com/flycheck/flycheck-cask/archive/0.3.tar.gz"
-    sha256 "920b55028ad62b7921c4eaa3a1714db0900aff1094a4b43fb6aa866e8c9a0184"
+    url "https://github.com/flycheck/flycheck-cask/archive/0.4.tar.gz"
+    sha256 "0446ae1e69a2827ac0cd7dd45f971853f3bf425c812bdf79965125a00c943aaf"
   end
 
   resource "color-mode-line" do
