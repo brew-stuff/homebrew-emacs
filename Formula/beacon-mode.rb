@@ -7,6 +7,13 @@ class BeaconMode < EmacsFormula
   sha256 "f62c7c19129def3e2942e6fbaf9e65222c707787eb088750a936da9c3b52b251"
   head "https://github.com/Malabarba/beacon.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0e1585defa46cc84ff63a92a0c1199f4035db37c7996e4bcda56c0a527e261fc" => :sierra
+    sha256 "0e1585defa46cc84ff63a92a0c1199f4035db37c7996e4bcda56c0a527e261fc" => :el_capitan
+    sha256 "0e1585defa46cc84ff63a92a0c1199f4035db37c7996e4bcda56c0a527e261fc" => :yosemite
+  end
+
   depends_on :emacs
   depends_on "homebrew/emacs/seq" if Emacs.version < Version.create("25")
 
