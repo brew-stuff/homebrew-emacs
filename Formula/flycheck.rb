@@ -9,9 +9,9 @@ class Flycheck < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b8c79ce7a1208e51677f75b4413e38da38b2480d6e2cc5b3358b2f9f4ab85d6e" => :sierra
-    sha256 "b8c79ce7a1208e51677f75b4413e38da38b2480d6e2cc5b3358b2f9f4ab85d6e" => :el_capitan
-    sha256 "b8c79ce7a1208e51677f75b4413e38da38b2480d6e2cc5b3358b2f9f4ab85d6e" => :yosemite
+    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :sierra
+    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :el_capitan
+    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :yosemite
   end
 
   option "with-cask", "Build with Cask support"
