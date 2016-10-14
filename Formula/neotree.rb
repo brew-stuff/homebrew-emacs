@@ -7,6 +7,13 @@ class Neotree < EmacsFormula
   sha256 "208ba914cc8b2d65ecc69db1ada3066c61d9d5b541529d566e0161cf390bf330"
   head "https://github.com/jaypei/emacs-neotree.git", :branch => "dev"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "66b99c96b3b183db861e7e9805bd12a541df2c55b12cc50c2ef33f560896307b" => :sierra
+    sha256 "66b99c96b3b183db861e7e9805bd12a541df2c55b12cc50c2ef33f560896307b" => :el_capitan
+    sha256 "66b99c96b3b183db861e7e9805bd12a541df2c55b12cc50c2ef33f560896307b" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
