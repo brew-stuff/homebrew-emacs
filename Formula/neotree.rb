@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Neotree < EmacsFormula
   desc "Tree-style file browser for Emacs"
   homepage "https://github.com/jaypei/emacs-neotree"
-  url "https://github.com/jaypei/emacs-neotree/archive/v0.2.1.tar.gz"
-  sha256 "fae0816cbd7ba051b6918caefeaccb09e700ddd47215cd9d8cee493edb3d2333"
+  url "https://github.com/jaypei/emacs-neotree/archive/0.5.tar.gz"
+  sha256 "208ba914cc8b2d65ecc69db1ada3066c61d9d5b541529d566e0161cf390bf330"
   head "https://github.com/jaypei/emacs-neotree.git", :branch => "dev"
 
   depends_on :emacs
