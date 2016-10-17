@@ -7,6 +7,13 @@ class LessCssMode < EmacsFormula
   sha256 "c0fcf73526b66e2eb1f0bfa6c7ca0f1aab9e3f7ba2b3c08252fab7ccf2da2b71"
   head "https://github.com/purcell/less-css-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "d1bc74cc2f12dcf6a5d11f7d38a62a387c7a72b6f2b04cbad1e2784cf182d571" => :sierra
+    sha256 "d1bc74cc2f12dcf6a5d11f7d38a62a387c7a72b6f2b04cbad1e2784cf182d571" => :el_capitan
+    sha256 "d1bc74cc2f12dcf6a5d11f7d38a62a387c7a72b6f2b04cbad1e2784cf182d571" => :yosemite
+  end
+
   depends_on :emacs => "22.2"
 
   def install
