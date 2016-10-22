@@ -19,6 +19,7 @@ class Helm < EmacsFormula
 
   def install
     system "make"
+    puts "hello"
     elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
