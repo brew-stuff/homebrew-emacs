@@ -7,6 +7,13 @@ class SuggestEmacs < EmacsFormula
   sha256 "02e2f87c00da1a95cdb436ba104d7fdffc1197207c38259318cd2026a1282b41"
   head "https://github.com/Wilfred/suggest.el.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "ca6e60e49dd5e5bcec7510577f16335d3d55083213eda37e176765d728ee0a86" => :sierra
+    sha256 "ca6e60e49dd5e5bcec7510577f16335d3d55083213eda37e176765d728ee0a86" => :el_capitan
+    sha256 "ca6e60e49dd5e5bcec7510577f16335d3d55083213eda37e176765d728ee0a86" => :yosemite
+  end
+
   depends_on :emacs => "24.4"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/f-emacs"
