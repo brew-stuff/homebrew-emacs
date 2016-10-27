@@ -9,9 +9,9 @@ class Yasnippet < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2763ff9ef3add0b80a4afa32cac9d3e2ba79ab295c83f2a14577d61a810d1d7f" => :sierra
-    sha256 "2763ff9ef3add0b80a4afa32cac9d3e2ba79ab295c83f2a14577d61a810d1d7f" => :el_capitan
-    sha256 "2763ff9ef3add0b80a4afa32cac9d3e2ba79ab295c83f2a14577d61a810d1d7f" => :yosemite
+    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :sierra
+    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :el_capitan
+    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :yosemite
   end
 
   option "with-htmlize", "Build HTML docs with htmlize"
