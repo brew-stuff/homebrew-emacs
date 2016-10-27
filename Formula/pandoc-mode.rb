@@ -9,9 +9,9 @@ class PandocMode < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :sierra
-    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :el_capitan
-    sha256 "f7d4e0feab9192e3ec657e23d94b2d6b776664bc310103795f02d106ce008abe" => :yosemite
+    sha256 "9f42c042b239ec443937cb21b2846356668b2c9975fe27b106e991fe3331e55a" => :sierra
+    sha256 "9f42c042b239ec443937cb21b2846356668b2c9975fe27b106e991fe3331e55a" => :el_capitan
+    sha256 "9f42c042b239ec443937cb21b2846356668b2c9975fe27b106e991fe3331e55a" => :yosemite
   end
 
   depends_on :emacs => "24.1"
