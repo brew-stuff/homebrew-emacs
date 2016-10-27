@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Yasnippet < EmacsFormula
   desc "Emacs template system"
   homepage "https://github.com/joaotavora/yasnippet"
-  url "https://elpa.gnu.org/packages/yasnippet-0.10.0.tar"
-  sha256 "bb75c4ead91547cc4d178ad522a9f0f23eadd553d9924cdfefcace3c4e04076e"
+  url "https://github.com/joaotavora/yasnippet/archive/0.11.0.tar.gz"
+  sha256 "05c7d47be7296add65519e2ed4f588120a60290635ebdb1a3e2b01376735b195"
   head "https://github.com/joaotavora/yasnippet.git"
 
   bottle do
@@ -16,7 +16,7 @@ class Yasnippet < EmacsFormula
 
   option "with-htmlize", "Build HTML docs with htmlize"
 
-  depends_on :emacs => "23.1"
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/htmlize" => :optional
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
