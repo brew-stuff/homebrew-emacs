@@ -6,6 +6,13 @@ class Seq < EmacsFormula
   url "https://elpa.gnu.org/packages/seq-2.19.tar"
   sha256 "0a7e93f52bb7afd28d36c1362f7da9e301694e813f3b2699a6011265743c0b86"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :sierra
+    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :el_capitan
+    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
 
   # Submitted upstream via email on 2016-10-28
