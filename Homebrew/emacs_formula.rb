@@ -74,8 +74,7 @@ class EmacsFormula < Formula
     # is this necessary?
     $stdout.flush
     unless $?.success?
-      odie "Tests failed"
-      puts "emacs #{test_args.join(" ")}"
+      odie "Tests failed: `emacs #{test_args.join(" ")}`"
     end
   end
 
