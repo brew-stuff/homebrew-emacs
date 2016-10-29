@@ -39,7 +39,7 @@ class EmacsFormula < Formula
 
   ### This is not well-tested and should be used with caution
   def ert_run_tests(*files)
-    test_args = %W[--batch -Q]
+    test_args = %w[--batch -Q]
     # allow running in resource blocks
     test_args << "--directory" << Pathname.pwd
 
@@ -54,7 +54,7 @@ class EmacsFormula < Formula
     end
     dirs.each do |x|
       x = Pathname.new(x)
-      test_args << "--directory" << "#{x}" if x.directory?
+      test_args << "--directory" << x.to_s if x.directory?
     end
 
     # this means flattening later on
@@ -80,7 +80,7 @@ class EmacsFormula < Formula
 
   ### Slightly better tested than ert_run_tests
   def byte_compile(*files)
-    emacs_args = %W[ --batch -Q ]
+    emacs_args = %w[--batch -Q]
 
     # Pathname.pwd and buildpath differ when we're compiling resources
     load_dirs = [buildpath, Pathname.pwd]
@@ -110,13 +110,12 @@ class EmacsFormula < Formula
       Process.wait pid
       # is this necessary?
       $stdout.flush
-      unless $?.success?
-        env = ENV.to_hash
-        puts # line between emacs output and env dump
-        onoe "Byte compilation failed"
-        puts "emacs #{args.join(" ")}"
-        raise BuildError.new(self, "emacs", args, env)
-      end
+      next if $?.success?
+      env = ENV.to_hash
+      puts # line between emacs output and env dump
+      onoe "Byte compilation failed"
+      puts "emacs #{args.join(" ")}"
+      raise BuildError.new(self, "emacs", args, env)
     end
   end
 end
