@@ -7,6 +7,13 @@ class Elfeed < EmacsFormula
   sha256 "0616be0ec8742beb5f1698d5162347a748e1750894e845430e3730714b0b2dc3"
   head "https://github.com/skeeto/elfeed.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "2498491fc8ff6e7996cd49bdc6489edd7008896a6601c003996cd167d09bcd8d" => :sierra
+    sha256 "2498491fc8ff6e7996cd49bdc6489edd7008896a6601c003996cd167d09bcd8d" => :el_capitan
+    sha256 "2498491fc8ff6e7996cd49bdc6489edd7008896a6601c003996cd167d09bcd8d" => :yosemite
+  end
+
   depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/simple-httpd"
 
