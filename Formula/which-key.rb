@@ -7,6 +7,13 @@ class WhichKey < EmacsFormula
   sha256 "d8eb92f348c5075a989cb567f57921f78569965fadde5e7c76bb772d6ba4affc"
   head "https://github.com/justbur/emacs-which-key.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :sierra
+    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :el_capitan
+    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :yosemite
+  end
+
   depends_on :emacs => "24.3"
 
   def install
