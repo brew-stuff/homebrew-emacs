@@ -8,9 +8,9 @@ class AdaMode < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :sierra
-    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :el_capitan
-    sha256 "5dec9c6f52c55475ef689fa17a6545b3f82901f029269709ff22ee64cd373879" => :yosemite
+    sha256 "d91c0f7770d892d0a94be729da7c71b4c784e5e7214d9bada75f9496885b1077" => :sierra
+    sha256 "d91c0f7770d892d0a94be729da7c71b4c784e5e7214d9bada75f9496885b1077" => :el_capitan
+    sha256 "d91c0f7770d892d0a94be729da7c71b4c784e5e7214d9bada75f9496885b1077" => :yosemite
   end
 
   option "without-reference", "Build without the reference manual"
