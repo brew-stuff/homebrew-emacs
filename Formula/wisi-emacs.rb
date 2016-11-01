@@ -6,6 +6,13 @@ class WisiEmacs < EmacsFormula
   url "https://elpa.gnu.org/packages/wisi-1.1.4.tar"
   sha256 "99507170b58aab866d7bbc63547751454227d68b196452f4bf7d5dbdcfc10bd8"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "a78cea1fd5b1ae63b35b14c29ea97ea694ece20ce87a34f40a965592dd957004" => :sierra
+    sha256 "a78cea1fd5b1ae63b35b14c29ea97ea694ece20ce87a34f40a965592dd957004" => :el_capitan
+    sha256 "a78cea1fd5b1ae63b35b14c29ea97ea694ece20ce87a34f40a965592dd957004" => :yosemite
+  end
+
   depends_on :emacs => "24.2"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
