@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Debbugs < EmacsFormula
   desc "Emacs library for accessing Debbugs SOAP servers"
   homepage "https://elpa.gnu.org/packages/debbugs.html"
-  url "https://elpa.gnu.org/packages/debbugs-0.11.tar"
-  sha256 "d670f48dc5138301d5f02f77d881144cd7d761fc89390c8d34edbbedd5d16983"
+  url "https://elpa.gnu.org/packages/debbugs-0.12.tar"
+  sha256 "f096b1841c9e10958bef0edaecdcc3b49d3febf54c04995aac112ae84e2391eb"
 
   bottle do
     cellar :any_skip_relocation
