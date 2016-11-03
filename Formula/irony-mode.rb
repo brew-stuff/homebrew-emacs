@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class IronyMode < EmacsFormula
   desc "C/C++ minor mode for Emacs powered by libclang"
   homepage "https://github.com/Sarcasm/irony-mode"
-  url "https://github.com/Sarcasm/irony-mode/archive/v0.2.0.tar.gz"
-  sha256 "448458daf0653b74382e576131f737347f95393b089dff319b66a2ed9fcbf3d8"
+  url "https://github.com/Sarcasm/irony-mode/archive/v0.2.1.tar.gz"
+  sha256 "6e7fc33751a5529194e3a6e50b60174fa2a47803ae383a6027e38ec589777b2a"
   head "https://github.com/Sarcasm/irony-mode.git"
 
   bottle do
