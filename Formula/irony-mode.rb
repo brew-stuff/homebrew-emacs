@@ -9,9 +9,9 @@ class IronyMode < EmacsFormula
 
   bottle do
     cellar :any
-    sha256 "9cf4b4fde2e75c465cd8a6a11b1ab5bf7db71b57eb3fdc478d500a011ec1ae0c" => :el_capitan
-    sha256 "d497dd2b7adb5715370126b37c3746fd18803fc7da56f2efe7ccd7c078ca0102" => :yosemite
-    sha256 "52b27bb9959e800108fb787e00fce8fafea36f5d9c142a03f75d8b988f264258" => :mavericks
+    sha256 "340776506d2ebac428dafb3e6f9d0b3bdb96b1abfd75b6da045933d6bcc725b8" => :sierra
+    sha256 "9f4630d75228a66f22dc05475b155f5539043688337fef9d95105fbb631c3f17" => :el_capitan
+    sha256 "0618e58e9410e1513199ba25ac9310a2341880ac0d383248bf6eaf1cdceb69ba" => :yosemite
   end
 
   depends_on :emacs => "23.1"
