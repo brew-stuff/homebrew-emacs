@@ -8,9 +8,9 @@ class Debbugs < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "593672178e5cacb64a5f002dd21ce4a7cf7e86fa127c03757e36d303f065e8cc" => :sierra
-    sha256 "593672178e5cacb64a5f002dd21ce4a7cf7e86fa127c03757e36d303f065e8cc" => :el_capitan
-    sha256 "593672178e5cacb64a5f002dd21ce4a7cf7e86fa127c03757e36d303f065e8cc" => :yosemite
+    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :sierra
+    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :el_capitan
+    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :yosemite
   end
 
   depends_on :emacs => "24.1"
