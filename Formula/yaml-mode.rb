@@ -16,6 +16,13 @@ class YamlMode < EmacsFormula
       sha256 "e339db2f453cf980fd7baf6d387b2d2339d76d4ba0f2aff7e7607bb5bf2fef2b"
     end
   end
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "7488be46e2368af94eb1ad1682a504b07030d0ef8691058e53b6c7842d10b832" => :sierra
+    sha256 "7488be46e2368af94eb1ad1682a504b07030d0ef8691058e53b6c7842d10b832" => :el_capitan
+    sha256 "7488be46e2368af94eb1ad1682a504b07030d0ef8691058e53b6c7842d10b832" => :yosemite
+  end
+
 
   depends_on :emacs => "24.1"
 
