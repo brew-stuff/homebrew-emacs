@@ -10,9 +10,9 @@ class Smartparens < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :sierra
-    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :el_capitan
-    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :yosemite
+    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :sierra
+    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :el_capitan
+    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :yosemite
   end
 
   depends_on :emacs => "24.1"
