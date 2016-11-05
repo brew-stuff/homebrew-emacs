@@ -7,6 +7,13 @@ class Smartparens < EmacsFormula
   sha256 "9834d1b0d93b0a5b308e56213f81c18cf0d9483163d6822d453be9004f2e0688"
   head "https://github.com/Fuco1/smartparens.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :sierra
+    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :el_capitan
+    sha256 "5b5afc186540b656d37b41575a81b8f9b186d448b1115481cf7810a715eea642" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
   depends_on "homebrew/emacs/dash-emacs"
