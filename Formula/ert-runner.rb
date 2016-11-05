@@ -6,6 +6,13 @@ class ErtRunner < EmacsFormula
   url "https://github.com/rejeep/ert-runner.el/archive/v0.7.0.tar.gz"
   sha256 "973f3abbbcb6fc51cde37fce1bc4fdd43da401c62e33445f27caa49826b3a798"
   head "https://github.com/rejeep/ert-runner.el.git"
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "d305eaa96e89bba3550441698cb2549058de15b4e61588d11f3d4f7de90fe09c" => :sierra
+    sha256 "d305eaa96e89bba3550441698cb2549058de15b4e61588d11f3d4f7de90fe09c" => :el_capitan
+    sha256 "d305eaa96e89bba3550441698cb2549058de15b4e61588d11f3d4f7de90fe09c" => :yosemite
+  end
+
   revision 1
 
   depends_on :emacs
