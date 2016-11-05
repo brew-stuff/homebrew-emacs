@@ -3,11 +3,21 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class YamlMode < EmacsFormula
   desc "Emacs major mode for editing YAML files"
   homepage "https://github.com/yoshiki/yaml-mode"
-  url "https://github.com/yoshiki/yaml-mode/archive/v0.0.12.tar.gz"
-  sha256 "f294ed0e2f77081c2e77fd9bd9b496346d5812b240613c5c9aee2dc6abfa5ca1"
   head "https://github.com/yoshiki/yaml-mode.git"
 
-  depends_on :emacs
+  stable do
+    url "https://github.com/yoshiki/yaml-mode/archive/v0.0.13.tar.gz"
+    sha256 "c547b1ec62e6b39fd3e95e28b8d3918958d4f00391c471485532dbc6cc3dcab8"
+
+    # Remove for > 0.0.13
+    # Upstream commit "update yaml-mode-version"
+    patch do
+      url "https://github.com/yoshiki/yaml-mode/commit/5abb2f4.patch"
+      sha256 "e339db2f453cf980fd7baf6d387b2d2339d76d4ba0f2aff7e7607bb5bf2fef2b"
+    end
+  end
+
+  depends_on :emacs => "24.1"
 
   def install
     (share/"emacs/site-lisp/yaml-mode").mkpath
