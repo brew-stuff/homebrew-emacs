@@ -6,6 +6,7 @@ class Smartparens < EmacsFormula
   url "https://github.com/Fuco1/smartparens/archive/1.9.0.tar.gz"
   sha256 "9834d1b0d93b0a5b308e56213f81c18cf0d9483163d6822d453be9004f2e0688"
   head "https://github.com/Fuco1/smartparens.git"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -19,6 +20,7 @@ class Smartparens < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
 
   def install
+    rm "smartparens-pkg.el"
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
     doc.install "smartparens.org"
