@@ -9,9 +9,9 @@ class WhichKey < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :sierra
-    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :el_capitan
-    sha256 "9bd60fa11ee62ab2977fffb0de354e4dac55cfe90e136d079027da44a8210c1f" => :yosemite
+    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :sierra
+    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :el_capitan
+    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :yosemite
   end
 
   depends_on :emacs => "24.3"
