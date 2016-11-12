@@ -7,6 +7,13 @@ class NixMode < EmacsFormula
   sha256 "b0591965aa2478e4969ce30baaa298a3e1a85ec2efd4bf4581f5f3f1d36f5cb6"
   head "https://github.com/NixOS/nix.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :sierra
+    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :el_capitan
+    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
 
   def install
