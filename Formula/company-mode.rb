@@ -9,10 +9,9 @@ class CompanyMode < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "8b411e04df35745ed0c99d876c2fb5ea5f873aacd9aa63041a82e6f72516ac90" => :sierra
-    sha256 "8b411e04df35745ed0c99d876c2fb5ea5f873aacd9aa63041a82e6f72516ac90" => :el_capitan
-    sha256 "8b411e04df35745ed0c99d876c2fb5ea5f873aacd9aa63041a82e6f72516ac90" => :yosemite
+    sha256 "0a2bde66f87e946ac6821b5f8e446af04112b9bc72956fc397a28c9310887be7" => :sierra
+    sha256 "0a2bde66f87e946ac6821b5f8e446af04112b9bc72956fc397a28c9310887be7" => :el_capitan
+    sha256 "0a2bde66f87e946ac6821b5f8e446af04112b9bc72956fc397a28c9310887be7" => :yosemite
   end
 
   option "with-ansible", "Install Ansible backend"
