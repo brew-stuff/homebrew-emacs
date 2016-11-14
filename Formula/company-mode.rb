@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CompanyMode < EmacsFormula
   desc "Modular in-buffer completion framework for Emacs"
   homepage "https://company-mode.github.io"
-  url "https://github.com/company-mode/company-mode/archive/0.9.0.tar.gz"
-  sha256 "a15621088d8ce2d8ea4b9df3fac836dd337509fbf627937cb1b0ef4e08ca2462"
+  url "https://github.com/company-mode/company-mode/archive/0.9.2.tar.gz"
+  sha256 "75c2e0325787c91228b5a9e4a0b702543e3ee3146194a849e429e20055915f08"
   head "https://github.com/company-mode/company-mode.git"
 
   bottle do
@@ -21,7 +21,7 @@ class CompanyMode < EmacsFormula
   option "with-statistics", "Include statistical ranking minor mode"
   option "with-web", "Install web templating backend"
 
-  depends_on emacs: "24.1"
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   if build.with? "web"
