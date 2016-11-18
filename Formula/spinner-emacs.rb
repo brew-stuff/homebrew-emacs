@@ -9,9 +9,9 @@ class SpinnerEmacs < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f6390b22460814d97de5fde438e6d17a12bdeedfeb608db2096ad08be7fb01c9" => :sierra
-    sha256 "f6390b22460814d97de5fde438e6d17a12bdeedfeb608db2096ad08be7fb01c9" => :el_capitan
-    sha256 "f6390b22460814d97de5fde438e6d17a12bdeedfeb608db2096ad08be7fb01c9" => :yosemite
+    sha256 "f21644bdfb2b8f3a8efbf95e5d7bbe6e8cf8fdfb38b9fc40ea32f059242a7b2d" => :sierra
+    sha256 "f21644bdfb2b8f3a8efbf95e5d7bbe6e8cf8fdfb38b9fc40ea32f059242a7b2d" => :el_capitan
+    sha256 "f21644bdfb2b8f3a8efbf95e5d7bbe6e8cf8fdfb38b9fc40ea32f059242a7b2d" => :yosemite
   end
 
   depends_on :emacs
