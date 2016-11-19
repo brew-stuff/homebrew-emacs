@@ -3,9 +3,19 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClojureMode < EmacsFormula
   desc "Emacs major mode for Clojure"
   homepage "https://github.com/clojure-emacs/clojure-mode"
-  url "https://github.com/clojure-emacs/clojure-mode/archive/5.5.2.tar.gz"
-  sha256 "75367f1a677a1c1b4c21e0f0de4d981cf3d345c159f06fcb1a38b9435ab1fc72"
   head "https://github.com/clojure-emacs/clojure-mode.git"
+
+  stable do
+    url "https://github.com/clojure-emacs/clojure-mode/archive/5.6.0.tar.gz"
+    sha256 "f55fab65811722ab7300d898085a0427207571f17282a4c402d015d00a5f30bb"
+
+    # Remove for > 5.6.0
+    # "bump `clojure-mode-version' to 5.6.0"
+    patch do
+      url "https://github.com/clojure-emacs/clojure-mode/pull/417.patch"
+      sha256 "2fe0fc2c27366268bf8fb3c07ac5186ed4dd7b47a85baebf0d1ce55d5df07078"
+    end
+  end
 
   option "with-inf", "Build with the inferior REPL"
 
