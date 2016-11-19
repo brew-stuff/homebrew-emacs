@@ -37,13 +37,13 @@ class CompanyMode < EmacsFormula
   end
 
   resource "ansible" do
-    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.3.0.tar.gz"
-    sha256 "41a5fdf234484e4a67b4d3ae16e5917078a1ea3f2c01c08e26d95daade51d0ec"
+    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.4.0.tar.gz"
+    sha256 "b2830689aefcc960b0188e725d3329984d2d879b0d5dd08204a006897d5677e9"
   end
 
   resource "emoji" do
-    url "https://github.com/dunn/company-emoji/archive/2.3.0.tar.gz"
-    sha256 "51f5c3c43ab6fcb79ea88115b0e773269cc02d56a8dbaec1f83f7fbe3e5f34f8"
+    url "https://github.com/dunn/company-emoji/archive/2.4.1.tar.gz"
+    sha256 "cd661ce659a09ccfa31c7686773883150d83052434d7490b3c6189c0f06618e7"
   end
 
   resource "php" do
