@@ -17,6 +17,13 @@ class ClojureMode < EmacsFormula
     end
   end
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "c31ea64f3d57b66dfa94174225321b16eec5897975d630e525fb5cae9acfb289" => :sierra
+    sha256 "c31ea64f3d57b66dfa94174225321b16eec5897975d630e525fb5cae9acfb289" => :el_capitan
+    sha256 "c31ea64f3d57b66dfa94174225321b16eec5897975d630e525fb5cae9acfb289" => :yosemite
+  end
+
   option "with-inf", "Build with the inferior REPL"
 
   depends_on :emacs => "24.3"
