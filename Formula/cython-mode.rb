@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CythonMode < EmacsFormula
   desc "Emacs major mode for Cython"
   homepage "http://cython.org"
-  url "https://github.com/cython/cython/archive/0.24.tar.gz"
-  sha256 "b60b91f1ec88921a423d5f0a5e2a7c232cdff12d9130088014bf89d542ce137b"
+  url "https://github.com/cython/cython/archive/0.25.1.tar.gz"
+  sha256 "1cda0c5b6ebe9a6df19993cabbe747e35e6f540d438e1a750f4fc8a17b3a7d37"
   head "https://github.com/cython/cython.git"
 
   depends_on :emacs
