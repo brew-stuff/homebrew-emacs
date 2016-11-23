@@ -7,6 +7,13 @@ class LedgerMode < EmacsFormula
   sha256 "cb1087bf89beb3e38d51c621604c67ec2995fada6e819904ef5276231140cf74"
   head "https://github.com/ledger/ledger-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5fee80edc9d1d10ee3ecabfcb2f226fa11083864b635937da3f393ce379a0ef7" => :sierra
+    sha256 "5fee80edc9d1d10ee3ecabfcb2f226fa11083864b635937da3f393ce379a0ef7" => :el_capitan
+    sha256 "5fee80edc9d1d10ee3ecabfcb2f226fa11083864b635937da3f393ce379a0ef7" => :yosemite
+  end
+
   depends_on :emacs
   depends_on "cmake" => :build
 
