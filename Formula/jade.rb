@@ -9,9 +9,9 @@ class Jade < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "faff8b56387b903f711a1954fd71de3896084b483eb4bacdf789ad0a7a65008e" => :sierra
-    sha256 "faff8b56387b903f711a1954fd71de3896084b483eb4bacdf789ad0a7a65008e" => :el_capitan
-    sha256 "faff8b56387b903f711a1954fd71de3896084b483eb4bacdf789ad0a7a65008e" => :yosemite
+    sha256 "3b20073a2b04b7cc3d4791506c40d8dc4e62673451c0ba24531b0f27ce79f9c1" => :sierra
+    sha256 "3b20073a2b04b7cc3d4791506c40d8dc4e62673451c0ba24531b0f27ce79f9c1" => :el_capitan
+    sha256 "3b20073a2b04b7cc3d4791506c40d8dc4e62673451c0ba24531b0f27ce79f9c1" => :yosemite
   end
 
   depends_on :emacs => "25.1"
