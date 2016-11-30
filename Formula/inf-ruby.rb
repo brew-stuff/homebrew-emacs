@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class InfRuby < EmacsFormula
   desc "Emacs REPL buffer connected to a Ruby subprocess"
   homepage "https://github.com/nonsequitur/inf-ruby"
-  url "https://github.com/nonsequitur/inf-ruby/archive/2.4.0.tar.gz"
-  sha256 "39e847194d813b00f242e6d04a9bc1169cab5181212c5f69b8f1afa59df2bdc0"
+  url "https://github.com/nonsequitur/inf-ruby/archive/2.5.0.tar.gz"
+  sha256 "a80c34c7858e1c2573e9250b36952f518b000c47187fe7965362f0c7becef2b6"
   head "https://github.com/nonsequitur/inf-ruby.git"
 
   depends_on :emacs
