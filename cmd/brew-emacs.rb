@@ -1,3 +1,7 @@
+#:  * `emacs` name...:
+#:    Generate a formula for the homebrew-emacs tap for each given <name>.
+#:    Open the last formula specified in your preferred editor.
+
 raise FormulaUnspecifiedError if ARGV.empty?
 
 def template(name)
