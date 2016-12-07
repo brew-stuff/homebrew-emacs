@@ -9,9 +9,9 @@ class Helm < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "dc18075abd55a314feebc7574c1f0e1bef0bde418ac72f03c22cf2b2cfb7cb8d" => :sierra
-    sha256 "dc18075abd55a314feebc7574c1f0e1bef0bde418ac72f03c22cf2b2cfb7cb8d" => :el_capitan
-    sha256 "dc18075abd55a314feebc7574c1f0e1bef0bde418ac72f03c22cf2b2cfb7cb8d" => :yosemite
+    sha256 "72bdd9254528483c4eec0e31d5127c2e4d9a008277f61d381ff7b07aa2527dfc" => :sierra
+    sha256 "72bdd9254528483c4eec0e31d5127c2e4d9a008277f61d381ff7b07aa2527dfc" => :el_capitan
+    sha256 "72bdd9254528483c4eec0e31d5127c2e4d9a008277f61d381ff7b07aa2527dfc" => :yosemite
   end
 
   depends_on :emacs => "24.3"
