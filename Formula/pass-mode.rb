@@ -7,6 +7,13 @@ class PassMode < EmacsFormula
   sha256 "ec9a99086429f6bb29b8cd5e8d391822de8353b6ce4f150916e7298e50e1f22d"
   head "https://github.com/NicolasPetton/pass.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :sierra
+    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :el_capitan
+    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :yosemite
+  end
+
   depends_on :emacs => "24"
   depends_on "pass"
   depends_on "homebrew/emacs/dash-emacs"
