@@ -7,6 +7,13 @@ class Htmlize < EmacsFormula
   sha256 "b450fa229bef77741b98b121a84ad27e2e0c530bbf87a589e06f3bab94a89682"
   head "https://github.com/dunn/htmlize-mirror.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :sierra
+    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :el_capitan
+    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :yosemite
+  end
+
   depends_on :emacs => "22.1"
 
   def install
