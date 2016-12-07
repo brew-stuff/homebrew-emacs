@@ -7,6 +7,13 @@ class InfRuby < EmacsFormula
   sha256 "a80c34c7858e1c2573e9250b36952f518b000c47187fe7965362f0c7becef2b6"
   head "https://github.com/nonsequitur/inf-ruby.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :sierra
+    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :el_capitan
+    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
