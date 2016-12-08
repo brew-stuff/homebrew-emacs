@@ -22,7 +22,7 @@ class Seq < EmacsFormula
   end
 
   def install
-    ert_run_tests "tests/seq-tests.el"
+    ert_run_tests "tests/seq-tests.el" if Emacs.version >= Version.create("25.1")
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
   end
