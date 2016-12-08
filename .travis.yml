@@ -12,8 +12,6 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y texinfo
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
-  # Fix error: Incorrect file permissions (664)
-  - chmod 0644 Formula/*.rb
   - sudo mkdir $HOME
   - sudo chown "$USER:" $HOME
   - mkdir $LINUXBREW
@@ -25,6 +23,9 @@ before_install:
   - cd $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
   - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/homebrew/homebrew-emacs"
   - ulimit -n 1024
+  # Fix error: Incorrect file permissions (664)
+  - chmod 0644 Formula/*.rb
+  - umask 022
 
 script:
   - brew test-bot --no-bottle
