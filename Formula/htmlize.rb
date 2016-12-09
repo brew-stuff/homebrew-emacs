@@ -9,9 +9,9 @@ class Htmlize < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :sierra
-    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :el_capitan
-    sha256 "76243973193bc9e49d144a3b3e5d3df065990b9731c32957e2c586349831b978" => :yosemite
+    sha256 "6c024aac4ec3392bb76d42dcdac82317d1fbd9f6e8900e6e0add36b0a35d78d3" => :sierra
+    sha256 "9c48a034c4489d9bace86fedb3830a72b05699451c19d3f90ef5926d4785e1d6" => :el_capitan
+    sha256 "9c48a034c4489d9bace86fedb3830a72b05699451c19d3f90ef5926d4785e1d6" => :yosemite
   end
 
   depends_on :emacs => "22.1"
