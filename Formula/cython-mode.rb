@@ -7,6 +7,13 @@ class CythonMode < EmacsFormula
   sha256 "206b6fc7e8cebe8e0529064a92e4f53f13a8f1d1f4dc173c32782ab134a2551e"
   head "https://github.com/cython/cython.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1a5a537e5b5ee82d787c07439c742d5af4e0fef0332c8b873565454c5b7886e3" => :sierra
+    sha256 "cdaa605270201cb75a52b9f08c9e8cdb07c60856cb75765d66e4dc022e71213c" => :el_capitan
+    sha256 "cdaa605270201cb75a52b9f08c9e8cdb07c60856cb75765d66e4dc022e71213c" => :yosemite
+  end
+
   depends_on :emacs
 
   def install
