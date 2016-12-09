@@ -3,9 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Htmlize < EmacsFormula
   desc "Emacs package for converting text to HTML"
   homepage "http://www.us.xemacs.org/People/hrvoje.niksic/"
-  url "https://github.com/hniksic/emacs-htmlize/archive/release/1.49.tar.gz"
-  sha256 "b450fa229bef77741b98b121a84ad27e2e0c530bbf87a589e06f3bab94a89682"
-  head "https://github.com/dunn/htmlize-mirror.git"
+  url "https://github.com/hniksic/emacs-htmlize/archive/release/1.50.tar.gz"
+  sha256 "e39148a591992e06254b1d50c8ddeeff07283df076dc1a986258ed527619f306"
+  head "https://github.com/hniksic/emacs-htmlize.git"
 
   bottle do
     cellar :any_skip_relocation
