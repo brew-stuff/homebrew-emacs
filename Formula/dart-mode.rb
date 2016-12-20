@@ -7,6 +7,13 @@ class DartMode < EmacsFormula
       :tag => "0.15", :revision => "e6635b390235cf16a8081763768cf925ca2d9133"
   head "https://github.com/nex3/dart-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "f0f1b0d58ea3b76814817c8b0148ed65b433afa7a6dec464ba76b369c0f897bc" => :sierra
+    sha256 "7d983840156f91a07300a2cef8667ad42211efd41017118c14e03bd5a5248345" => :el_capitan
+    sha256 "010bab624b6501bca59135a9c06048a445866d5694bb1d3439f0a1fa9bb4ded7" => :yosemite
+  end
+
   depends_on :emacs => "25.1"
   depends_on "homebrew/emacs/dash-emacs"
   depends_on "homebrew/emacs/flycheck"
