@@ -49,9 +49,8 @@ class Flycheck < EmacsFormula
   end
 
   resource "pos-tip" do
-    url "https://github.com/flycheck/flycheck-pos-tip/archive/hotfix-0.25.1.tar.gz"
-    sha256 "fb5b66ae1ecf3aca87fd5e0de88b98301d6fa3f6ec4562677d209349265dd553"
-    version "0.1-hotfix"
+    url "https://github.com/flycheck/flycheck-pos-tip/archive/0.3.tar.gz"
+    sha256 "adc8bf677e0c917b2f85d248b80ff9b7d90d93fdf7f605b78bcc7369a516fa2d"
   end
 
   def install
