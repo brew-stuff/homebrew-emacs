@@ -60,6 +60,11 @@ brew untap homebrew/emacs
 All files installed from this tap will still exist, but the formulae
 will no longer be updated.
 
+License
+-------
+
+Code is under the [BSD 2-clause "Simplified" License](https://github.com/Homebrew/homebrew-emacs/tree/master/LICENSE).
+
 About
 -----
 
