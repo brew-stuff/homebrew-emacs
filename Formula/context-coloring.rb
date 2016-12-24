@@ -7,6 +7,13 @@ class ContextColoring < EmacsFormula
   sha256 "cc19110feca916f9be3cd697ac1e17b7a067f0d707289634033540328d550797"
   head "https://github.com/jacksonrayhamilton/context-coloring.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0428ce4dca6692f59da3f041a7065e79f6b84cdf40533456dca62df05536df62" => :sierra
+    sha256 "e52354f9efd6366f213c87d8fba5f3086ec577665c011a2f9b0b06b843ebae99" => :el_capitan
+    sha256 "e52354f9efd6366f213c87d8fba5f3086ec577665c011a2f9b0b06b843ebae99" => :yosemite
+  end
+
   depends_on :emacs => "24.3"
   depends_on "homebrew/emacs/js2-mode"
 
