@@ -7,6 +7,13 @@ class RustMode < EmacsFormula
   sha256 "6ec0c86eb9a19b850d6e4a42db56f80ff9586cc2013d8b2f9a652fc5f0e7be45"
   head "https://github.com/rust-lang/rust-mode.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1eefadd0a60b20e5c553892418e0c20b7b9a5d67a33b2516c83fcc128ea6f0db" => :sierra
+    sha256 "f8ab2b552e3323c0c87ebfec39f25d3988f7586f90792001b7518848373a0083" => :el_capitan
+    sha256 "f8ab2b552e3323c0c87ebfec39f25d3988f7586f90792001b7518848373a0083" => :yosemite
+  end
+
   depends_on :emacs => "24"
 
   def install
