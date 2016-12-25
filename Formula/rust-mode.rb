@@ -3,9 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class RustMode < EmacsFormula
   desc "Emacs major mode for editing Rust code"
   homepage "https://github.com/rust-lang/rust-mode"
+  url "https://github.com/rust-lang/rust-mode/archive/0.3.0.tar.gz"
+  sha256 "6ec0c86eb9a19b850d6e4a42db56f80ff9586cc2013d8b2f9a652fc5f0e7be45"
   head "https://github.com/rust-lang/rust-mode.git"
 
-  depends_on :emacs => "23.1"
+  depends_on :emacs => "24"
 
   def install
     ENV["EMACS"] = which "emacs"
