@@ -42,8 +42,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "emoji" do
-    url "https://github.com/dunn/company-emoji/archive/2.4.1.tar.gz"
-    sha256 "cd661ce659a09ccfa31c7686773883150d83052434d7490b3c6189c0f06618e7"
+    url "https://github.com/dunn/company-emoji/archive/2.5.0.tar.gz"
+    sha256 "010fef421db8c73626ba7e1d844b650da8d77f46ea40ad9d9ca7f2f08e4d70f3"
   end
 
   resource "php" do
