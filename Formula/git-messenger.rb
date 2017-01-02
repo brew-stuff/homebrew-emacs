@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GitMessenger < EmacsFormula
   desc "Show commit info for individual lines in Emacs"
   homepage "https://github.com/syohex/emacs-git-messenger"
-  url "https://github.com/syohex/emacs-git-messenger/archive/0.17.tar.gz"
-  sha256 "f69d897345a5cbb211f7a72a6c3a5f46814909d035b635275b2b6f03ea5047e0"
+  url "https://github.com/syohex/emacs-git-messenger/archive/0.18.tar.gz"
+  sha256 "e9daa597be69a11afb974986c5f2de67c62eaf606cb176ac33a473f04c9cb89e"
   head "https://github.com/syohex/emacs-git-messenger.git"
 
   depends_on :emacs
@@ -13,17 +13,7 @@ class GitMessenger < EmacsFormula
 
   def install
     byte_compile "git-messenger.el"
-    (share/"emacs/site-lisp/git-messenger").install "git-messenger.el",
-                                                    "git-messenger.elc"
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'git-messenger)
-    (setq git-messenger:show-detail t)
-  EOS
+    elisp.install "git-messenger.el", "git-messenger.elc"
   end
 
   test do
@@ -35,6 +25,6 @@ class GitMessenger < EmacsFormula
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
-    (testpath/".git").exist?
+    assert File.exist?(".git"), "Failed to init!"
   end
 end
