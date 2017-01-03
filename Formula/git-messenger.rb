@@ -7,6 +7,13 @@ class GitMessenger < EmacsFormula
   sha256 "e9daa597be69a11afb974986c5f2de67c62eaf606cb176ac33a473f04c9cb89e"
   head "https://github.com/syohex/emacs-git-messenger.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "db70a8bec5229306043465d3193f96b0b1e8d91c8af9409d677e0c32e3efc275" => :sierra
+    sha256 "4fc7ccc7ddec59eb7c56782b1be203ed39b10d6fcd582055df960995fd060b4b" => :el_capitan
+    sha256 "4fc7ccc7ddec59eb7c56782b1be203ed39b10d6fcd582055df960995fd060b4b" => :yosemite
+  end
+
   depends_on :emacs
   depends_on "homebrew/emacs/popup"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
