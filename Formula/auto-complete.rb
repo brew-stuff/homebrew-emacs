@@ -7,7 +7,6 @@ class AutoComplete < EmacsFormula
   sha256 "1bfb4351c3e49681a875dab937c25b6b38e4bf8a8cd64bcba1954300242578cb"
   head "https://github.com/auto-complete/auto-complete.git"
 
-  option "with-emoji", "Install ac-emoji"
   option "with-etags", "Install ac-etags"
   option "with-haskell", "Install ac-haskell-process"
   option "with-helm", "Use helm for selecting completion candidates"
@@ -35,11 +34,6 @@ class AutoComplete < EmacsFormula
     depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
-  end
-
-  resource "emoji" do
-    url "https://github.com/syohex/emacs-ac-emoji/archive/0.02.tar.gz"
-    sha256 "fde5b02f594a212fd1bb8ef760ed4bb07d0ef00ef9f6608867b73c191ddf6127"
   end
 
   resource "etags" do
@@ -78,13 +72,6 @@ class AutoComplete < EmacsFormula
   end
 
   def install
-    if build.with? "emoji"
-      resource("emoji").stage do
-        byte_compile Dir["*.el"]
-        elisp.install Dir["*.el"], Dir["*.elc"]
-      end
-    end
-
     if build.with? "etags"
       resource("etags").stage do
         byte_compile "ac-etags.el"
