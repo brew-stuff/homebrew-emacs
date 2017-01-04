@@ -7,14 +7,12 @@ class AutoComplete < EmacsFormula
   sha256 "1bfb4351c3e49681a875dab937c25b6b38e4bf8a8cd64bcba1954300242578cb"
   head "https://github.com/auto-complete/auto-complete.git"
 
-  option "with-c-headers", "Install ac-c-headers"
   option "with-emoji", "Install ac-emoji"
   option "with-etags", "Install ac-etags"
   option "with-haskell", "Install ac-haskell-process"
   option "with-helm", "Use helm for selecting completion candidates"
   option "with-html", "Install ac-html"
   option "with-ispell", "Install ac-ispell"
-  option "with-js2", "Install ac-js2"
   option "with-php", "Install ac-php"
   option "with-slime", "Install ac-slime"
 
@@ -31,22 +29,12 @@ class AutoComplete < EmacsFormula
     depends_on "homebrew/emacs/web-completion-data"
   end
 
-  if build.with? "js2"
-    depends_on "homebrew/emacs/js2-mode"
-    depends_on "homebrew/emacs/skewer-mode"
-  end
-
   if build.with? "php"
     depends_on "homebrew/emacs/f-emacs"
     depends_on "homebrew/emacs/popup"
     depends_on "homebrew/emacs/s-emacs"
     depends_on "homebrew/emacs/xcscope"
     depends_on "homebrew/emacs/yasnippet"
-  end
-
-  resource "c-headers" do
-    url "https://github.com/zk-phi/ac-c-headers.git",
-        :revision => "de13a1d35b311e6601556d8ef163de102057deea"
   end
 
   resource "emoji" do
@@ -79,11 +67,6 @@ class AutoComplete < EmacsFormula
     sha256 "fe9f63ea435a888aa909bcb92435957ab8472e6bce33cbabc51f2f00d5e6a893"
   end
 
-  resource "js2" do
-    url "https://github.com/ScottyB/ac-js2.git",
-        :revision => "721c482e1d4a08f4a29a74437257d573e8f69969"
-  end
-
   resource "php" do
     url "https://github.com/xcwen/ac-php/archive/1.7.5.tar.gz"
     sha256 "1730bfc2292c707c105f4c8abee5b6c76b178fa2e649bde5ad39f35bf194d538"
@@ -95,13 +78,6 @@ class AutoComplete < EmacsFormula
   end
 
   def install
-    if build.with? "c-headers"
-      resource("c-headers").stage do
-        byte_compile "ac-c-headers.el"
-        elisp.install "ac-c-headers.el", "ac-c-headers.elc"
-      end
-    end
-
     if build.with? "emoji"
       resource("emoji").stage do
         byte_compile Dir["*.el"]
@@ -142,13 +118,6 @@ class AutoComplete < EmacsFormula
       resource("ispell").stage do
         byte_compile "ac-ispell.el"
         elisp.install "ac-ispell.el", "ac-ispell.elc"
-      end
-    end
-
-    if build.with? "js2"
-      resource("js2").stage do
-        byte_compile "ac-js2.el"
-        elisp.install "ac-js2.el", "ac-js2.elc", "skewer-addon.js"
       end
     end
 
