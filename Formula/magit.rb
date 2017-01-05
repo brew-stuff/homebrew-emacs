@@ -9,9 +9,9 @@ class Magit < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5e418f5bf3b925662622fa0a7bab1baac6843810e6e257a6bc090180b67b6bc5" => :sierra
-    sha256 "8387ef26921f4e16f29089f8eac812807dcc630d7b9c9c91422064049eff2565" => :el_capitan
-    sha256 "b7abc9fde948412d40cadf5bf3b645ca8c1dc8d520e4ed4ee30d74d88ecb2888" => :yosemite
+    sha256 "8c63d377fb3097bf1cb1cef15778bf43d85801d77b3801cd3951291443728435" => :sierra
+    sha256 "821734d9aa2c1896ed422aa6f7f1c2d654a044e428fdf29162d82d0b5ce18fae" => :el_capitan
+    sha256 "0dfd0405f1a33e7126937d835138049763a80bf4160138c5586624e9dcff286a" => :yosemite
   end
 
   option "with-gh-pulls", "Build with GitHub pull request extension"
