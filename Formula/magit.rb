@@ -3,18 +3,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Magit < EmacsFormula
   desc "Emacs interface for Git"
   homepage "https://magit.vc/"
+  url "https://github.com/magit/magit/releases/download/2.10.0/magit-2.10.0.tar.gz"
+  sha256 "a195a6dfc670d8fb65c55a5daa5840245ec9cfb379ca77b49b42a46f88dfe4f0"
   head "https://github.com/magit/magit.git", :shallow => false
-
-  stable do
-    url "https://github.com/magit/magit/releases/download/2.9.0/magit-2.9.0.tar.gz"
-    sha256 "ac69c709dd6fe09b29dde1e8d98087058b869064cbbbf98effab7ebb1f4925cd"
-
-    # Fixup for `make install`
-    patch do
-      url "https://github.com/magit/magit/commit/bfac73a15e22aaab561e007b0247631e8717e965.diff"
-      sha256 "dd0a015211f206fec0666632526f3de1bb9da652aabe1bf06060a0fc95f5bd0e"
-    end
-  end
 
   bottle do
     cellar :any_skip_relocation
@@ -41,8 +32,8 @@ class Magit < EmacsFormula
   end
 
   resource "with-editor" do
-    url "https://github.com/magit/with-editor/archive/v2.5.8.tar.gz"
-    sha256 "56b2216fb316af5c7673589405a0a7e545a2414a9991374ad95ef15f2a68f0b5"
+    url "https://github.com/magit/with-editor/archive/v2.5.9.tar.gz"
+    sha256 "f0772410e280cf7926d145bcc8c43643141afefa3aa97fa2cfc08c8cbdfdce7e"
   end
 
   def install
