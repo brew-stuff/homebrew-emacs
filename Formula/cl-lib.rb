@@ -2,19 +2,17 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class ClLib < EmacsFormula
   desc "Compatibility library for Emacs 24's cl-lib"
-  homepage "http://elpa.gnu.org/packages/cl-lib.html"
-  url "http://elpa.gnu.org/packages/cl-lib-0.5.el"
-  sha256 "24a5c6ca95c3d702939f4e8d370eb9bbd496db86d4a022caefaba4753a738efc"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/cl-lib/cl-lib.el"
+  homepage "https://elpa.gnu.org/packages/cl-lib.html"
+  url "https://elpa.gnu.org/packages/cl-lib-0.6.el"
+  sha256 "d34f8b68414f3a48dec41c0728381c3e9254f7179776ddffe90944f7878865cb"
 
-  depends_on :emacs
+  depends_on :emacs => "21"
 
   def install
-    mv "cl-lib-#{version}.el", "cl-lib.el" if build.stable?
+    mv "cl-lib-#{version}.el", "cl-lib.el"
 
-    byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/cl-lib").install Dir["*.el"],
-                                             Dir["*.elc"]
+    byte_compile "cl-lib.el"
+    elisp.install "cl-lib.el", "cl-lib.elc"
   end
 
   if Emacs.version >= Version.create("24.3")
@@ -25,5 +23,14 @@ class ClLib < EmacsFormula
       Make sure Emacs' native cl-lib appears before this one in your load-path.
     EOS
     end
+  end
+
+  test do
+    (testpath/"test.el").write <<-EOS.undent
+      (add-to-list 'load-path "#{elisp}")
+      (load "cl-lib")
+      (print (cl-typep "homebrew" 'string))
+    EOS
+    assert_equal "t", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
