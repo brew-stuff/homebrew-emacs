@@ -61,6 +61,12 @@ class OrgMode < EmacsFormula
 
     system "make", "install"
 
+    cd "contrib/lisp" do
+      # htmlize has its own formula
+      rm "htmlize.el"
+      byte_compile Dir["*.el"]
+    end
+
     elisp.install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
   end
