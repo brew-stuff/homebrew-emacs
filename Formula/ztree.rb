@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class ZtreeEmacs < EmacsFormula
+class Ztree < EmacsFormula
   desc "Emacs modes for directory tree comparison"
   homepage "https://github.com/fourier/ztree"
   url "https://elpa.gnu.org/packages/ztree-1.0.4.tar"
