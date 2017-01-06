@@ -10,9 +10,10 @@ class OrgMode < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "86acfb96a6ff40bbe667b88d0fa2018a203f971c17d689e2392260c8609ceeab" => :sierra
-    sha256 "7d21e46c2bf5f6e6d7298ad8e6cca3e6e3b2775a51a913eaa866f4cf5b7af2aa" => :el_capitan
-    sha256 "621a0b512c25fad00a91241792a9836214045537770a57c993e5f52bbcd860e7" => :yosemite
+    rebuild 1
+    sha256 "8f691adf27e2fb758d68f12e2f1b78c889104de17de6b44e9d42de5878a6ee6c" => :sierra
+    sha256 "d3f7507375724ff1768987f76cf314c6ef79e6b6ba8499e1a326d6910eaac550" => :el_capitan
+    sha256 "eb4feaff0c3488a574a397fd9a82ef8682dc4f737f796656ffaed9fec386f48a" => :yosemite
   end
 
   option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
