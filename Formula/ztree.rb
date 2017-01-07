@@ -9,9 +9,9 @@ class Ztree < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :sierra
-    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :el_capitan
-    sha256 "50bf2f4102a9da94c9bc4e73f67677072d1ff01deeff5ec28ec4e6ed9a9f0471" => :yosemite
+    sha256 "a5253b970e776895b1da9ccd2d65151c31adfed162a16ffa03e6681e67bb499e" => :sierra
+    sha256 "a1529c28939be1b7f0bf8723e08d1b79e1073f7a741f01152369bd5105573fca" => :el_capitan
+    sha256 "a1529c28939be1b7f0bf8723e08d1b79e1073f7a741f01152369bd5105573fca" => :yosemite
   end
 
   depends_on :emacs => "24.1"
