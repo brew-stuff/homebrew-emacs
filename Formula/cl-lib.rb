@@ -8,9 +8,9 @@ class ClLib < EmacsFormula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1d6129d35b62520f5765a3673b744e4414694b8b31858ed7eeb9eff1f00cfde4" => :sierra
-    sha256 "90a7cf3819e82ef479b8f6619b88fddfc1de7f3fb0a4fc7100a6f8f691b3b703" => :el_capitan
-    sha256 "90a7cf3819e82ef479b8f6619b88fddfc1de7f3fb0a4fc7100a6f8f691b3b703" => :yosemite
+    sha256 "066f128c9b851a894131e4ed26c150c4320ccd953e0fd7f53388b08a2d683fd5" => :sierra
+    sha256 "b48a9625be157fadf2e11c64e1abc01c3e169ef87de924d5c31179b032858ef5" => :el_capitan
+    sha256 "b48a9625be157fadf2e11c64e1abc01c3e169ef87de924d5c31179b032858ef5" => :yosemite
   end
 
   depends_on :emacs => "21"
