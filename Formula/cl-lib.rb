@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class ClLib < EmacsFormula
   desc "Compatibility library for Emacs 24's cl-lib"
   homepage "https://elpa.gnu.org/packages/cl-lib.html"
-  url "https://elpa.gnu.org/packages/cl-lib-0.6.el"
-  sha256 "d34f8b68414f3a48dec41c0728381c3e9254f7179776ddffe90944f7878865cb"
+  url "https://elpa.gnu.org/packages/cl-lib-0.6.1.el"
+  sha256 "3ec984402f531ad8b4fd58c9b5e62c56065d88b607caf8ec1de1c5c90d5f8703"
 
   bottle do
     cellar :any_skip_relocation
