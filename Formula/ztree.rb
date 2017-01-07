@@ -1,10 +1,10 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class ZtreeEmacs < EmacsFormula
+class Ztree < EmacsFormula
   desc "Emacs modes for directory tree comparison"
   homepage "https://github.com/fourier/ztree"
-  url "https://elpa.gnu.org/packages/ztree-1.0.4.tar"
-  sha256 "f04a0cdfa827802c7cf6ec0fafbf7b0a8c8f27ae9b471d403a1f69608c523176"
+  url "https://elpa.gnu.org/packages/ztree-1.0.5.tar"
+  sha256 "3d58d5a0a3220ed62f54014e51d12b1caed459650d2b8e2afabf85adbc5eeb92"
   head "https://github.com/fourier/ztree.git"
 
   bottle do
