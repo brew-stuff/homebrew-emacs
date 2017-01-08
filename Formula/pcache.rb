@@ -7,6 +7,13 @@ class Pcache < EmacsFormula
   sha256 "c0411bfa4a6625b5c17e3c47f1d3a897298c22bbc9234c06333a5efab0ada4fb"
   head "https://github.com/sigma/pcache.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "c4cc455cc9a1ec8e0f950af59e45983ec1a56e3c1b870e488a15ee07647f0aa4" => :sierra
+    sha256 "6b66caa78eef4855d7b99f87b436e761be0f7ad13f2e845edb97c2012884a7a4" => :el_capitan
+    sha256 "6b66caa78eef4855d7b99f87b436e761be0f7ad13f2e845edb97c2012884a7a4" => :yosemite
+  end
+
   depends_on :emacs => "24.1"
 
   def install
