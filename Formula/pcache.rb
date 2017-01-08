@@ -3,11 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Pcache < EmacsFormula
   desc "Persistent caching for Emacs"
   homepage "https://github.com/sigma/pcache"
-  url "https://github.com/sigma/pcache/archive/v0.4.1.tar.gz"
-  sha256 "1b70e6ec242e9f5c984f00acdcc06bb1d01ac8985fc56f5f7b354ac2d84bd02d"
+  url "https://github.com/sigma/pcache/archive/v0.4.2.tar.gz"
+  sha256 "c0411bfa4a6625b5c17e3c47f1d3a897298c22bbc9234c06333a5efab0ada4fb"
   head "https://github.com/sigma/pcache.git"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
 
   def install
     ert_run_tests "test/pcache-test.el"
