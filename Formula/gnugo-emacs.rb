@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GnugoEmacs < EmacsFormula
   desc "Emacs interface to GNU Go"
   homepage "http://www.gnuvola.org/software/gnugo/"
-  url "http://elpa.gnu.org/packages/gnugo-3.0.0.tar"
-  sha256 "fd082e88944bf607c6bf115753d0670f6c21a5bc33595c271f02e4d8f19a242d"
+  url "https://elpa.gnu.org/packages/gnugo-3.0.1.tar"
+  sha256 "f70ef92dcb53f7a4a0246d4f91933ef6c4b226e4951d01b0fdadeb5dd383e223"
 
   depends_on :emacs
   depends_on "homebrew/games/gnu-go"
@@ -14,20 +14,12 @@ class GnugoEmacs < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/gnugo").install Dir["*.el"], Dir["*.elc"]
-    doc.install "README", "HACKING"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'gnugo)
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/gnugo")
+      (add-to-list 'load-path "#{elisp}")
       (load "gnugo")
       (print (minibuffer-prompt-width))
     EOS
