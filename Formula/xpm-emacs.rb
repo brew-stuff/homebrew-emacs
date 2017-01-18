@@ -7,7 +7,7 @@ class XpmEmacs < EmacsFormula
   sha256 "e45281a2a361790fc1a7b17e360ab2c04a6032026d911d79448f7dde475a9361"
   revision 1
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
