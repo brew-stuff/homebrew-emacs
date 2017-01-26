@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.0.3.tar.gz"
-  sha256 "b45b31c658c0cb50ba4a1c8ebe56db91fe9cba439a46e7da9d348f07598c5fec"
+  url "http://orgmode.org/org-9.0.4.tar.gz"
+  sha256 "9c4b563e6ce4babdd651fa70ed5528fff05170045e4edf4070017fa5c14e6a2a"
 
   head "http://orgmode.org/org-mode.git", :shallow => false
 
@@ -24,9 +24,8 @@ class OrgMode < EmacsFormula
   depends_on "homebrew/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
-    url "https://github.com/tarsius/ox-texinfo-plus/raw/d8ccdda026aa6891a306288e51ce8a9436000889/ox-texinfo%2B.el"
-    sha256 "cc734205aae4a1bb62e40b4c80b07362d2b0f1e8dff47a1b9ea1987521a8df02"
-    version "20160408"
+    url "https://github.com/tarsius/ox-texinfo-plus/archive/v1.2.0.tar.gz"
+    sha256 "f18f84c2a5e80a70897ca0cec1338bf327122c8b1894bdd0290dc2ab6348e85b"
   end
 
   resource "toc-org" do
@@ -37,7 +36,6 @@ class OrgMode < EmacsFormula
   def install
     if build.with? "texinfo-plus"
       resource("ox-texinfo-plus").stage do
-        mv "ox-texinfo%2B.el", "ox-texinfo+.el"
         byte_compile "ox-texinfo+.el"
         elisp.install "ox-texinfo+.el", "ox-texinfo+.elc"
       end
