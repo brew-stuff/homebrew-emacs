@@ -5,15 +5,15 @@ class XclipMode < EmacsFormula
   homepage "http://elpa.gnu.org/packages/xclip.html"
   url "http://elpa.gnu.org/packages/xclip-1.3.el"
   sha256 "8724069facb86870058c1a6d2e321dfb2e6df3252bb1a29ed408157435c998fe"
+  revision 1
 
   depends_on :emacs
-  depends_on "homebrew/x11/xclip"
+  depends_on "xclip"
 
   def install
     mv "xclip-#{version}.el", "xclip.el"
     byte_compile "xclip.el"
-    (share/"emacs/site-lisp/xclip").install "xclip.el",
-                                            "xclip.elc"
+    elisp.install "xclip.el", "xclip.elc"
   end
 
   def caveats; <<-EOS.undent
@@ -26,7 +26,7 @@ class XclipMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/xclip")
+      (add-to-list 'load-path "#{elisp}")
       (load "xclip")
       (turn-on-xclip)
       (print (minibuffer-prompt-width))
