@@ -1,29 +1,38 @@
 language: ruby
-rvm: 2.0.0
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode8.2
+      rvm: system
+    - os: linux
+      rvm: 2.0.0
 
 env:
   global:
-    - PATH="~/.linuxbrew/bin:~/.linuxbrew/sbin:$PATH"
     - HOMEBREW_DEVELOPER=1
-    - HOME=/home/linuxbrew
-    - LINUXBREW=$HOME/.linuxbrew
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y texinfo
-  - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
-  - sudo mkdir $HOME
-  - sudo chown "$USER:" $HOME
-  - mkdir $LINUXBREW
-  - curl -L https://github.com/Linuxbrew/brew/tarball/master | tar xz -m --strip 1 -C $LINUXBREW
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+      export PATH="~/.linuxbrew/bin:~/.linuxbrew/sbin:$PATH";
+      export HOME=/home/linuxbrew;
+      export LINUXBREW=$HOME/.linuxbrew;
+      sudo apt-get -qq update;
+      sudo apt-get install -y texinfo;
+      sudo mkdir $HOME;
+      sudo chown "$USER:" $HOME;
+      mkdir $LINUXBREW;
+      curl -L https://github.com/Linuxbrew/brew/tarball/master | tar xz -m --strip 1 -C $LINUXBREW;
+      brew tap linuxbrew/xorg;
+    fi
   - brew update || brew update
-  - brew tap linuxbrew/xorg
+  - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
   - mkdir -p $(brew --repo)/Library/Taps/homebrew
   - ln -s $PWD $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
   - cd $(brew --repo)/Library/Taps/homebrew/homebrew-emacs
   - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/homebrew/homebrew-emacs"
   - ulimit -n 1024
-  # Fix error: Incorrect file permissions (664)
+  # Fix linux error: Incorrect file permissions (664)
   - chmod 0644 Formula/*.rb
   - umask 022
 
