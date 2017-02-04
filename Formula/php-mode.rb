@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PhpMode < EmacsFormula
   desc "Major mode for editing PHP files"
   homepage "https://github.com/ejmr/php-mode"
-  url "https://github.com/ejmr/php-mode/archive/v1.18.0.tar.gz"
-  sha256 "3ab66c6d8b84e601700c49b42850145b797fb31a5a49d273a4048d394d519c01"
+  url "https://github.com/ejmr/php-mode/archive/v1.18.2.tar.gz"
+  sha256 "16b26a5584139db2dbc05414a686f54173d7505d7aa041ca12238188c23ea90c"
   head "https://github.com/ejmr/php-mode.git"
 
   depends_on :emacs => "24.1"
