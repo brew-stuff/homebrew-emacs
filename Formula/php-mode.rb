@@ -7,6 +7,8 @@ class PhpMode < EmacsFormula
   sha256 "16b26a5584139db2dbc05414a686f54173d7505d7aa041ca12238188c23ea90c"
   head "https://github.com/ejmr/php-mode.git"
 
+  bottle :disable
+
   depends_on :emacs => "24.1"
 
   def install
