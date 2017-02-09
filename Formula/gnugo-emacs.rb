@@ -6,12 +6,7 @@ class GnugoEmacs < EmacsFormula
   url "https://elpa.gnu.org/packages/gnugo-3.0.1.tar"
   sha256 "f70ef92dcb53f7a4a0246d4f91933ef6c4b226e4951d01b0fdadeb5dd383e223"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "fab6f023b46fd04d6435ca016ee7394b07a3f85e29641f187c67999de428a04e" => :sierra
-    sha256 "86b2696b34839ec9fa1e2af7b5d116bda62b34f45ddaf15dc5fbe712b61bca1f" => :el_capitan
-    sha256 "86b2696b34839ec9fa1e2af7b5d116bda62b34f45ddaf15dc5fbe712b61bca1f" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs
   depends_on "homebrew/games/gnu-go"
