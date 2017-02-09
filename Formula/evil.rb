@@ -2,12 +2,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Evil < EmacsFormula
   desc "Extensible vi layer for Emacs"
-  homepage "https://bitbucket.org/lyro/evil"
-  url "https://bitbucket.org/lyro/evil/get/1.2.12.tar.bz2"
-  sha256 "d10b0ce7989a379a47a98b18e4cf7099ebfe88c19e0edd99ac6fe0655d528d9d"
-  head "https://bitbucket.org/lyro/evil", :using => :hg
+  homepage "https://github.com/emacs-evil/evil"
+  url "https://github.com/emacs-evil/evil/archive/1.2.12.tar.gz"
+  sha256 "035d2257e39819dc769ee069ef163dc22edfa40eb81842967539c2111475f7b8"
+  head "https://github.com/emacs-evil/evil.git"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/undo-tree"
 
   def install
