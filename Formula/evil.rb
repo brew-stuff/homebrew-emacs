@@ -7,7 +7,7 @@ class Evil < EmacsFormula
   sha256 "035d2257e39819dc769ee069ef163dc22edfa40eb81842967539c2111475f7b8"
   head "https://github.com/emacs-evil/evil.git"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
   depends_on "homebrew/emacs/undo-tree"
 
   def install
