@@ -42,8 +42,8 @@ end
 class Slime < EmacsFormula
   desc "Emacs package for interactive programming in Lisp"
   homepage "http://common-lisp.net/project/slime/"
-  url "https://github.com/slime/slime/archive/v2.18.tar.gz"
-  sha256 "926ecc0000c248ed77ff2f8ea30e55665790e7431d46ffaa05bc9acc17dfca90"
+  url "https://github.com/slime/slime/archive/v2.19.tar.gz"
+  sha256 "172ca6757f4a90a156cfdc5199f00ad076599f084d02eabf2d64266459c10aca"
   head "https://github.com/slime/slime.git"
 
   depends_on :emacs => "23.4"
