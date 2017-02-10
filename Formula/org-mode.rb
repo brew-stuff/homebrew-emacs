@@ -3,10 +3,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.0.4.tar.gz"
-  sha256 "9c4b563e6ce4babdd651fa70ed5528fff05170045e4edf4070017fa5c14e6a2a"
+  url "http://orgmode.org/org-9.0.5.tar.gz"
+  sha256 "e5bb3476190a5d42795c170c894c9dcb475587855bd535200cd7a2751e6e9869"
 
   head "http://orgmode.org/org-mode.git", :shallow => false
+
+  bottle :disable
 
   option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
   option "with-toc", "Install the toc-org extension"
