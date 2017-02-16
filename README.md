@@ -1,6 +1,21 @@
 homebrew-emacs
 ==============
 
+Untapping Required
+------------------
+
+If you are a previous user of homebrew/homebrew-emacs and dunn/emacs
+was tapped automatically, you need to run:
+
+```bash
+brew untap homebrew/emacs
+```
+
+Previously installed formulae should continue to work.
+
+Description
+-----------
+
 homebrew-emacs is a [Homebrew](http://brew.sh) tap for Emacs packages.
 
 It enables you to install [Emacs](https://gnu.org/s/emacs/) packages
