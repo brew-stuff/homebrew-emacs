@@ -16,8 +16,8 @@ class BundlerEmacs < EmacsFormula
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/inf-ruby"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/inf-ruby"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "bundler.el"
@@ -27,7 +27,7 @@ class BundlerEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/inf-ruby"].opt_elisp}")
       (load "bundler")
       (print (minibuffer-prompt-width))
     EOS

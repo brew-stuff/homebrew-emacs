@@ -15,9 +15,9 @@ class PandocMode < EmacsFormula
   end
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/hydra-emacs"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/hydra-emacs"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"]
@@ -27,9 +27,9 @@ class PandocMode < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/hydra-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/hydra-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")
       (load "pandoc-mode")
       (print (minibuffer-prompt-width))

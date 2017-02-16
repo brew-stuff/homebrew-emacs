@@ -16,7 +16,7 @@ class AdaMode < EmacsFormula
   option "without-reference", "Build without the reference manual"
 
   depends_on :emacs => "24.2"
-  depends_on "homebrew/emacs/wisi-emacs"
+  depends_on "dunn/emacs/wisi-emacs"
 
   resource "reference" do
     url "http://stephe-leake.org/ada/arm_info-2012.2.tar.gz"

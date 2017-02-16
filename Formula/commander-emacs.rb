@@ -8,10 +8,10 @@ class CommanderEmacs < EmacsFormula
   head "https://github.com/rejeep/commander.el.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/f-emacs"
-  depends_on "homebrew/emacs/s-emacs"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/f-emacs"
+  depends_on "dunn/emacs/s-emacs"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "commander.el"
@@ -21,9 +21,9 @@ class CommanderEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/f"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/f"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s-emacs"].opt_elisp}")
       (load "commander")
       (print (minibuffer-prompt-width))
     EOS

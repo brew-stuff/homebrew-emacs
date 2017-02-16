@@ -16,8 +16,8 @@ class PdfTools < EmacsFormula
 
   depends_on "cairo"
   depends_on "poppler"
-  depends_on "homebrew/emacs/let-alist"
-  depends_on "homebrew/emacs/tablist"
+  depends_on "dunn/emacs/let-alist"
+  depends_on "dunn/emacs/tablist"
 
   def install
     system "make", "server/epdfinfo"
@@ -36,8 +36,8 @@ class PdfTools < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/let-alist"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/tablist"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/let-alist"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/tablist"].opt_elisp}")
       (setq pdf-info-epdfinfo-program "#{bin}/epdfinfo")
       (load "pdf-tools")
       (pdf-tools-toggle-debug)

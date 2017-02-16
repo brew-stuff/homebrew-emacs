@@ -21,19 +21,19 @@ class CompanyMode < EmacsFormula
   option "with-web", "Install web templating backend"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   if build.with? "web"
-    depends_on "homebrew/emacs/dash-emacs"
-    depends_on "homebrew/emacs/web-completion-data"
+    depends_on "dunn/emacs/dash-emacs"
+    depends_on "dunn/emacs/web-completion-data"
   end
 
   if build.with? "php"
-    depends_on "homebrew/emacs/f-emacs"
-    depends_on "homebrew/emacs/popup"
-    depends_on "homebrew/emacs/s-emacs"
-    depends_on "homebrew/emacs/xcscope"
-    depends_on "homebrew/emacs/yasnippet"
+    depends_on "dunn/emacs/f-emacs"
+    depends_on "dunn/emacs/popup"
+    depends_on "dunn/emacs/s-emacs"
+    depends_on "dunn/emacs/xcscope"
+    depends_on "dunn/emacs/yasnippet"
   end
 
   resource "ansible" do
@@ -106,7 +106,7 @@ class CompanyMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (load "company")
       (print (minibuffer-prompt-width))
     EOS

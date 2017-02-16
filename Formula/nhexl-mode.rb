@@ -7,7 +7,7 @@ class NhexlMode < EmacsFormula
   sha256 "a097eebd37ec42776595f54e54987829f3aef653457a33c25822f2d6fbbc3f63"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "nhexl-mode-#{version}.el", "nhexl-mode.el"

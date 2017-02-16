@@ -9,7 +9,7 @@ class PkgInfo < EmacsFormula
 
   depends_on :emacs => "24.1"
   depends_on "cask"
-  depends_on "homebrew/emacs/epl"
+  depends_on "dunn/emacs/epl"
 
   def install
     system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
@@ -21,7 +21,7 @@ class PkgInfo < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/pkg-info")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_share}/emacs/site-lisp/epl")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].opt_share}/emacs/site-lisp/epl")
       (load "pkg-info")
       (print (minibuffer-prompt-width))
     EOS

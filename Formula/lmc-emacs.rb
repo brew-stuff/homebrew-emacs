@@ -7,7 +7,7 @@ class LmcEmacs < EmacsFormula
   sha256 "50400d6861c7b065c7947747e20b991a88d10b08bfea120c68e0bdd429d3a43a"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "lmc-#{version}.el", "lmc.el"

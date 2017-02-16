@@ -15,8 +15,8 @@ class FEmacs < EmacsFormula
   end
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/s-emacs"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/s-emacs"
 
   def install
     byte_compile "f.el"
@@ -26,8 +26,8 @@ class FEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s-emacs"].opt_elisp}")
       (load "f")
       (print (f-this-file))
     EOS

@@ -10,7 +10,7 @@ class Evil < EmacsFormula
   bottle :disable
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/undo-tree"
+  depends_on "dunn/emacs/undo-tree"
 
   def install
     system "make"

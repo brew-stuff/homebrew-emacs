@@ -8,9 +8,9 @@ class Projectile < EmacsFormula
   head "https://github.com/bbatsov/projectile.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/epl"
-  depends_on "homebrew/emacs/pkg-info"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/epl"
+  depends_on "dunn/emacs/pkg-info"
 
   def install
     byte_compile "projectile.el"
@@ -19,9 +19,9 @@ class Projectile < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/pkg-info"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")
       (load "projectile")
       (print (projectile-version))

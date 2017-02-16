@@ -16,8 +16,8 @@ class Smartparens < EmacsFormula
   end
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
-  depends_on "homebrew/emacs/dash-emacs"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/dash-emacs"
 
   def install
     rm "smartparens-pkg.el"
@@ -29,7 +29,7 @@ class Smartparens < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
       (load "smartparens")
       (turn-on-smartparens-mode)
       (turn-off-smartparens-mode)

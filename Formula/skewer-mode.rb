@@ -8,8 +8,8 @@ class SkewerMode < EmacsFormula
   head "https://github.com/skeeto/skewer-mode.git"
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/js2-mode"
-  depends_on "homebrew/emacs/simple-httpd"
+  depends_on "dunn/emacs/js2-mode"
+  depends_on "dunn/emacs/simple-httpd"
 
   def install
     byte_compile Dir["*.el"]
@@ -27,8 +27,8 @@ class SkewerMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/skewer-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/simple-httpd"].opt_share}/emacs/site-lisp/simple-httpd")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/js2-mode"].opt_share}/emacs/site-lisp/js2-mode")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/simple-httpd"].opt_share}/emacs/site-lisp/simple-httpd")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_share}/emacs/site-lisp/js2-mode")
       (load "skewer-mode")
       (run-skewer)
       (print (minibuffer-prompt-width))

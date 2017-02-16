@@ -15,7 +15,7 @@ class AnsibleDoc < EmacsFormula
   end
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/yaml-mode"
+  depends_on "dunn/emacs/yaml-mode"
 
   def install
     system "make", "compile"

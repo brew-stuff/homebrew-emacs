@@ -15,7 +15,7 @@ class XpmEmacs < EmacsFormula
   revision 1
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "xpm.el", "xpm-m2z.el"

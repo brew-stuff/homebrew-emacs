@@ -9,7 +9,7 @@ class Robe < EmacsFormula
 
   depends_on :emacs => "24.3"
   depends_on :ruby => "1.9"
-  depends_on "homebrew/emacs/inf-ruby"
+  depends_on "dunn/emacs/inf-ruby"
 
   def install
     byte_compile Dir["*.el"]

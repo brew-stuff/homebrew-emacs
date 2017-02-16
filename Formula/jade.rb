@@ -15,10 +15,10 @@ class Jade < EmacsFormula
   end
 
   depends_on :emacs => "25.1"
-  depends_on "homebrew/emacs/company-mode"
-  depends_on "homebrew/emacs/js2-mode"
-  depends_on "homebrew/emacs/seq"
-  depends_on "homebrew/emacs/websocket-emacs"
+  depends_on "dunn/emacs/company-mode"
+  depends_on "dunn/emacs/js2-mode"
+  depends_on "dunn/emacs/seq"
+  depends_on "dunn/emacs/websocket-emacs"
 
   def install
     ert_run_tests "test/jade-interaction-test.el"
@@ -30,10 +30,10 @@ class Jade < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/company-mode"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/js2-mode"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/websocket-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/company-mode"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/websocket-emacs"].opt_elisp}")
       (load "jade")
       (print (minibuffer-prompt-width))
     EOS

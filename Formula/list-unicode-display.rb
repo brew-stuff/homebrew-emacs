@@ -15,7 +15,7 @@ class ListUnicodeDisplay < EmacsFormula
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "list-unicode-display.el"
@@ -25,7 +25,7 @@ class ListUnicodeDisplay < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (load "list-unicode-display")
       (list-unicode-display "NULL")
       (print (minibuffer-prompt-width))

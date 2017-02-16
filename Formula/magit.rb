@@ -12,13 +12,13 @@ class Magit < EmacsFormula
   option "with-gh-pulls", "Build with GitHub pull request extension"
 
   depends_on :emacs => "24.4"
-  depends_on "homebrew/emacs/async-emacs"
-  depends_on "homebrew/emacs/dash-emacs"
+  depends_on "dunn/emacs/async-emacs"
+  depends_on "dunn/emacs/dash-emacs"
 
   if build.with? "gh-pulls"
-    depends_on "homebrew/emacs/gh-emacs"
-    depends_on "homebrew/emacs/pcache"
-    depends_on "homebrew/emacs/s-emacs"
+    depends_on "dunn/emacs/gh-emacs"
+    depends_on "dunn/emacs/pcache"
+    depends_on "dunn/emacs/s-emacs"
   end
 
   resource "gh-pulls" do
@@ -34,8 +34,8 @@ class Magit < EmacsFormula
   def install
     resource("with-editor").stage do
       system "make", "all",
-             "EFLAGS=-L #{Formula["homebrew/emacs/async-emacs"].opt_elisp} \
-                     -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
+             "EFLAGS=-L #{Formula["dunn/emacs/async-emacs"].opt_elisp} \
+                     -L #{Formula["dunn/emacs/dash-emacs"].opt_elisp}"
       elisp.install "with-editor.el", "with-editor.elc"
       info.install "with-editor.info"
       doc.install Dir["with-editor.*"]
@@ -51,8 +51,8 @@ class Magit < EmacsFormula
 
     load_args = [
       "LOAD_PATH = -L #{buildpath}/lisp",
-      "LOAD_PATH += -L #{Formula["homebrew/emacs/dash-emacs"].opt_elisp}",
-      "LOAD_PATH += -L #{Formula["homebrew/emacs/async-emacs"].opt_elisp}",
+      "LOAD_PATH += -L #{Formula["dunn/emacs/dash-emacs"].opt_elisp}",
+      "LOAD_PATH += -L #{Formula["dunn/emacs/async-emacs"].opt_elisp}",
       "LOAD_PATH += -L #{elisp}",
     ]
     (buildpath/"config.mk").write load_args.join("\n")
@@ -68,8 +68,8 @@ class Magit < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/async-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/async-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
       (load "magit")
       (magit-run-git "init")
     EOS

@@ -15,10 +15,10 @@ class SuggestEmacs < EmacsFormula
   end
 
   depends_on :emacs => "24.4"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/f-emacs"
-  depends_on "homebrew/emacs/loop-emacs"
-  depends_on "homebrew/emacs/s-emacs"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/f-emacs"
+  depends_on "dunn/emacs/loop-emacs"
+  depends_on "dunn/emacs/s-emacs"
 
   def install
     byte_compile "suggest.el"
@@ -27,10 +27,10 @@ class SuggestEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/f-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/loop-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/f-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/loop-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")
       (load "suggest")
       (print (minibuffer-prompt-width))

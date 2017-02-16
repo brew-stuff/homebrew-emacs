@@ -16,7 +16,7 @@ class TinyEmacs < EmacsFormula
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/undercover" => :build
+  depends_on "dunn/emacs/undercover" => :build
 
   def install
     ert_run_tests "tiny-test.el"

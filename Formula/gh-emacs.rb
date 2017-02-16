@@ -8,9 +8,9 @@ class GhEmacs < EmacsFormula
   head "https://github.com/sigma/gh.el.git"
 
   depends_on :emacs => "24.4"
-  depends_on "homebrew/emacs/mocker" => :build
-  depends_on "homebrew/emacs/logito"
-  depends_on "homebrew/emacs/pcache"
+  depends_on "dunn/emacs/mocker" => :build
+  depends_on "dunn/emacs/logito"
+  depends_on "dunn/emacs/pcache"
 
   def install
     system "make", "test"
@@ -20,8 +20,8 @@ class GhEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/logito"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/pcache"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/logito"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/pcache"].opt_elisp}")
       (load "gh")
       (print (minibuffer-prompt-width))
     EOS

@@ -15,7 +15,7 @@ class Muse < EmacsFormula
   end
 
   depends_on emacs: "21.1"
-  depends_on "homebrew/emacs/htmlize"
+  depends_on "dunn/emacs/htmlize"
 
   def install
     inreplace "Makefile.defs.default", "/usr/local", prefix

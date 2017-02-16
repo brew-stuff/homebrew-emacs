@@ -9,9 +9,9 @@ class AgEmacs < EmacsFormula
 
   depends_on :emacs => "23.4"
   depends_on "the_silver_searcher"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/s-emacs"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/s-emacs"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "ag.el"
@@ -21,8 +21,8 @@ class AgEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/s-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/s-emacs"].opt_elisp}")
       (load "ag")
       (print (buffer-name (ag "#{elisp}" "#{testpath}")))
     EOS

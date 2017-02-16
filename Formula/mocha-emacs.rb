@@ -8,12 +8,12 @@ class MochaEmacs < EmacsFormula
 
   head do
     url "https://github.com/scottaj/mocha.el.git"
-    depends_on "homebrew/emacs/f-emacs"
-    depends_on "homebrew/emacs/s-emacs"
+    depends_on "dunn/emacs/f-emacs"
+    depends_on "dunn/emacs/s-emacs"
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/js2-mode"
+  depends_on "dunn/emacs/js2-mode"
 
   def install
     byte_compile "mocha.el"
@@ -23,7 +23,7 @@ class MochaEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/js2-mode"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_elisp}")
       (load "mocha")
       (print (minibuffer-prompt-width))
     EOS

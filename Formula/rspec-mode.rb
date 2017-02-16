@@ -8,7 +8,7 @@ class RspecMode < EmacsFormula
   head "https://github.com/pezra/rspec-mode.git"
 
   depends_on :emacs => "23.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ert_run_tests "test/rspec-mode-test.el" unless build.stable?

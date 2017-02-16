@@ -14,7 +14,7 @@ class TnfaEmacs < EmacsFormula
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/queue-emacs"
+  depends_on "dunn/emacs/queue-emacs"
 
   def install
     mv "tNFA-#{version}.el", "tNFA.el"

@@ -9,7 +9,7 @@ class Mocker < EmacsFormula
 
   depends_on :emacs
   depends_on "cask" => :build
-  depends_on "homebrew/emacs/el-x"
+  depends_on "dunn/emacs/el-x"
 
   def install
     system "make", "test"

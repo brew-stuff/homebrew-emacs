@@ -8,8 +8,8 @@ class JsonMode < EmacsFormula
   head "https://github.com/joshwnj/json-mode.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/json-reformat"
-  depends_on "homebrew/emacs/json-snatcher"
+  depends_on "dunn/emacs/json-reformat"
+  depends_on "dunn/emacs/json-snatcher"
 
   def install
     byte_compile "json-mode.el"
@@ -20,8 +20,8 @@ class JsonMode < EmacsFormula
     (testpath/"test.json").write '{ "home": "brew" }'
 
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/json-reformat"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/json-snatcher"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/json-reformat"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/json-snatcher"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")
       (load "json-mode")
       (find-file "#{testpath}/test.json")

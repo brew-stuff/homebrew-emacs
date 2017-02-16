@@ -8,8 +8,8 @@ class PuppetMode < EmacsFormula
   head "https://github.com/lunaryorn/puppet-mode.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
-  depends_on "homebrew/emacs/pkg-info"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/pkg-info"
 
   def install
     byte_compile "puppet-mode.el"

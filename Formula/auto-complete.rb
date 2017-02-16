@@ -23,24 +23,24 @@ class AutoComplete < EmacsFormula
   option "with-slime", "Install ac-slime"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/popup"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/popup"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
-  depends_on "homebrew/emacs/haskell-mode" if build.with? "haskell"
-  depends_on "homebrew/emacs/helm" if build.with? "helm"
-  depends_on "homebrew/emacs/slime" if build.with? "slime"
+  depends_on "dunn/emacs/haskell-mode" if build.with? "haskell"
+  depends_on "dunn/emacs/helm" if build.with? "helm"
+  depends_on "dunn/emacs/slime" if build.with? "slime"
 
   if build.with? "html"
-    depends_on "homebrew/emacs/dash-emacs"
-    depends_on "homebrew/emacs/web-completion-data"
+    depends_on "dunn/emacs/dash-emacs"
+    depends_on "dunn/emacs/web-completion-data"
   end
 
   if build.with? "php"
-    depends_on "homebrew/emacs/f-emacs"
-    depends_on "homebrew/emacs/popup"
-    depends_on "homebrew/emacs/s-emacs"
-    depends_on "homebrew/emacs/xcscope"
-    depends_on "homebrew/emacs/yasnippet"
+    depends_on "dunn/emacs/f-emacs"
+    depends_on "dunn/emacs/popup"
+    depends_on "dunn/emacs/s-emacs"
+    depends_on "dunn/emacs/xcscope"
+    depends_on "dunn/emacs/yasnippet"
   end
 
   resource "etags" do
@@ -139,7 +139,7 @@ class AutoComplete < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/auto-complete")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/popup"].opt_share}/emacs/site-lisp/popup")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/popup"].opt_share}/emacs/site-lisp/popup")
 
       (load "auto-complete")
       (print ac-version)

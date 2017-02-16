@@ -21,14 +21,14 @@ Install
 -------
 
 You can install any of the packages in `./Formula` by prefixing them
-with the tap name, `homebrew/emacs`:
+with the tap name, `dunn/emacs`:
 
 ```
-brew install homebrew/emacs/helm
+brew install dunn/emacs/helm
 ```
 
 That will automatically “tap” the repository (which you can do
-manually with `brew tap homebrew/emacs`), so then you can install formula
+manually with `brew tap dunn/emacs`), so then you can install formula
 without prefixing:
 
 ```
@@ -54,7 +54,7 @@ Uninstall
 To uninstall homebrew-emacs, you just need to “untap” it:
 
 ```
-brew untap homebrew/emacs
+brew untap dunn/emacs
 ```
 
 All files installed from this tap will still exist, but the formulae

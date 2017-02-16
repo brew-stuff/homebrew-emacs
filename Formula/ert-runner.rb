@@ -16,20 +16,20 @@ class ErtRunner < EmacsFormula
   revision 1
 
   depends_on :emacs
-  depends_on "homebrew/emacs/ansi-emacs"
-  depends_on "homebrew/emacs/commander-emacs"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/f-emacs"
-  depends_on "homebrew/emacs/s-emacs"
-  depends_on "homebrew/emacs/shut-up"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/ansi-emacs"
+  depends_on "dunn/emacs/commander-emacs"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/f-emacs"
+  depends_on "dunn/emacs/s-emacs"
+  depends_on "dunn/emacs/shut-up"
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"], Dir["reporters/*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"], "reporters"
 
     load_paths = %w[ansi-emacs commander-emacs dash-emacs f-emacs s-emacs shut-up].map do |dep|
-      "--directory " + Formula["homebrew/emacs/#{dep}"].opt_elisp
+      "--directory " + Formula["dunn/emacs/#{dep}"].opt_elisp
     end
 
     inreplace "bin/ert-runner" do |s|

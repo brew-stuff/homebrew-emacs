@@ -15,7 +15,7 @@ class ContextColoring < EmacsFormula
   end
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/js2-mode"
+  depends_on "dunn/emacs/js2-mode"
 
   def install
     ert_run_tests "context-coloring-test.el"

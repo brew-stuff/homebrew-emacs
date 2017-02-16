@@ -21,12 +21,12 @@ class Flycheck < EmacsFormula
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/let-alist"
-  depends_on "homebrew/emacs/pkg-info"
-  depends_on "homebrew/emacs/seq" if Emacs.version < Version.create("25")
-  depends_on "homebrew/emacs/haskell-mode" if build.with? "haskell"
-  depends_on "homebrew/emacs/pos-tip" if build.with? "pos-tip"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/let-alist"
+  depends_on "dunn/emacs/pkg-info"
+  depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
+  depends_on "dunn/emacs/haskell-mode" if build.with? "haskell"
+  depends_on "dunn/emacs/pos-tip" if build.with? "pos-tip"
 
   resource "cask" do
     url "https://github.com/flycheck/flycheck-cask/archive/0.4.tar.gz"
@@ -69,10 +69,10 @@ class Flycheck < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/pkg-info"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/epl"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/pkg-info"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
       (load "flycheck")
       (load "pkg-info")
       (print (flycheck-version))

@@ -8,7 +8,7 @@ class RubocopEmacs < EmacsFormula
   head "https://github.com/bbatsov/rubocop-emacs.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/dash-emacs"
+  depends_on "dunn/emacs/dash-emacs"
 
   def install
     byte_compile "rubocop.el"

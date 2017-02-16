@@ -7,7 +7,7 @@ class OscEmacs < EmacsFormula
   sha256 "4b5bdd2c622b3b3f0ec3211c1071e88c6267de327b71c543aa32bbbeff5adf26"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "osc-#{version}.el", "osc.el"

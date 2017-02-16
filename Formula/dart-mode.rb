@@ -15,8 +15,8 @@ class DartMode < EmacsFormula
   end
 
   depends_on :emacs => "25.1"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/flycheck"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/flycheck"
 
   def install
     byte_compile "dart-mode.el"
@@ -26,9 +26,9 @@ class DartMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/flycheck"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/flycheck"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
       (load "dart-mode")
       (print (minibuffer-prompt-width))
     EOS

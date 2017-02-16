@@ -14,7 +14,7 @@ class PokerEmacs < EmacsFormula
   end
 
   depends_on emacs: "24.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     mv "poker-#{version}.el", "poker.el"

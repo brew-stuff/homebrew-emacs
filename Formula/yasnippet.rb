@@ -17,8 +17,8 @@ class Yasnippet < EmacsFormula
   option "with-htmlize", "Build HTML docs with htmlize"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/htmlize" => :optional
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/htmlize" => :optional
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     ert_run_tests "yasnippet-tests.el"

@@ -15,8 +15,8 @@ class IronyMode < EmacsFormula
   end
 
   depends_on :emacs => "23.1"
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
-  depends_on "homebrew/emacs/yasnippet" => :optional
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/yasnippet" => :optional
 
   depends_on "llvm"
   depends_on "cmake" => :build
@@ -42,7 +42,7 @@ class IronyMode < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/cl-lib"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (load "irony")
       (print (minibuffer-prompt-width))
     EOS

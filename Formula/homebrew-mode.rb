@@ -8,24 +8,24 @@ class HomebrewMode < EmacsFormula
   head "https://github.com/dunn/homebrew-mode.git"
 
   depends_on :emacs => "24.4"
-  depends_on "homebrew/emacs/dash-emacs"
-  depends_on "homebrew/emacs/inf-ruby"
+  depends_on "dunn/emacs/dash-emacs"
+  depends_on "dunn/emacs/inf-ruby"
 
   def install
     system "make", "tests",
-           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}",
-           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
+           "inf_ruby=#{Formula["dunn/emacs/inf-ruby"].opt_elisp}",
+           "dash=#{Formula["dunn/emacs/dash-emacs"].opt_elisp}"
 
     system "make", "install", "prefix=#{prefix}",
-           "inf_ruby=#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}",
-           "dash=#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}"
+           "inf_ruby=#{Formula["dunn/emacs/inf-ruby"].opt_elisp}",
+           "dash=#{Formula["dunn/emacs/dash-emacs"].opt_elisp}"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{share}/emacs/site-lisp/homebrew-mode")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/inf-ruby"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/inf-ruby"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
 
       (load "homebrew-mode")
       (print homebrew-mode-version)

@@ -8,7 +8,7 @@ class Elfeed < EmacsFormula
   head "https://github.com/skeeto/elfeed.git"
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/simple-httpd"
+  depends_on "dunn/emacs/simple-httpd"
 
   def install
     byte_compile Dir["web/*.el"]

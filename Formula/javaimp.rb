@@ -7,7 +7,7 @@ class Javaimp < EmacsFormula
   sha256 "ce09593f934c370c41e99f95d4aeaab1581414213e7d6af09952e7653a64b304"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/seq" if Emacs.version < Version.create("25")
+  depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
 
   def install
     ert_run_tests "javaimp-tests.el"
@@ -18,7 +18,7 @@ class Javaimp < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/seq"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
       (load "javaimp")
       (print (minibuffer-prompt-width))
     EOS

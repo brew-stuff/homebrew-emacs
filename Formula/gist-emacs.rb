@@ -8,7 +8,7 @@ class GistEmacs < EmacsFormula
   head "https://github.com/defunkt/gist.el.git"
 
   depends_on :emacs => "24.1"
-  depends_on "homebrew/emacs/gh-emacs"
+  depends_on "dunn/emacs/gh-emacs"
 
   def install
     byte_compile "gist.el"
@@ -18,9 +18,9 @@ class GistEmacs < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/gh-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/logito"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/pcache"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/gh-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/logito"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/pcache"].opt_elisp}")
       (load "gist")
       (print (minibuffer-prompt-width))
     EOS

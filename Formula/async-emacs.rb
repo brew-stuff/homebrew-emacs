@@ -8,7 +8,7 @@ class AsyncEmacs < EmacsFormula
   head "https://github.com/jwiegley/emacs-async.git"
 
   depends_on :emacs
-  depends_on "homebrew/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile Dir["*.el"]

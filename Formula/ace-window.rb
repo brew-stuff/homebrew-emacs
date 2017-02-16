@@ -15,7 +15,7 @@ class AceWindow < EmacsFormula
   end
 
   depends_on :emacs
-  depends_on "homebrew/emacs/avy"
+  depends_on "dunn/emacs/avy"
 
   def install
     byte_compile "ace-window.el"
@@ -25,7 +25,7 @@ class AceWindow < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["homebrew/emacs/avy"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/avy"].opt_elisp}")
       (load "ace-window")
       (aw-window-list)
       (print (minibuffer-prompt-width))

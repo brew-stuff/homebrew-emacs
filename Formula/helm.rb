@@ -15,7 +15,7 @@ class Helm < EmacsFormula
   end
 
   depends_on :emacs => "24.3"
-  depends_on "homebrew/emacs/async-emacs"
+  depends_on "dunn/emacs/async-emacs"
 
   def install
     system "make"
