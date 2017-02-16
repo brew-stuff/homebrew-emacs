@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Magit < EmacsFormula
   desc "Emacs interface for Git"
   homepage "https://magit.vc/"
-  url "https://github.com/magit/magit/releases/download/2.10.1/magit-2.10.1.tar.gz"
-  sha256 "5b9e690c9b679d5ae43de19dadcebaa7727b4f9f2359dc7c0b337f40b3d26fa8"
+  url "https://github.com/magit/magit/releases/download/2.10.2/magit-2.10.2.tar.gz"
+  sha256 "287498610d0835f6b918c698ef798c14cc867c8302e1d3138a3dc760d4600c27"
   head "https://github.com/magit/magit.git", :shallow => false
 
   bottle :disable
@@ -27,8 +27,8 @@ class Magit < EmacsFormula
   end
 
   resource "with-editor" do
-    url "https://github.com/magit/with-editor/archive/v2.5.9.tar.gz"
-    sha256 "f0772410e280cf7926d145bcc8c43643141afefa3aa97fa2cfc08c8cbdfdce7e"
+    url "https://github.com/magit/with-editor/archive/v2.5.10.tar.gz"
+    sha256 "c7a849ed827e830f0092695d6b99dce9fad5e1a87e6f0cf1fe7379f860505d53"
   end
 
   def install
