@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GnugoEmacs < EmacsFormula
   desc "Emacs interface to GNU Go"
   homepage "http://www.gnuvola.org/software/gnugo/"
-  url "https://elpa.gnu.org/packages/gnugo-3.0.2.tar"
-  sha256 "732c5b6195b4e3f1b4af113717590c3fa2d77a862bfa002f9ac26aae8049b58b"
+  url "https://elpa.gnu.org/packages/gnugo-3.1.0.tar"
+  sha256 "c13dd1bbdf8ea0e3b20e403739ef03fa05c3280c4bb7ab380ee73d5084def276"
 
   bottle :disable
 
