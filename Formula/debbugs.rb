@@ -6,12 +6,7 @@ class Debbugs < EmacsFormula
   url "https://elpa.gnu.org/packages/debbugs-0.13.tar"
   sha256 "e17b7db406a33fa365f6bf5e9a81a78130d429fa77ab5ff7e42dc813bf43c309"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :sierra
-    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :el_capitan
-    sha256 "4a9d120e615b99fc9fb347fb5ea7a704c8c7ae7b3fb585ccf9bd4131b446ed50" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
 
