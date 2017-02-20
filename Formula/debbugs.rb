@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Debbugs < EmacsFormula
   desc "Emacs library for accessing Debbugs SOAP servers"
   homepage "https://elpa.gnu.org/packages/debbugs.html"
-  url "https://elpa.gnu.org/packages/debbugs-0.13.tar"
-  sha256 "e17b7db406a33fa365f6bf5e9a81a78130d429fa77ab5ff7e42dc813bf43c309"
+  url "https://elpa.gnu.org/packages/debbugs-0.14.tar"
+  sha256 "5e69701e70b1ce373e7c38872e041fe44c0fe5950f64b9fb4388a201de668f1f"
 
   bottle :disable
 
