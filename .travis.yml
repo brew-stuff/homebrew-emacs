@@ -27,7 +27,7 @@ before_install:
     fi
   - brew update || brew update
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
-  - mkdir -p $(brew --repo)/Library/Taps/homebrew
+  - mkdir -p $(brew --repo)/Library/Taps/dunn
   - ln -s $PWD $(brew --repo)/Library/Taps/dunn/homebrew-emacs
   - cd $(brew --repo)/Library/Taps/dunn/homebrew-emacs
   - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/dunn/homebrew-emacs"
