@@ -4,8 +4,8 @@ class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
   homepage "https://github.com/editorconfig/editorconfig-emacs"
   url "https://github.com/editorconfig/editorconfig-emacs.git",
-      :tag => "v0.7.8",
-      :revision => "442f23637ec50274c5e47c20827c946f51cfb8fb"
+      :tag => "v0.7.9",
+      :revision => "b86a4b3a696328faaa37a808abeed54561d19385"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
