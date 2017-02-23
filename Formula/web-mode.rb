@@ -7,7 +7,7 @@ class WebMode < EmacsFormula
   sha256 "08bbb0859a01eb1dabe1e53c15d9d0cbc862cb69318c234d0fc34ee8510f41e0"
   head "https://github.com/fxbois/web-mode.git"
 
-  depends_on :emacs => "22.1"
+  depends_on :emacs => "23.1"
 
   def install
     system "/bin/bash", "./run.sh"
