@@ -52,8 +52,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "statistics" do
-    url "https://github.com/company-mode/company-statistics/archive/0.2.2.tar.gz"
-    sha256 "31c7f68324f492cbe658f0733841e4de64149e86f821c878c390edb0e840e420"
+    url "https://elpa.gnu.org/packages/company-statistics-0.2.3.tar"
+    sha256 "9c1358e9012bca320ef82a42fb50d49e06f92e76a42743b497691c97c0ed001d"
   end
 
   resource "web" do
