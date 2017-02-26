@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Jade < EmacsFormula
   desc "JavaScript Awesome Development Environment"
   homepage "https://github.com/NicolasPetton/jade"
-  url "https://github.com/NicolasPetton/jade/archive/0.26.tar.gz"
-  sha256 "c0a996e0f5c25145ee17abb418277d866386a84c2d48ecbcd96ecda2cc6f28cf"
+  url "https://github.com/NicolasPetton/jade/archive/0.28.tar.gz"
+  sha256 "c8588ad47b0f9badc158cffb3cc77ef8b1dbe07ab4323bc3e8c29e0aa063dc2c"
   head "https://github.com/NicolasPetton/jade.git"
 
   bottle do
