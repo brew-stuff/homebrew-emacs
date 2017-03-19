@@ -6,7 +6,7 @@ class Auctex < Formula
   sha256 "3c232fd8e57780edea28cd3035afcc2b6ed965b5954e96b34a258cacfcaaf18f"
 
   head do
-    url "http://git.savannah.gnu.org/cgit/auctex.git"
+    url "https://git.savannah.gnu.org/git/auctex.git"
     depends_on "autoconf" => :build
   end
 
