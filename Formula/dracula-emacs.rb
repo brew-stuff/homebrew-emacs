@@ -1,7 +1,7 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class DraculaEmacs < EmacsFormula
-  desc "A dark color theme available for a number of editors."
+  desc "Dark color theme available for a number of editors."
   homepage "https://github.com/dracula/emacs"
   url "https://github.com/dracula/emacs/archive/v1.2.5.tar.gz"
   sha256 "bc78039c90d5d27f6b1ccb7b32fabb3ecbf0d485421bc63ae5d5d6836b9780b4"
