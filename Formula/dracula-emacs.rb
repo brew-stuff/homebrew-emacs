@@ -17,7 +17,7 @@ class DraculaEmacs < EmacsFormula
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'custom-theme-load-path "#{elisp}")
       (load-theme 'dracula t)
       (print (minibuffer-prompt-width))
     EOS
