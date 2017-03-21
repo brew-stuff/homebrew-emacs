@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class LoadDir < EmacsFormula
   desc "Package for loading all Emacs Lisp files in a directory"
   homepage "https://elpa.gnu.org/packages/load-dir.html"
-  url "https://elpa.gnu.org/packages/load-dir-0.0.4.el"
-  sha256 "440549cc97aedb1488cd30d2b09baaaeba10d357d8389292fdaf4affa20fa913"
+  url "https://elpa.gnu.org/packages/load-dir-0.0.5.el"
+  sha256 "85dd17294a44706c8a3fce056e4224f8eeb00feb74c1e7cbfadf9612ec8de594"
 
   bottle :disable
 
@@ -19,7 +19,6 @@ class LoadDir < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
-      (require 'cl-extra)
       (load "load-dir")
       (load-dir-one "#{elisp}")
       (print load-dir-loaded)
