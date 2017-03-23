@@ -3,11 +3,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Gnorb < EmacsFormula
   desc "Glue code between Gnus, Org, and BBDB in Emacs"
   homepage "https://github.com/girzel/gnorb"
-  url "http://elpa.gnu.org/packages/gnorb-1.1.2.tar"
-  sha256 "7db3ddc270a26905f0635eae53af3ac24694ec4fdb4a3aaa498fd13176e3a5a1"
+  url "https://elpa.gnu.org/packages/gnorb-1.2.1.tar"
+  sha256 "3d3db528c6fb84ed7b9e4f82d7a0646a25f95589b12a9e7e3782b6bb3f033756"
   head "https://github.com/girzel/gnorb.git"
 
   depends_on :emacs
+  depends_on "dunn/emacs/org-mode" if Emacs.version < Version.create("24.1")
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
