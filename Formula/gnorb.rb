@@ -7,6 +7,8 @@ class Gnorb < EmacsFormula
   sha256 "3d3db528c6fb84ed7b9e4f82d7a0646a25f95589b12a9e7e3782b6bb3f033756"
   head "https://github.com/girzel/gnorb.git"
 
+  bottle :disable
+
   depends_on :emacs
   depends_on "dunn/emacs/org-mode" if Emacs.version < Version.create("24.1")
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
