@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CompanyMode < EmacsFormula
   desc "Modular in-buffer completion framework for Emacs"
   homepage "https://company-mode.github.io"
-  url "https://github.com/company-mode/company-mode/archive/0.9.2.tar.gz"
-  sha256 "75c2e0325787c91228b5a9e4a0b702543e3ee3146194a849e429e20055915f08"
+  url "https://github.com/company-mode/company-mode/archive/0.9.3.tar.gz"
+  sha256 "7013ac226c3d6d0b005f41efe573c1665fac02e1bae2e0b5fe7ad77621bbd9bb"
   head "https://github.com/company-mode/company-mode.git"
 
   bottle :disable
@@ -15,8 +15,7 @@ class CompanyMode < EmacsFormula
   option "with-statistics", "Include statistical ranking minor mode"
   option "with-web", "Install web templating backend"
 
-  depends_on :emacs => "24.1"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on :emacs => "24.3"
 
   if build.with? "web"
     depends_on "dunn/emacs/dash-emacs"
@@ -32,8 +31,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "ansible" do
-    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.4.0.tar.gz"
-    sha256 "b2830689aefcc960b0188e725d3329984d2d879b0d5dd08204a006897d5677e9"
+    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.5.0.tar.gz"
+    sha256 "46b7fcd21c651a90054f2161dea0546fb80e35008773cee3c80eb354eab9f857"
   end
 
   resource "emoji" do
