@@ -2,10 +2,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class Gnorb < EmacsFormula
   desc "Glue code between Gnus, Org, and BBDB in Emacs"
-  homepage "https://github.com/girzel/gnorb"
-  url "https://elpa.gnu.org/packages/gnorb-1.2.1.tar"
-  sha256 "3d3db528c6fb84ed7b9e4f82d7a0646a25f95589b12a9e7e3782b6bb3f033756"
-  head "https://github.com/girzel/gnorb.git"
+  homepage "https://elpa.gnu.org/packages/gnorb.html"
+  url "https://elpa.gnu.org/packages/gnorb-1.2.2.tar"
+  sha256 "f55049ef93c15985b1dd3affd79ffb3c3891d6b784aa82b14137327d8faf7ab2"
 
   bottle :disable
 
