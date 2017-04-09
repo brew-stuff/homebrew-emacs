@@ -7,24 +7,9 @@ class Swiper < EmacsFormula
   sha256 "582414b7e257019696e2b93bbdf6556383751e85ee6ecbf56fe1e85800e5d8a2"
   head "https://github.com/abo-abo/swiper.git"
 
-  option "with-helm", "Use helm as the backend instead of ivy"
-
   depends_on :emacs => "24.3"
-  depends_on "dunn/emacs/helm" if build.with? "helm"
-
-  resource "swiper-helm" do
-    url "https://github.com/abo-abo/swiper-helm/archive/0.1.0.tar.gz"
-    sha256 "8db4b0d7835cd71f17ae7fcc2642208270b332c38cc06f44fca5f7b3e674d8ab"
-  end
 
   def install
-    if build.with? "helm"
-      resource("swiper-helm").stage do
-        byte_compile "swiper-helm.el"
-        elisp.install "swiper-helm.el", "swiper-helm.elc"
-      end
-    end
-
     system "make", "compile"
     system "make", "test"
     elisp.install Dir["*.el"], Dir["*.elc"]
