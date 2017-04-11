@@ -1,11 +1,11 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class Jade < EmacsFormula
-  desc "JavaScript Awesome Development Environment"
-  homepage "https://github.com/NicolasPetton/jade"
-  url "https://github.com/NicolasPetton/jade/archive/0.28.tar.gz"
-  sha256 "c8588ad47b0f9badc158cffb3cc77ef8b1dbe07ab4323bc3e8c29e0aa063dc2c"
-  head "https://github.com/NicolasPetton/jade.git"
+class Indium < EmacsFormula
+  desc "JavaScript development environment for Emacs"
+  homepage "https://github.com/NicolasPetton/Indium"
+  url "https://github.com/NicolasPetton/Indium/archive/0.4.0.tar.gz"
+  sha256 "1b2890afa3e2d12999d513b8279b0eeb6b5f99a409d1bb62dd4dd3d4e9466637"
+  head "https://github.com/NicolasPetton/Indium.git"
 
   bottle :disable
 
@@ -29,7 +29,7 @@ class Jade < EmacsFormula
       (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/websocket-emacs"].opt_elisp}")
-      (load "jade")
+      (load "indium")
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip

@@ -3,6 +3,7 @@
   "dash": "dash-emacs",
   "f": "f-emacs",
   "hydra": "hydra-emacs",
+  "jade": "indium",
   "s": "s-emacs",
   "xml-rpc": "xml-rpc-emacs",
   "ztree-emacs": "ztree"
