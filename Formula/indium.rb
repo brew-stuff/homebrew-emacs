@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Indium < EmacsFormula
   desc "JavaScript development environment for Emacs"
   homepage "https://github.com/NicolasPetton/Indium"
-  url "https://github.com/NicolasPetton/Indium/archive/0.4.0.tar.gz"
-  sha256 "1b2890afa3e2d12999d513b8279b0eeb6b5f99a409d1bb62dd4dd3d4e9466637"
+  url "https://github.com/NicolasPetton/Indium/archive/0.4.1.tar.gz"
+  sha256 "3ed2d4461fd3d2af82271758550f9506b0198cbbe456baa1dbbebb3e91b4d77c"
   head "https://github.com/NicolasPetton/Indium.git"
 
   bottle :disable
