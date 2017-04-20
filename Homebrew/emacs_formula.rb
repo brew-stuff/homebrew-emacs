@@ -118,4 +118,41 @@ class EmacsFormula < Formula
       raise BuildError.new(self, "emacs", args, env)
     end
   end
+
+  def byte_compile_all_at_once(*files)
+    emacs_args = %W[ --batch ]
+
+    # Pathname.pwd and buildpath differ when we're compiling resources
+    load_dirs = [buildpath, Pathname.pwd]
+
+    Dir["#{buildpath}/**"].each do |x|
+      x = Pathname.new(x)
+      load_dirs << x if x.directory?
+    end
+
+    Dir["#{Pathname.pwd}/**"].each do |x|
+      x = Pathname.new(x)
+      load_dirs << x if x.directory?
+    end
+
+    emacs_args += load_dirs.uniq.map { |d| %W[--directory #{d}] }.flatten
+    emacs_args += lib_load_paths if deps.any?
+    emacs_args << "-f" << "batch-byte-compile"
+
+    lisps = files.flatten
+    args = Array.new(emacs_args)
+    args += lisps
+    ohai "Byte compiling #{lisps.join(" ")}"
+    pid = fork { exec("emacs", *args) }
+    Process.wait pid
+    # is this necessary?
+    $stdout.flush
+    unless $?.success?
+      env = ENV.to_hash
+      puts # line between emacs output and env dump
+      onoe "Byte compilation failed"
+      puts "emacs #{args.join(" ")}"
+      raise BuildError.new(self, "emacs", args, env)
+    end
+  end
 end
