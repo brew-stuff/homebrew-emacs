@@ -13,7 +13,6 @@ class OrgMode < EmacsFormula
   option "with-toc", "Install the toc-org extension"
 
   depends_on :emacs => "24.3"
-  depends_on :tex => :optional
   depends_on "dunn/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
