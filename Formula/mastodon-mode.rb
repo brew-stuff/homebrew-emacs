@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class MastodonMode < EmacsFormula
   desc "Client and major mode for Mastodon"
   homepage "https://github.com/jdenen/mastodon.el"
-  url "https://github.com/jdenen/mastodon.el/archive/0.6.0.tar.gz"
-  sha256 "04a7b8a949fb864e9d08bd3e20d3c08415f17dc6834c128c57a03524927bd749"
+  url "https://github.com/jdenen/mastodon.el/archive/0.6.2.tar.gz"
+  sha256 "85b0f8539e8a1eca6d1d1f8b009b9e8a9974e8594d525a04cb489c12c03725f7"
   head "https://github.com/jdenen/mastodon.el.git"
 
   depends_on :emacs => "24.4"
