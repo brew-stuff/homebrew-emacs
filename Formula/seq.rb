@@ -3,15 +3,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Seq < EmacsFormula
   desc "Sequence manipulation library for Emacs"
   homepage "https://elpa.gnu.org/packages/seq.html"
-  url "https://elpa.gnu.org/packages/seq-2.19.tar"
-  sha256 "0a7e93f52bb7afd28d36c1362f7da9e301694e813f3b2699a6011265743c0b86"
+  url "https://elpa.gnu.org/packages/seq-2.20.tar"
+  sha256 "1634947f0944908c7dbfb3b11c7c899b6d486b7ceadb79bd7e60496fade9376f"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :sierra
-    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :el_capitan
-    sha256 "afec866b234393783e082364aec5696c102343657c57c34af7a20abe57836a3a" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
 
