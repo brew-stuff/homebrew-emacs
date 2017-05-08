@@ -3,16 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Neotree < EmacsFormula
   desc "Tree-style file browser for Emacs"
   homepage "https://github.com/jaypei/emacs-neotree"
-  url "https://github.com/jaypei/emacs-neotree/archive/0.5.1.tar.gz"
-  sha256 "1d517543bcc3d7df92a1262410266febee47b9a294d9380183bf3fa735c6fc39"
+  url "https://github.com/jaypei/emacs-neotree/archive/0.5.2.tar.gz"
+  sha256 "22dc07fc170ebb2c69353fcd4680a06824fd42b9cc41f6e6715646cf216ba6fd"
   head "https://github.com/jaypei/emacs-neotree.git", :branch => "dev"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "57a1fe46267ebf430157af2ffb074babfa8aeb1a9441ba42b6518913f0d99b31" => :sierra
-    sha256 "9ff4c17f5d226dbfb7456fdd8bb2dffd63c02d52a2de1034dfd18b6533fc8cfa" => :el_capitan
-    sha256 "9ff4c17f5d226dbfb7456fdd8bb2dffd63c02d52a2de1034dfd18b6533fc8cfa" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
 
