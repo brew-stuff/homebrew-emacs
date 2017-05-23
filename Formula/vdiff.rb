@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Vdiff < EmacsFormula
   desc "Visual diff tool for Emacs, similar to vimdiff"
   homepage "https://github.com/justbur/emacs-vdiff"
-  url "https://elpa.gnu.org/packages/vdiff-0.2.el"
-  sha256 "7cec49f361a38a51fa05467939e0d004326f93a3f102281dab52c2bd4d252710"
+  url "https://elpa.gnu.org/packages/vdiff-0.2.3.el"
+  sha256 "1fa7ec822092f92ce631cd15eccd28c4d1a1dd6fc08d47f7766b8a0affd7fca4"
   head "https://github.com/justbur/emacs-vdiff.git"
 
   depends_on :emacs => "24.4"
