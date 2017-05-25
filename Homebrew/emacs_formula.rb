@@ -45,13 +45,12 @@ class EmacsFormula < Formula
 
     # Detect if we're calling it from the test block or the install
     # block
-    if buildpath.nil?
-      test_args << "--directory" << elisp
-      dirs = Dir["#{elisp}/**/*"]
-    else
-      dirs = Dir["#{buildpath}/**/*"]
-      test_args << "--directory" << buildpath
-    end
+    dirs = if buildpath.nil?
+             Dir["#{elisp}/**/*"]
+           else
+             Dir["#{buildpath}/**/*"]
+           end
+
     dirs.each do |x|
       x = Pathname.new(x)
       test_args << "--directory" << x.to_s if x.directory?
