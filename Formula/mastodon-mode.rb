@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class MastodonMode < EmacsFormula
   desc "Client and major mode for Mastodon"
   homepage "https://github.com/jdenen/mastodon.el"
-  url "https://github.com/jdenen/mastodon.el/archive/0.6.2.tar.gz"
-  sha256 "85b0f8539e8a1eca6d1d1f8b009b9e8a9974e8594d525a04cb489c12c03725f7"
+  url "https://github.com/jdenen/mastodon.el/archive/0.7.0.tar.gz"
+  sha256 "f54b789c1b900f7856e7c5b89c6d093376a32ad6ea817aa83552fc215f4e9231"
   head "https://github.com/jdenen/mastodon.el.git"
 
   depends_on :emacs => "24.4"
@@ -24,8 +24,8 @@ class MastodonMode < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
       (load "mastodon")
-      (print mastodon-version)
+      (print (minibuffer-prompt-width))
     EOS
-    assert_equal "\"#{version}\"", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
+    assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
   end
 end
