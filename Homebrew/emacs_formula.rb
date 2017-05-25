@@ -59,7 +59,6 @@ class EmacsFormula < Formula
     # this means flattening later on
     test_args << lib_load_paths if deps.any?
 
-    test_args << "-l" << "ert"
     files.flatten.each do |f|
       test_args << "-l" << f
     end
