@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Indium < EmacsFormula
   desc "JavaScript development environment for Emacs"
   homepage "https://github.com/NicolasPetton/Indium"
-  url "https://github.com/NicolasPetton/Indium/archive/0.4.2.tar.gz"
-  sha256 "90839b31a08be7425914c09e56643c49aeadb4a38a23459c89e95404d859004e"
+  url "https://github.com/NicolasPetton/Indium/archive/1.2.0.tar.gz"
+  sha256 "ccde3ce17f2d39760a18a8346f0c51a4c9956e2a7bd27deb3c629178402fcd07"
   head "https://github.com/NicolasPetton/Indium.git"
 
   bottle :disable
@@ -16,10 +16,13 @@ class Indium < EmacsFormula
   depends_on "dunn/emacs/websocket-emacs"
 
   def install
-    ert_run_tests "test/jade-interaction-test.el"
-
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
+
+    cd "doc" do
+      system "make", "info"
+      info.install Dir["*.info"]
+    end
   end
 
   test do
