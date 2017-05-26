@@ -16,6 +16,7 @@ class CompanyMode < EmacsFormula
   option "with-web", "Install web templating backend"
 
   depends_on :emacs => "24.3"
+  depends_on "dunn/emacs/irony-mode" => :optional
 
   if build.with? "web"
     depends_on "dunn/emacs/dash-emacs"
@@ -38,6 +39,11 @@ class CompanyMode < EmacsFormula
   resource "emoji" do
     url "https://github.com/dunn/company-emoji/archive/2.5.0.tar.gz"
     sha256 "010fef421db8c73626ba7e1d844b650da8d77f46ea40ad9d9ca7f2f08e4d70f3"
+  end
+
+  resource "irony" do
+    url "https://github.com/Sarcasm/company-irony/archive/v1.0.0.tar.gz"
+    sha256 "2e5610401d90c5bb2e7a2b81a1b177d273d05cade51c3600597e0a533191a7e0"
   end
 
   resource "php" do
@@ -67,6 +73,13 @@ class CompanyMode < EmacsFormula
       resource("emoji").stage do
         byte_compile "company-emoji.el"
         (elisp/"emoji").install Dir["*.el"], Dir["*.elc"]
+      end
+    end
+
+    if build.with? "irony-mode"
+      resource("irony").stage do
+        byte_compile "company-irony.el"
+        (elisp/"irony").install Dir["*.el"], Dir["*.elc"]
       end
     end
 
