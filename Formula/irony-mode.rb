@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class IronyMode < EmacsFormula
   desc "C/C++ minor mode for Emacs powered by libclang"
   homepage "https://github.com/Sarcasm/irony-mode"
-  url "https://github.com/Sarcasm/irony-mode/archive/v0.2.1.tar.gz"
-  sha256 "6e7fc33751a5529194e3a6e50b60174fa2a47803ae383a6027e38ec589777b2a"
+  url "https://github.com/Sarcasm/irony-mode/archive/v1.0.0.tar.gz"
+  sha256 "7326bf7308d1308493a91efbb91aa25aecb1bc0c188888c7dc9ad5c9a1e6d0b9"
   head "https://github.com/Sarcasm/irony-mode.git"
 
   bottle do
@@ -14,7 +14,7 @@ class IronyMode < EmacsFormula
     sha256 "0618e58e9410e1513199ba25ac9310a2341880ac0d383248bf6eaf1cdceb69ba" => :yosemite
   end
 
-  depends_on :emacs => "23.1"
+  depends_on :emacs => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
   depends_on "dunn/emacs/yasnippet" => :optional
 
