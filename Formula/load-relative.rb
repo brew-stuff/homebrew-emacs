@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class LoadRelative < EmacsFormula
   desc "Emacs Lisp functions for relative file load"
   homepage "https://github.com/rocky/emacs-load-relative"
-  url "http://elpa.gnu.org/packages/load-relative-1.2.el"
-  sha256 "3c66e3d491892b94833c0e9bca3a242aa70899af490e2f2608cb7e580055ae6e"
+  url "https://elpa.gnu.org/packages/load-relative-1.3.el"
+  sha256 "fab654764e67ebb5145e01e1e22455afa83b273d64ebea788aba49338858ddc1"
 
   head do
     url "https://github.com/rocky/emacs-load-relative.git"
@@ -21,20 +21,10 @@ class LoadRelative < EmacsFormula
       byte_compile "load-relative.el"
     else
       system "./autogen.sh"
-      cd "test" do
-        system "make", "check-elget"
-      end
+      system "make", "check"
       system "make"
     end
-    (share/"emacs/site-lisp/load-relative").install "load-relative.el",
-                                                    "load-relative.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'load-relative)
-  EOS
+    elisp.install "load-relative.el", "load-relative.elc"
   end
 
   test do
