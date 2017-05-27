@@ -13,7 +13,7 @@ class Seq < EmacsFormula
   # Submitted upstream via email on 2016-10-28
   patch :p3 do
     url "https://github.com/dunn/elpa/commit/195320c704cbc721f945d59fa54cd20d8e024a57.diff"
-    sha256 "f4967cac92cfe462eca073c27db1422299acae5d0a99cacac8c14555ab616142"
+    sha256 "0cf5ba33945af4db2fe6e0ad914e5a684f12dc07cc613e145fbe273f247a9a9c"
   end
 
   def install
