@@ -3,9 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class MarkdownMode < EmacsFormula
   desc "Major mode for editing Markdown files"
   homepage "http://jblevins.org/projects/markdown-mode/"
-  url "https://github.com/jrblevin/markdown-mode/archive/v2.1.tar.gz"
-  mirror "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/markdown-mode/markdown-mode_2.1.orig.tar.gz"
-  sha256 "65d28802915a47056108b63eba3911e32de35c5d6b3c6898ca23ac414b0c4de7"
+  url "https://github.com/jrblevin/markdown-mode/archive/v2.2.tar.gz"
+  sha256 "d64123ab78e37a9ff5fd3c87b4f729701c5bc75cc31c7ee1b2b727d5b3032aa1"
   head "https://github.com/jrblevin/markdown-mode.git"
 
   deprecated_option "with-markdown-plus" => "with-plus"
@@ -21,13 +20,13 @@ class MarkdownMode < EmacsFormula
   end
 
   resource "markdown+" do
-    url "https://github.com/milkypostman/markdown-mode-plus/raw/f35e63284c5caed19b29501730e134018a78e441/markdown-mode%2B.el"
-    sha256 "743209cb390f9bd29bbaaf53d8e4940ee452ce401d85f253d938503d0e80d0f8"
+    url "https://github.com/milkypostman/markdown-mode-plus/raw/8e1ac13342491d4d1bb0c7102e5c416e24d1cc51/markdown-mode%2B.el"
+    sha256 "771a3015d5cf8999a656f1e1a25c6bf2fce7d10d1ecccaae6dd3dfe664999db9"
   end
 
   resource "markdown-toc" do
-    url "https://github.com/ardumont/markdown-toc/releases/download/0.1.1/markdown-toc-0.1.1.tar"
-    sha256 "40d1297e2c9cbb38aad10c7431f1ea1ffc09c97aefa4e6d96adde3fd1e1a27ad"
+    url "https://github.com/ardumont/markdown-toc/releases/download/0.1.2/markdown-toc-0.1.2.tar"
+    sha256 "6f2ac775a0bd6986f916bbc4051300536b390e19101300fc95235b091dfbb8c2"
   end
 
   def install
@@ -45,9 +44,14 @@ class MarkdownMode < EmacsFormula
       end
     end
 
+    # One of the tests tries to do a recursive read of TMPDIR, which
+    # fails because of the sandbox
+    ENV["TMPDIR"] = buildpath
+
     # Install markdown-mode last so it's in the buildpath when
     # markdown-toc looks for it during compile
-    byte_compile "markdown-mode.el"
+    system "make", "test"
+    system "make"
     elisp.install "markdown-mode.el", "markdown-mode.elc"
   end
 
