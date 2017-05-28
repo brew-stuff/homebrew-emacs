@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Circe < EmacsFormula
   desc "Emacs IRC client"
   homepage "https://github.com/jorgenschaefer/circe"
-  url "https://github.com/jorgenschaefer/circe/archive/v2.4.tar.gz"
-  sha256 "36e5d4a22ba8fce24da222eb7ea4100999f35a0d7a47b3e609942b1e874b9fd1"
+  url "https://github.com/jorgenschaefer/circe/archive/v2.5.tar.gz"
+  sha256 "c9d26e5aab840f41526166dc89fce5421e91c250b58620f26a2161ef0c5c1a75"
   head "https://github.com/jorgenschaefer/circe.git"
 
   depends_on :emacs
@@ -22,6 +22,7 @@ class Circe < EmacsFormula
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (load "circe")
       (print circe-version)
     EOS
