@@ -6,6 +6,8 @@ class Realgud < EmacsFormula
   url "https://elpa.gnu.org/packages/realgud-1.4.4.tar"
   sha256 "ec58be91c9f1fb9ebde195f948603efdec01d4735095220304e9c634469d88d9"
 
+  bottle :disable
+
   depends_on :emacs => "24.3"
   depends_on "dunn/emacs/load-relative"
   depends_on "dunn/emacs/test-simple"
