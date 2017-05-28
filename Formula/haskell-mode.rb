@@ -4,6 +4,7 @@ class HaskellMode < EmacsFormula
   desc "Emacs major mode for Haskell"
   homepage "https://github.com/haskell/haskell-mode"
   url "https://github.com/haskell/haskell-mode/archive/v16.1.tar.gz"
+  mirror "https://mirrors.ocf.berkeley.edu/debian/pool/main/h/haskell-mode/haskell-mode_16.1.orig.tar.gz"
   sha256 "109d9a0070825745c20f590c7fd0a1d2bb873d931db5ecc7deea317ab864d43c"
   head "https://github.com/haskell/haskell-mode.git"
 
