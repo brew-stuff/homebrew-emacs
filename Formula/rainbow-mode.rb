@@ -2,12 +2,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class RainbowMode < EmacsFormula
   desc "Minor mode for highlighting color-strings"
-  homepage "http://elpa.gnu.org/packages/rainbow-mode.html"
-  url "http://elpa.gnu.org/packages/rainbow-mode-0.12.el"
-  sha256 "04b020c5a2da88165a25ffb574e80a66ca678434c526d9378998f0ed8ec64781"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/rainbow-mode/rainbow-mode.el"
+  homepage "https://elpa.gnu.org/packages/rainbow-mode.html"
+  url "https://elpa.gnu.org/packages/rainbow-mode-0.13.el"
+  sha256 "b4b5f6479d8e2a910cc8718569a37bc7c0ccdf13206b2e23be183f6c7a556ab4"
 
-  depends_on :emacs
+  depends_on :emacs => "24.1"
 
   def install
     mv "rainbow-mode-#{version}.el", "rainbow-mode.el" if build.stable?
