@@ -92,6 +92,11 @@ class CompanyMode < EmacsFormula
       end
     end
 
+    # https://github.com/company-mode/company-mode/issues/375
+    inreplace "test/async-tests.el",
+              "company-async-timeout 0.1",
+              "company-async-timeout 2"
+
     system "make", "test-batch"
     system "make", "compile"
     elisp.install Dir["company*.el"], Dir["company*.elc"]
