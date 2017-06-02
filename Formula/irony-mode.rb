@@ -7,12 +7,7 @@ class IronyMode < EmacsFormula
   sha256 "7326bf7308d1308493a91efbb91aa25aecb1bc0c188888c7dc9ad5c9a1e6d0b9"
   head "https://github.com/Sarcasm/irony-mode.git"
 
-  bottle do
-    cellar :any
-    sha256 "340776506d2ebac428dafb3e6f9d0b3bdb96b1abfd75b6da045933d6bcc725b8" => :sierra
-    sha256 "9f4630d75228a66f22dc05475b155f5539043688337fef9d95105fbb631c3f17" => :el_capitan
-    sha256 "0618e58e9410e1513199ba25ac9310a2341880ac0d383248bf6eaf1cdceb69ba" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
