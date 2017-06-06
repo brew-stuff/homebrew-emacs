@@ -1,10 +1,10 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class GistEmacs < EmacsFormula
-  desc "Emacs integration for gist.github.com"
+  desc "Emacs integration with GitHub Gists"
   homepage "https://github.com/defunkt/gist.el"
-  url "https://github.com/defunkt/gist.el/archive/v1.3.1.tar.gz"
-  sha256 "a060bc828aceba8a8c9aa850b5157cb85a8fe83987096bcc7500ae0ba86bb54b"
+  url "https://github.com/defunkt/gist.el/archive/v1.4.0.tar.gz"
+  sha256 "5003cf146f6e269aab57a6c6c1c7448ba7312094fabdf76ba0688ca2e00b6893"
   head "https://github.com/defunkt/gist.el.git"
 
   depends_on :emacs => "24.1"
