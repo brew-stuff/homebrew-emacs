@@ -7,6 +7,8 @@ class GistEmacs < EmacsFormula
   sha256 "5003cf146f6e269aab57a6c6c1c7448ba7312094fabdf76ba0688ca2e00b6893"
   head "https://github.com/defunkt/gist.el.git"
 
+  bottle :disable
+
   depends_on :emacs => "24.1"
   depends_on "dunn/emacs/gh-emacs"
 
