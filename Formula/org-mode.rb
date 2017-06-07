@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.0.7.tar.gz"
-  sha256 "3fef470b9cb474fd5a459e506aa6c8619633e4fdb12c5f8cfb5ebcb432501ab7"
+  url "http://orgmode.org/org-9.0.8.tar.gz"
+  sha256 "7110a41e6398d71bd2c88b573ded53ef470883b5dc9b6deda077d6dfba39891c"
   head "http://orgmode.org/org-mode.git", :shallow => false
 
   bottle :disable
