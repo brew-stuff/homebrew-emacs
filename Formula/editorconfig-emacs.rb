@@ -4,8 +4,8 @@ class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
   homepage "https://github.com/editorconfig/editorconfig-emacs"
   url "https://github.com/editorconfig/editorconfig-emacs.git",
-      :tag => "v0.7.9",
-      :revision => "b86a4b3a696328faaa37a808abeed54561d19385"
+      :tag => "v0.7.10",
+      :revision => "1543835ce00412c3cd34a61497af5f68ead250a6"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
@@ -17,7 +17,7 @@ class EditorconfigEmacs < EmacsFormula
 
   def install
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system "make"
+    system "make", "PROJECT_ROOT_DIR=#{buildpath}"
     system "make", "test", "PROJECT_ROOT_DIR=#{buildpath}"
     elisp.install Dir["*.el"], Dir["*.elc"]
 
