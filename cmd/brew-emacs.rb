@@ -18,6 +18,8 @@ def template(name)
     sha256 ""
     head ""
 
+    bottle :disable
+
     depends_on :emacs => "22.1"
 
     def install
