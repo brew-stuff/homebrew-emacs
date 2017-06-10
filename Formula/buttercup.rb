@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Buttercup < EmacsFormula
   desc "Behavior-driven Emacs Lisp testing"
   homepage "https://github.com/jorgenschaefer/emacs-buttercup/"
-  url "https://github.com/jorgenschaefer/emacs-buttercup/archive/v1.5.tar.gz"
-  sha256 "d694a00de0828b4c8c554ed394076e37ba32e67e8bf6afb779abd7fc4baa2757"
+  url "https://github.com/jorgenschaefer/emacs-buttercup/archive/v1.7.tar.gz"
+  sha256 "844e9bec68767d2c077655c9d0ad290fba8fca674586220475ae7df4c54d13e9"
   head "https://github.com/jorgenschaefer/emacs-buttercup.git"
 
   depends_on :emacs => "24.1"
