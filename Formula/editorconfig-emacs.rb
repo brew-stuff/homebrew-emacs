@@ -8,6 +8,8 @@ class EditorconfigEmacs < EmacsFormula
       :revision => "1543835ce00412c3cd34a61497af5f68ead250a6"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
+  bottle :disable
+
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
 
   depends_on :emacs => "24.1"
