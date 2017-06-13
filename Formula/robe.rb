@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Robe < EmacsFormula
   desc "Navigation, documentation lookup and completion for Ruby"
   homepage "https://github.com/dgutov/robe"
-  url "https://github.com/dgutov/robe/archive/0.8.0.tar.gz"
-  sha256 "ec3eb7cfe63b7fd8fca8f9e70c12d976b49bfc0870424e2e2ae74abe35ba8de9"
+  url "https://github.com/dgutov/robe/archive/0.8.1.tar.gz"
+  sha256 "790d201cc8aa7c95aaf9ca10b322c3c8944ffebd9e4045c047487297922fe4ee"
   head "https://github.com/dgutov/robe.git"
 
   depends_on :emacs => "24.4"
@@ -12,8 +12,9 @@ class Robe < EmacsFormula
   depends_on "dunn/emacs/inf-ruby"
 
   def install
-    byte_compile "robe.el", "ac-robe.el", "company-robe.el"
+    ert_run_tests "ert/core-tests.el"
 
+    byte_compile "robe.el", "ac-robe.el", "company-robe.el"
     elisp.install "robe.el", "ac-robe.el", "company-robe.el",
                   "robe.elc", "ac-robe.elc", "company-robe.elc",
                   "lib"
