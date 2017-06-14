@@ -3,16 +3,18 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SoapClientEmacs < EmacsFormula
   desc "Emacs SOAP client"
   homepage "https://github.com/alex-hhh/emacs-soap-client"
-  url "https://github.com/alex-hhh/emacs-soap-client/archive/3.1.2.tar.gz"
-  sha256 "0c69d65a8cdc4aa5fad903c3ab7a752058d4ea5d7f3a8ff37ed92ecf40df95ac"
+  url "https://github.com/alex-hhh/emacs-soap-client/archive/3.1.3.tar.gz"
+  sha256 "51815efc543380e9c237c764dd24cf904a2dfc27ec7f1b226c6befa6c3b83c59"
   head "https://github.com/alex-hhh/emacs-soap-client.git"
 
   depends_on :emacs => "23.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
-    byte_compile Dir["*.el"]
-    elisp.install Dir["*.el"], Dir["*.elc"]
+    byte_compile "jira2.el", "soap-client.el", "soap-inspect.el"
+
+    elisp.install "jira2.el", "soap-client.el", "soap-inspect.el",
+                  "jira2.elc", "soap-client.elc", "soap-inspect.elc"
   end
 
   test do
