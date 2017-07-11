@@ -2,8 +2,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class OmnMode < EmacsFormula
   desc "Emacs major mode for the OWL Manchester Notation"
-  homepage "http://elpa.gnu.org/packages/omn-mode.html"
-  url "http://elpa.gnu.org/packages/omn-mode-1.2.el"
+  homepage "https://elpa.gnu.org/packages/omn-mode.html"
+  url "https://elpa.gnu.org/packages/omn-mode-1.2.el"
   sha256 "829c291ddd7f3208e5142cce450e93d5ac808f5d919e9f7011c6b2b614aef45c"
 
   depends_on :emacs
@@ -11,8 +11,7 @@ class OmnMode < EmacsFormula
   def install
     mv "omn-mode-#{version}.el", "omn-mode.el"
     byte_compile "omn-mode.el"
-    (share/"emacs/site-lisp/omn-mode").install "omn-mode.el",
-                                               "omn-mode.elc"
+    elisp.install "omn-mode.el", "omn-mode.elc"
   end
 
   test do
