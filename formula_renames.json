@@ -6,5 +6,6 @@
   "jade": "indium",
   "s": "s-emacs",
   "xml-rpc": "xml-rpc-emacs",
+  "wisi-emacs": "wisi",
   "ztree-emacs": "ztree"
 }
