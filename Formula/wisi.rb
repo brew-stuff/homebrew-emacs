@@ -1,6 +1,6 @@
 require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
-class WisiEmacs < EmacsFormula
+class Wisi < EmacsFormula
   desc "Indentation/navigation in Emacs using a LALR parser"
   homepage "http://www.nongnu.org/ada-mode/wisi/wisi.html"
   url "https://elpa.gnu.org/packages/wisi-1.1.5.tar"
