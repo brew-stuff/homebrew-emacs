@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CompanyMode < EmacsFormula
   desc "Modular in-buffer completion framework for Emacs"
   homepage "https://company-mode.github.io"
-  url "https://github.com/company-mode/company-mode/archive/0.9.3.tar.gz"
-  sha256 "7013ac226c3d6d0b005f41efe573c1665fac02e1bae2e0b5fe7ad77621bbd9bb"
+  url "https://github.com/company-mode/company-mode/archive/0.9.4.tar.gz"
+  sha256 "fd2662a452aa31644d0e7615e9aeff236f0c8e09b13b0371c400b1b0bc0d1e73"
   head "https://github.com/company-mode/company-mode.git"
 
   bottle :disable
@@ -32,8 +32,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "ansible" do
-    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.5.0.tar.gz"
-    sha256 "46b7fcd21c651a90054f2161dea0546fb80e35008773cee3c80eb354eab9f857"
+    url "https://github.com/krzysztof-magosa/company-ansible/archive/0.6.0.tar.gz"
+    sha256 "5bf5cabd679f01c7bfb6d0bb469aa2773150e9452a514583fd741271a120d84a"
   end
 
   resource "emoji" do
@@ -41,14 +41,16 @@ class CompanyMode < EmacsFormula
     sha256 "010fef421db8c73626ba7e1d844b650da8d77f46ea40ad9d9ca7f2f08e4d70f3"
   end
 
+  # TODO: this should probably be an option --with-company in the
+  # irony formula
   resource "irony" do
     url "https://github.com/Sarcasm/company-irony/archive/v1.0.0.tar.gz"
     sha256 "2e5610401d90c5bb2e7a2b81a1b177d273d05cade51c3600597e0a533191a7e0"
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.7.7.tar.gz"
-    sha256 "849dbb5f2fe26096969b2a1b2d1c167e10b255754a89271a827e08f4c756d411"
+    url "https://github.com/xcwen/ac-php/archive/1.7.9.tar.gz"
+    sha256 "0f65c0a2a2abbd6208ae9be0ed145dec950054ac6beac341960709ba8ae21a6b"
   end
 
   resource "statistics" do
