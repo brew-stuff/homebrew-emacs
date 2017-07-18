@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Yasnippet < EmacsFormula
   desc "Emacs template system"
   homepage "https://github.com/joaotavora/yasnippet"
-  url "https://github.com/joaotavora/yasnippet/archive/0.11.0.tar.gz"
-  sha256 "05c7d47be7296add65519e2ed4f588120a60290635ebdb1a3e2b01376735b195"
+  url "https://elpa.gnu.org/packages/yasnippet-0.12.0.tar"
+  sha256 "bb5751b6a3d716e369c2fd3c2e3c46dbabe28ddd5f0c089605ce6a6f5f85bf24"
   head "https://github.com/joaotavora/yasnippet.git"
 
   bottle do
@@ -28,8 +28,8 @@ class Yasnippet < EmacsFormula
       system "rake", "doc[#{Formula["htmlize"].opt_elisp}]"
       doc.install "doc/images", "doc/stylesheets", Dir["doc/*.html"]
     end
-
-    elisp.install Dir["*.el"], Dir["*.elc"]
+    elisp.install (Dir["*.el"] - %w[yasnippet-pkg.el]),
+                  Dir["*.elc"]
     (prefix/"contrib").install "snippets"
   end
 
@@ -41,6 +41,7 @@ class Yasnippet < EmacsFormula
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
       (load "yasnippet")
+      (yas-global-mode 1)
       (print (minibuffer-prompt-width))
     EOS
     assert_equal "0", shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
