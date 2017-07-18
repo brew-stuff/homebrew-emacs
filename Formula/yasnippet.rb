@@ -7,12 +7,7 @@ class Yasnippet < EmacsFormula
   sha256 "bb5751b6a3d716e369c2fd3c2e3c46dbabe28ddd5f0c089605ce6a6f5f85bf24"
   head "https://github.com/joaotavora/yasnippet.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :sierra
-    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :el_capitan
-    sha256 "e232de891a90050a690ed93e196bdc83cf6ca98d041dfe6e6918b806ee2324c0" => :yosemite
-  end
+  bottle :disable
 
   option "with-htmlize", "Build HTML docs with htmlize"
 
