@@ -3,16 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class PassMode < EmacsFormula
   desc "Major mode for password-store"
   homepage "https://github.com/NicolasPetton/pass"
-  url "https://github.com/NicolasPetton/pass/archive/1.6.tar.gz"
-  sha256 "ec9a99086429f6bb29b8cd5e8d391822de8353b6ce4f150916e7298e50e1f22d"
+  url "https://github.com/NicolasPetton/pass/archive/1.7.tar.gz"
+  sha256 "727be1f93adc02590ae6a232864f4f8c44aacfda06af84214e7c60f0cd4e9d7e"
   head "https://github.com/NicolasPetton/pass.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :sierra
-    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :el_capitan
-    sha256 "acb1755b36b2a4948e074ec5507e0a5e04d1d5904f8aa572ce133c4079bd56ba" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24"
   depends_on "pass"
