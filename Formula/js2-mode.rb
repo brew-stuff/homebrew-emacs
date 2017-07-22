@@ -3,16 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"
   homepage "https://github.com/mooz/js2-mode"
-  url "https://github.com/mooz/js2-mode/archive/20170116.tar.gz"
-  sha256 "ad18557494b4b251829dbc0b01a1976215799ddba04140475786797f122a9e67"
+  url "https://github.com/mooz/js2-mode/archive/20170721.tar.gz"
+  sha256 "dcf8548ea1cd1c5ba2bc3a1a8764cbca3ba6d8fee7f1cedd5ec1ba0e1156f737"
   head "https://github.com/mooz/js2-mode.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "ddeb0113cf9564fc6b5d0e85fe41bec0b710e72c0ba99600612e36440b812b7c" => :sierra
-    sha256 "f0396350a6d250c5aeca1d9ccf77a206333606f4980635704477ee71e444458a" => :el_capitan
-    sha256 "f0396350a6d250c5aeca1d9ccf77a206333606f4980635704477ee71e444458a" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
 
