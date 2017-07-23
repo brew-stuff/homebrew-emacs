@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class HydraEmacs < EmacsFormula
   desc "Group Emacs commands under a common prefix"
   homepage "https://github.com/abo-abo/hydra"
-  url "https://github.com/abo-abo/hydra/archive/0.13.6.tar.gz"
-  sha256 "800e3954c61aa5cbc0274afd246b334446c1aef12d117dca2da33e5410dce514"
+  url "https://github.com/abo-abo/hydra/archive/0.14.0.tar.gz"
+  sha256 "a8664c86a5f48af37e47983829d653b31114eade87a2b6f234107eeedc980421"
   head "https://github.com/abo-abo/hydra.git"
 
   depends_on :emacs => "24.1"
