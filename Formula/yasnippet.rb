@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Yasnippet < EmacsFormula
   desc "Emacs template system"
   homepage "https://github.com/joaotavora/yasnippet"
-  url "https://elpa.gnu.org/packages/yasnippet-0.12.0.tar"
-  sha256 "bb5751b6a3d716e369c2fd3c2e3c46dbabe28ddd5f0c089605ce6a6f5f85bf24"
+  url "https://elpa.gnu.org/packages/yasnippet-0.12.1.tar"
+  sha256 "96982462b3468e2b15306a398ca6cdd15b620b3578a5bcd9d1c370c487850107"
   head "https://github.com/joaotavora/yasnippet.git"
 
   bottle :disable
