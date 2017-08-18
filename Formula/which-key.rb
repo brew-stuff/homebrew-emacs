@@ -3,16 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class WhichKey < EmacsFormula
   desc "Emacs package for displaying available keybindings"
   homepage "https://github.com/justbur/emacs-which-key"
-  url "https://github.com/justbur/emacs-which-key/archive/v1.2.1.tar.gz"
-  sha256 "787a456e7377c9b1e7c6df8fd32403971d649c801d79e71e57a638d04edf6abd"
+  url "https://github.com/justbur/emacs-which-key/archive/v3.0.2.tar.gz"
+  sha256 "44ec19e3ec72bffdf565da78fd460914593b72edd2c78d840bc326cc19386df7"
   head "https://github.com/justbur/emacs-which-key.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :sierra
-    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :el_capitan
-    sha256 "16ac1315b3585c0d1c96a5dab1bd35fcf22acd3df6b87b294dc28e56faf286e1" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.3"
 
