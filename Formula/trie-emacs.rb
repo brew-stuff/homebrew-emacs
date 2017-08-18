@@ -2,19 +2,14 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class TrieEmacs < EmacsFormula
   desc "Emacs implementation of the trie data structure"
-  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
-  url "https://elpa.gnu.org/packages/trie-0.2.6.el"
-  sha256 "3112d165951b4bb84e64214373ae7f19eebf8948b0ee8b6158839582610b71e0"
+  homepage "http://www.dr-qubit.org/emacs_data-structures.html"
+  url "https://elpa.gnu.org/packages/trie-0.4.el"
+  sha256 "fcfdd790aa91557dc1dd6b970327161d86b9ca5a6fa7c649a2b1c3b70674c920"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :sierra
-    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :el_capitan
-    sha256 "1b32170d8f8f4b81c70f9edc6562025e069f1459d78e6ee7989c96105eef8892" => :yosemite
-  end
+  bottle :disable
 
   # for the avl-tree package
-  depends_on emacs: "24.1"
+  depends_on :emacs => "24.1"
   depends_on "dunn/emacs/heap-emacs"
   depends_on "dunn/emacs/tnfa-emacs"
 
