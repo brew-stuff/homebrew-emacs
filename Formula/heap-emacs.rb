@@ -2,16 +2,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class HeapEmacs < EmacsFormula
   desc "Emacs implementation of the ternary heap data structure"
-  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
-  url "http://www.dr-qubit.org/download.php?file=predictive/heap-0.4.el"
-  sha256 "e6394912f111d9ee09b1005a69f08e37f18dae7e0b19d8728217f4bc37b06fef"
+  homepage "http://www.dr-qubit.org/emacs_data-structures.html"
+  url "https://elpa.gnu.org/packages/heap-0.5.el"
+  sha256 "afe7cf0129833682bf7042ff5fae7dfa669353199b1ecf6441eca0e806071b8f"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :sierra
-    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :el_capitan
-    sha256 "3a59119151282c5c89bccf18ed0329d885dc84faeade695f924105f69e4e12e0" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs
 
