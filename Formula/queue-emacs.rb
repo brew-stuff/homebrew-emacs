@@ -2,16 +2,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class QueueEmacs < EmacsFormula
   desc "Emacs implementation of the queue data structure"
-  homepage "http://www.dr-qubit.org/Emacs_data_structure_packages.html"
-  url "https://elpa.gnu.org/packages/queue-0.1.1.el"
-  sha256 "210daf744931abd007e2ad0caae0990ecfa09b6509402b9c6238398bbb23824b"
+  homepage "http://www.dr-qubit.org/emacs_data-structures.html"
+  url "https://elpa.gnu.org/packages/queue-0.2.el"
+  sha256 "6be60aa5f429e0e3e2c000563356855e3edb7f5378ebf8499ed35aac1141a233"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "b642d609277da3a3c6c55bab87ea97d2e31de8ba553cb968f4816748fd7ef6b6" => :sierra
-    sha256 "b642d609277da3a3c6c55bab87ea97d2e31de8ba553cb968f4816748fd7ef6b6" => :el_capitan
-    sha256 "b642d609277da3a3c6c55bab87ea97d2e31de8ba553cb968f4816748fd7ef6b6" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs
 
