@@ -2,31 +2,22 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class AdaptiveWrap < EmacsFormula
   desc "Emacs minor mode for smart soft-wrapping"
-  homepage "http://elpa.gnu.org/packages/adaptive-wrap.html"
-  url "http://elpa.gnu.org/packages/adaptive-wrap-0.5.el"
-  sha256 "fefa54ba670b84360d2602fae477642b27ca4c2312983a7d24b4e6bcd1ad2f3b"
-  head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/adaptive-wrap/adaptive-wrap.el"
+  homepage "https://elpa.gnu.org/packages/adaptive-wrap.html"
+  url "https://elpa.gnu.org/packages/adaptive-wrap-0.5.1.el"
+  sha256 "940ed8b720efc56d235ffd6ecc78a17094aef956d4eea89a98dc5f96af7c2762"
 
-  depends_on :emacs
+  depends_on :emacs => "23.1"
 
   def install
     mv "adaptive-wrap-#{version}.el", "adaptive-wrap.el" if build.stable?
 
     byte_compile "adaptive-wrap.el"
-    (share/"emacs/site-lisp/adaptive-wrap").install "adaptive-wrap.el",
-                                                    "adaptive-wrap.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'adaptive-wrap)
-  EOS
+    elisp.install "adaptive-wrap.el", "adaptive-wrap.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/adaptive-wrap")
+      (add-to-list 'load-path "#{elisp}")
       (load "adaptive-wrap")
       (adaptive-wrap-prefix-mode 1)
       (print (minibuffer-prompt-width))
