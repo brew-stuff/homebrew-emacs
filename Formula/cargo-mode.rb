@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class CargoMode < EmacsFormula
   desc "Emacs Minor Mode for Cargo, Rust's Package Manager."
   homepage "https://github.com/kwrooijen/cargo.el"
-  url "https://github.com/kwrooijen/cargo.el/archive/0.4.0.tar.gz"
-  sha256 "78bfeb12b224199517e7e154af5e877f83a0220526738798422afebaeb11fc51"
+  url "https://github.com/kwrooijen/cargo.el/archive/0.4.1.tar.gz"
+  sha256 "d15b810a00fb2d4340abe833501554dbd8fd28679dcb02a09d82d82865934d01"
   head "https://github.com/kwrooijen/cargo.el.git"
 
   bottle :disable
