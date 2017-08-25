@@ -3,37 +3,22 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class InfRuby < EmacsFormula
   desc "Emacs REPL buffer connected to a Ruby subprocess"
   homepage "https://github.com/nonsequitur/inf-ruby"
-  url "https://github.com/nonsequitur/inf-ruby/archive/2.5.0.tar.gz"
-  sha256 "a80c34c7858e1c2573e9250b36952f518b000c47187fe7965362f0c7becef2b6"
+  url "https://github.com/nonsequitur/inf-ruby/archive/2.5.1.tar.gz"
+  sha256 "c60012110eb98605ef5d1c2d4ce8d11eca158eb34de71728ee932562e610e354"
   head "https://github.com/nonsequitur/inf-ruby.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :sierra
-    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :el_capitan
-    sha256 "8eff78791e8bd1b6b9eb5685b86c2c49c98689320d39f82281f20512b193bf5e" => :yosemite
-  end
+  bottle :disable
 
-  depends_on :emacs
+  depends_on :emacs => "23.1"
 
   def install
     byte_compile "inf-ruby.el"
-    (share/"emacs/site-lisp/inf-ruby").install "inf-ruby.el",
-                                               "inf-ruby.elc"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'inf-ruby)
-    (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
-    (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
-  EOS
+    elisp.install "inf-ruby.el", "inf-ruby.elc"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/inf-ruby")
+      (add-to-list 'load-path "#{elisp}")
       (load "inf-ruby")
       (print (minibuffer-prompt-width))
     EOS
