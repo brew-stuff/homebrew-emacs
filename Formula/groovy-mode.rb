@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class GroovyMode < EmacsFormula
   desc "Modes for Groovy and Groovy-related technology"
   homepage "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes"
-  url "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/archive/1.0.1.tar.gz"
-  sha256 "a7a498d47ee6d2eef2fb1e6d484bbba9354d0fd4176437819ce5474f86b611bc"
+  url "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes/archive/1.0.2.tar.gz"
+  sha256 "4888b6ec93bec53a4b6fd4e706dec209679c0d17ba3371fc5e4cd4fea28861e1"
   head "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git"
 
   depends_on :emacs => "22.1"
