@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.0.9.tar.gz"
-  sha256 "3b7eb38521a34cb2fa8edf8f83682f0ccb88fd37d4997044f1558356577aa628"
+  url "http://orgmode.org/org-9.0.10.tar.gz"
+  sha256 "464d4f93d72925b4c0460d7ab643e4e9052e18b1b979c57168026c24ccee76e9"
   head "http://orgmode.org/org-mode.git", :shallow => false
 
   bottle :disable
@@ -16,8 +16,8 @@ class OrgMode < EmacsFormula
   depends_on "dunn/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
-    url "https://github.com/tarsius/ox-texinfo-plus/archive/v1.3.0.tar.gz"
-    sha256 "dbc131cf7ded8e0d4efa176d5f1d86e1c4d4147cb479b8c497e70c9f2b92937f"
+    url "https://github.com/tarsius/ox-texinfo-plus/archive/v2.1.0.tar.gz"
+    sha256 "3974c3f15d7f3f5801b29593de63c262dd5c95cf655850e97b1b474b7d552231"
   end
 
   resource "toc-org" do
