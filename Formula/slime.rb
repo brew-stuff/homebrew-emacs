@@ -7,11 +7,7 @@ class CommonLispRequirement < Requirement
   # Based on ordering of available implementations from
   # https://common-lisp.net/project/slime/; except for SBCL which is
   # the default in the Makefile
-  lisps = %w[
-    sbcl lisp
-    ccl clisp
-    ecl abcl
-  ]
+  lisps = %w[sbcl lisp ccl clisp ecl abcl]
 
   satisfy :build_env => false do
     lisps.each do |bin|
@@ -41,9 +37,9 @@ end
 
 class Slime < EmacsFormula
   desc "Emacs package for interactive programming in Lisp"
-  homepage "http://common-lisp.net/project/slime/"
-  url "https://github.com/slime/slime/archive/v2.19.tar.gz"
-  sha256 "172ca6757f4a90a156cfdc5199f00ad076599f084d02eabf2d64266459c10aca"
+  homepage "https://common-lisp.net/project/slime/"
+  url "https://github.com/slime/slime/archive/v2.20.tar.gz"
+  sha256 "f385fcb9f4b4ffe4370b1f8ec72afaff7ebf7b17206ae061e449ee4b7cc1d420"
   head "https://github.com/slime/slime.git"
 
   depends_on :emacs => "23.4"
