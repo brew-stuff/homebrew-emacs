@@ -7,12 +7,7 @@ class AutoComplete < EmacsFormula
   sha256 "1bfb4351c3e49681a875dab937c25b6b38e4bf8a8cd64bcba1954300242578cb"
   head "https://github.com/auto-complete/auto-complete.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "c76916d1126d529b6a9423d08191d3ce6ee43b60d45ec4206fab827140acd46e" => :sierra
-    sha256 "40712749c919c76ca351f4688112d051032510ca4f90d2ae4929353e54ed002d" => :el_capitan
-    sha256 "40712749c919c76ca351f4688112d051032510ca4f90d2ae4929353e54ed002d" => :yosemite
-  end
+  bottle :disable
 
   option "with-etags", "Install ac-etags"
   option "with-haskell", "Install ac-haskell-process"
