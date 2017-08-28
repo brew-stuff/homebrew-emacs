@@ -49,8 +49,8 @@ class CompanyMode < EmacsFormula
   end
 
   resource "php" do
-    url "https://github.com/xcwen/ac-php/archive/1.7.9.tar.gz"
-    sha256 "0f65c0a2a2abbd6208ae9be0ed145dec950054ac6beac341960709ba8ae21a6b"
+    url "https://github.com/xcwen/ac-php/archive/1.8.tar.gz"
+    sha256 "5a89026514c04458d7dacd461dcef05065495b0a631dc9a2cf1f366db185d83a"
   end
 
   resource "statistics" do
