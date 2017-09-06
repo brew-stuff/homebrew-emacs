@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.0.10.tar.gz"
-  sha256 "464d4f93d72925b4c0460d7ab643e4e9052e18b1b979c57168026c24ccee76e9"
+  url "http://orgmode.org/org-9.1.tar.gz"
+  sha256 "70c6bb1d8d94fa77c7b1d4814855097461567cec0f081e4cff494436836c2f08"
   head "http://orgmode.org/org-mode.git", :shallow => false
 
   bottle :disable
@@ -51,12 +51,6 @@ class OrgMode < EmacsFormula
     EOS
 
     system "make", "install"
-
-    cd "contrib/lisp" do
-      # htmlize has its own formula
-      rm "htmlize.el"
-      byte_compile Dir["*.el"]
-    end
 
     elisp.install "contrib/lisp" => "contrib"
     info.install "doc/org" => "org.info"
