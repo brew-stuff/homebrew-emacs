@@ -3,16 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Olivetti < EmacsFormula
   desc "Emacs minor mode for distraction-free writing"
   homepage "https://github.com/rnkn/olivetti"
-  url "https://github.com/rnkn/olivetti/archive/v1.5.6.tar.gz"
-  sha256 "06fb7f68bf07710cf59beb16c7a877b0504ab2809f227254beeeb933caf8638a"
+  url "https://github.com/rnkn/olivetti/archive/v1.5.7.tar.gz"
+  sha256 "078b1d23efd04f81bcd196a6cfcc1df0b80e35151953c4cab587c865a4394588"
   head "https://github.com/rnkn/olivetti.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "e0fad2ae9934cfcf128c817d05432fb838bad006da13fa5df6ab57314c621a4a" => :el_capitan
-    sha256 "de690d9fafca4739d01a1b7970e2fbbb4bb77df4bb989c87c28f827ad15c680b" => :yosemite
-    sha256 "de690d9fafca4739d01a1b7970e2fbbb4bb77df4bb989c87c28f827ad15c680b" => :mavericks
-  end
+  bottle :disable
 
   depends_on :emacs => "24.4"
 
