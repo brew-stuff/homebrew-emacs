@@ -3,13 +3,12 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class RequestEmacs < EmacsFormula
   desc "HTTP request library for Emacs"
   homepage "https://tkf.github.io/emacs-request/"
-  url "https://github.com/tkf/emacs-request/archive/v0.2.0.tar.gz"
-  sha256 "57f19767852682842a8e41143c48933693f323e9bd5d5472cb5d96d0d34b946a"
+  url "https://github.com/tkf/emacs-request/archive/v0.3.0.tar.gz"
+  sha256 "7f03a011e59df9daa99e54ab423d956f4f12be763836992ced586c8fb2eeec71"
   head "https://github.com/tkf/emacs-request.git"
 
-  depends_on :emacs => "24"
+  depends_on :emacs => "24.4"
   depends_on "dunn/emacs/deferred"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
     byte_compile "request.el", "request-deferred.el"
