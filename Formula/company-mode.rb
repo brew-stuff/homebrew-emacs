@@ -110,7 +110,7 @@ class CompanyMode < EmacsFormula
     # https://github.com/company-mode/company-mode/issues/375
     inreplace "test/async-tests.el",
               "company-async-timeout 0.1",
-              "company-async-timeout 2"
+              "company-async-timeout 5"
 
     system "make", "test-batch"
     system "make", "compile"
