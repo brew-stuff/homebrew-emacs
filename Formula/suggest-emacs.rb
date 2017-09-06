@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SuggestEmacs < EmacsFormula
   desc "Emacs package for discovering functions"
   homepage "https://github.com/Wilfred/suggest.el"
-  url "https://github.com/Wilfred/suggest.el/archive/0.3.tar.gz"
-  sha256 "65575776f5e82f69724ad1bc61e41d907218c5ed14b40da071b0135a9a3dada1"
+  url "https://github.com/Wilfred/suggest.el/archive/0.4.tar.gz"
+  sha256 "f7d13da6e3d31c8bc8f7e9dd645ecb011b045341da60ae58ef88a7204775c09c"
   head "https://github.com/Wilfred/suggest.el.git"
 
   bottle :disable
