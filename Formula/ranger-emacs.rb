@@ -3,25 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class RangerEmacs < EmacsFormula
   desc "Alternate file navigation for Emacs"
   homepage "https://github.com/ralesi/ranger.el"
+  url "https://github.com/ralesi/ranger.el/archive/v0.9.8.5.tar.gz"
+  sha256 "70700d814c2e44f246182954d6c14db7889ae7486a155af0831b70d34eb48459"
   head "https://github.com/ralesi/ranger.el.git"
 
-  stable do
-    url "https://github.com/ralesi/ranger.el/archive/v0.9.8.4.tar.gz"
-    sha256 "7b4d1f6473e25074123520bef7251a6da1dfcc3ba10c16c723188c8ba7c4f459"
-
-    # Keymap bug that prevented compiling; remove with next release
-    patch do
-      url "https://github.com/ralesi/ranger.el/commit/584e4ae8cce1c54a44b40dd4c77fbb2f06d73ecb.diff"
-      sha256 "0b1fda31e264614c988570643b1fc80c2b96fbb2796221978fb08aff467ba102"
-    end
-  end
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "ee70c730f200a24f9bc5efb1f4eca2d5d1a068397eb76bee6aa4e36352c3f786" => :sierra
-    sha256 "ee70c730f200a24f9bc5efb1f4eca2d5d1a068397eb76bee6aa4e36352c3f786" => :el_capitan
-    sha256 "ee70c730f200a24f9bc5efb1f4eca2d5d1a068397eb76bee6aa4e36352c3f786" => :yosemite
-  end
-
+  bottle :disable
 
   depends_on :emacs => "24.4"
 
