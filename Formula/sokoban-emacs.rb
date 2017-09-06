@@ -3,21 +3,16 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SokobanEmacs < EmacsFormula
   desc "Emacs version of Sokoban"
   homepage "https://elpa.gnu.org/packages/sokoban.html"
-  url "https://elpa.gnu.org/packages/sokoban-1.4.tar"
-  sha256 "8127798c25bb19ae8d9a4d8d9d3e24b43a5a1ec45b0c79f1003a66991157d3f9"
+  url "https://elpa.gnu.org/packages/sokoban-1.4.5.tar"
+  sha256 "37c279b68ee5c558a3d4f027a70b8fc7c2bdcaf8f12d2d11a2aa3871c32b03c2"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d6fa7fa231286d5bc328044d5a5a9b131f8075c98fec6d9b9915cc158f750ca3" => :sierra
-    sha256 "d6fa7fa231286d5bc328044d5a5a9b131f8075c98fec6d9b9915cc158f750ca3" => :el_capitan
-    sha256 "d6fa7fa231286d5bc328044d5a5a9b131f8075c98fec6d9b9915cc158f750ca3" => :yosemite
-  end
+  bottle :disable
 
-  depends_on emacs: "19.34"
+  depends_on :emacs => "23.1"
 
   def install
-    byte_compile Dir["*.el"]
-    elisp.install Dir["*.el"], Dir["*.elc"], "sokoban.levels"
+    byte_compile "sokoban.el"
+    elisp.install "sokoban.el", "sokoban.elc", "sokoban.levels"
   end
 
   test do
