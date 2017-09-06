@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Helm < EmacsFormula
   desc "Emacs completion and selection narrowing framework"
   homepage "https://emacs-helm.github.io/helm/"
-  url "https://github.com/emacs-helm/helm/archive/v2.8.2.tar.gz"
-  sha256 "021868e935383a1549c29a7ec610a25c900db72f2c943c006f7503370822bee0"
+  url "https://github.com/emacs-helm/helm/archive/v2.8.4.tar.gz"
+  sha256 "0d5616c3582377eb54f6d15a0822fdc1c46ce48b46d5b1e394c1878905b715b5"
   head "https://github.com/emacs-helm/helm.git"
 
   bottle :disable
@@ -13,13 +13,14 @@ class Helm < EmacsFormula
   depends_on "dunn/emacs/async-emacs"
 
   def install
-    system "make"
+    system "make", "ASYNC_ELPA_DIR=#{Formula["dunn/emacs/async-emacs"].opt_elisp}"
     elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
-      (add-to-list 'load-path "#{share}/emacs/site-lisp/helm")
+      (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/async-emacs"].opt_elisp}")
       (load "helm-config")
       (print (minibuffer-prompt-width))
     EOS
