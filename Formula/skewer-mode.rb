@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SkewerMode < EmacsFormula
   desc "Emacs mode for live web development"
   homepage "https://github.com/skeeto/skewer-mode"
-  url "https://github.com/skeeto/skewer-mode/archive/1.6.2.tar.gz"
-  sha256 "a0b78e77ecbf26320ee407a93e68bb5328e967b6ff0fff3531490249cef8571e"
+  url "https://github.com/skeeto/skewer-mode/archive/1.7.0.tar.gz"
+  sha256 "a824879872985d9fad1a1aa57c965b03d61106b33e1ff7102991a8a6d80a05ea"
   head "https://github.com/skeeto/skewer-mode.git"
 
   depends_on :emacs => "24.3"
@@ -13,15 +13,7 @@ class SkewerMode < EmacsFormula
 
   def install
     byte_compile Dir["*.el"]
-    (share/"emacs/site-lisp/skewer-mode").install Dir["*.el"], Dir["*.elc"], Dir["*.js"], Dir["*.html"]
-    doc.install "README.md"
-  end
-
-  def caveats; <<-EOS.undent
-    Add the following to your init file:
-
-    (require 'skewer-mode)
-  EOS
+    elisp.install Dir["*.el"], Dir["*.elc"], Dir["*.js"], Dir["*.html"]
   end
 
   test do
