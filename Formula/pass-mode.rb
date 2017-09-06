@@ -14,6 +14,7 @@ class PassMode < EmacsFormula
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/f-emacs"
   depends_on "dunn/emacs/s-emacs"
+  depends_on "perl" if OS.linux?
 
   def install
     byte_compile "pass.el"
