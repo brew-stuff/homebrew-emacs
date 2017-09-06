@@ -3,17 +3,11 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Smartparens < EmacsFormula
   desc "Minor mode for Emacs that deals with parens pairs"
   homepage "https://github.com/Fuco1/smartparens"
-  url "https://github.com/Fuco1/smartparens/archive/1.9.0.tar.gz"
-  sha256 "9834d1b0d93b0a5b308e56213f81c18cf0d9483163d6822d453be9004f2e0688"
+  url "https://github.com/Fuco1/smartparens/archive/1.10.1.tar.gz"
+  sha256 "715051817d688449708a252dc72b056f281a4eaf769a2c441e58f6b59c899adb"
   head "https://github.com/Fuco1/smartparens.git"
-  revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :sierra
-    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :el_capitan
-    sha256 "121efa69b9017a48b4c70d0b04b7f3757938da7b20ccd9df3adf29f54acfe5b2" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
@@ -23,12 +17,12 @@ class Smartparens < EmacsFormula
     rm "smartparens-pkg.el"
     byte_compile Dir["*.el"]
     elisp.install Dir["*.el"], Dir["*.elc"]
-    doc.install "smartparens.org"
   end
 
   test do
     (testpath/"test.el").write <<-EOS.undent
       (add-to-list 'load-path "#{elisp}")
+      (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
       (load "smartparens")
       (turn-on-smartparens-mode)
