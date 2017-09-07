@@ -2,26 +2,25 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class NixMode < EmacsFormula
   desc "Major mode for editing Nix files"
-  homepage "https://github.com/NixOS/nix/tree/master/misc/emacs"
-  url "https://github.com/NixOS/nix/archive/1.11.4.tar.gz"
-  sha256 "b0591965aa2478e4969ce30baaa298a3e1a85ec2efd4bf4581f5f3f1d36f5cb6"
+  homepage "https://github.com/NixOS/nix-mode"
+  url "https://github.com/NixOS/nix-mode/archive/v1.2.1.tar.gz"
+  sha256 "a555cc180b3134063aa515a834407295c168b1934f25df9cf8da84dbce636637"
+  version_scheme 1
   head "https://github.com/NixOS/nix.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :sierra
-    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :el_capitan
-    sha256 "6f693d371ee5c21708fe140c169a89ce2ec31019fb888f072a300cba18b92ca3" => :yosemite
-  end
+  bottle :disable
 
   depends_on :emacs => "24.1"
+  depends_on "dunn/emacs/mmm-mode"
 
   def install
-    cd "misc/emacs" do
-      byte_compile "nix-mode.el"
-      elisp.install "nix-mode.el", "nix-mode.elc"
-      prefix.install "README"
+    if build.stable?
+      byte_compile Dir["*.el"]
+    else
+      system "make", "test"
+      system "make", "compile"
     end
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
