@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class SokobanEmacs < EmacsFormula
   desc "Emacs version of Sokoban"
   homepage "https://elpa.gnu.org/packages/sokoban.html"
-  url "https://elpa.gnu.org/packages/sokoban-1.4.5.tar"
-  sha256 "37c279b68ee5c558a3d4f027a70b8fc7c2bdcaf8f12d2d11a2aa3871c32b03c2"
+  url "https://elpa.gnu.org/packages/sokoban-1.4.6.tar"
+  sha256 "f62f775b74d223f2b53b30f8356e6bc751f74d8a3d07c459c2c57e3368a04c84"
 
   bottle :disable
 
