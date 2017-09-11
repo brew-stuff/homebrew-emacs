@@ -3,16 +3,10 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class XpmEmacs < EmacsFormula
   desc "Emacs library for editing XPM images"
   homepage "http://www.gnuvola.org/software/xpm/"
-  url "https://elpa.gnu.org/packages/xpm-1.0.3.tar"
-  sha256 "e45281a2a361790fc1a7b17e360ab2c04a6032026d911d79448f7dde475a9361"
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "9a0c4aa6d9be329992dcdcb3ba6c6fe5c9c02b14614bba9e854ca08305c76693" => :sierra
-    sha256 "0141324ad216a7362a7aa01a2b84966a7853f7dbc74730caf3f1cc15fcfc2bd3" => :el_capitan
-    sha256 "0141324ad216a7362a7aa01a2b84966a7853f7dbc74730caf3f1cc15fcfc2bd3" => :yosemite
-  end
+  url "https://elpa.gnu.org/packages/xpm-1.0.4.tar"
+  sha256 "303f629471ffc95d6b87b66302ed730bd53c1a7dd6cc07d6a82c41a8958fb51c"
 
-  revision 1
+  bottle :disable
 
   depends_on :emacs => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
