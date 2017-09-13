@@ -16,7 +16,7 @@ class PdfTools < EmacsFormula
     end
   end
 
-  depends_on :emacs => "24.3"
+  depends_on :emacs => "24.4"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
