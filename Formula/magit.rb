@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Magit < EmacsFormula
   desc "Emacs interface for Git"
   homepage "https://magit.vc/"
-  url "https://github.com/magit/magit/releases/download/2.10.3/magit-2.10.3.tar.gz"
-  sha256 "13d3272ba2d3f6b4a64b2df7dc5d1f26dcd0bc6aa6c44be0600f08a27531960e"
+  url "https://github.com/magit/magit/releases/download/2.11.0/magit-2.11.0.tar.gz"
+  sha256 "1f9ae73637257987a7c4ed60e78df0e14f1459c60b3ba4a10c4c265557f1b487"
   head "https://github.com/magit/magit.git", :shallow => false
 
   bottle :disable
@@ -27,8 +27,8 @@ class Magit < EmacsFormula
   end
 
   resource "with-editor" do
-    url "https://github.com/magit/with-editor/archive/v2.5.10.tar.gz"
-    sha256 "c7a849ed827e830f0092695d6b99dce9fad5e1a87e6f0cf1fe7379f860505d53"
+    url "https://github.com/magit/with-editor/archive/v2.6.0.tar.gz"
+    sha256 "8f26a619d745f0a47281fd389c6f947733752472eec26a2b1d5e7f641063ea04"
   end
 
   def install
@@ -71,7 +71,7 @@ class Magit < EmacsFormula
       (add-to-list 'load-path "#{Formula["dunn/emacs/async-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
       (load "magit")
-      (magit-run-git "init")
+      (magit-init "#{testpath}")
     EOS
     system "emacs", "--batch", "-Q", "-l", "#{testpath}/test.el"
     assert (testpath/".git").directory?
