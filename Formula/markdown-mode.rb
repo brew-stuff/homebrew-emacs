@@ -2,9 +2,9 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class MarkdownMode < EmacsFormula
   desc "Major mode for editing Markdown files"
-  homepage "http://jblevins.org/projects/markdown-mode/"
-  url "https://github.com/jrblevin/markdown-mode/archive/v2.2.tar.gz"
-  sha256 "d64123ab78e37a9ff5fd3c87b4f729701c5bc75cc31c7ee1b2b727d5b3032aa1"
+  homepage "https://jblevins.org/projects/markdown-mode/"
+  url "https://github.com/jrblevin/markdown-mode/archive/v2.3.tar.gz"
+  sha256 "a309492fa01fac6ca75d2abc5ccac6bf459578fa273b42a348df37e8f0978cd3"
   head "https://github.com/jrblevin/markdown-mode.git"
 
   deprecated_option "with-markdown-plus" => "with-plus"
@@ -19,8 +19,8 @@ class MarkdownMode < EmacsFormula
     depends_on "dunn/emacs/dash-emacs"
   end
 
-  resource "markdown+" do
-    url "https://github.com/milkypostman/markdown-mode-plus/raw/8e1ac13342491d4d1bb0c7102e5c416e24d1cc51/markdown-mode%2B.el"
+  resource "markdown-plus" do
+    url "https://github.com/milkypostman/markdown-mode-plus/raw/411d079f4430a33c34ec0bbcb1535fe1145a2509/markdown-mode%2B.el"
     sha256 "771a3015d5cf8999a656f1e1a25c6bf2fce7d10d1ecccaae6dd3dfe664999db9"
   end
 
@@ -31,7 +31,7 @@ class MarkdownMode < EmacsFormula
 
   def install
     if build.with? "plus"
-      resource("markdown+").stage do
+      resource("markdown-plus").stage do
         mv "markdown-mode%2B.el", "markdown-mode+.el"
         byte_compile "markdown-mode+.el"
         elisp.install "markdown-mode+.el", "markdown-mode+.elc"
