@@ -3,17 +3,17 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Wisi < EmacsFormula
   desc "Indentation/navigation in Emacs using a LALR parser"
   homepage "http://www.nongnu.org/ada-mode/wisi/wisi.html"
-  url "https://elpa.gnu.org/packages/wisi-1.1.5.tar"
-  sha256 "448dee9cff401b9ddb471d37afe40118531ef3e534b05dca0070bf04a75f0de0"
+  url "https://elpa.gnu.org/packages/wisi-1.1.6.tar"
+  sha256 "d3f26f27f8cb2932639ad054d35a5742eb1b989546597c6b06e5ae4768aaf05c"
 
   bottle :disable
 
-  depends_on :emacs => "24.2"
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on :emacs => "25.1"
 
   def install
-    byte_compile (Dir["*.el"] - ["wisi-pkg.el"])
-    elisp.install (Dir["*.el"] - ["wisi-pkg.el"]), Dir["*.elc"]
+    sources = (Dir["*.el"] - ["wisi-pkg.el"])
+    byte_compile sources
+    elisp.install sources, Dir["*.elc"]
   end
 
   test do
