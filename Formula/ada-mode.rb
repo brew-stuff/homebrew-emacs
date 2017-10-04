@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AdaMode < EmacsFormula
   desc "Emacs major mode for editing Ada sources"
   homepage "http://www.nongnu.org/ada-mode/"
-  url "https://elpa.gnu.org/packages/ada-mode-5.2.2.tar"
-  sha256 "6dbf0ef0b16a9e4fc6020b2fcf4f5a1eb866f73bcb2d0cb5e76ae9b789cc1430"
+  url "https://elpa.gnu.org/packages/ada-mode-5.3.1.tar"
+  sha256 "a965690bc8399fb6d25c7a7f7b9a8dfb995751672b00059007d80a3ff851366b"
 
   bottle :disable
 
