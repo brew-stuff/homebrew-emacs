@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
-  url "https://github.com/flycheck/flycheck/releases/download/30/flycheck-30.tar"
-  sha256 "c7ef2e0195bd32af96180dff4602a86af2ed147f9a1735b51d1f11a9b19abfe7"
+  url "https://github.com/flycheck/flycheck/releases/download/31/flycheck-31.tar"
+  sha256 "80086d3970fa3327a284ebdf69e7c842ae0a0c2b6c28e6b2f7ec5413ace23607"
   head "https://github.com/flycheck/flycheck.git"
 
   bottle do
