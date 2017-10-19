@@ -17,7 +17,7 @@ class Flycheck < EmacsFormula
   option "with-cask", "Build with Cask support"
   option "with-color-mode-line", "Include minor mode for coloring the mode-line"
   option "with-haskell", "Build with improved Haskell support"
-  option "with-package", "Include checker for package metadata"
+  option "with-package", "Include checker for package.el metadata"
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
   depends_on :emacs => "24.3"
@@ -26,6 +26,7 @@ class Flycheck < EmacsFormula
   depends_on "dunn/emacs/pkg-info"
   depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
   depends_on "dunn/emacs/haskell-mode" if build.with? "haskell"
+  depends_on "dunn/emacs/package-lint" if build.with? "package"
   depends_on "dunn/emacs/pos-tip" if build.with? "pos-tip"
 
   resource "cask" do
