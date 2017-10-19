@@ -1,16 +1,14 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Gnorb < EmacsFormula
   desc "Glue code between Gnus, Org, and BBDB"
   homepage "https://elpa.gnu.org/packages/gnorb.html"
-  url "https://elpa.gnu.org/packages/gnorb-1.2.3.tar"
-  sha256 "87f542c07e1c6e412487130d6dd95113bc0c58acaefbef1ed9a42a25220215af"
+  url "https://elpa.gnu.org/packages/gnorb-1.5.3.tar"
+  sha256 "291619c9ca79bce8ba1914a994bd6d5a34ee039cc3ae1f94ed26f99e4fd9a9d2"
 
   bottle :disable
 
-  depends_on EmacsRequirement
-  depends_on "dunn/emacs/org-mode" if Emacs.version < Version.create("24.1")
-  depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+  depends_on EmacsRequirement => "25.1"
 
   def install
     byte_compile Dir["*.el"]
