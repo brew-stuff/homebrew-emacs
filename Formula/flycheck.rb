@@ -3,21 +3,16 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
   homepage "http://www.flycheck.org/"
-  url "https://github.com/flycheck/flycheck/releases/download/30/flycheck-30.tar"
-  sha256 "c7ef2e0195bd32af96180dff4602a86af2ed147f9a1735b51d1f11a9b19abfe7"
+  url "https://github.com/flycheck/flycheck/releases/download/31/flycheck-31.tar"
+  sha256 "80086d3970fa3327a284ebdf69e7c842ae0a0c2b6c28e6b2f7ec5413ace23607"
   head "https://github.com/flycheck/flycheck.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :sierra
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :el_capitan
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :yosemite
-  end
+  bottle :disable
 
   option "with-cask", "Build with Cask support"
   option "with-color-mode-line", "Include minor mode for coloring the mode-line"
   option "with-haskell", "Build with improved Haskell support"
-  option "with-package", "Include checker for package metadata"
+  option "with-package", "Include checker for package.el metadata"
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
   depends_on :emacs => "24.3"
@@ -26,6 +21,7 @@ class Flycheck < EmacsFormula
   depends_on "dunn/emacs/pkg-info"
   depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
   depends_on "dunn/emacs/haskell-mode" if build.with? "haskell"
+  depends_on "dunn/emacs/package-lint" if build.with? "package"
   depends_on "dunn/emacs/pos-tip" if build.with? "pos-tip"
 
   resource "cask" do
