@@ -7,12 +7,7 @@ class Flycheck < EmacsFormula
   sha256 "80086d3970fa3327a284ebdf69e7c842ae0a0c2b6c28e6b2f7ec5413ace23607"
   head "https://github.com/flycheck/flycheck.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :sierra
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :el_capitan
-    sha256 "4d82dee34882058d5f9847c1eca06397e5dd4da18648a824fccf2c528c9d0cc8" => :yosemite
-  end
+  bottle :disable
 
   option "with-cask", "Build with Cask support"
   option "with-color-mode-line", "Include minor mode for coloring the mode-line"
