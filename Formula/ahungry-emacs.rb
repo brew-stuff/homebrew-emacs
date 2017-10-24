@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AhungryEmacs < EmacsFormula
   desc "Bright and bold color theme for Emacs"
   homepage "https://github.com/ahungry/color-theme-ahungry"
-  url "https://elpa.gnu.org/packages/ahungry-theme-1.6.0.tar"
-  sha256 "5ff3e769788117c0b88102ead89e0465f7facf48cb2081aaafc7be51ce3b1dac"
+  url "https://elpa.gnu.org/packages/ahungry-theme-1.7.0.tar"
+  sha256 "72dc6df01926926db71e4eb2f6b6fd6b2fbc868fbf930024f37ca7c06c121f47"
   head "https://github.com/ahungry/color-theme-ahungry.git"
 
   depends_on :emacs => "24.1"
