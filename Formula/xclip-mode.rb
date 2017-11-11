@@ -6,6 +6,8 @@ class XclipMode < EmacsFormula
   url "https://elpa.gnu.org/packages/xclip-1.4.el"
   sha256 "d7d09f5f3461e70a3589124be4955f1e858e0f83220987359320c8cf413a3c8b"
 
+  bottle :disable
+
   depends_on :emacs
   depends_on "xclip"
 
