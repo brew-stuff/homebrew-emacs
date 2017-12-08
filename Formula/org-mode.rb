@@ -3,21 +3,21 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class OrgMode < EmacsFormula
   desc "Notes, TODOs, and project planning for Emacs"
   homepage "http://orgmode.org"
-  url "http://orgmode.org/org-9.1.2.tar.gz"
-  sha256 "52a9979384b266c945be7473d9ab9c6b6a21525cc3cd9a4fe9115ff18c9d65b9"
+  url "http://orgmode.org/org-9.1.4.tar.gz"
+  sha256 "7e38e84527b844e822a715f970c7ff135af40666b0a53e432dca2cb3e7222981"
   head "http://orgmode.org/org-mode.git", :shallow => false
 
   bottle :disable
 
-  option "with-texinfo-plus", "Install Jonas Bernoulli's extension of ox-texinfo"
-  option "with-toc", "Install the toc-org extension"
+  option "with-texinfo-plus", "Build with ox-texinfo+"
+  option "with-toc", "Build with toc-org"
 
   depends_on :emacs => "24.3"
   depends_on "dunn/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do
-    url "https://github.com/tarsius/ox-texinfo-plus/archive/v2.1.0.tar.gz"
-    sha256 "3974c3f15d7f3f5801b29593de63c262dd5c95cf655850e97b1b474b7d552231"
+    url "https://github.com/tarsius/ox-texinfo-plus/archive/v2.2.0.tar.gz"
+    sha256 "0d4d73208700b812b9bf79d9fb83945eafff317f82dc0cbe2aa8aba4fa87a85d"
   end
 
   resource "toc-org" do
