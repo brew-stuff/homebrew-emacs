@@ -1,9 +1,9 @@
 class Auctex < Formula
   desc "Emacs package for writing and formatting TeX"
   homepage "https://www.gnu.org/software/auctex/"
-  url "https://ftpmirror.gnu.org/auctex/auctex-11.90.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/auctex/auctex-11.90.tar.gz"
-  sha256 "3c232fd8e57780edea28cd3035afcc2b6ed965b5954e96b34a258cacfcaaf18f"
+  url "https://ftp.gnu.org/gnu/auctex/auctex-12.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/auctex/auctex-12.1.tar.gz"
+  sha256 "c95cca4d70a9783617f7b5035c5e2c77438fa35d2505555d40190ac2652a5db4"
 
   head do
     url "https://git.savannah.gnu.org/git/auctex.git"
@@ -42,7 +42,7 @@ class Auctex < Formula
       (add-to-list 'load-path "#{elisp}")
       (require 'tex-site)
     EOS
-    (testpath/"test.tex").write <<-'EOS'.undent
+    (testpath/"test.tex").write <<~EOS
       \documentclass{article}
       \begin{document}
       This file is incomplete.
