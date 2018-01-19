@@ -7,7 +7,7 @@ class AsyncEmacs < EmacsFormula
   sha256 "dcb9bc817be1c478a73a039a2a4c129c3cca7ebcd228b3954e82737964ded69d"
   head "https://github.com/jwiegley/emacs-async.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

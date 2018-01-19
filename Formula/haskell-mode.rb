@@ -17,7 +17,7 @@ class HaskellMode < EmacsFormula
   deprecated_option "with-html" => "with-docs"
   option "with-docs", "Build HTML documentation"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "texinfo" if build.with? "docs"
 
   def install

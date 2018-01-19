@@ -7,7 +7,7 @@ class AnzuMode < EmacsFormula
   sha256 "9f91077d12bffc2d30640dfc5a5b627139d03c06bee9335f5df6977e121a8f99"
   head "https://github.com/syohex/emacs-anzu.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

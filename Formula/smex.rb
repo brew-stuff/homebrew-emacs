@@ -7,7 +7,7 @@ class Smex < EmacsFormula
   sha256 "96eb68ac3301d0986195a29ea03d4dad1a5f81647cb097a78de59c1cc6d78e58"
   head "https://github.com/nonsequitur/smex.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile "smex.el"

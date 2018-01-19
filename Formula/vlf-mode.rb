@@ -7,7 +7,7 @@ class VlfMode < EmacsFormula
   sha256 "098c5d438b31c5b83a51ffed09d47c4eead2733dc68fd9bb7d5eebe56450f899"
   head "https://github.com/m00natic/vlfi.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     byte_compile Dir["*.el"]

@@ -7,7 +7,7 @@ class EmmetMode < EmacsFormula
   sha256 "f21f1786f5f8e8b1760858601d476957544163a2afa5ed184a97b9a5bc10773c"
   head "https://github.com/smihica/emmet-mode.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     system "make", "test"

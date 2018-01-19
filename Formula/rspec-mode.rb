@@ -7,7 +7,7 @@ class RspecMode < EmacsFormula
   sha256 "7cdfe79434f14ed70becfe65509932da7777c138d63b0ccca3d68452743d0ac8"
   head "https://github.com/pezra/rspec-mode.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

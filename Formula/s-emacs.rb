@@ -7,7 +7,7 @@ class SEmacs < EmacsFormula
   sha256 "826d186458f7568f1304bca0c094034a9e7370bd2858dcf806dd513abe2d384f"
   head "https://github.com/magnars/s.el.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     system "./run-tests.sh"

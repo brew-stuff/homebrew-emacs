@@ -14,7 +14,7 @@ class GitModes < EmacsFormula
     sha256 "35c84d898e53906342f652e9d929ff6f9e01a91455a6ae7e744e648444414efc" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

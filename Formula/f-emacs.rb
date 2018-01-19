@@ -14,7 +14,7 @@ class FEmacs < EmacsFormula
     sha256 "bf38575bd6c720968b2d219fded449db08415a4579c115b5141d6e9641a3b44d" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/s-emacs"
 

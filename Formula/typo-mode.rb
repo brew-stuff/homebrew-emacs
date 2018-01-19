@@ -7,7 +7,7 @@ class TypoMode < EmacsFormula
   sha256 "da7b345e7cb9e9934c8f0aa0b000e417e772636679c0e5ae6653269201e254e5"
   head "https://github.com/jorgenschaefer/typoel.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "typo.el"

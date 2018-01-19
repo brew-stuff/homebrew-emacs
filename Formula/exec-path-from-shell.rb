@@ -7,7 +7,7 @@ class ExecPathFromShell < EmacsFormula
   sha256 "75861413984557c02cca01c4484b9b17a4c237cd66778e5a58847637f7c3f8ab"
   head "https://github.com/purcell/exec-path-from-shell.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "exec-path-from-shell.el"

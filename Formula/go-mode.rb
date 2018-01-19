@@ -7,7 +7,7 @@ class GoMode < EmacsFormula
   sha256 "d54a4afac1658082da1f26bab486c346262e5b185e6463cfe316a3e5e57ab6a9"
   head "https://github.com/dominikh/go-mode.el"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

@@ -7,7 +7,7 @@ class DiffHl < EmacsFormula
   sha256 "369cebddd9c77eb20a4c9a3c2f55d2496b5cc821aedf4cba50a77a36588bb02b"
   head "https://github.com/dgutov/diff-hl.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

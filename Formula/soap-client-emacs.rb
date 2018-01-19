@@ -7,7 +7,7 @@ class SoapClientEmacs < EmacsFormula
   sha256 "51815efc543380e9c237c764dd24cf904a2dfc27ec7f1b226c6befa6c3b83c59"
   head "https://github.com/alex-hhh/emacs-soap-client.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

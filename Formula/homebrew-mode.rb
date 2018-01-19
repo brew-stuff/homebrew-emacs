@@ -7,7 +7,7 @@ class HomebrewMode < EmacsFormula
   sha256 "f362f572b3fd0de4f41783d9416f80068fe78589c320b58881ac455dd62fea05"
   head "https://github.com/dunn/homebrew-mode.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/inf-ruby"
 

@@ -14,7 +14,7 @@ class Ggtags < EmacsFormula
     sha256 "0c6997c50b8f9e6bc6f4372673cd0ead4c45019563326078053235d748e879f1" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "global" => "with-ctags"
 
   def install

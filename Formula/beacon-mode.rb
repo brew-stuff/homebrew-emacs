@@ -9,7 +9,7 @@ class BeaconMode < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
 
   def install

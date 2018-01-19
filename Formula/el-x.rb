@@ -7,7 +7,7 @@ class ElX < EmacsFormula
   sha256 "734e654b26ae699c41bb8f691fb4ec4d6064c156b02ddf3c2fa98b7dc16a527e"
   head "https://github.com/sigma/el-x.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

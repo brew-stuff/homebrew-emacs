@@ -6,7 +6,7 @@ class ElectricSpacing < EmacsFormula
   url "http://elpa.gnu.org/packages/electric-spacing-5.0.el"
   sha256 "db3be647b3573da463377711d7b7bbb91df85f3e9393afbfa41259f009da66ca"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "electric-spacing-#{version}.el", "electric-spacing.el"

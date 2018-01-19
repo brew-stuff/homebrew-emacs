@@ -14,7 +14,7 @@ class SpinnerEmacs < EmacsFormula
     sha256 "f21644bdfb2b8f3a8efbf95e5d7bbe6e8cf8fdfb38b9fc40ea32f059242a7b2d" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "spinner-#{version}.el", "spinner.el" if build.stable?

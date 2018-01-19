@@ -7,7 +7,7 @@ class Enwc < EmacsFormula
   sha256 "1eedd7238722c71d6686afd636d36daabbbf2ecf5ee9562affcf33651f9bb2a6"
   head "http://bzr.savannah.nongnu.org/r/enwc/trunk", :using => :bzr
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

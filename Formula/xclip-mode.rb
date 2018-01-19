@@ -8,7 +8,7 @@ class XclipMode < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "xclip"
 
   def install

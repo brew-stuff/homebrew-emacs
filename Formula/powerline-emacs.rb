@@ -7,7 +7,7 @@ class PowerlineEmacs < EmacsFormula
   sha256 "cb4fff38648913f865c7085c9ab9708468940c3d05a8aee1b1d77fb96630c0c5"
   head "https://github.com/milkypostman/powerline.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

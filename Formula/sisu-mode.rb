@@ -6,7 +6,7 @@ class SisuMode < EmacsFormula
   url "http://elpa.gnu.org/packages/sisu-mode-7.1.8.el"
   sha256 "d282c04aa6cdee1e7726e5c0b3f002d22507181f90272adb69e1d99f8937fa8b"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "sisu-mode-#{version}.el", "sisu-mode.el"

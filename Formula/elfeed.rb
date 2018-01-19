@@ -7,7 +7,7 @@ class Elfeed < EmacsFormula
   sha256 "8e7e4a26ce260cbaf9427ee5aa2c34812385f5b9b8b5d4541c938135e848f134"
   head "https://github.com/skeeto/elfeed.git"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/simple-httpd"
 
   def install

@@ -7,7 +7,7 @@ class Undercover < EmacsFormula
   sha256 "c7b69b33b41df47dc67b499c6dbec9a8d775f2c8eeab9de22ee1fe7f1155fc6f"
   head "https://github.com/sviridov/undercover.el.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/shut-up"
 

@@ -15,7 +15,7 @@ class ErtRunner < EmacsFormula
 
   revision 1
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/ansi-emacs"
   depends_on "dunn/emacs/commander-emacs"
   depends_on "dunn/emacs/dash-emacs"

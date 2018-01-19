@@ -6,7 +6,7 @@ class Jumpc < EmacsFormula
   url "http://elpa.gnu.org/packages/jumpc-3.0.el"
   sha256 "ca548fdf39d8a3e5314e3a1633902ec9158ccb5bd20487a81a03ab5f077f0fee"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "jumpc-#{version}.el", "jumpc.el"

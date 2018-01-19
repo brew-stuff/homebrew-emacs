@@ -6,7 +6,7 @@ class MemoryUsageEmacs < EmacsFormula
   url "http://elpa.gnu.org/packages/memory-usage-0.2.el"
   sha256 "92bf00d1f12cde4367ccd85ed6afddfc0642a185f0bcb1fb5601b67cf5591c0f"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "memory-usage-#{version}.el", "memory-usage.el"

@@ -7,7 +7,7 @@ class Pabbrev < EmacsFormula
   sha256 "b0bb2a370b626d09a43b7159080ac95ca6239bf9dcccc35fbc0ef960665365a7"
   head "https://github.com/phillord/pabbrev.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

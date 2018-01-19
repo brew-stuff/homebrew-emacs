@@ -12,7 +12,7 @@ class OrgMode < EmacsFormula
   option "with-texinfo-plus", "Build with ox-texinfo+"
   option "with-toc", "Build with toc-org"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/dash-emacs"
 
   resource "ox-texinfo-plus" do

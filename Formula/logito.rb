@@ -7,7 +7,7 @@ class Logito < EmacsFormula
   sha256 "c28a60f49ec9e2a9c3167e51d31ec799b68df81391282f3b0b52813d1450a428"
   head "https://github.com/sigma/logito.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "logito.el"

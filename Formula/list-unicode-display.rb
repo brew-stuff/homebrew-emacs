@@ -14,7 +14,7 @@ class ListUnicodeDisplay < EmacsFormula
     sha256 "ad0fc229b84165fc4003c57ecccb5e1c9aa0c2c3cdefbd27b372e9ddefda452e" => :mavericks
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

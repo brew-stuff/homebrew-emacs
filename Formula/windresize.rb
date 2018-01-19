@@ -6,7 +6,7 @@ class Windresize < EmacsFormula
   url "http://elpa.gnu.org/packages/windresize-0.1.el"
   sha256 "7d448781cc2a717127c2f905494e9bf5a95b43ded8bd5f803e775a838c76ab2c"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "windresize-#{version}.el", "windresize.el"

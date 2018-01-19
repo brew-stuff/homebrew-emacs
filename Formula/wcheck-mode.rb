@@ -7,7 +7,7 @@ class WcheckMode < EmacsFormula
   sha256 "58f6d43989214f44c61ea75a06bebf383f08c9e5c74b3b1080045047b5edf943"
   head "https://github.com/tlikonen/wcheck-mode.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     if build.stable?

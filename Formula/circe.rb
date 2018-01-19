@@ -7,7 +7,7 @@ class Circe < EmacsFormula
   sha256 "c9d26e5aab840f41526166dc89fce5421e91c250b58620f26a2161ef0c5c1a75"
   head "https://github.com/jorgenschaefer/circe.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   depends_on "dunn/emacs/buttercup" => :build

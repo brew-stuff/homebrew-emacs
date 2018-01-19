@@ -7,7 +7,7 @@ class JsonSnatcher < EmacsFormula
   sha256 "cb31a87db5efe5f2c04adaaa8260d9d9d9cc00b5e7289c17053fb6eba2e6d1d9"
   head "https://github.com/Sterlingg/json-snatcher.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile "json-snatcher.el"

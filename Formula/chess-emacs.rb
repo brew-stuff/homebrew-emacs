@@ -8,7 +8,7 @@ class ChessEmacs < EmacsFormula
   head "http://git.savannah.gnu.org/r/emacs/elpa.git",
        :branch => "externals/chess"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

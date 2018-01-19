@@ -7,7 +7,7 @@ class JsonReformat < EmacsFormula
   sha256 "48dc62c4a1d1021afc3f4a0be49ea81cef7e9eb0997dcb23a827bfcc34c1cb85"
   head "https://github.com/gongo/json-reformat.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     byte_compile "json-reformat.el"

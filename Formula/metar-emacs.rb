@@ -6,7 +6,7 @@ class MetarEmacs < EmacsFormula
   url "https://elpa.gnu.org/packages/metar-0.3.el"
   sha256 "4f00867fc8a90975bbbdd5932783979427562c70bb3ec5adffbe2cdec106fb1d"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

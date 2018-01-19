@@ -14,7 +14,7 @@ class Htmlize < EmacsFormula
     sha256 "152bd496933fd102693cc0ba1b394cd18c261714a364d572c52bdce68b6086d6" => :yosemite
   end
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     byte_compile "htmlize.el"

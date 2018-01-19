@@ -8,7 +8,7 @@ class Wisi < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "25.1"
+  depends_on EmacsRequirement => "25.1"
 
   def install
     sources = (Dir["*.el"] - ["wisi-pkg.el"])

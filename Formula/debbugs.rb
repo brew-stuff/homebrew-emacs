@@ -8,7 +8,7 @@ class Debbugs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile Dir["*.el"]

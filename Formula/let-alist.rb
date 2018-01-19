@@ -6,7 +6,7 @@ class LetAlist < EmacsFormula
   url "https://elpa.gnu.org/packages/let-alist-1.0.5.el"
   sha256 "fc6b2900e461eb02c0be0365daaa130d3daf43a095ce994e0d8a8212ad4ceb64"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   bottle :disable
 

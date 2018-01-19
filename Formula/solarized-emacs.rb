@@ -5,7 +5,7 @@ class SolarizedEmacs < EmacsFormula
   homepage "https://github.com/sellout/emacs-color-theme-solarized"
   head "https://github.com/sellout/emacs-color-theme-solarized.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     system "make", "build"

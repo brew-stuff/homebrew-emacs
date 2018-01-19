@@ -7,7 +7,7 @@ class DockerfileMode < EmacsFormula
   sha256 "49618f06ed6d7a4d64251e00540df13870aeee9a8f55acd4def0482ada78156e"
   head "https://github.com/spotify/dockerfile-mode.git"
 
-  depends_on :emacs => "24"
+  depends_on EmacsRequirement => "24"
 
   def install
     byte_compile "dockerfile-mode.el"

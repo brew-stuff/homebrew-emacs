@@ -7,7 +7,7 @@ class RainbowDelimiters < EmacsFormula
   sha256 "39a5aa2f5b6fc5ac7c97362442459d8f012ea5536c6720929666611dc995d974"
   head "https://github.com/Fanael/rainbow-delimiters.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     ert_run_tests "rainbow-delimiters-test.el"

@@ -7,7 +7,7 @@ class Mocker < EmacsFormula
   sha256 "7549aa6ce2021da2a0f664dc225cda0cac27a4cb4f867180004ac9ec17cae76f"
   head "https://github.com/sigma/mocker.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "cask" => :build
   depends_on "dunn/emacs/el-x"
 

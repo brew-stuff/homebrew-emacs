@@ -8,7 +8,7 @@ class QueueEmacs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "queue-#{version}.el", "queue.el"

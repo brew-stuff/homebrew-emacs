@@ -11,7 +11,7 @@ class Auctex < Formula
   end
 
   depends_on :tex
-  depends_on :emacs => "21.1"
+  depends_on EmacsRequirement => "21.1"
 
   def install
     # configure fails if the texmf dir is not there yet

@@ -14,7 +14,7 @@ class DMode < EmacsFormula
     sha256 "509b93a1da0fd6802e67b8a8b518e647668b380112185f6fc9baa78f9722b439" => :yosemite
   end
 
-  depends_on :emacs => "23"
+  depends_on EmacsRequirement => "23"
   depends_on "cask"
 
   def install

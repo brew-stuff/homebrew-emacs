@@ -6,7 +6,7 @@ class RainbowMode < EmacsFormula
   url "https://elpa.gnu.org/packages/rainbow-mode-0.13.el"
   sha256 "b4b5f6479d8e2a910cc8718569a37bc7c0ccdf13206b2e23be183f6c7a556ab4"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     mv "rainbow-mode-#{version}.el", "rainbow-mode.el" if build.stable?

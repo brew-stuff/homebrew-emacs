@@ -7,7 +7,7 @@ class RequestEmacs < EmacsFormula
   sha256 "7f03a011e59df9daa99e54ab423d956f4f12be763836992ced586c8fb2eeec71"
   head "https://github.com/tkf/emacs-request.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "dunn/emacs/deferred"
 
   def install

@@ -14,7 +14,7 @@ class Pcache < EmacsFormula
     sha256 "6b66caa78eef4855d7b99f87b436e761be0f7ad13f2e845edb97c2012884a7a4" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     ert_run_tests "test/pcache-test.el"

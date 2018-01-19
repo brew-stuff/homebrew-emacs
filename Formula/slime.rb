@@ -42,7 +42,7 @@ class Slime < EmacsFormula
   sha256 "f385fcb9f4b4ffe4370b1f8ec72afaff7ebf7b17206ae061e449ee4b7cc1d420"
   head "https://github.com/slime/slime.git"
 
-  depends_on :emacs => "23.4"
+  depends_on EmacsRequirement => "23.4"
   depends_on CommonLispRequirement
   depends_on "texinfo" => :build
 

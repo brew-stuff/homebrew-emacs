@@ -7,7 +7,7 @@ class CoffeeMode < EmacsFormula
   sha256 "7aa8e5858f8aa1de77ca6d2bf829d1f0b7db656905108426e53d03d8db4104fc"
   head "https://github.com/defunkt/coffee-mode.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

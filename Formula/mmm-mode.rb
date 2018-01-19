@@ -9,7 +9,7 @@ class MmmMode < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 

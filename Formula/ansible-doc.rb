@@ -14,7 +14,7 @@ class AnsibleDoc < EmacsFormula
     sha256 "6aa199b9cd8c2a4b74d946a02b5efc837c13c2013ba2a39f8fb663f331442bdf" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/yaml-mode"
 
   def install
