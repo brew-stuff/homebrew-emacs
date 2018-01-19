@@ -14,7 +14,7 @@ class ContextColoring < EmacsFormula
     sha256 "e52354f9efd6366f213c87d8fba5f3086ec577665c011a2f9b0b06b843ebae99" => :yosemite
   end
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/js2-mode"
 
   def install

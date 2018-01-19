@@ -6,7 +6,7 @@ class TempBufferBrowse < EmacsFormula
   url "https://elpa.gnu.org/packages/temp-buffer-browse-1.5.el"
   sha256 "6c74cc2ac6b971f22d2e841a8179d1a21ffc7c58079d5e65749b3cc33ade2eb7"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     mv "temp-buffer-browse-#{version}.el", "temp-buffer-browse.el"

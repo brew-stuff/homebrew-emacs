@@ -7,7 +7,7 @@ class Keyfreq < EmacsFormula
   sha256 "8dd13c050e4ebb943c9190f2d9066ec6f4cb7af21b28abd1a2bc76c59539609e"
   head "https://github.com/dacap/keyfreq.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

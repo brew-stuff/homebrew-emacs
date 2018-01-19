@@ -7,7 +7,7 @@ class ClGeneric < EmacsFormula
   sha256 "f893845a425e414d5a5769670b958b36cb5c3ef1b63f0c8ccb565f09171a636d"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/cl-generic/cl-generic.el"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "cl-generic-#{version}.el", "cl-generic.el"

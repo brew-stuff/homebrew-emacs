@@ -6,7 +6,7 @@ class RegisterList < EmacsFormula
   url "http://elpa.gnu.org/packages/register-list-0.1.el"
   sha256 "506a53515bca5e4bf512484f7a4451ed21195df8cb557a315ee2c2ed4975efab"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "register-list-#{version}.el", "register-list.el"

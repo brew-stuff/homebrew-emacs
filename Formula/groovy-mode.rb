@@ -7,7 +7,7 @@ class GroovyMode < EmacsFormula
   sha256 "4888b6ec93bec53a4b6fd4e706dec209679c0d17ba3371fc5e4cd4fea28861e1"
   head "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     el_array = %w[groovy-mode.el groovy-electric.el inf-groovy.el]

@@ -7,7 +7,7 @@ class ElispSlimeNav < EmacsFormula
   sha256 "6239d99fcdcfc819a7aa739f21eeea433493ea4bac909dfb3be91e8243f507ef"
   head "https://github.com/purcell/elisp-slime-nav.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "elisp-slime-nav.el"

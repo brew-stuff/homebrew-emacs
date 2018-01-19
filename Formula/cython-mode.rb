@@ -14,7 +14,7 @@ class CythonMode < EmacsFormula
     sha256 "cdaa605270201cb75a52b9f08c9e8cdb07c60856cb75765d66e4dc022e71213c" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     cd "Tools"

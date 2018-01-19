@@ -7,7 +7,7 @@ class EasyKill < EmacsFormula
   sha256 "4dcac3a01c2d4194c4907e2248e1685ef4b47556de98e7809a40244da3d3eb42"
   head "https://github.com/leoliu/easy-kill.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

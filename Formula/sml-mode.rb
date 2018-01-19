@@ -13,7 +13,7 @@ class SmlMode < EmacsFormula
     sha256 "0bbef293efc508f9c36deffcca323895aa4fd4d2da21527659d4e82bcaf389bf" => :yosemite
   end
 
-  depends_on emacs: "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     mv "sml-mode-#{version}.el", "sml-mode.el"

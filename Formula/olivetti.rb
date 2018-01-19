@@ -9,7 +9,7 @@ class Olivetti < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
 
   def install
     byte_compile "olivetti.el"

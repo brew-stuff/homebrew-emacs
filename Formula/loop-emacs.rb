@@ -7,7 +7,7 @@ class LoopEmacs < EmacsFormula
   sha256 "4945498a4f7ff4cd85315a1d3480e41c03452e05df8340ccf84b49ff078479fc"
   head "https://github.com/Wilfred/loop.el.git"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     byte_compile "loop.el"

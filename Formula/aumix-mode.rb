@@ -7,7 +7,7 @@ class AumixMode < EmacsFormula
   sha256 "8b8ef69fcaa1abc9f4e3404d3c15e37bad1a7549022340fdfb2dfce933cb2904"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/aumix-mode/aumix-mode.el"
 
-  depends_on :emacs => "20"
+  depends_on EmacsRequirement => "20"
 
   def install
     mv "aumix-mode-#{version}.el", "aumix-mode.el" if build.stable?

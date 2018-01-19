@@ -8,7 +8,7 @@ class Realgud < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/load-relative"
   depends_on "dunn/emacs/test-simple"
   depends_on "dunn/emacs/loc-changes"

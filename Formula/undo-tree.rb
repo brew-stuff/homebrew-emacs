@@ -9,7 +9,7 @@ class UndoTree < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "undo-tree-#{version}.el", "undo-tree.el" if build.stable?

@@ -7,7 +7,7 @@ class TwitteringMode < EmacsFormula
   sha256 "0b6ca146af6e5c06efa327ef2d4fbb9c56bbff7e28a802623c735fc7fa6249f3"
   head "https://github.com/hayamiz/twittering-mode.git"
 
-  depends_on :emacs => "21.1"
+  depends_on EmacsRequirement => "21.1"
 
   def install
     # currently fails https://github.com/hayamiz/twittering-mode/issues/119

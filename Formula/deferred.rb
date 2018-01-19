@@ -15,7 +15,7 @@ class Deferred < EmacsFormula
     end
   end
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     system "make", "compile"

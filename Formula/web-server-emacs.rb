@@ -7,7 +7,7 @@ class WebServerEmacs < EmacsFormula
   sha256 "5690e943312b312b4be3f419a3c292b73d2ccfe6f045da988f84aac23174a1e0"
   head "https://github.com/eschulte/emacs-web-server.git"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     if build.stable?

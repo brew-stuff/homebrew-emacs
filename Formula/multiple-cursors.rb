@@ -7,7 +7,7 @@ class MultipleCursors < EmacsFormula
   sha256 "33a1c193cf8bcb0c80f71a154cbbc1956ee80a79ec63ebcaf3ea6fb6298c3042"
   head "https://github.com/magnars/multiple-cursors.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile Dir["*.el"]

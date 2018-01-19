@@ -7,7 +7,7 @@ class Vdiff < EmacsFormula
   sha256 "1fa7ec822092f92ce631cd15eccd28c4d1a1dd6fc08d47f7766b8a0affd7fca4"
   head "https://github.com/justbur/emacs-vdiff.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "hydra-emacs"
   depends_on "magit" => :optional
 

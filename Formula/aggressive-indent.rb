@@ -14,7 +14,7 @@ class AggressiveIndent < EmacsFormula
     sha256 "ba490be18e32f1529179972b5f03bd729fd527df1c780c4681eaee61e64edd09" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

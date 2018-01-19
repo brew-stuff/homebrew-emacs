@@ -7,7 +7,7 @@ class UnkillableScratch < EmacsFormula
   sha256 "9e3ade0a2a1041d63e558de51d4f0f519377f292125feaf623e33ddac331ee4f"
   head "https://github.com/EricCrosson/unkillable-scratch.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     byte_compile "unkillable-scratch.el"

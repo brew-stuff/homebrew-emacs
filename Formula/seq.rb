@@ -8,7 +8,7 @@ class Seq < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   # Submitted upstream via email on 2016-10-28
   patch :p3 do

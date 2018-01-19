@@ -7,7 +7,7 @@ class PosTip < EmacsFormula
   sha256 "5934257ec49c587681cc37f9d3f774053124f147d623a500a667ca6d8477588a"
   head "https://github.com/pitkali/pos-tip.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     byte_compile "pos-tip.el"

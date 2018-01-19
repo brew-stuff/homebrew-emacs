@@ -6,7 +6,7 @@ class AsciiArtToUnicode < EmacsFormula
   url "https://elpa.gnu.org/packages/ascii-art-to-unicode-1.11.el"
   sha256 "1a7d15cd24aaf79bff137bab50fe6fb7e6f17337bf6c168892d6c33df5953bfc"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

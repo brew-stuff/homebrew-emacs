@@ -6,7 +6,7 @@ class Wpuzzle < EmacsFormula
   url "http://elpa.gnu.org/packages/wpuzzle-1.1.el"
   sha256 "720a03df4a09437790c222effd7fb461b09fdd8be34c85ac90db01d642204ff2"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "aspell" => "with-lang-en"
 
   def install

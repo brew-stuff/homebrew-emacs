@@ -7,7 +7,7 @@ class WebsocketEmacs < EmacsFormula
   sha256 "a9b1c4c725e85f809d9532b273e91c809b179410684d7b98deec7c54adad9d35"
   head "https://github.com/ahyatt/emacs-websocket.git"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     # the functional test requires a running Tornado web server

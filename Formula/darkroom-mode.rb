@@ -7,7 +7,7 @@ class DarkroomMode < EmacsFormula
   sha256 "0dd1c3d8ba143601b9a558ff1fcf9cad75f11c44cbaca9ac5f10a1d7bdc3f725"
   head "https://github.com/capitaomorte/darkroom.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

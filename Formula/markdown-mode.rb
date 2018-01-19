@@ -12,7 +12,7 @@ class MarkdownMode < EmacsFormula
   option "with-plus", "Install the markdown-mode+ extension"
   option "with-toc", "Install the markdown-toc extension"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
 
   if build.with? "toc"
     depends_on "dunn/emacs/s-emacs"

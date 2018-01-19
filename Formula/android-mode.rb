@@ -9,7 +9,7 @@ class AndroidMode < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

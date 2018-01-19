@@ -14,7 +14,7 @@ class Sotlisp < EmacsFormula
     sha256 "7fc81ed345da59dab98007374f75cc362bdf9c165bc3b9ae8817d76a0ad888be" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     mv "sotlisp-#{version}.el", "sotlisp.el" if build.stable?

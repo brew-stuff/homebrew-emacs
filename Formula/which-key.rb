@@ -9,7 +9,7 @@ class WhichKey < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     ert_run_tests "which-key-tests.el"

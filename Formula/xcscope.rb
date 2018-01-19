@@ -7,7 +7,7 @@ class Xcscope < EmacsFormula
   sha256 "69d80db62d1c4354cd1bb04df401b8c329658bd1e9262e28b8e81a80abb0e09b"
   head "https://github.com/dkogan/xcscope.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "cscope"
 
   def install

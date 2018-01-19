@@ -14,7 +14,7 @@ class Muse < EmacsFormula
     sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :yosemite
   end
 
-  depends_on emacs: "21.1"
+  depends_on EmacsRequirement => "21.1"
   depends_on "dunn/emacs/htmlize"
 
   def install

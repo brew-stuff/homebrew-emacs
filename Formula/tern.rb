@@ -9,7 +9,7 @@ class Tern < EmacsFormula
   head "https://github.com/ternjs/tern.git"
 
   depends_on "node"
-  depends_on :emacs => "24"
+  depends_on EmacsRequirement => "24"
   depends_on "dunn/emacs/auto-complete" => :optional
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

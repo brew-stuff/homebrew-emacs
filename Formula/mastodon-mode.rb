@@ -7,7 +7,7 @@ class MastodonMode < EmacsFormula
   sha256 "f54b789c1b900f7856e7c5b89c6d093376a32ad6ea817aa83552fc215f4e9231"
   head "https://github.com/jdenen/mastodon.el.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "cask" => :build
 
   def install

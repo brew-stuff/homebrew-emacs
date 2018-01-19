@@ -7,7 +7,7 @@ class PkgInfo < EmacsFormula
   sha256 "a5e5123f96bfa635c67ea64cf8df2b3a29e448f6ec2116de13a0d65af494c1bf"
   head "https://github.com/lunaryorn/pkg-info.el.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "cask"
   depends_on "dunn/emacs/epl"
 

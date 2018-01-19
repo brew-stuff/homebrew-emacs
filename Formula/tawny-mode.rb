@@ -9,7 +9,7 @@ class TawnyMode < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "25.1"
+  depends_on EmacsRequirement => "25.1"
   depends_on "dunn/emacs/cider"
   depends_on "dunn/emacs/queue-emacs"
 

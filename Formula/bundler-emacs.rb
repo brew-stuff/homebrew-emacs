@@ -15,7 +15,7 @@ class BundlerEmacs < EmacsFormula
     end
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/inf-ruby"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

@@ -9,7 +9,7 @@ class Helm < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/async-emacs"
 
   def install

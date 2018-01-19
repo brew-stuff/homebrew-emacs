@@ -7,7 +7,7 @@ class GhEmacs < EmacsFormula
   sha256 "f1e4244c329197f1d659a024c8fe20e0d62d1e74578f8bebac216b8defc02635"
   head "https://github.com/sigma/gh.el.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "dunn/emacs/mocker" => :build
   depends_on "dunn/emacs/logito"
   depends_on "dunn/emacs/pcache"

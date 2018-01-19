@@ -7,7 +7,7 @@ class ShellPop < EmacsFormula
   sha256 "71a86e70540e84ec2d2bff2eb587b358cb0cd2b094763a29bd8c45b7ea3a8420"
   head "https://github.com/kyagi/shell-pop-el"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile "shell-pop.el"

@@ -7,7 +7,7 @@ class Avy < EmacsFormula
   sha256 "269d1a0710f86c3fd82a7099f5b9f359b45d7dd36b0ab7e4afbe082842c1b9f1"
   head "https://github.com/abo-abo/avy.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

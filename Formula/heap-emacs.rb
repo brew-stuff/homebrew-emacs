@@ -8,7 +8,7 @@ class HeapEmacs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "heap-#{version}.el", "heap.el"

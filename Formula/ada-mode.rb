@@ -10,7 +10,7 @@ class AdaMode < EmacsFormula
 
   option "without-reference", "Build without the reference manual"
 
-  depends_on :emacs => "24.2"
+  depends_on EmacsRequirement => "24.2"
   depends_on "dunn/emacs/wisi"
 
   resource "reference" do

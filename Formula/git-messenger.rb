@@ -14,7 +14,7 @@ class GitMessenger < EmacsFormula
     sha256 "4fc7ccc7ddec59eb7c56782b1be203ed39b10d6fcd582055df960995fd060b4b" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/popup"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

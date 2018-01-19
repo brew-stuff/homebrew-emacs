@@ -8,7 +8,7 @@ class TnfaEmacs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/queue-emacs"
 
   def install

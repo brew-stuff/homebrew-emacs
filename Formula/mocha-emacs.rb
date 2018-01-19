@@ -12,7 +12,7 @@ class MochaEmacs < EmacsFormula
     depends_on "dunn/emacs/s-emacs"
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/js2-mode"
 
   def install

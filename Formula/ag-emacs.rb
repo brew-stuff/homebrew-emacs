@@ -7,7 +7,7 @@ class AgEmacs < EmacsFormula
   sha256 "5951a28a112a7adeb2276d12bb9543e5ea4a42ca27fcd50c7a0e436fb9b995e6"
   head "https://github.com/Wilfred/ag.el.git"
 
-  depends_on :emacs => "23.4"
+  depends_on EmacsRequirement => "23.4"
   depends_on "the_silver_searcher"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/s-emacs"

@@ -7,7 +7,7 @@ class SimpleHttpd < EmacsFormula
   sha256 "1908f12864c3cfa3997859e4e4caf78cfab59d925ca8516ae898485be3802707"
   head "https://github.com/skeeto/emacs-web-server.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

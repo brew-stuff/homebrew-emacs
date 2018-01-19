@@ -8,7 +8,7 @@ class LoadDir < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     mv "load-dir-#{version}.el", "load-dir.el"

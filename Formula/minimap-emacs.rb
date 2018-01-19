@@ -6,7 +6,7 @@ class MinimapEmacs < EmacsFormula
   url "http://elpa.gnu.org/packages/minimap-1.2.el"
   sha256 "68edade04864f7d04a7777922fc0cac3d3999caf73c49c298915ed7a7c6f9ded"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "minimap-#{version}.el", "minimap.el"

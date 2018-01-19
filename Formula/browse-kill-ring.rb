@@ -7,7 +7,7 @@ class BrowseKillRing < EmacsFormula
   sha256 "3323acad302516a644f43cf726a2b3ce1be873fa87ce60a5969e1ea761ac3b35"
   head "https://github.com/browse-kill-ring/browse-kill-ring.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile Dir["*.el"]

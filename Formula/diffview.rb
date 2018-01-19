@@ -7,7 +7,7 @@ class Diffview < EmacsFormula
   sha256 "91b3c9cfa03230fb78555b3d714c3c0ffc8984c7bbb733954dbf47f9eaaf6dbe"
   head "https://github.com/mgalgs/diffview-mode.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "diffview-#{version}.el", "diffview.el" if build.stable?

@@ -7,7 +7,7 @@ class Robe < EmacsFormula
   sha256 "790d201cc8aa7c95aaf9ca10b322c3c8944ffebd9e4045c047487297922fe4ee"
   head "https://github.com/dgutov/robe.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on :ruby => "1.9"
   depends_on "dunn/emacs/inf-ruby"
 

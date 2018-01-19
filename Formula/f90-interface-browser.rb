@@ -13,7 +13,7 @@ class F90InterfaceBrowser < EmacsFormula
     sha256 "11d1af4867f71f99983df7901b5190f7ab6dae55663eea0ee840c014a0138911" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "f90-interface-browser.el"

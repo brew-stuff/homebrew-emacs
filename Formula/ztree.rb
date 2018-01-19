@@ -14,7 +14,7 @@ class Ztree < EmacsFormula
     sha256 "a1529c28939be1b7f0bf8723e08d1b79e1073f7a741f01152369bd5105573fca" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

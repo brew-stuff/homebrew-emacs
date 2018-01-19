@@ -7,7 +7,7 @@ class Crisp < EmacsFormula
   sha256 "11589f5526680d76d6aa8d0ac7ce1bef3bb1e05bc2cf92adfe29114efb7176f5"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/crisp/crisp.el"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "crisp-#{version}.el", "crisp.el"

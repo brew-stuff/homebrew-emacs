@@ -14,7 +14,7 @@ class TextmateEmacs < EmacsFormula
     sha256 "15528cfd245976e10b7fde8aaa9d98a1fd99a93df3ccf69968fe2bc7fc145388" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "textmate.el"

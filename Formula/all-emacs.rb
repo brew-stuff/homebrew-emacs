@@ -7,7 +7,7 @@ class AllEmacs < EmacsFormula
   sha256 "23c200460cb8ebcbc03e781562277e550b8c6bb075593de0d70840dbc165049e"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/all/all.el"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "all-#{version}.el", "all.el" if build.stable?

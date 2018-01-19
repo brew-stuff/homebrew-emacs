@@ -6,7 +6,7 @@ class Javaimp < EmacsFormula
   url "https://elpa.gnu.org/packages/javaimp-0.6.tar"
   sha256 "ce09593f934c370c41e99f95d4aeaab1581414213e7d6af09952e7653a64b304"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
 
   def install

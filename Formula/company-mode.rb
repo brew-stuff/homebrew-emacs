@@ -15,7 +15,7 @@ class CompanyMode < EmacsFormula
   option "with-statistics", "Include statistical ranking minor mode"
   option "with-web", "Install web templating backend"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/irony-mode" => :optional
 
   if build.with? "web"
