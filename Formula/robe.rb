@@ -8,7 +8,7 @@ class Robe < EmacsFormula
   head "https://github.com/dgutov/robe.git"
 
   depends_on EmacsRequirement => "24.4"
-  depends_on :ruby => "1.9"
+  depends_on "ruby" => :recommended if MacOS.version <= :mountain_lion
   depends_on "dunn/emacs/inf-ruby"
 
   def install
