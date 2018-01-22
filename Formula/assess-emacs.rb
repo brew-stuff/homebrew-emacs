@@ -9,7 +9,7 @@ class AssessEmacs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "cask" => :build
 
   depends_on "dunn/emacs/seq"

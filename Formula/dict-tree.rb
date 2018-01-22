@@ -8,7 +8,7 @@ class DictTree < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/heap-emacs"
   depends_on "dunn/emacs/tnfa-emacs"
   depends_on "dunn/emacs/trie-emacs"

@@ -14,7 +14,7 @@ class LedgerMode < EmacsFormula
     sha256 "5fee80edc9d1d10ee3ecabfcb2f226fa11083864b635937da3f393ce379a0ef7" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "cmake" => :build
 
   def install

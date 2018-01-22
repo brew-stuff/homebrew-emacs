@@ -12,7 +12,7 @@ class LocChanges < EmacsFormula
     depends_on "autoconf" => :build
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     if build.stable?

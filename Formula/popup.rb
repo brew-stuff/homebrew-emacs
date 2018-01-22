@@ -14,7 +14,7 @@ class Popup < EmacsFormula
     sha256 "185a95d7bae875a306141dabb88bbc3f8729c6a3cf0073b816d6b42abfcd6690" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

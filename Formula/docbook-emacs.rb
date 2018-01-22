@@ -6,7 +6,7 @@ class DocbookEmacs < EmacsFormula
   url "http://elpa.gnu.org/packages/docbook-0.1.el"
   sha256 "668706d1d52744295cce5c850f4de273eb256eea109b59d3fdb5180e1b7aa007"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "docbook-#{version}.el", "docbook.el"

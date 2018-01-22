@@ -7,7 +7,7 @@ class Wgrep < EmacsFormula
   sha256 "819219bafe76fa8b5f3e5eb50c46e23c0d47ce0c5d84ae9b791d9cacaebf4be4"
   head "https://github.com/mhayashi1120/Emacs-wgrep.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     system "make", "compile"

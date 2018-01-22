@@ -8,7 +8,7 @@ class GnugoEmacs < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "gnu-go"
   depends_on "dunn/emacs/ascii-art-to-unicode"
   depends_on "dunn/emacs/xpm-emacs"

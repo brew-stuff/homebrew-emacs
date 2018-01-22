@@ -6,7 +6,7 @@ class AdaptiveWrap < EmacsFormula
   url "https://elpa.gnu.org/packages/adaptive-wrap-0.5.1.el"
   sha256 "940ed8b720efc56d235ffd6ecc78a17094aef956d4eea89a98dc5f96af7c2762"
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     mv "adaptive-wrap-#{version}.el", "adaptive-wrap.el" if build.stable?

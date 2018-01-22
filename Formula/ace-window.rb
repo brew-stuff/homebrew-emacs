@@ -14,7 +14,7 @@ class AceWindow < EmacsFormula
     sha256 "203e1f373ffe7fde6c54f7c7d2bac0ea54c8155426ea244ff7773c71843eba5f" => :mavericks
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/avy"
 
   def install

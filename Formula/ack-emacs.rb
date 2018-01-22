@@ -7,7 +7,7 @@ class AckEmacs < EmacsFormula
   sha256 "395172b1b930eed0ea61911f6036a9b46ad29dd0b267e05b3ce213e223d4926a"
   head "https://github.com/leoliu/ack-el.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile Dir["*.el"]

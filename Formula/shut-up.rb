@@ -7,7 +7,7 @@ class ShutUp < EmacsFormula
   sha256 "a11df31fe160d2ec7e94874e98dca804414f08e6cd9fe7e38ec994359bcc7f26"
   head "https://github.com/cask/shut-up.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "shut-up.el"

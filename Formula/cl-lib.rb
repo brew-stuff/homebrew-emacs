@@ -13,7 +13,7 @@ class ClLib < EmacsFormula
     sha256 "b48a9625be157fadf2e11c64e1abc01c3e169ef87de924d5c31179b032858ef5" => :yosemite
   end
 
-  depends_on :emacs => "21"
+  depends_on EmacsRequirement => "21"
 
   def install
     mv "cl-lib-#{version}.el", "cl-lib.el"

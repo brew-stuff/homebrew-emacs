@@ -14,7 +14,7 @@ class CsharpMode < EmacsFormula
     sha256 "42d63e7cf2281186389dfa824888eec5ad2f8c9cb0989b9a6e9acf02b24f4293" => :mavericks
   end
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     byte_compile "csharp-mode.el"

@@ -11,7 +11,7 @@ class Magit < EmacsFormula
 
   option "with-gh-pulls", "Build with GitHub pull request extension"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on "dunn/emacs/async-emacs"
   depends_on "dunn/emacs/dash-emacs"
 

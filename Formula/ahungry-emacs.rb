@@ -7,7 +7,7 @@ class AhungryEmacs < EmacsFormula
   sha256 "fbacbbeecbbd94511eae99e18fb1bcddbe556a141fb81769993d7fb968b6b091"
   head "https://github.com/ahungry/color-theme-ahungry.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     byte_compile "ahungry-theme.el", "color-theme-ahungry.el"

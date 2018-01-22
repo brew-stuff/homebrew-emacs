@@ -7,7 +7,7 @@ class KnowYourHttpWell < EmacsFormula
   sha256 "d26229332d1ebb15cce3970e9185390244f10806986bbaa3e28f7185d0e773f8"
   head "https://github.com/for-GET/know-your-http-well.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     cd "emacs" do

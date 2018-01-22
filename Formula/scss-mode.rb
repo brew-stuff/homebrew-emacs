@@ -7,7 +7,7 @@ class ScssMode < EmacsFormula
   sha256 "765b06cd6f93763c5dc5903b1645d98ea9ea6f75f5d6bc96b68d979224f90812"
   head "https://github.com/antonj/scss-mode.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "scss-mode.el"

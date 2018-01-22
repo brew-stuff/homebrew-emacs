@@ -6,7 +6,7 @@ class DismalMode < EmacsFormula
   url "http://elpa.gnu.org/packages/dismal-1.5.tar"
   sha256 "e610562530756e0714155643d9ee1d8847fe082b79237ea5cb9a4ec10c371aee"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile Dir["*.el"]

@@ -7,7 +7,7 @@ class AnsiEmacs < EmacsFormula
   sha256 "884beed6a8d4c33d2f99fdf2b1092c4d06f18eaf2b250d4fb843a214d726528e"
   head "https://github.com/rejeep/ansi.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/s-emacs"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")

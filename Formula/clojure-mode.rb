@@ -9,7 +9,7 @@ class ClojureMode < EmacsFormula
 
   option "with-inf", "Build with the inferior REPL"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "cask"
 
   resource "inf" do

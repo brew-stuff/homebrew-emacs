@@ -6,7 +6,7 @@ class DjvuEmacs < EmacsFormula
   url "http://elpa.gnu.org/packages/djvu-0.5.el"
   sha256 "52e3f98512c3b1425a1e1c7e36c6b435446b071cb21ca91c2c5fbbaa23d9fef2"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "djvulibre"
 
   def install

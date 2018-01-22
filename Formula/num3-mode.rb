@@ -6,7 +6,7 @@ class Num3Mode < EmacsFormula
   url "http://elpa.gnu.org/packages/num3-mode-1.2.el"
   sha256 "a8ad0b2181a6024fdff2cff93c6d03dcc95dc430eb1d3215c1d9685caef4a3da"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "num3-mode-#{version}.el", "num3-mode.el"

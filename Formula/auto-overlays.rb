@@ -14,7 +14,7 @@ class AutoOverlays < EmacsFormula
     sha256 "92d8f95abb3a368dffaca663d466f746610224a34ef30609f1199fdd360dfd24" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     # head is a joint repository so it doesn't include documentation

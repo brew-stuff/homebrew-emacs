@@ -7,7 +7,7 @@ class PdfTools < EmacsFormula
   sha256 "663d22ce4a56c1eb75a329fa4ab5f77d92c030fcc1deaf4ec95b24356cf3351a"
   head "https://github.com/politza/pdf-tools.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

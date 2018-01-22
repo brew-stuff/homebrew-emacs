@@ -6,7 +6,7 @@ class Timerfunctions < EmacsFormula
   url "http://elpa.gnu.org/packages/timerfunctions-1.4.2.el"
   sha256 "854bc3716a77db2bc5f7f264166f6156e7a3b3c3296e1adface15f04b6455888"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "timerfunctions-#{version}.el", "timerfunctions.el"

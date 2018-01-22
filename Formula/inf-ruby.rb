@@ -9,7 +9,7 @@ class InfRuby < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "23.1"
+  depends_on EmacsRequirement => "23.1"
 
   def install
     byte_compile "inf-ruby.el"

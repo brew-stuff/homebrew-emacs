@@ -9,7 +9,7 @@ class Indium < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs => "25.1"
+  depends_on EmacsRequirement => "25.1"
   depends_on "dunn/emacs/company-mode"
   depends_on "dunn/emacs/js2-mode"
   depends_on "dunn/emacs/seq"

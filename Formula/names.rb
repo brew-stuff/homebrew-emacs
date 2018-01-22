@@ -7,7 +7,7 @@ class Names < EmacsFormula
   sha256 "4d84c4cf981b0d3597f0e94668e1e31352f477b08fd2fdef699ef43480d3558f"
   head "https://github.com/Malabarba/names.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

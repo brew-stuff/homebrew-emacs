@@ -6,7 +6,7 @@ class Ediprolog < EmacsFormula
   url "https://elpa.gnu.org/packages/ediprolog-1.2.el"
   sha256 "5fb97c61fa51a5a68d4098458c34461fbc8362e0afbeacbcac202076ee762e0d"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
 
   def install
     mv "ediprolog-#{version}.el", "ediprolog.el"

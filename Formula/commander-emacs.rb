@@ -7,7 +7,7 @@ class CommanderEmacs < EmacsFormula
   sha256 "5eb0f7f016b484ffc91bcd54ced1b0455667e5ee93077a92eafc9d5f4214daa4"
   head "https://github.com/rejeep/commander.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/f-emacs"
   depends_on "dunn/emacs/s-emacs"

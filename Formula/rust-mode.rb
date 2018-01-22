@@ -14,7 +14,7 @@ class RustMode < EmacsFormula
     sha256 "f8ab2b552e3323c0c87ebfec39f25d3988f7586f90792001b7518848373a0083" => :yosemite
   end
 
-  depends_on :emacs => "24"
+  depends_on EmacsRequirement => "24"
 
   def install
     ENV["EMACS"] = which "emacs"

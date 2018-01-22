@@ -7,7 +7,7 @@ class ElispBugHunter < EmacsFormula
   sha256 "5d009cb82b8083c681c17446a318e9fe19ac686fb7cede3748999020abd5f476"
   head "https://github.com/Malabarba/elisp-bug-hunter.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

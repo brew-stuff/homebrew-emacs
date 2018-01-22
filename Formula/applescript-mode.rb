@@ -9,7 +9,7 @@ class ApplescriptMode < EmacsFormula
 
   head "http://svn.osdn.jp/svnroot/macemacsjp/applescript-mode/trunk"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "applescript-mode.el"

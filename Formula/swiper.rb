@@ -7,7 +7,7 @@ class Swiper < EmacsFormula
   sha256 "b507579202e438103f2bd1925b4a5ddb9dccb85efdca5faf786d07f58521816e"
   head "https://github.com/abo-abo/swiper.git"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     system "make", "compile"

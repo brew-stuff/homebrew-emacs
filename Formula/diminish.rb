@@ -7,7 +7,7 @@ class Diminish < EmacsFormula
   sha256 "49ce6cb24d40bde0f3e82a30adbc19b322fd3e56d53208c0cad9b1b275126644"
   head "https://github.com/myrjola/diminish.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "diminish.el"

@@ -13,7 +13,7 @@ class ScrollRestore < EmacsFormula
     sha256 "0151cec65c17775e1344619ce240fe892653193ca9c87eee97eca85c293c344c" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "scroll-restore-#{version}.el", "scroll-restore.el"

@@ -6,7 +6,7 @@ class Flylisp < EmacsFormula
   url "http://elpa.gnu.org/packages/flylisp-0.2.el"
   sha256 "6693ed3b4ca7914470326619302bc568520243c83611a8a9289bf21e3c4e0042"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
 
   def install
     mv "flylisp-#{version}.el", "flylisp.el"

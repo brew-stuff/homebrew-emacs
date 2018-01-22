@@ -13,7 +13,7 @@ class PokerEmacs < EmacsFormula
     sha256 "c94d19d10fccf200c9a51a4b439e9d24678a80ff151a7638ef635176803905d2" => :yosemite
   end
 
-  depends_on emacs: "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

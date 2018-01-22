@@ -7,7 +7,7 @@ class Projectile < EmacsFormula
   sha256 "c7417e25f2fc113194ca68aaecb1a6fe55e44734d5ab0fd643ba7eb0511779d6"
   head "https://github.com/bbatsov/projectile.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/epl"
   depends_on "dunn/emacs/pkg-info"

@@ -6,7 +6,7 @@ class NhexlMode < EmacsFormula
   url "https://elpa.gnu.org/packages/nhexl-mode-0.2.el"
   sha256 "a097eebd37ec42776595f54e54987829f3aef653457a33c25822f2d6fbbc3f63"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

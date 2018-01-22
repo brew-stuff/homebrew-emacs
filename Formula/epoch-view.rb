@@ -6,7 +6,7 @@ class EpochView < EmacsFormula
   url "http://elpa.gnu.org/packages/epoch-view-0.0.1.el"
   sha256 "dd6d15ce3d847af00102aab889e1d7353d7323bfa27a8907dac4a5e77d2ec2f3"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "epoch-view-#{version}.el", "epoch-view.el"

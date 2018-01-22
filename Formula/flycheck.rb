@@ -15,7 +15,7 @@ class Flycheck < EmacsFormula
   option "with-package", "Include checker for package.el metadata"
   option "with-pos-tip", "Use pos-tip for tooltip display"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/let-alist"
   depends_on "dunn/emacs/pkg-info"

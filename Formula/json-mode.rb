@@ -7,7 +7,7 @@ class JsonMode < EmacsFormula
   sha256 "e537a936ecfc0374e9bbbf6319bd7fc5f36258585f44acd3bcc71ccbc82d041a"
   head "https://github.com/joshwnj/json-mode.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/json-reformat"
   depends_on "dunn/emacs/json-snatcher"
 

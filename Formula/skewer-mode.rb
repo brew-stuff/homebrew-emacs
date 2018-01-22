@@ -7,7 +7,7 @@ class SkewerMode < EmacsFormula
   sha256 "a824879872985d9fad1a1aa57c965b03d61106b33e1ff7102991a8a6d80a05ea"
   head "https://github.com/skeeto/skewer-mode.git"
 
-  depends_on :emacs => "24.3"
+  depends_on EmacsRequirement => "24.3"
   depends_on "dunn/emacs/js2-mode"
   depends_on "dunn/emacs/simple-httpd"
 

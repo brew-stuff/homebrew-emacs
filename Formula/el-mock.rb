@@ -7,7 +7,7 @@ class ElMock < EmacsFormula
   sha256 "0b8db563fbf9d8a4793afa57c9f59eb44ca07f5de248fff61fb677542c49bc9b"
   head "https://github.com/rejeep/el-mock.el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "el-mock.el"

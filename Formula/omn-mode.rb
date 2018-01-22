@@ -6,7 +6,7 @@ class OmnMode < EmacsFormula
   url "https://elpa.gnu.org/packages/omn-mode-1.2.el"
   sha256 "829c291ddd7f3208e5142cce450e93d5ac808f5d919e9f7011c6b2b614aef45c"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "omn-mode-#{version}.el", "omn-mode.el"

@@ -7,7 +7,7 @@ class Cider < EmacsFormula
   sha256 "22381d3b3522c0b897f62d35592420c2e7843dd319a32a72eeb622483593f848"
   head "https://github.com/clojure-emacs/cider.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
   depends_on :java => ["1.7+", :run]
 
   depends_on "dunn/emacs/clojure-mode"

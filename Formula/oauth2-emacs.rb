@@ -6,7 +6,7 @@ class Oauth2Emacs < EmacsFormula
   url "https://elpa.gnu.org/packages/oauth2-0.11.el"
   sha256 "b76a4c5792292d3e3b5616e4f38735601e2f0ac5f59006dd5ecbeaaf6462b379"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "oauth2-#{version}.el", "oauth2.el"

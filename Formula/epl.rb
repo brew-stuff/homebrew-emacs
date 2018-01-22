@@ -7,7 +7,7 @@ class Epl < EmacsFormula
   sha256 "2cabc9324cf7a88abf1bc00c3fe2f79105e3170a005ab28453fb1537d4b02194"
   head "https://github.com/cask/epl.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "cask"
 
   def install

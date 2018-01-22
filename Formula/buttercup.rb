@@ -7,7 +7,7 @@ class Buttercup < EmacsFormula
   sha256 "844e9bec68767d2c077655c9d0ad290fba8fca674586220475ae7df4c54d13e9"
   head "https://github.com/jorgenschaefer/emacs-buttercup.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     system "make", "test"

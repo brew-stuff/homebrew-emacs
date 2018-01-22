@@ -14,7 +14,7 @@ class DartMode < EmacsFormula
     sha256 "010bab624b6501bca59135a9c06048a445866d5694bb1d3439f0a1fa9bb4ded7" => :yosemite
   end
 
-  depends_on :emacs => "25.1"
+  depends_on EmacsRequirement => "25.1"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/flycheck"
 

@@ -14,7 +14,7 @@ class PandocMode < EmacsFormula
     sha256 "6661b3e1a1040338f88d26c2c4cecd5787873b3c9f6cd1c30fbd585592b2bc83" => :yosemite
   end
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/dash-emacs"
   depends_on "dunn/emacs/hydra-emacs"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")

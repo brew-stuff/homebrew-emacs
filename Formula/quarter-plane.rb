@@ -6,7 +6,7 @@ class QuarterPlane < EmacsFormula
   url "http://elpa.gnu.org/packages/quarter-plane-0.1.el"
   sha256 "b5f2fbdffb9000f9035aac89c9bb78f9daacc2f1a977ed8244b000f79b564342"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "quarter-plane-#{version}.el", "quarter-plane.el"

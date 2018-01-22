@@ -7,7 +7,7 @@ class PmdEmacs < EmacsFormula
   sha256 "d4677bf1039f2a25b0a029c593bfc1f442c8fb0807b17092ce422cd25f390f42"
   head "https://github.com/pmd/pmd-emacs.git"
 
-  depends_on :emacs => "22.1"
+  depends_on EmacsRequirement => "22.1"
   depends_on "pmd"
 
   def install

@@ -7,7 +7,7 @@ class DbusCodegen < EmacsFormula
   sha256 "fc571aa29a09063995e1df525e001b1196f5193b8bbb1f007c141a9b0d9327be"
   head "https://github.com/ueno/dbus-codegen-el.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install

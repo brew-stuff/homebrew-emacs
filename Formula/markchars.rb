@@ -6,7 +6,7 @@ class Markchars < EmacsFormula
   url "http://elpa.gnu.org/packages/markchars-0.2.0.el"
   sha256 "1b12ffda377f5769ec13f6ea674b492779f79e9669a0c261e7057bf665dac9f2"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "markchars-#{version}.el", "markchars.el"

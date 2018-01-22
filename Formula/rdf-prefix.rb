@@ -7,7 +7,7 @@ class RdfPrefix < EmacsFormula
   sha256 "a82a18be9f0bffdc8856a845797df224470e7b5a049f763c48ea0d8aa9b68f4d"
   head "https://github.com/simenheg/rdf-prefix.git"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "rdf-prefix.el"

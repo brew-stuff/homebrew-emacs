@@ -24,7 +24,7 @@ class YamlMode < EmacsFormula
   end
 
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     (share/"emacs/site-lisp/yaml-mode").mkpath

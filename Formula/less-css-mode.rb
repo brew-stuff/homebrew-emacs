@@ -14,7 +14,7 @@ class LessCssMode < EmacsFormula
     sha256 "d1bc74cc2f12dcf6a5d11f7d38a62a387c7a72b6f2b04cbad1e2784cf182d571" => :yosemite
   end
 
-  depends_on :emacs => "22.2"
+  depends_on EmacsRequirement => "22.2"
 
   def install
     byte_compile "less-css-mode.el"

@@ -12,7 +12,7 @@ class EditorconfigEmacs < EmacsFormula
 
   option "without-editorconfig", "Use the Emacs Lisp implementation of EditorConfig Core"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "cmake" => :build
   depends_on "editorconfig" => :recommended
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")

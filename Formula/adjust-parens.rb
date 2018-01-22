@@ -6,7 +6,7 @@ class AdjustParens < EmacsFormula
   url "http://elpa.gnu.org/packages/adjust-parens-3.0.tar"
   sha256 "ef3febb45ed9a4291bec226ce7d7d641b75a7c3f2e197382894763efdacbf599"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     system "make"

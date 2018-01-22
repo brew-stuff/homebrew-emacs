@@ -17,7 +17,7 @@ class AutoComplete < EmacsFormula
   option "with-php", "Install ac-php"
   option "with-slime", "Install ac-slime"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/popup"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

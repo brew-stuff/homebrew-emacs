@@ -7,7 +7,7 @@ class PuppetMode < EmacsFormula
   sha256 "71ebcb4bf518f9aca404260186b97556fb52060bc56edb77ab1881d64543174d"
   head "https://github.com/lunaryorn/puppet-mode.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
   depends_on "dunn/emacs/pkg-info"
 

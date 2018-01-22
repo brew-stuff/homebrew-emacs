@@ -7,7 +7,7 @@ class HydraEmacs < EmacsFormula
   sha256 "a8664c86a5f48af37e47983829d653b31114eade87a2b6f234107eeedc980421"
   head "https://github.com/abo-abo/hydra.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     system "make", "test"

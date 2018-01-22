@@ -6,7 +6,7 @@ class MinibufferLine < EmacsFormula
   url "http://elpa.gnu.org/packages/minibuffer-line-0.1.el"
   sha256 "345e7d38063c949d270535b5d53e652dd3eecca6fd398e4228ca1a71738cc4db"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "minibuffer-line-#{version}.el", "minibuffer-line.el"

@@ -7,7 +7,7 @@ class CapsLockEmacs < EmacsFormula
   sha256 "6a5fba4a7fb30ce50050477639ed34bb76f2e374a7083417c88ddc80aae290c4"
   head "http://git.savannah.gnu.org/cgit/emacs/elpa.git/plain/packages/caps-lock/caps-lock.el"
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     mv "caps-lock-#{version}.el", "caps-lock.el" if build.stable?

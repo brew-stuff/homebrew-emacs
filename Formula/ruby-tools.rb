@@ -14,7 +14,7 @@ class RubyTools < EmacsFormula
     sha256 "2e4aac3b6ba9c4ee87947be0b592f687c5287428f311ce76b3ee9651c9cb6f41" => :mavericks
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     byte_compile "ruby-tools.el"

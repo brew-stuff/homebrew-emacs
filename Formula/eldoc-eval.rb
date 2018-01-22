@@ -7,7 +7,7 @@ class EldocEval < EmacsFormula
   sha256 "9250d2a3506eff7bc7496e8d0033e5afde4effe8f58e83b27cfc4071e751b33c"
   head "https://github.com/thierryvolpiatto/eldoc-eval.git"
 
-  depends_on :emacs => "24.4"
+  depends_on EmacsRequirement => "24.4"
 
   def install
     byte_compile "eldoc-eval.el"

@@ -8,7 +8,7 @@ class Gnorb < EmacsFormula
 
   bottle :disable
 
-  depends_on :emacs
+  depends_on EmacsRequirement
   depends_on "dunn/emacs/org-mode" if Emacs.version < Version.create("24.1")
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 

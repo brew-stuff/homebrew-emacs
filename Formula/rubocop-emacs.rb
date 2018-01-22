@@ -7,7 +7,7 @@ class RubocopEmacs < EmacsFormula
   sha256 "4fe70cfa4ee1134613e5fb20c55958cbc4d27d6df758a657746d04dd296876f8"
   head "https://github.com/bbatsov/rubocop-emacs.git"
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/dash-emacs"
 
   def install

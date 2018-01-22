@@ -15,7 +15,7 @@ class W3 < EmacsFormula
     sha256 "2593f02cf26ce94ea59723a8ac0f115ea4f9abfffcbf3f53cafbce32cc9030f4" => :yosemite
   end
 
-  depends_on :emacs
+  depends_on EmacsRequirement
 
   def install
     ert_run_tests "tests/url-test.el"

@@ -9,7 +9,7 @@ class DashEmacs < EmacsFormula
 
   bottle :unneeded
 
-  depends_on :emacs => "24.1"
+  depends_on EmacsRequirement => "24.1"
 
   def install
     system "./run-tests.sh"
