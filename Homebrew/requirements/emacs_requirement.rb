@@ -1,6 +1,5 @@
 class EmacsRequirement < Requirement
   fatal true
-  default_formula "emacs"
 
   def initialize(tags)
     @version = tags.shift if /\d+\.*\d*/ =~ tags.first
