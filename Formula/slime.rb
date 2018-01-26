@@ -2,7 +2,6 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
 class CommonLispRequirement < Requirement
   fatal true
-  default_formula "sbcl"
 
   # Based on ordering of available implementations from
   # https://common-lisp.net/project/slime/; except for SBCL which is
