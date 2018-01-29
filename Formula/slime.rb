@@ -22,7 +22,7 @@ class CommonLispRequirement < Requirement
   end
 
   def message
-    s = <<-EOS.undent
+    s = <<~EOS
       A Common Lisp implementation is required:
       - Steel Bank Common Lisp (SBCL)
       - CMU Common Lisp (cmucl)
