@@ -26,7 +26,7 @@ class Indium < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/company-mode"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_elisp}")
