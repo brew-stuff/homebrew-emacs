@@ -6,7 +6,7 @@ matrix:
       osx_image: xcode8.2
       rvm: system
     - os: linux
-      rvm: 2.0.0
+      rvm: 2.3.0
 
 env:
   global:
