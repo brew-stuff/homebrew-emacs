@@ -1,34 +1,23 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Muse < EmacsFormula
   desc "Authoring and publishing environment for Emacs"
   homepage "https://www.gnu.org/software/emacs-muse/"
-  url "https://github.com/alexott/muse/archive/v3.20.tar.gz"
-  sha256 "2ef519db1c1119b2346d40ac8ea640143a5ea939d7b40ac3d142200dc275d584"
+  url "https://elpa.gnu.org/packages/muse-3.20.1.tar"
+  sha256 "5eb1128f9fa0eaf3f6a56db3f99aa8fab299ef2031d491bebe29948c40ed1441"
   head "https://github.com/alexott/muse.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :sierra
-    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :el_capitan
-    sha256 "cf1cc4ddfd35590820de2188338c07b93739c19602e43bd86ebdee280f953b5f" => :yosemite
-  end
+  bottle :disable
 
   depends_on EmacsRequirement => "21.1"
   depends_on "dunn/emacs/htmlize"
 
   def install
-    inreplace "Makefile.defs.default", "/usr/local", prefix
+    rm "muse-pkg.el"
 
-    # for some reason `make all` hangs in Homebrew
-    system "make", "autoloads"
-    system "make", "lisp"
-    system "make", "contrib"
-    system "make", "experimental"
-    system "make", "info-only"
-
-    system "make", "test"
-    system "make", "install"
+    info.install "muse.info"
+    byte_compile Dir["*.el"]
+    elisp.install Dir["*.el"], Dir["*.elc"]
   end
 
   test do
