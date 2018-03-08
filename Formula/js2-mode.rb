@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Js2Mode < EmacsFormula
   desc "Improved major mode for editing JavaScript in Emacs"
   homepage "https://github.com/mooz/js2-mode"
-  url "https://github.com/mooz/js2-mode/archive/20170721.tar.gz"
-  sha256 "dcf8548ea1cd1c5ba2bc3a1a8764cbca3ba6d8fee7f1cedd5ec1ba0e1156f737"
+  url "https://github.com/mooz/js2-mode/archive/20180301.tar.gz"
+  sha256 "83972a5f3736d80250816dbd002d2785283f45f199b9b8ee70ab66acf8834f8d"
   head "https://github.com/mooz/js2-mode.git"
 
   bottle :disable
@@ -18,7 +18,7 @@ class Js2Mode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "js2-mode")
       (print (minibuffer-prompt-width))
