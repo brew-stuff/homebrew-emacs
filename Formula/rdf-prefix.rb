@@ -15,7 +15,7 @@ class RdfPrefix < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "rdf-prefix")
       (print (rdf-prefix-lookup "bf"))

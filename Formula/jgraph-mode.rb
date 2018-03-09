@@ -16,7 +16,7 @@ class JgraphMode < EmacsFormula
                                                   "jgraph-mode.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'jgraph-mode)
@@ -24,7 +24,7 @@ class JgraphMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/jgraph-mode")
       (load "jgraph-mode")
       (print jgraph-commands)

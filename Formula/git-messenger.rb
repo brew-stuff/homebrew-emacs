@@ -24,7 +24,7 @@ class GitMessenger < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/git-messenger")
       (add-to-list 'load-path "#{Formula["popup"].opt_share}/emacs/site-lisp/popup")
       (load "git-messenger")

@@ -15,7 +15,7 @@ class MinibufferLine < EmacsFormula
                                                       "minibuffer-line.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'minibuffer-line)
@@ -23,7 +23,7 @@ class MinibufferLine < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/minibuffer-line")
       (load "minibuffer-line")
       (print (minibuffer-prompt-width))

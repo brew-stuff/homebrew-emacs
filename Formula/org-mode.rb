@@ -43,7 +43,7 @@ class OrgMode < EmacsFormula
     system "make", "all"
 
     rm "local.mk"
-    (buildpath/"local.mk").write <<-EOS.undent
+    (buildpath/"local.mk").write <<~EOS
       prefix  = #{prefix}
       lispdir = #{elisp}
       datadir = #{etc}/emacs/#{name}
@@ -57,7 +57,7 @@ class OrgMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "org")
       (print (minibuffer-prompt-width))

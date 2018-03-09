@@ -15,7 +15,7 @@ class JsonSnatcher < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "json-snatcher")
       (print (jsons-is-number "808"))

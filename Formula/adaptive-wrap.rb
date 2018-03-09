@@ -16,7 +16,7 @@ class AdaptiveWrap < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "adaptive-wrap")
       (adaptive-wrap-prefix-mode 1)

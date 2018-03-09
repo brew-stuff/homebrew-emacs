@@ -16,7 +16,7 @@ class ElX < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "el-x")
       (print (minibuffer-prompt-width))

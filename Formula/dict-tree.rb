@@ -20,7 +20,7 @@ class DictTree < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["trie-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["heap-emacs"].opt_elisp}")

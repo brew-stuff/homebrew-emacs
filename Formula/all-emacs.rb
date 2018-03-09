@@ -15,7 +15,7 @@ class AllEmacs < EmacsFormula
     (share/"emacs/site-lisp/all").install "all.el", "all.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'all)
@@ -23,7 +23,7 @@ class AllEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/all")
       (load "all")
       (print (minibuffer-prompt-width))

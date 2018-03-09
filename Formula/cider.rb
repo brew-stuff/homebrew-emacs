@@ -23,7 +23,7 @@ class Cider < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/clojure-mode"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")

@@ -18,7 +18,7 @@ class SimpleHttpd < EmacsFormula
     doc.install "README.md"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'simple-httpd)
@@ -26,7 +26,7 @@ class SimpleHttpd < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/simple-httpd")
       (load "simple-httpd")
       (setq httpd-root "#{testpath}")

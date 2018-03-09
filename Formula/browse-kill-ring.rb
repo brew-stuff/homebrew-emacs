@@ -17,7 +17,7 @@ class BrowseKillRing < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/browse-kill-ring")
       (load "browse-kill-ring")
       (browse-kill-ring-default-keybindings)

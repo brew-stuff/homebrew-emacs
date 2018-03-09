@@ -17,7 +17,7 @@ class InfRuby < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "inf-ruby")
       (print (minibuffer-prompt-width))

@@ -22,7 +22,7 @@ class LessCssMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "less-css-mode")
       (print (minibuffer-prompt-width))

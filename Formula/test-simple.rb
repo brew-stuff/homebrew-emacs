@@ -29,7 +29,7 @@ class TestSimple < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/test-simple")
       (load "test-simple")
       (print (minibuffer-prompt-width))

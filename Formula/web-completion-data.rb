@@ -26,7 +26,7 @@ class WebCompletionData < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "web-completion-data")
       (print web-completion-data-html-source-dir)

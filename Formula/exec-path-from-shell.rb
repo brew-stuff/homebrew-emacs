@@ -15,7 +15,7 @@ class ExecPathFromShell < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "exec-path-from-shell")
       (print (exec-path-from-shell-copy-env "HOME"))

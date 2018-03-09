@@ -15,7 +15,7 @@ class DjvuEmacs < EmacsFormula
     (share/"emacs/site-lisp/djvu").install "djvu.el", "djvu.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'djvu)
@@ -23,7 +23,7 @@ class DjvuEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/djvu")
       (load "djvu")
       (print (minibuffer-prompt-width))

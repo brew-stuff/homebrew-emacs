@@ -22,7 +22,7 @@ class WebServerEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "web-server")
       (print (minibuffer-prompt-width))

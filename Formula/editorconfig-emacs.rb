@@ -30,7 +30,7 @@ class EditorconfigEmacs < EmacsFormula
 
   def caveats
     if build.without? "editorconfig"
-      <<-EOS.undent
+      <<~EOS
       Set the Emacs variable `editorconfig-exec-path' to
         #{HOMEBREW_PREFIX}/bin/editorconfig-el
       EOS
@@ -38,7 +38,7 @@ class EditorconfigEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "editorconfig")
       (editorconfig-mode 1)

@@ -19,7 +19,7 @@ class PkgInfo < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/pkg-info")
       (add-to-list 'load-path "#{Formula["dunn/emacs/epl"].opt_share}/emacs/site-lisp/epl")
       (load "pkg-info")

@@ -27,14 +27,14 @@ class PdfTools < EmacsFormula
     elisp.install Dir["lisp/pdf*.el"], Dir["lisp/pdf*.elc"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Set the variable `pdf-info-epdfinfo-program' to
       #{HOMEBREW_PREFIX}/bin/epdfinfo
   EOS
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/let-alist"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/tablist"].opt_elisp}")

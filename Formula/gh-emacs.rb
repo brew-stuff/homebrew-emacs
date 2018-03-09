@@ -18,7 +18,7 @@ class GhEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/logito"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/pcache"].opt_elisp}")

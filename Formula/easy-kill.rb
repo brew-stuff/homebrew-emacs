@@ -17,7 +17,7 @@ class EasyKill < EmacsFormula
     doc.install "README.rst"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'easy-kill)
@@ -26,7 +26,7 @@ class EasyKill < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/easy-kill")
       (load "easy-kill")
       (print (minibuffer-prompt-width))

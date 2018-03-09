@@ -16,7 +16,7 @@ class ZenburnEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'custom-theme-load-path "#{elisp}")
       (load-theme 'zenburn t)
       (print (minibuffer-prompt-width))

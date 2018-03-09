@@ -23,7 +23,7 @@ class ClLib < EmacsFormula
   end
 
   if Emacs.version >= Version.create("24.3")
-    def caveats; <<-EOS.undent
+    def caveats; <<~EOS
       Warning: Emacs 24.3 and higher includes cl-lib
 
       Installing the compatibility library in parallel can have unexpected consequences.
@@ -33,7 +33,7 @@ class ClLib < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "cl-lib")
       (print (cl-typep "homebrew" 'string))

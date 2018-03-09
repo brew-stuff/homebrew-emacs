@@ -17,7 +17,7 @@ class PuppetMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (require 'puppet-mode)
       (print (minibuffer-prompt-width))

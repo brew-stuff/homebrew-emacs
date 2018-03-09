@@ -24,7 +24,7 @@ class Htmlize < EmacsFormula
   test do
     (testpath/"test.txt").write "hello"
 
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "htmlize")
       (htmlize-file "#{testpath}/test.txt" "#{testpath}/out.html")
