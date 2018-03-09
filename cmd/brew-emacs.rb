@@ -8,7 +8,7 @@ def template(name)
   classname = name.split("-").collect(&:capitalize).join
   # An added '-emacs' suffix probably isn't part of the actual package name
   name = name.gsub(/-emacs/, "")
-  <<-EOS.undent
+  <<~EOS
   require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 
   class #{classname} < EmacsFormula
@@ -28,7 +28,7 @@ def template(name)
     end
 
     test do
-      (testpath/"test.el").write <<-EOS.undent
+      (testpath/"test.el").write <<~EOS
         (add-to-list 'load-path "\#{elisp}")
         (load "#{name}")
         (print (minibuffer-prompt-width))

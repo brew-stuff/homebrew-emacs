@@ -20,7 +20,7 @@ class TrieEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/heap-emacs"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/tnfa-emacs"].opt_elisp}")

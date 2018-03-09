@@ -132,7 +132,7 @@ class AutoComplete < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/auto-complete")
       (add-to-list 'load-path "#{Formula["dunn/emacs/popup"].opt_share}/emacs/site-lisp/popup")
 

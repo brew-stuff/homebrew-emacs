@@ -19,7 +19,7 @@ class JsonMode < EmacsFormula
   test do
     (testpath/"test.json").write '{ "home": "brew" }'
 
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{Formula["dunn/emacs/json-reformat"].opt_elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/json-snatcher"].opt_elisp}")
       (add-to-list 'load-path "#{elisp}")

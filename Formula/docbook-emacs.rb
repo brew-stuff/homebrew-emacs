@@ -15,7 +15,7 @@ class DocbookEmacs < EmacsFormula
                                               "docbook.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'docbook)
@@ -23,7 +23,7 @@ class DocbookEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/docbook")
       (load "docbook")
       (print (minibuffer-prompt-width))

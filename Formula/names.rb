@@ -16,7 +16,7 @@ class Names < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/names")
       (load "names")
       (print (minibuffer-prompt-width))

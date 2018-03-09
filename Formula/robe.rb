@@ -21,7 +21,7 @@ class Robe < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["inf-ruby"].opt_elisp}")
       (load "robe")

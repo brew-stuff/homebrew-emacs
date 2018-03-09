@@ -21,7 +21,7 @@ class MBuffer < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "m-buffer")
       (print (minibuffer-prompt-width))

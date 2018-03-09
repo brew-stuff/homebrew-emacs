@@ -15,7 +15,7 @@ class OmnMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/omn-mode")
       (load "omn-mode")
       (print (minibuffer-prompt-width))

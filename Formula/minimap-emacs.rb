@@ -15,7 +15,7 @@ class MinimapEmacs < EmacsFormula
                                               "minimap.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'minimap)
@@ -23,7 +23,7 @@ class MinimapEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/minimap")
       (load "minimap")
       (print (minibuffer-prompt-width))

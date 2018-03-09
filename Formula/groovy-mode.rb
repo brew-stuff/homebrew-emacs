@@ -17,14 +17,14 @@ class GroovyMode < EmacsFormula
     prefix.install "gpl-3.0.txt"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Grails mode was not installed, as it currently has additional dependencies
     not available in Homebrew.
   EOS
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "groovy-mode")
       (print (minibuffer-prompt-width))

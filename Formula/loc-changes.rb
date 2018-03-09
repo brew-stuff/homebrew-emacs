@@ -30,7 +30,7 @@ class LocChanges < EmacsFormula
                                                   "loc-changes.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'loc-changes)
@@ -38,7 +38,7 @@ class LocChanges < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/loc-changes")
       (load "loc-changes")
       (print (minibuffer-prompt-width))

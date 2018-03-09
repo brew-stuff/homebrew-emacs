@@ -15,7 +15,7 @@ class LoopEmacs < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (load "loop")
       (print (let ((x 0) (sum 0))

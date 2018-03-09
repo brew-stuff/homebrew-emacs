@@ -28,7 +28,7 @@ class Auctex < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<~EOS
     texmf files have been installed into:
       #{HOMEBREW_PREFIX}/share/texmf
 
@@ -38,7 +38,7 @@ class Auctex < Formula
   end
 
   test do
-    (testpath/".emacs").write <<-EOS.undent
+    (testpath/".emacs").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (require 'tex-site)
     EOS

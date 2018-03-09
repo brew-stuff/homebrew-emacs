@@ -15,7 +15,7 @@ class QuarterPlane < EmacsFormula
                                                     "quarter-plane.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'quarter-plane)
@@ -23,7 +23,7 @@ class QuarterPlane < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/quarter-plane")
       (load "quarter-plane")
       (quarter-plane-delete-whitespace)

@@ -17,7 +17,7 @@ class SkewerMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/skewer-mode")
       (add-to-list 'load-path "#{Formula["dunn/emacs/simple-httpd"].opt_share}/emacs/site-lisp/simple-httpd")
       (add-to-list 'load-path "#{Formula["dunn/emacs/js2-mode"].opt_share}/emacs/site-lisp/js2-mode")

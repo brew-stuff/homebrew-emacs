@@ -17,7 +17,7 @@ class AsciiArtToUnicode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/ascii-art-to-unicode")
       (load "ascii-art-to-unicode")
       (print (minibuffer-prompt-width))

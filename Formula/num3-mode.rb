@@ -15,7 +15,7 @@ class Num3Mode < EmacsFormula
                                                 "num3-mode.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'num3-mode)
@@ -24,7 +24,7 @@ class Num3Mode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/num3-mode")
       (load "num3-mode")
       (global-num3-mode)

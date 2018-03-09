@@ -15,7 +15,7 @@ class DismalMode < EmacsFormula
     doc.install "README", Dir["*.txt"], Dir["*.texi"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add something like the following to your init file:
 
     (setq dismal-directory "#{ENV["HOME"]}/Documents/dismal")
@@ -24,7 +24,7 @@ class DismalMode < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/dismal")
       (setq dismal-directory "#{doc}")
       (load "dismal")

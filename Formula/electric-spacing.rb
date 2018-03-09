@@ -15,7 +15,7 @@ class ElectricSpacing < EmacsFormula
                                                        "electric-spacing.elc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Add the following to your init file:
 
     (require 'electric-spacing)
@@ -23,7 +23,7 @@ class ElectricSpacing < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{share}/emacs/site-lisp/electric-spacing")
       (load "electric-spacing")
       (print (minibuffer-prompt-width))

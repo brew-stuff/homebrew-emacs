@@ -23,7 +23,7 @@ class ListUnicodeDisplay < EmacsFormula
   end
 
   test do
-    (testpath/"test.el").write <<-EOS.undent
+    (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
       (add-to-list 'load-path "#{Formula["dunn/emacs/cl-lib"].opt_elisp}")
       (load "list-unicode-display")
