@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AdaptiveWrap < EmacsFormula
   desc "Emacs minor mode for smart soft-wrapping"
   homepage "https://elpa.gnu.org/packages/adaptive-wrap.html"
-  url "https://elpa.gnu.org/packages/adaptive-wrap-0.5.1.el"
-  sha256 "940ed8b720efc56d235ffd6ecc78a17094aef956d4eea89a98dc5f96af7c2762"
+  url "https://elpa.gnu.org/packages/adaptive-wrap-0.5.2.el"
+  sha256 "5c094189373adfe0e94483ab957b662dd056761ed3d3da18198b13bb140b8ee1"
 
   depends_on EmacsRequirement => "23.1"
 
