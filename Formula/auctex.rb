@@ -1,4 +1,6 @@
-class Auctex < Formula
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
+
+class Auctex < EmacsFormula
   desc "Emacs package for writing and formatting TeX"
   homepage "https://www.gnu.org/software/auctex/"
   url "https://ftp.gnu.org/gnu/auctex/auctex-12.1.tar.gz"
@@ -29,11 +31,10 @@ class Auctex < Formula
 
   def caveats
     <<~EOS
-    texmf files have been installed into:
-      #{HOMEBREW_PREFIX}/share/texmf
-
-    You can add it to your TEXMFHOME using:
-      sudo tlmgr conf texmf TEXMFHOME "~/Library/texmf:#{HOMEBREW_PREFIX}/share/texmf"
+      texmf files have been installed into:
+        #{HOMEBREW_PREFIX}/share/texmf
+       You can add it to your TEXMFHOME using:
+        sudo tlmgr conf texmf TEXMFHOME "~/Library/texmf:#{HOMEBREW_PREFIX}/share/texmf"
     EOS
   end
 
