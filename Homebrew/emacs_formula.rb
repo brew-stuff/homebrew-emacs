@@ -1,5 +1,6 @@
-require File.expand_path("../emacs", __FILE__)
-require File.expand_path("../requirements/emacs_requirement", __FILE__)
+require File.expand_path("emacs", __dir__)
+require File.expand_path("requirements/emacs_requirement", __dir__)
+require File.expand_path("requirements/latex_requirement", __dir__)
 
 class EmacsFormula < Formula
   def initialize(*)
@@ -47,9 +48,9 @@ class EmacsFormula < Formula
     # Detect if we're calling it from the test block or the install
     # block
     dirs = if buildpath.nil?
-             Dir["#{elisp}/**/*"]
-           else
-             Dir["#{buildpath}/**/*"]
+      Dir["#{elisp}/**/*"]
+    else
+      Dir["#{buildpath}/**/*"]
            end
 
     dirs.each do |x|
@@ -72,7 +73,7 @@ class EmacsFormula < Formula
     Process.wait pid
     # is this necessary?
     $stdout.flush
-    unless $?.success?
+    unless $CHILD_STATUS.success?
       odie "Tests failed: `emacs #{test_args.join(" ")}`"
     end
   end
@@ -109,7 +110,7 @@ class EmacsFormula < Formula
       Process.wait pid
       # is this necessary?
       $stdout.flush
-      next if $?.success?
+      next if $CHILD_STATUS.success?
       env = ENV.to_hash
       puts # line between emacs output and env dump
       onoe "Byte compilation failed"
