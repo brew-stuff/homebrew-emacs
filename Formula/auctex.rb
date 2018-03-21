@@ -12,7 +12,7 @@ class Auctex < EmacsFormula
     depends_on "autoconf" => :build
   end
 
-  # depends_on :tex
+  depends_on LaTeXRequirement
   depends_on EmacsRequirement => "21.1"
 
   def install
