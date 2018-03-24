@@ -3,8 +3,8 @@ require File.expand_path("../Homebrew/emacs_formula", __dir__)
 class Muse < EmacsFormula
   desc "Authoring and publishing environment for Emacs"
   homepage "https://www.gnu.org/software/emacs-muse/"
-  url "https://elpa.gnu.org/packages/muse-3.20.1.tar"
-  sha256 "5eb1128f9fa0eaf3f6a56db3f99aa8fab299ef2031d491bebe29948c40ed1441"
+  url "https://elpa.gnu.org/packages/muse-3.20.2.tar"
+  sha256 "96a39d0115e26e643f2cf4646521f4522429d7983a8c3b6d2b53f442ba714e3c"
   head "https://github.com/alexott/muse.git"
 
   bottle :disable
