@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class PhpMode < EmacsFormula
   desc "Major mode for editing PHP files"
   homepage "https://github.com/ejmr/php-mode"
-  url "https://github.com/ejmr/php-mode/archive/v1.18.2.tar.gz"
-  sha256 "16b26a5584139db2dbc05414a686f54173d7505d7aa041ca12238188c23ea90c"
+  url "https://github.com/ejmr/php-mode/archive/v1.19.0.tar.gz"
+  sha256 "ba3c469eaee72fe25c0549249c859c2535cc0067857379e2713eb1416bed92a0"
   head "https://github.com/ejmr/php-mode.git"
 
   bottle :disable
