@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class FountainMode < EmacsFormula
   desc "Major mode for the Fountain screenwriting syntax"
   homepage "https://github.com/rnkn/fountain-mode"
-  url "https://github.com/rnkn/fountain-mode/archive/v2.5.0.tar.gz"
-  sha256 "a8b81c4ef4e413b5d124d77b818016e3483ec738fe818534194408b4e92d2181"
+  url "https://github.com/rnkn/fountain-mode/archive/v2.5.3.tar.gz"
+  sha256 "04edf6eb7d229f0e41a47d26facea559c5e91a2f52cadb1137660858bd90ef74"
   head "https://github.com/rnkn/fountain-mode.git"
 
   bottle :disable
