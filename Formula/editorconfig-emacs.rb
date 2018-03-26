@@ -1,11 +1,11 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
   homepage "https://github.com/editorconfig/editorconfig-emacs"
   url "https://github.com/editorconfig/editorconfig-emacs.git",
-      :tag => "v0.7.10",
-      :revision => "1543835ce00412c3cd34a61497af5f68ead250a6"
+      :tag => "v0.7.11",
+      :revision => "2ec90f13ad98481c5324eea4877de7a80d814d86"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   bottle :disable
@@ -31,8 +31,8 @@ class EditorconfigEmacs < EmacsFormula
   def caveats
     if build.without? "editorconfig"
       <<~EOS
-      Set the Emacs variable `editorconfig-exec-path' to
-        #{HOMEBREW_PREFIX}/bin/editorconfig-el
+        Set the Emacs variable `editorconfig-exec-path' to
+          #{HOMEBREW_PREFIX}/bin/editorconfig-el
       EOS
     end
   end
