@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class MastodonMode < EmacsFormula
   desc "Client and major mode for Mastodon"
   homepage "https://github.com/jdenen/mastodon.el"
-  url "https://github.com/jdenen/mastodon.el/archive/0.7.0.tar.gz"
-  sha256 "f54b789c1b900f7856e7c5b89c6d093376a32ad6ea817aa83552fc215f4e9231"
+  url "https://github.com/jdenen/mastodon.el/archive/0.7.2.tar.gz"
+  sha256 "18194b2b274eec0902c581b7781e93db733acd93e816f8fc8fe8933aa2a19a22"
   head "https://github.com/jdenen/mastodon.el.git"
 
   depends_on EmacsRequirement => "24.4"
