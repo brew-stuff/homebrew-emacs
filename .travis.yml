@@ -37,7 +37,7 @@ before_install:
   - umask 022
 
 script:
-  - brew test-bot --no-bottle
+  - brew test-bot --no-bottle --tap=$(brew --repo)/Library/Taps/dunn/homebrew-emacs
 
 notifications:
   email:
