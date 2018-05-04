@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Realgud < EmacsFormula
   desc "Emacs front-end for interacting with external debuggers"
   homepage "https://github.com/realgud/realgud"
-  url "https://elpa.gnu.org/packages/realgud-1.4.4.tar"
-  sha256 "ec58be91c9f1fb9ebde195f948603efdec01d4735095220304e9c634469d88d9"
+  url "https://elpa.gnu.org/packages/realgud-1.4.5.tar"
+  sha256 "44f0e28109846fe3618215b884e302601d0cc5ee6b3fada2f28b2c775e7f1c81"
 
   bottle :disable
 
@@ -21,7 +21,7 @@ class Realgud < EmacsFormula
 
   resource "byebug" do
     url "https://github.com/realgud/realgud-byebug.git",
-        :revision => "cb75d6bd9abbe04afa4c74a7ce9c66852814e0c3"
+        :revision => "de603d58aa9ef72a2619247a0234fccf6bc2cc9a"
   end
 
   resource "pry" do
