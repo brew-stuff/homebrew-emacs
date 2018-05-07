@@ -3,16 +3,17 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class AsyncEmacs < EmacsFormula
   desc "Emacs library for asynchronous processing"
   homepage "https://github.com/jwiegley/emacs-async"
-  url "https://elpa.gnu.org/packages/async-1.9.2.tar"
-  sha256 "dcb9bc817be1c478a73a039a2a4c129c3cca7ebcd228b3954e82737964ded69d"
+  url "https://github.com/jwiegley/emacs-async/archive/v1.9.3.tar.gz"
+  sha256 "eadd291e75dd05aa1a0c7199ecc936b8c18b7981220612cb018f4c2ad0ba0c9d"
   head "https://github.com/jwiegley/emacs-async.git"
 
   depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
 
   def install
-    byte_compile Dir["*.el"]
-    elisp.install Dir["*.el"], Dir["*.elc"]
+    system "make", "all"
+    elisp.mkpath
+    system "make", "install", "DESTDIR=#{elisp}"
   end
 
   test do
