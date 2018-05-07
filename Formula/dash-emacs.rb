@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DashEmacs < EmacsFormula
   desc "Modern list library for Emacs"
   homepage "https://github.com/magnars/dash.el"
-  url "https://github.com/magnars/dash.el/archive/2.13.0.tar.gz"
-  sha256 "0bc298129ff3421ba2de87b95c157fe35be0f7f26de83eae5d8558947f9e54de"
+  url "https://github.com/magnars/dash.el/archive/2.14.1.tar.gz"
+  sha256 "bae5cac81d6d0214c54ed67ccd25b1c2cb13e96b5c2f91a84a6eb222bd5d117e"
   head "https://github.com/magnars/dash.el.git"
 
   bottle :unneeded
