@@ -3,8 +3,8 @@ require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
 class Yasnippet < EmacsFormula
   desc "Emacs template system"
   homepage "https://github.com/joaotavora/yasnippet"
-  url "https://elpa.gnu.org/packages/yasnippet-0.12.2.tar"
-  sha256 "69e3a0b378e1e5ed629ea7faecf72bb7d3786fc048891ed3fcd71dfc1aa5910d"
+  url "https://elpa.gnu.org/packages/yasnippet-0.13.0.tar"
+  sha256 "bf6850175b7cc4e376501085e41edde92635495370ddec4f3c707c85bcdf96ce"
   head "https://github.com/joaotavora/yasnippet.git"
 
   bottle :disable
@@ -14,6 +14,11 @@ class Yasnippet < EmacsFormula
   depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/htmlize" => :optional
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
+
+  resource "snippets" do
+    url "https://github.com/AndreaCrotti/yasnippet-snippets/archive/0.3.tar.gz"
+    sha256 "96ed67308be785dd1a661658f123a88b0757794639afb246a5c6acbc758fe342"
+  end
 
   def install
     ert_run_tests "yasnippet-tests.el"
@@ -25,7 +30,7 @@ class Yasnippet < EmacsFormula
     end
     elisp.install (Dir["*.el"] - %w[yasnippet-pkg.el]),
                   Dir["*.elc"]
-    (prefix/"contrib").install "snippets"
+    (prefix/"contrib").install resource("snippets")
   end
 
   def caveats
