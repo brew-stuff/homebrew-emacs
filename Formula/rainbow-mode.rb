@@ -3,8 +3,8 @@ require File.expand_path("../Homebrew/emacs_formula", __dir__)
 class RainbowMode < EmacsFormula
   desc "Minor mode for highlighting color-strings"
   homepage "https://elpa.gnu.org/packages/rainbow-mode.html"
-  url "https://elpa.gnu.org/packages/rainbow-mode-1.0.el"
-  sha256 "b43e8f56a1cd25f6b52cbf74e73a32a673996b08cd14162fbc3a9db7df6ae9d5"
+  url "https://elpa.gnu.org/packages/rainbow-mode-1.0.1.el"
+  sha256 "4e33e4d749991c59c3930f08cf1a00dc8369d581750b7fe475b90cd31551ef32"
 
   depends_on EmacsRequirement => "24.1"
 
