@@ -20,7 +20,7 @@ class PdfTools < EmacsFormula
   depends_on "dunn/emacs/tablist"
 
   def install
-    system "make", "server/epdfinfo"
+    system "make", "server/epdfinfo", "CC=/usr/bin/gcc", "CXX=/usr/bin/gcc", "AR=/usr/bin/ar", "RANLIB=/usr/bin/ranlib"
     bin.install "server/epdfinfo"
 
     byte_compile Dir["lisp/pdf*"]
