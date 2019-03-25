@@ -1,3 +1,7 @@
+# UNMAINTAINED
+
+**I am not currently keeping these formulae up-to-date.**  If you wish to take over maintainence of this repository, let me know.
+
 homebrew-emacs
 ==============
 
