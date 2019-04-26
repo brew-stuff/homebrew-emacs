@@ -1,6 +1,4 @@
-# UNMAINTAINED
-
-**I am not currently keeping these formulae up-to-date.**  If you wish to take over maintainence of this repository, let me know.
+# I've just taken over maintenance of this package, and will be updating the Homebrew–related linkages shortly. -David Apr 26, 2019
 
 homebrew-emacs
 ==============
