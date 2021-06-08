@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Javaimp < EmacsFormula
   desc "Emacs functions for Java imports in Maven projects"

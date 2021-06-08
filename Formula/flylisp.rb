@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Flylisp < EmacsFormula
   desc "Emacs minor mode for coloring incorrect parentheses"
@@ -15,11 +15,12 @@ class Flylisp < EmacsFormula
                                               "flylisp.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'flylisp)
-  EOS
+      (require 'flylisp)
+    EOS
   end
 
   test do

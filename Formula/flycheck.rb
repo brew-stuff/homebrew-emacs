@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Flycheck < EmacsFormula
   desc "On-the-fly syntax checking extension"
@@ -52,6 +52,7 @@ class Flycheck < EmacsFormula
   def install
     resources.each do |r|
       next if build.without? r.name
+
       r.stage do
         byte_compile "flycheck-#{r.name}.el"
         elisp.install "flycheck-#{r.name}.el", "flycheck-#{r.name}.elc"

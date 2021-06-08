@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class YamlMode < EmacsFormula
   desc "Emacs major mode for editing YAML files"
@@ -23,7 +23,6 @@ class YamlMode < EmacsFormula
     sha256 "7488be46e2368af94eb1ad1682a504b07030d0ef8691058e53b6c7842d10b832" => :yosemite
   end
 
-
   depends_on EmacsRequirement => "24.1"
 
   def install
@@ -33,12 +32,13 @@ class YamlMode < EmacsFormula
     doc.install "README"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'yaml-mode)
-    (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-  EOS
+      (require 'yaml-mode)
+      (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+    EOS
   end
 
   test do

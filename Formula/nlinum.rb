@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Nlinum < EmacsFormula
   desc "Emacs mode for displaying line numbers in the margin"

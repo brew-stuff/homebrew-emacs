@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AllEmacs < EmacsFormula
   desc "Emacs package to edit all lines matching a given regexp"
@@ -15,11 +15,12 @@ class AllEmacs < EmacsFormula
     (share/"emacs/site-lisp/all").install "all.el", "all.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'all)
-  EOS
+      (require 'all)
+    EOS
   end
 
   test do

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class PdfTools < EmacsFormula
   desc "Emacs support library for PDF files"
@@ -20,17 +20,19 @@ class PdfTools < EmacsFormula
   depends_on "dunn/emacs/tablist"
 
   def install
-    system "make", "server/epdfinfo", "CC=/usr/bin/gcc", "CXX=/usr/bin/gcc", "AR=/usr/bin/ar", "RANLIB=/usr/bin/ranlib"
+    system "make", "server/epdfinfo", "CC=/usr/bin/gcc", "CXX=/usr/bin/gcc", "AR=/usr/bin/ar",
+"RANLIB=/usr/bin/ranlib"
     bin.install "server/epdfinfo"
 
     byte_compile Dir["lisp/pdf*"]
     elisp.install Dir["lisp/pdf*.el"], Dir["lisp/pdf*.elc"]
   end
 
-  def caveats; <<~EOS
-    Set the variable `pdf-info-epdfinfo-program' to
-      #{HOMEBREW_PREFIX}/bin/epdfinfo
-  EOS
+  def caveats
+    <<~EOS
+      Set the variable `pdf-info-epdfinfo-program' to
+        #{HOMEBREW_PREFIX}/bin/epdfinfo
+    EOS
   end
 
   test do

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Smex < EmacsFormula
   desc "Adds Ido completions to Emacs' M-x"
@@ -15,14 +15,15 @@ class Smex < EmacsFormula
     doc.install "README.markdown"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'smex)
-    (global-set-key (kbd "M-x") 'smex)
-    (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-    (global-set-key (kbd "C-x C-M") 'smex-major-mode-commands)
-  EOS
+      (require 'smex)
+      (global-set-key (kbd "M-x") 'smex)
+      (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+      (global-set-key (kbd "C-x C-M") 'smex-major-mode-commands)
+    EOS
   end
 
   test do

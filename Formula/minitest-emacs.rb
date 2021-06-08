@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class MinitestEmacs < EmacsFormula
   desc "Minor mode for interacting with minitest within Emacs"

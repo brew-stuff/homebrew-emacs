@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Realgud < EmacsFormula
   desc "Emacs front-end for interacting with external debuggers"
@@ -21,12 +21,12 @@ class Realgud < EmacsFormula
 
   resource "byebug" do
     url "https://github.com/realgud/realgud-byebug.git",
-        :revision => "cb75d6bd9abbe04afa4c74a7ce9c66852814e0c3"
+        revision: "cb75d6bd9abbe04afa4c74a7ce9c66852814e0c3"
   end
 
   resource "pry" do
     url "https://github.com/realgud/realgud-pry.git",
-        :revision => "9b3834048fcbc16827c55af38f8cfef0cf6533da"
+        revision: "9b3834048fcbc16827c55af38f8cfef0cf6533da"
   end
 
   def install

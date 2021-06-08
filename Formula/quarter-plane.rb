@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class QuarterPlane < EmacsFormula
   desc "Emacs minor mode for quarter-plane style editing"
@@ -15,11 +15,12 @@ class QuarterPlane < EmacsFormula
                                                     "quarter-plane.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'quarter-plane)
-  EOS
+      (require 'quarter-plane)
+    EOS
   end
 
   test do

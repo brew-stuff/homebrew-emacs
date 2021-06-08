@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DismalMode < EmacsFormula
   desc "Emacs major mode for editing dismal spreadsheets"
@@ -15,12 +15,13 @@ class DismalMode < EmacsFormula
     doc.install "README", Dir["*.txt"], Dir["*.texi"]
   end
 
-  def caveats; <<~EOS
-    Add something like the following to your init file:
+  def caveats
+    <<~EOS
+      Add something like the following to your init file:
 
-    (setq dismal-directory "#{ENV["HOME"]}/Documents/dismal")
-    (require 'dismal)
-  EOS
+      (setq dismal-directory "#{ENV["HOME"]}/Documents/dismal")
+      (require 'dismal)
+    EOS
   end
 
   test do

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class LocChanges < EmacsFormula
   desc "Emacs package to track buffer positions across changes"
@@ -30,11 +30,12 @@ class LocChanges < EmacsFormula
                                                   "loc-changes.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'loc-changes)
-  EOS
+      (require 'loc-changes)
+    EOS
   end
 
   test do

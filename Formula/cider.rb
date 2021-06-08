@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Cider < EmacsFormula
   desc "Clojure IDE for Emacs"
@@ -8,7 +8,7 @@ class Cider < EmacsFormula
   head "https://github.com/clojure-emacs/cider.git"
 
   depends_on EmacsRequirement => "24.4"
-  depends_on :java => ["1.7+", :run]
+  depends_on java: ["1.7+", :run]
 
   depends_on "dunn/emacs/clojure-mode"
   depends_on "dunn/emacs/dash-emacs"

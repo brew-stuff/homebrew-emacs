@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class ApplescriptMode < EmacsFormula
   desc "Emacs major mode for editing AppleScript"
@@ -17,13 +17,14 @@ class ApplescriptMode < EmacsFormula
                                                        "applescript-mode.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'applescript-mode)
-    (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
-    (add-to-list 'interpreter-mode-alist '("osascript" . applescript-mode))
-  EOS
+      (require 'applescript-mode)
+      (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
+      (add-to-list 'interpreter-mode-alist '("osascript" . applescript-mode))
+    EOS
   end
 
   test do

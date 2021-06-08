@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class UnkillableScratch < EmacsFormula
   desc "Prevent *scratch* etc. from being killed"
@@ -16,12 +16,13 @@ class UnkillableScratch < EmacsFormula
     doc.install "README.md"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'unkillable-scratch)
-    (unkillable-scratch 1)
-  EOS
+      (require 'unkillable-scratch)
+      (unkillable-scratch 1)
+    EOS
   end
 
   test do

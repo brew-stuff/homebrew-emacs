@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class MetarEmacs < EmacsFormula
   desc "Emacs package for accessing METAR weather info"
@@ -22,6 +22,6 @@ class MetarEmacs < EmacsFormula
       (load "metar")
       (print (cdr (metar-get-record "SARC")))
     EOS
-    assert_match /^"SARC\ .*/, shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
+    assert_match(/^"SARC\ .*/, shell_output("emacs -Q --batch -l #{testpath}/test.el").strip)
   end
 end

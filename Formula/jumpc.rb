@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Jumpc < EmacsFormula
   desc "Save and jump to previous cursor positions in Emacs"
@@ -15,13 +15,14 @@ class Jumpc < EmacsFormula
                                             "jumpc.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'jumpc)
-    (jumpc)
-    (jumpc-bind-vim-key)
-  EOS
+      (require 'jumpc)
+      (jumpc)
+      (jumpc-bind-vim-key)
+    EOS
   end
 
   test do

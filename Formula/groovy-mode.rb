@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class GroovyMode < EmacsFormula
   desc "Modes for Groovy and Groovy-related technology"
@@ -17,10 +17,11 @@ class GroovyMode < EmacsFormula
     prefix.install "gpl-3.0.txt"
   end
 
-  def caveats; <<~EOS
-    Grails mode was not installed, as it currently has additional dependencies
-    not available in Homebrew.
-  EOS
+  def caveats
+    <<~EOS
+      Grails mode was not installed, as it currently has additional dependencies
+      not available in Homebrew.
+    EOS
   end
 
   test do

@@ -4,8 +4,8 @@ class EditorconfigEmacs < EmacsFormula
   desc "EditorConfig plugin for emacs"
   homepage "https://github.com/editorconfig/editorconfig-emacs"
   url "https://github.com/editorconfig/editorconfig-emacs.git",
-      :tag => "v0.7.11",
-      :revision => "2ec90f13ad98481c5324eea4877de7a80d814d86"
+      tag:      "v0.7.11",
+      revision: "2ec90f13ad98481c5324eea4877de7a80d814d86"
   head "https://github.com/editorconfig/editorconfig-emacs.git"
 
   bottle :disable
@@ -25,7 +25,7 @@ class EditorconfigEmacs < EmacsFormula
 
     libexec.install "bin/editorconfig-el"
     (bin/"editorconfig-el").write_env_script(libexec/"editorconfig-el",
-                                             :EDITORCONFIG_CORE_LIBRARY_PATH => opt_elisp)
+                                             EDITORCONFIG_CORE_LIBRARY_PATH: opt_elisp)
   end
 
   def caveats

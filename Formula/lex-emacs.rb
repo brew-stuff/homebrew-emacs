@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class LexEmacs < EmacsFormula
   desc "Lexical analyser construction"
@@ -15,11 +15,12 @@ class LexEmacs < EmacsFormula
                                           Dir["*.elc"]
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'lex)
-  EOS
+      (require 'lex)
+    EOS
   end
 
   test do

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Markchars < EmacsFormula
   desc "Emacs modes for marking special characters"
@@ -15,11 +15,12 @@ class Markchars < EmacsFormula
                                                 "markchars.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'markchars)
-  EOS
+      (require 'markchars)
+    EOS
   end
 
   test do

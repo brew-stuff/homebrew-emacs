@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class LoadDir < EmacsFormula
   desc "Package for loading all Emacs Lisp files in a directory"

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class ChessEmacs < EmacsFormula
   desc "Chess module for Emacs"
@@ -6,7 +6,7 @@ class ChessEmacs < EmacsFormula
   url "http://elpa.gnu.org/packages/chess-2.0.4.tar"
   sha256 "5a16dbd56432be81f1c313fc88972ac690c2dc5a82c1035da37b8472ab5c01eb"
   head "http://git.savannah.gnu.org/r/emacs/elpa.git",
-       :branch => "externals/chess"
+       branch: "externals/chess"
 
   depends_on EmacsRequirement => "24.1"
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
@@ -19,11 +19,12 @@ class ChessEmacs < EmacsFormula
     info.install "chess.info"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'chess)
-  EOS
+      (require 'chess)
+    EOS
   end
 
   test do

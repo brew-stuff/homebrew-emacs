@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Crisp < EmacsFormula
   desc "Emacs emulator for CRiSP/Brief"
@@ -17,11 +17,12 @@ class Crisp < EmacsFormula
                                             "crisp.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'crisp)
-  EOS
+      (require 'crisp)
+    EOS
   end
 
   test do

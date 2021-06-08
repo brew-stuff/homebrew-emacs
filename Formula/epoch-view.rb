@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class EpochView < EmacsFormula
   desc "Emacs minor mode to convert Unix epoch times"
@@ -15,11 +15,12 @@ class EpochView < EmacsFormula
                                                  "epoch-view.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'epoch-view)
-  EOS
+      (require 'epoch-view)
+    EOS
   end
 
   test do

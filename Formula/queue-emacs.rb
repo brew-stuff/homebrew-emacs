@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class QueueEmacs < EmacsFormula
   desc "Emacs implementation of the queue data structure"

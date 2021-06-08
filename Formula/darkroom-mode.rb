@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DarkroomMode < EmacsFormula
   desc "Emacs major mode to remove visual distractions"
@@ -17,11 +17,12 @@ class DarkroomMode < EmacsFormula
     doc.install "README.md" if build.head?
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'darkroom)
-  EOS
+      (require 'darkroom)
+    EOS
   end
 
   test do
