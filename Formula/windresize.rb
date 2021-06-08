@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Windresize < EmacsFormula
   desc "Interactively resize windows in Emacs"
@@ -15,11 +15,12 @@ class Windresize < EmacsFormula
                                                  "windresize.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'windresize)
-  EOS
+      (require 'windresize)
+    EOS
   end
 
   test do

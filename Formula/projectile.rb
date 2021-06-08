@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Projectile < EmacsFormula
   desc "Project Interaction Library for Emacs"
@@ -26,6 +26,6 @@ class Projectile < EmacsFormula
       (load "projectile")
       (print (projectile-version))
     EOS
-    assert_equal %("#{version}"), shell_output("emacs --quick --batch --load #{testpath}/test.el").strip
+    assert_equal %Q("#{version}"), shell_output("emacs --quick --batch --load #{testpath}/test.el").strip
   end
 end

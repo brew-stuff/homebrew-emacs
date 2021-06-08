@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class CargoMode < EmacsFormula
   desc "Emacs Minor Mode for Cargo, Rust's Package Manager."

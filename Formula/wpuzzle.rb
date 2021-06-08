@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Wpuzzle < EmacsFormula
   desc "Emacs word search game"
@@ -16,11 +16,12 @@ class Wpuzzle < EmacsFormula
                                               "wpuzzle.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'wpuzzle)
-  EOS
+      (require 'wpuzzle)
+    EOS
   end
 
   test do

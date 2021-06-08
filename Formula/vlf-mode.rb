@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class VlfMode < EmacsFormula
   desc "Emacs minor mode for viewing very large files"
@@ -15,11 +15,12 @@ class VlfMode < EmacsFormula
     doc.install "README.org"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'vlf-setup)
-  EOS
+      (require 'vlf-setup)
+    EOS
   end
 
   test do

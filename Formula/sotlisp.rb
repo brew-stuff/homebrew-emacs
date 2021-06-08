@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Sotlisp < EmacsFormula
   desc "Emacs minor mode for writing Emacs Lisp faster"

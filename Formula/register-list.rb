@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class RegisterList < EmacsFormula
   desc "Emacs functions to view and edit registers"
@@ -15,11 +15,12 @@ class RegisterList < EmacsFormula
                                                     "register-list.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'register-list)
-  EOS
+      (require 'register-list)
+    EOS
   end
 
   test do

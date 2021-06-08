@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class ContextColoring < EmacsFormula
   desc "Emacs mode to color JS and Elisp code by scope"

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class PmdEmacs < EmacsFormula
   desc "Major mode for plugging PMD into Emacs"

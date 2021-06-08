@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class JsonSnatcher < EmacsFormula
   desc "Get the path to a JSON element in Emacs"

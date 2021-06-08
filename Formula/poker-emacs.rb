@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class PokerEmacs < EmacsFormula
   desc "Texas Hold'Em Poker for Emacs"
@@ -30,6 +30,6 @@ class PokerEmacs < EmacsFormula
     EOS
     assert_equal 52, shell_output("emacs -Q --batch -l #{testpath}/test.el")
       .strip.gsub(/[()"]/, "")
-      .split(" ").length
+      .split.length
   end
 end

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class JgraphMode < EmacsFormula
   desc "Emacs major mode for editing Jgraph files"
@@ -16,11 +16,12 @@ class JgraphMode < EmacsFormula
                                                   "jgraph-mode.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'jgraph-mode)
-  EOS
+      (require 'jgraph-mode)
+    EOS
   end
 
   test do

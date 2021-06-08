@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class CapsLockEmacs < EmacsFormula
   desc "Caps lock as an Emacs minor mode"
@@ -17,11 +17,12 @@ class CapsLockEmacs < EmacsFormula
                                                 "caps-lock.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'caps-lock)
-  EOS
+      (require 'caps-lock)
+    EOS
   end
 
   test do

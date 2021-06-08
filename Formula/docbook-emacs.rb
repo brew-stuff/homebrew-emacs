@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DocbookEmacs < EmacsFormula
   desc "Emacs package for viewing DocBook files"
@@ -15,11 +15,12 @@ class DocbookEmacs < EmacsFormula
                                               "docbook.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'docbook)
-  EOS
+      (require 'docbook)
+    EOS
   end
 
   test do

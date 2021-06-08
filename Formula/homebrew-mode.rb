@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class HomebrewMode < EmacsFormula
   desc "Emacs minor mode for editing Homebrew formulae"

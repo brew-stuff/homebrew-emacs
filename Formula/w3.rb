@@ -1,5 +1,4 @@
-# coding: utf-8
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class W3 < EmacsFormula
   desc "Emacs web browser"

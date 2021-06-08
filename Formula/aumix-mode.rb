@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AumixMode < EmacsFormula
   desc "Emacs major mode for controlling aumix in a buf"
@@ -17,11 +17,12 @@ class AumixMode < EmacsFormula
                                                  "aumix-mode.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (autoload 'aumix "aumix-mode" nil t)
-  EOS
+      (autoload 'aumix "aumix-mode" nil t)
+    EOS
   end
 
   test do

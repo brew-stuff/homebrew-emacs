@@ -5,7 +5,7 @@ class OrgMode < EmacsFormula
   homepage "https://orgmode.org"
   url "https://orgmode.org/org-9.1.12.tar.gz"
   sha256 "d9fd82a0467aa61efe48682475e85da21f79c431558b1b4744036aa804e1b18e"
-  head "https://code.orgmode.org/bzg/org-mode.git", :shallow => false
+  head "https://code.orgmode.org/bzg/org-mode.git", shallow: false
 
   bottle :disable
 

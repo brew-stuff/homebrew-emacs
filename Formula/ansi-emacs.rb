@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AnsiEmacs < EmacsFormula
   desc "Emacs library to convert strings into ANSI"

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class MemoryUsageEmacs < EmacsFormula
   desc "Tools for analyzing Emacs' memory usage"
@@ -15,11 +15,12 @@ class MemoryUsageEmacs < EmacsFormula
                                                    "memory-usage.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'memory-usage)
-  EOS
+      (require 'memory-usage)
+    EOS
   end
 
   test do

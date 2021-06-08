@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class CommonLispRequirement < Requirement
   fatal true
@@ -8,7 +8,7 @@ class CommonLispRequirement < Requirement
   # the default in the Makefile
   lisps = %w[sbcl lisp ccl clisp ecl abcl]
 
-  satisfy :build_env => false do
+  satisfy build_env: false do
     lisps.each do |bin|
       @lisp = which(bin) if @lisp.nil? && which(bin)
     end

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AdjustParens < EmacsFormula
   desc "Emacs minor mode for indenting Lisp and Clojure"
@@ -14,13 +14,14 @@ class AdjustParens < EmacsFormula
                                                     Dir["*.elc"]
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'adjust-parens)
-    (add-hook 'emacs-lisp-mode-hook #'adjust-parens-mode)
-    (add-hook 'clojure-mode-hook #'adjust-parens-mode)
-  EOS
+      (require 'adjust-parens)
+      (add-hook 'emacs-lisp-mode-hook #'adjust-parens-mode)
+      (add-hook 'clojure-mode-hook #'adjust-parens-mode)
+    EOS
   end
 
   test do

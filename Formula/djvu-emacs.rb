@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DjvuEmacs < EmacsFormula
   desc "Emacs front-end for djvused"
@@ -15,11 +15,12 @@ class DjvuEmacs < EmacsFormula
     (share/"emacs/site-lisp/djvu").install "djvu.el", "djvu.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'djvu)
-  EOS
+      (require 'djvu)
+    EOS
   end
 
   test do

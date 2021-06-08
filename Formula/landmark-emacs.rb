@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class LandmarkEmacs < EmacsFormula
   desc "Neural-network robot that learns landmarks"
@@ -16,11 +16,12 @@ class LandmarkEmacs < EmacsFormula
                                                "landmark.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'landmark)
-  EOS
+      (require 'landmark)
+    EOS
   end
 
   test do

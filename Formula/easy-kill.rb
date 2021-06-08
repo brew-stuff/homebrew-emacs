@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class EasyKill < EmacsFormula
   desc "Replacement for kill-ring-save in Emacs"
@@ -17,12 +17,13 @@ class EasyKill < EmacsFormula
     doc.install "README.rst"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'easy-kill)
-    (global-set-key [remap kill-ring-save] 'easy-kill)
-  EOS
+      (require 'easy-kill)
+      (global-set-key [remap kill-ring-save] 'easy-kill)
+    EOS
   end
 
   test do

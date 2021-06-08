@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class AdaMode < EmacsFormula
   desc "Emacs major mode for editing Ada sources"
@@ -24,9 +24,7 @@ class AdaMode < EmacsFormula
     elisp.install (Dir["*.el"] - %w[ada-mode-pkg.el]), Dir["*.elc"]
 
     info.install Dir["*.info"]
-    if build.with? "reference"
-      resource("reference").stage { info.install Dir["*"] }
-    end
+    resource("reference").stage { info.install Dir["*"] } if build.with? "reference"
   end
 
   test do

@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class SimpleHttpd < EmacsFormula
   desc "Extensible Emacs HTTP 1.1 server"
@@ -18,11 +18,12 @@ class SimpleHttpd < EmacsFormula
     doc.install "README.md"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'simple-httpd)
-  EOS
+      (require 'simple-httpd)
+    EOS
   end
 
   test do

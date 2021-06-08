@@ -1,11 +1,11 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Enwc < EmacsFormula
   desc "The Emacs Network Client"
   homepage "http://elpa.gnu.org/packages/enwc.html"
   url "http://elpa.gnu.org/packages/enwc-1.0.tar"
   sha256 "1eedd7238722c71d6686afd636d36daabbbf2ecf5ee9562affcf33651f9bb2a6"
-  head "http://bzr.savannah.nongnu.org/r/enwc/trunk", :using => :bzr
+  head "http://bzr.savannah.nongnu.org/r/enwc/trunk", using: :bzr
 
   depends_on EmacsRequirement
   depends_on "dunn/emacs/cl-lib" if Emacs.version < Version.create("24.3")
@@ -23,12 +23,13 @@ class Enwc < EmacsFormula
     doc.install Dir["doc/*"]
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'enwc-setup)
-    (enwc-setup)
-  EOS
+      (require 'enwc-setup)
+      (enwc-setup)
+    EOS
   end
 
   test do

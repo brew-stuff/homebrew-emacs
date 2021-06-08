@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class Num3Mode < EmacsFormula
   desc "Emacs minor mode to highlight long numbers for readability"
@@ -15,12 +15,13 @@ class Num3Mode < EmacsFormula
                                                 "num3-mode.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'num3-mode)
-    (global-num3-mode)
-  EOS
+      (require 'num3-mode)
+      (global-num3-mode)
+    EOS
   end
 
   test do

@@ -1,10 +1,10 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class DartMode < EmacsFormula
   desc "Major mode for editing Dart code"
   homepage "https://github.com/nex3/dart-mode"
   url "https://github.com/nex3/dart-mode.git",
-      :tag => "0.15", :revision => "e6635b390235cf16a8081763768cf925ca2d9133"
+      tag: "0.15", revision: "e6635b390235cf16a8081763768cf925ca2d9133"
   head "https://github.com/nex3/dart-mode.git"
 
   bottle do

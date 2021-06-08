@@ -1,4 +1,4 @@
-require File.expand_path("../../Homebrew/emacs_formula", __FILE__)
+require File.expand_path("../Homebrew/emacs_formula", __dir__)
 
 class MinimapEmacs < EmacsFormula
   desc "Emacs minor mode for sidebar displays of buffers"
@@ -15,11 +15,12 @@ class MinimapEmacs < EmacsFormula
                                               "minimap.elc"
   end
 
-  def caveats; <<~EOS
-    Add the following to your init file:
+  def caveats
+    <<~EOS
+      Add the following to your init file:
 
-    (require 'minimap)
-  EOS
+      (require 'minimap)
+    EOS
   end
 
   test do
